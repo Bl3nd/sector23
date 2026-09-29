@@ -13,7 +13,7 @@
   },
   "sortTailwindcss": {
     "stylesheet": "./app/globals.css",
-    "functions": ["tv"],
+    "functions": ["tv"]
   },
   "ignorePatterns": []
 }

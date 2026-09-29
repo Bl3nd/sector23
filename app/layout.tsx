@@ -5,18 +5,17 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+    subsets: ["latin"],
+    variable: "--font-geist-sans",
+  }),
+  geistMono = Geist_Mono({
+    subsets: ["latin"],
+    variable: "--font-geist-mono",
+  });
 
 export const metadata: Metadata = {
-  title: "Sector23",
   description: "Sector23 is a React component library for building modern web applications.",
+  title: "Sector23",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
