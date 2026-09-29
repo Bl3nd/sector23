@@ -16,7 +16,8 @@
       "rules": {
         "eslint/sort-imports": "off",
         "new-cap": "off",
-        "eslint/one-var": "off"
+        "eslint/one-var": "off",
+        "func-style": "off"
       }
     }
   ],
