@@ -19,7 +19,8 @@
         "eslint/one-var": "off",
         "func-style": "off",
         "no-ternary": "allow",
-        "no-duplicate-imports": "allow"
+        "no-duplicate-imports": "allow",
+        "sort-keys": "off"
       }
     }
   ],

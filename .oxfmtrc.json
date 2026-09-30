@@ -15,5 +15,5 @@
     "stylesheet": "./app/globals.css",
     "functions": ["tv"]
   },
-  "ignorePatterns": []
+  "ignorePatterns": [".vscode/settings.json", "tsconfig.json"]
 }

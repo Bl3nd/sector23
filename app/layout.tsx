@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 
+import { DirectionProvider } from "@base-ui/react";
 import { JetBrains_Mono, Lora, Quicksand } from "next/font/google";
 
-import { ThemeProvider } from "./components/theme-provider";
 import "./globals.css";
+import { ThemeProvider } from "./components/theme-provider";
 
 const fontSans = Quicksand({
   subsets: ["latin"],
@@ -32,11 +33,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${fontSans.variable} ${fontSerif.variable} ${fontMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="relative flex min-h-full flex-col">
-        <ThemeProvider>
-          <div className="isolate">{children}</div>
-        </ThemeProvider>
-      </body>
+      <DirectionProvider direction="ltr">
+        <body className="relative flex min-h-full flex-col">
+          <ThemeProvider>
+            <div className="isolate">{children}</div>
+          </ThemeProvider>
+        </body>
+      </DirectionProvider>
     </html>
   );
 }
