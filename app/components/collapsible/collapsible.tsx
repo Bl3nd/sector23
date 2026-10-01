@@ -1,6 +1,5 @@
 "use client";
 
-import { useDirection } from "@base-ui/react";
 import { Collapsible as BaseCollapsible } from "@base-ui/react/collapsible";
 
 import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
@@ -8,14 +7,11 @@ import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
 import { collapsible } from "./collapsible.style";
 
 function Collapsible({ className, ...props }: BaseCollapsible.Root.Props) {
-  const direction = useDirection();
-
   return (
     <BaseCollapsible.Root
       data-slot="collapsible"
       className={mergeSlotClassName(collapsible().root, className)}
       {...props}
-      dir={direction}
     />
   );
 }
