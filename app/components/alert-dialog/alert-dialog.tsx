@@ -1,5 +1,11 @@
-import { mergeProps, useRender } from "@base-ui/react";
+"use client";
+
+import { mergeProps, useDirection, useRender } from "@base-ui/react";
 import { AlertDialog as BaseAlertDialog } from "@base-ui/react/alert-dialog";
+
+import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
+
+import { alertDialog } from "./alert-dialog.style";
 
 const createAlertDialogHandle = BaseAlertDialog.createHandle;
 
@@ -9,36 +15,64 @@ function AlertDialog(props: BaseAlertDialog.Root.Props) {
 
 function AlertDialogTrigger({ className, ...props }: BaseAlertDialog.Trigger.Props) {
   return (
-    <BaseAlertDialog.Trigger data-slot="alert-dialog-trigger" className={className} {...props} />
+    <BaseAlertDialog.Trigger
+      data-slot="alert-dialog-trigger"
+      className={mergeSlotClassName(alertDialog().trigger, className)}
+      {...props}
+    />
   );
 }
 
 function AlertDialogPortal({ className, ...props }: BaseAlertDialog.Portal.Props) {
   return (
-    <BaseAlertDialog.Portal data-slot="alert-dialog-portal" className={className} {...props} />
+    <BaseAlertDialog.Portal
+      data-slot="alert-dialog-portal"
+      className={mergeSlotClassName(alertDialog().portal, className)}
+      {...props}
+    />
   );
 }
 
 function AlertDialogBackdrop({ className, ...props }: BaseAlertDialog.Backdrop.Props) {
   return (
-    <BaseAlertDialog.Backdrop data-slot="alert-dialog-backdrop" className={className} {...props} />
+    <BaseAlertDialog.Backdrop
+      data-slot="alert-dialog-backdrop"
+      className={mergeSlotClassName(alertDialog().backdrop, className)}
+      {...props}
+    />
   );
 }
 
 function AlertDialogViewport({ className, ...props }: BaseAlertDialog.Viewport.Props) {
   return (
-    <BaseAlertDialog.Viewport data-slot="alert-dialog-viewport" className={className} {...props} />
+    <BaseAlertDialog.Viewport
+      data-slot="alert-dialog-viewport"
+      className={mergeSlotClassName(alertDialog().viewport, className)}
+      {...props}
+    />
   );
 }
 
 function AlertDialogPopup({ className, ...props }: BaseAlertDialog.Popup.Props) {
-  return <BaseAlertDialog.Popup data-slot="alert-dialog-popup" className={className} {...props} />;
+  const direction = useDirection();
+
+  return (
+    <BaseAlertDialog.Popup
+      data-slot="alert-dialog-popup"
+      className={mergeSlotClassName(alertDialog().popup, className)}
+      {...props}
+      dir={direction}
+    />
+  );
 }
 
 function AlertDialogHeader({ className, render, ...props }: useRender.ComponentProps<"div">) {
   const header = useRender({
     defaultTagName: "div",
-    props: { ...mergeProps<"div">({ className }, props), "data-slot": "alert-dialog-header" },
+    props: {
+      ...mergeProps<"div">({ className: alertDialog().header({ className }) }, props),
+      "data-slot": "alert-dialog-header",
+    },
     render,
   });
 
@@ -46,14 +80,20 @@ function AlertDialogHeader({ className, render, ...props }: useRender.ComponentP
 }
 
 function AlertDialogTitle({ className, ...props }: BaseAlertDialog.Title.Props) {
-  return <BaseAlertDialog.Title data-slot="alert-dialog-title" className={className} {...props} />;
+  return (
+    <BaseAlertDialog.Title
+      data-slot="alert-dialog-title"
+      className={mergeSlotClassName(alertDialog().title, className)}
+      {...props}
+    />
+  );
 }
 
 function AlertDialogDescription({ className, ...props }: BaseAlertDialog.Description.Props) {
   return (
     <BaseAlertDialog.Description
       data-slot="alert-dialog-description"
-      className={className}
+      className={mergeSlotClassName(alertDialog().description, className)}
       {...props}
     />
   );
@@ -62,7 +102,10 @@ function AlertDialogDescription({ className, ...props }: BaseAlertDialog.Descrip
 function AlertDialogFooter({ className, render, ...props }: useRender.ComponentProps<"div">) {
   const footer = useRender({
     defaultTagName: "div",
-    props: { ...mergeProps<"div">({ className }, props), "data-slot": "alert-dialog-footer" },
+    props: {
+      ...mergeProps<"div">({ className: alertDialog().footer({ className }) }, props),
+      "data-slot": "alert-dialog-footer",
+    },
     render,
   });
 
@@ -70,7 +113,13 @@ function AlertDialogFooter({ className, render, ...props }: useRender.ComponentP
 }
 
 function AlertDialogClose({ className, ...props }: BaseAlertDialog.Close.Props) {
-  return <BaseAlertDialog.Close data-slot="alert-dialog-close" className={className} {...props} />;
+  return (
+    <BaseAlertDialog.Close
+      data-slot="alert-dialog-close"
+      className={mergeSlotClassName(alertDialog().close, className)}
+      {...props}
+    />
+  );
 }
 
 export {
