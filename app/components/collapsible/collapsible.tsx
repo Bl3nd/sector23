@@ -1,17 +1,39 @@
+"use client";
+
 import { Collapsible as BaseCollapsible } from "@base-ui/react/collapsible";
 
+import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
+
+import { collapsible } from "./collapsible.style";
+
 function Collapsible({ className, ...props }: BaseCollapsible.Root.Props) {
-  return <BaseCollapsible.Root data-slot="collapsible" className={className} {...props} />;
+  return (
+    <BaseCollapsible.Root
+      data-slot="collapsible"
+      className={mergeSlotClassName(collapsible().root, className)}
+      {...props}
+    />
+  );
 }
 
 function CollapsibleTrigger({ className, ...props }: BaseCollapsible.Trigger.Props) {
   return (
-    <BaseCollapsible.Trigger data-slot="collapsible-trigger" className={className} {...props} />
+    <BaseCollapsible.Trigger
+      data-slot="collapsible-trigger"
+      className={mergeSlotClassName(collapsible().trigger, className)}
+      {...props}
+    />
   );
 }
 
 function CollapsiblePanel({ className, ...props }: BaseCollapsible.Panel.Props) {
-  return <BaseCollapsible.Panel data-slot="collapsible-panel" className={className} {...props} />;
+  return (
+    <BaseCollapsible.Panel
+      data-slot="collapsible-panel"
+      className={mergeSlotClassName(collapsible().panel, className)}
+      {...props}
+    />
+  );
 }
 
 export { Collapsible, CollapsibleTrigger, CollapsiblePanel };
