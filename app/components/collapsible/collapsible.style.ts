@@ -6,6 +6,7 @@ const collapsible = tv({
     trigger: "",
     panel: [
       "h-(--collapsible-panel-height) overflow-hidden transition-[height] duration-300 ease-default",
+      "data-disabled:opacity-50",
       "data-ending-style:h-0",
       "data-starting-style:h-0",
     ],
