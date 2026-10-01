@@ -1,4 +1,4 @@
-import type { VariantProps } from "tailwind-variants/lite";
+import type { VariantProps } from "tailwind-variants";
 
 import { tv } from "tailwind-variants";
 
