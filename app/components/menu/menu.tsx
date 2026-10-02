@@ -6,6 +6,8 @@ import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
 
 import { menu } from "./menu.style";
 
+const POSITIONER_SIDE_OFFSET = 6;
+
 const createMenuHandle = BaseMenu.createHandle;
 
 function Menu(props: BaseMenu.Root.Props) {
@@ -42,7 +44,11 @@ function MenuBackdrop({ className, ...props }: BaseMenu.Backdrop.Props) {
   );
 }
 
-function MenuPositioner({ className, sideOffset = 6, ...props }: BaseMenu.Positioner.Props) {
+function MenuPositioner({
+  className,
+  sideOffset = POSITIONER_SIDE_OFFSET,
+  ...props
+}: BaseMenu.Positioner.Props) {
   return (
     <BaseMenu.Positioner
       data-slot="menu-positioner"
