@@ -22,7 +22,7 @@ const contextMenu = tv({
       "[&>kbd]:[&>svg]:size-3",
     ],
     linkItem: "",
-    separator: "",
+    separator: "my-1 h-px bg-border",
     submenuTrigger: "",
     group: "",
     groupLabel: "",
