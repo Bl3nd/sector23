@@ -39,12 +39,12 @@ const button = tv({
       outline: [
         "border border-border",
         "hover:bg-accent hover:text-accent-foreground",
-        "data-popup-open:bg-accent data-popup-open:text-accent-foreground",
+        "data-popup-open:bg-accent/80 data-popup-open:text-accent-foreground",
       ],
       ghost: [
         "shadow-none",
         "hover:bg-accent hover:text-accent-foreground",
-        "data-popup-open:bg-accent data-popup-open:text-accent-foreground",
+        "data-popup-open:bg-accent/80 data-popup-open:text-accent-foreground",
       ],
       "ghost-emphasized": [
         "text-muted-foreground shadow-none",
