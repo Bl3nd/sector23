@@ -1,18 +1,40 @@
+"use client";
+
 import { NavigationMenu as BaseNavigationMenu } from "@base-ui/react/navigation-menu";
 
+import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
+
+import { navigationMenu } from "./navigation-menu.style";
+
+const POSITIONER_SIDE_OFFSET = 10;
+
 function NavigationMenu({ className, ...props }: BaseNavigationMenu.Root.Props) {
-  return <BaseNavigationMenu.Root data-slot="navigation-menu" className={className} {...props} />;
+  return (
+    <BaseNavigationMenu.Root
+      data-slot="navigation-menu"
+      className={mergeSlotClassName(navigationMenu().root, className)}
+      {...props}
+    />
+  );
 }
 
 function NavigationMenuList({ className, ...props }: BaseNavigationMenu.List.Props) {
   return (
-    <BaseNavigationMenu.List data-slot="navigation-menu-list" className={className} {...props} />
+    <BaseNavigationMenu.List
+      data-slot="navigation-menu-list"
+      className={mergeSlotClassName(navigationMenu().list, className)}
+      {...props}
+    />
   );
 }
 
 function NavigationMenuItem({ className, ...props }: BaseNavigationMenu.Item.Props) {
   return (
-    <BaseNavigationMenu.Item data-slot="navigation-menu-item" className={className} {...props} />
+    <BaseNavigationMenu.Item
+      data-slot="navigation-menu-item"
+      className={mergeSlotClassName(navigationMenu().item, className)}
+      {...props}
+    />
   );
 }
 
@@ -20,7 +42,7 @@ function NavigationMenuTrigger({ className, ...props }: BaseNavigationMenu.Trigg
   return (
     <BaseNavigationMenu.Trigger
       data-slot="navigation-menu-trigger"
-      className={className}
+      className={mergeSlotClassName(navigationMenu().trigger, className)}
       {...props}
     />
   );
@@ -28,7 +50,11 @@ function NavigationMenuTrigger({ className, ...props }: BaseNavigationMenu.Trigg
 
 function NavigationMenuIcon({ className, ...props }: BaseNavigationMenu.Icon.Props) {
   return (
-    <BaseNavigationMenu.Icon data-slot="navigation-menu-icon" className={className} {...props} />
+    <BaseNavigationMenu.Icon
+      data-slot="navigation-menu-icon"
+      className={mergeSlotClassName(navigationMenu().icon, className)}
+      {...props}
+    />
   );
 }
 
@@ -36,7 +62,7 @@ function NavigationMenuContent({ className, ...props }: BaseNavigationMenu.Conte
   return (
     <BaseNavigationMenu.Content
       data-slot="navigation-menu-content"
-      className={className}
+      className={mergeSlotClassName(navigationMenu().content, className)}
       {...props}
     />
   );
@@ -44,7 +70,11 @@ function NavigationMenuContent({ className, ...props }: BaseNavigationMenu.Conte
 
 function NavigationMenuLink({ className, ...props }: BaseNavigationMenu.Link.Props) {
   return (
-    <BaseNavigationMenu.Link data-slot="navigation-menu-link" className={className} {...props} />
+    <BaseNavigationMenu.Link
+      data-slot="navigation-menu-link"
+      className={mergeSlotClassName(navigationMenu().link, className)}
+      {...props}
+    />
   );
 }
 
@@ -52,7 +82,7 @@ function NavigationMenuPortal({ className, ...props }: BaseNavigationMenu.Portal
   return (
     <BaseNavigationMenu.Portal
       data-slot="navigation-menu-portal"
-      className={className}
+      className={mergeSlotClassName(navigationMenu().portal, className)}
       {...props}
     />
   );
@@ -62,17 +92,22 @@ function NavigationMenuBackdrop({ className, ...props }: BaseNavigationMenu.Back
   return (
     <BaseNavigationMenu.Backdrop
       data-slot="navigation-menu-backdrop"
-      className={className}
+      className={mergeSlotClassName(navigationMenu().backdrop, className)}
       {...props}
     />
   );
 }
 
-function NavigationMenuPositioner({ className, ...props }: BaseNavigationMenu.Positioner.Props) {
+function NavigationMenuPositioner({
+  className,
+  sideOffset = POSITIONER_SIDE_OFFSET,
+  ...props
+}: BaseNavigationMenu.Positioner.Props) {
   return (
     <BaseNavigationMenu.Positioner
       data-slot="navigation-menu-positioner"
-      className={className}
+      className={mergeSlotClassName(navigationMenu().positioner, className)}
+      sideOffset={sideOffset}
       {...props}
     />
   );
@@ -80,13 +115,21 @@ function NavigationMenuPositioner({ className, ...props }: BaseNavigationMenu.Po
 
 function NavigationMenuPopup({ className, ...props }: BaseNavigationMenu.Popup.Props) {
   return (
-    <BaseNavigationMenu.Popup data-slot="navigation-menu-popup" className={className} {...props} />
+    <BaseNavigationMenu.Popup
+      data-slot="navigation-menu-popup"
+      className={mergeSlotClassName(navigationMenu().popup, className)}
+      {...props}
+    />
   );
 }
 
 function NavigationMenuArrow({ className, ...props }: BaseNavigationMenu.Arrow.Props) {
   return (
-    <BaseNavigationMenu.Arrow data-slot="navigation-menu-arrow" className={className} {...props} />
+    <BaseNavigationMenu.Arrow
+      data-slot="navigation-menu-arrow"
+      className={mergeSlotClassName(navigationMenu().arrow, className)}
+      {...props}
+    />
   );
 }
 
@@ -94,7 +137,7 @@ function NavigationMenuViewport({ className, ...props }: BaseNavigationMenu.View
   return (
     <BaseNavigationMenu.Viewport
       data-slot="navigation-menu-viewport"
-      className={className}
+      className={mergeSlotClassName(navigationMenu().viewport, className)}
       {...props}
     />
   );
