@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback } from "@/app/components/avatar";
+import { Avatar } from "@/app/components/avatar";
 import {
   PreviewCard,
   PreviewCardArrow,
