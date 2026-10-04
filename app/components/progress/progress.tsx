@@ -1,23 +1,59 @@
+"use client";
+
 import { Progress as BaseProgress } from "@base-ui/react/progress";
 
+import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
+
+import { progress } from "./progress.style";
+
 function Progress({ className, ...props }: BaseProgress.Root.Props) {
-  return <BaseProgress.Root data-slot="progress" className={className} {...props} />;
+  return (
+    <BaseProgress.Root
+      data-slot="progress"
+      className={mergeSlotClassName(progress().root, className)}
+      {...props}
+    />
+  );
 }
 
 function ProgressLabel({ className, ...props }: BaseProgress.Label.Props) {
-  return <BaseProgress.Label data-slot="progress-label" className={className} {...props} />;
+  return (
+    <BaseProgress.Label
+      data-slot="progress-label"
+      className={mergeSlotClassName(progress().label, className)}
+      {...props}
+    />
+  );
 }
 
 function ProgressTrack({ className, ...props }: BaseProgress.Track.Props) {
-  return <BaseProgress.Track data-slot="progress-track" className={className} {...props} />;
+  return (
+    <BaseProgress.Track
+      data-slot="progress-track"
+      className={mergeSlotClassName(progress().track, className)}
+      {...props}
+    />
+  );
 }
 
 function ProgressIndicator({ className, ...props }: BaseProgress.Indicator.Props) {
-  return <BaseProgress.Indicator data-slot="progress-indicator" className={className} {...props} />;
+  return (
+    <BaseProgress.Indicator
+      data-slot="progress-indicator"
+      className={mergeSlotClassName(progress().indicator, className)}
+      {...props}
+    />
+  );
 }
 
 function ProgressValue({ className, ...props }: BaseProgress.Value.Props) {
-  return <BaseProgress.Value data-slot="progress-value" className={className} {...props} />;
+  return (
+    <BaseProgress.Value
+      data-slot="progress-value"
+      className={mergeSlotClassName(progress().value, className)}
+      {...props}
+    />
+  );
 }
 
 export { Progress, ProgressLabel, ProgressTrack, ProgressIndicator, ProgressValue };
