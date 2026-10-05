@@ -1,3 +1,4 @@
+// oxlint-disable no-magic-numbers
 import { Separator } from "@/app/components/separator";
 
 const links = [

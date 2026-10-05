@@ -1,3 +1,4 @@
+// oxlint-disable no-magic-numbers
 import { Fragment } from "react";
 
 import {
