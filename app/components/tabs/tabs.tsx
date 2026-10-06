@@ -1,26 +1,59 @@
+"use client";
+
 import { mergeProps, useRender } from "@base-ui/react";
 import { Tabs as BaseTabs } from "@base-ui/react/tabs";
 
+import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
+
+import { tabs } from "./tabs.style";
+
 function Tabs({ className, ...props }: BaseTabs.Root.Props) {
-  return <BaseTabs.Root data-slot="tabs" className={className} {...props} />;
+  return (
+    <BaseTabs.Root
+      data-slot="tabs"
+      className={mergeSlotClassName(tabs().root, className)}
+      {...props}
+    />
+  );
 }
 
 function TabsList({ className, ...props }: BaseTabs.List.Props) {
-  return <BaseTabs.List data-slot="tabs-list" className={className} {...props} />;
+  return (
+    <BaseTabs.List
+      data-slot="tabs-list"
+      className={mergeSlotClassName(tabs().list, className)}
+      {...props}
+    />
+  );
 }
 
 function TabsTab({ className, ...props }: BaseTabs.Tab.Props) {
-  return <BaseTabs.Tab data-slot="tabs-tab" className={className} {...props} />;
+  return (
+    <BaseTabs.Tab
+      data-slot="tabs-tab"
+      className={mergeSlotClassName(tabs().tab, className)}
+      {...props}
+    />
+  );
 }
 
 function TabsIndicator({ className, ...props }: BaseTabs.Indicator.Props) {
-  return <BaseTabs.Indicator data-slot="tabs-indicator" className={className} {...props} />;
+  return (
+    <BaseTabs.Indicator
+      data-slot="tabs-indicator"
+      className={mergeSlotClassName(tabs().indicator, className)}
+      {...props}
+    />
+  );
 }
 
 function TabsContent({ className, render, ...props }: useRender.ComponentProps<"div">) {
   const content = useRender({
     defaultTagName: "div",
-    props: { ...mergeProps<"div">({ className }, props), "data-slot": "tabs-content" },
+    props: {
+      ...mergeProps<"div">({ className: tabs().content({ className }) }, props),
+      "data-slot": "tabs-content",
+    },
     render,
   });
 
@@ -28,7 +61,13 @@ function TabsContent({ className, render, ...props }: useRender.ComponentProps<"
 }
 
 function TabsPanel({ className, ...props }: BaseTabs.Panel.Props) {
-  return <BaseTabs.Panel data-slot="tabs-panel" className={className} {...props} />;
+  return (
+    <BaseTabs.Panel
+      data-slot="tabs-panel"
+      className={mergeSlotClassName(tabs().panel, className)}
+      {...props}
+    />
+  );
 }
 
 export { Tabs, TabsList, TabsTab, TabsIndicator, TabsContent, TabsPanel };
