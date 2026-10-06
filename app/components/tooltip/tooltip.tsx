@@ -1,4 +1,12 @@
+"use client";
+
 import { Tooltip as BaseTooltip } from "@base-ui/react/tooltip";
+
+import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
+
+import { tooltip } from "./tooltip.style";
+
+const POSITIONER_SIDE_OFFSET = 6;
 
 const createTooltipHandle = BaseTooltip.createHandle;
 
@@ -11,27 +19,68 @@ function Tooltip(props: BaseTooltip.Root.Props) {
 }
 
 function TooltipTrigger({ className, ...props }: BaseTooltip.Trigger.Props) {
-  return <BaseTooltip.Trigger data-slot="tooltip-trigger" className={className} {...props} />;
+  return (
+    <BaseTooltip.Trigger
+      data-slot="tooltip-trigger"
+      className={mergeSlotClassName(tooltip().trigger, className)}
+      {...props}
+    />
+  );
 }
 
 function TooltipPortal({ className, ...props }: BaseTooltip.Portal.Props) {
-  return <BaseTooltip.Portal data-slot="tooltip-portal" className={className} {...props} />;
+  return (
+    <BaseTooltip.Portal
+      data-slot="tooltip-portal"
+      className={mergeSlotClassName(tooltip().portal, className)}
+      {...props}
+    />
+  );
 }
 
-function TooltipPositioner({ className, ...props }: BaseTooltip.Positioner.Props) {
-  return <BaseTooltip.Positioner data-slot="tooltip-positioner" className={className} {...props} />;
+function TooltipPositioner({
+  className,
+  sideOffset = POSITIONER_SIDE_OFFSET,
+  ...props
+}: BaseTooltip.Positioner.Props) {
+  return (
+    <BaseTooltip.Positioner
+      data-slot="tooltip-positioner"
+      className={mergeSlotClassName(tooltip().positioner, className)}
+      sideOffset={sideOffset}
+      {...props}
+    />
+  );
 }
 
 function TooltipPopup({ className, ...props }: BaseTooltip.Popup.Props) {
-  return <BaseTooltip.Popup data-slot="tooltip-popup" className={className} {...props} />;
+  return (
+    <BaseTooltip.Popup
+      data-slot="tooltip-popup"
+      className={mergeSlotClassName(tooltip().popup, className)}
+      {...props}
+    />
+  );
 }
 
 function TooltipArrow({ className, ...props }: BaseTooltip.Arrow.Props) {
-  return <BaseTooltip.Arrow data-slot="tooltip-arrow" className={className} {...props} />;
+  return (
+    <BaseTooltip.Arrow
+      data-slot="tooltip-arrow"
+      className={mergeSlotClassName(tooltip().arrow, className)}
+      {...props}
+    />
+  );
 }
 
 function TooltipViewport({ className, ...props }: BaseTooltip.Viewport.Props) {
-  return <BaseTooltip.Viewport data-slot="tooltip-viewport" className={className} {...props} />;
+  return (
+    <BaseTooltip.Viewport
+      data-slot="tooltip-viewport"
+      className={mergeSlotClassName(tooltip().viewport, className)}
+      {...props}
+    />
+  );
 }
 
 export {
