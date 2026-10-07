@@ -1,27 +1,69 @@
+"use client";
+
 import { Field as BaseField } from "@base-ui/react/field";
 
+import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
+
+import { field } from "./field.style";
+
 function Field({ className, ...props }: BaseField.Root.Props) {
-  return <BaseField.Root data-slot="field" className={className} {...props} />;
+  return (
+    <BaseField.Root
+      data-slot="field"
+      className={mergeSlotClassName(field().root, className)}
+      {...props}
+    />
+  );
 }
 
 function FieldLabel({ className, ...props }: BaseField.Label.Props) {
-  return <BaseField.Label data-slot="field-label" className={className} {...props} />;
+  return (
+    <BaseField.Label
+      data-slot="field-label"
+      className={mergeSlotClassName(field().label, className)}
+      {...props}
+    />
+  );
 }
 
 function FieldControl({ className, ...props }: BaseField.Control.Props) {
-  return <BaseField.Control data-slot="field-control" className={className} {...props} />;
+  return (
+    <BaseField.Control
+      data-slot="field-control"
+      className={mergeSlotClassName(field().control, className)}
+      {...props}
+    />
+  );
 }
 
 function FieldDescription({ className, ...props }: BaseField.Description.Props) {
-  return <BaseField.Description data-slot="field-description" className={className} {...props} />;
+  return (
+    <BaseField.Description
+      data-slot="field-description"
+      className={mergeSlotClassName(field().description, className)}
+      {...props}
+    />
+  );
 }
 
 function FieldItem({ className, ...props }: BaseField.Item.Props) {
-  return <BaseField.Item data-slot="field-item" className={className} {...props} />;
+  return (
+    <BaseField.Item
+      data-slot="field-item"
+      className={mergeSlotClassName(field().item, className)}
+      {...props}
+    />
+  );
 }
 
 function FieldError({ className, ...props }: BaseField.Error.Props) {
-  return <BaseField.Error data-slot="field-error" className={className} {...props} />;
+  return (
+    <BaseField.Error
+      data-slot="field-error"
+      className={mergeSlotClassName(field().error, className)}
+      {...props}
+    />
+  );
 }
 
 function FieldValidity(props: BaseField.Validity.Props) {
