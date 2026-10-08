@@ -6,7 +6,7 @@ const tooltip = tv({
     portal: "",
     positioner: "",
     popup: [
-      "relative flex origin-(--transform-origin) flex-col rounded-lg border border-border bg-popover px-2 py-1.5 text-sm leading-none text-popover-foreground shadow-md transition-[scale,opacity] duration-300 ease-default",
+      "relative flex origin-(--transform-origin) flex-col rounded-md border border-border bg-popover px-2 py-1.5 text-sm leading-none text-popover-foreground shadow-md transition-[scale,opacity] duration-200 ease-default",
       "data-ending-style:scale-95 data-ending-style:opacity-0",
       "data-instant:transition-none",
       "data-starting-style:scale-95 data-starting-style:opacity-0",

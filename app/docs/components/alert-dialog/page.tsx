@@ -46,7 +46,7 @@ export default function AlertDialogPage() {
               </div>
             </div>
             <AlertDialogFooter>
-              <AlertDialogClose>Cancel</AlertDialogClose>
+              <AlertDialogClose render={<Button variant="outline" />}>Cancel</AlertDialogClose>
               <AlertDialogClose render={<Button variant="destructive" />}>
                 Delete project
               </AlertDialogClose>

@@ -3,7 +3,7 @@ import { tv } from "tailwind-variants";
 const previewCard = tv({
   slots: {
     trigger: [
-      "rounded-sm font-medium text-foreground underline underline-offset-2 transition-colors duration-150 ease-fast outline-none",
+      "rounded-sm font-medium text-foreground underline underline-offset-2 transition-all duration-150 ease-default outline-none",
       "hover:text-foreground/90",
       "focus-visible:ring-2 focus-visible:ring-ring/50",
       "data-popup-open:text-foreground/80",

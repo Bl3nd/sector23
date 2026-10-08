@@ -7,7 +7,7 @@ const popover = tv({
     backdrop: "",
     positioner: "",
     popup: [
-      "relative flex h-(--popup-height,auto) w-(--popup-width,auto) max-w-full origin-(--transform-origin) flex-col gap-1 rounded-md bg-popover p-3 text-popover-foreground shadow-md transition-[scale,opacity] duration-200 ease-default outline-none",
+      "relative flex h-(--popup-height,auto) w-(--popup-width,auto) max-w-full origin-(--transform-origin) flex-col gap-1.5 rounded-md border border-border bg-popover p-3 text-popover-foreground shadow-md transition-[scale,opacity] duration-200 ease-default outline-none",
       "data-ending-style:scale-95 data-ending-style:opacity-0",
       "data-starting-style:scale-95 data-starting-style:opacity-0",
     ],

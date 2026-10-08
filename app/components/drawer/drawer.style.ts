@@ -4,12 +4,7 @@ const drawer = tv({
   slots: {
     indentBackground: "",
     indent: "",
-    trigger: [
-      "inline-flex min-h-8 shrink-0 items-center justify-center gap-1.5 rounded-md px-2 text-sm font-medium whitespace-nowrap transition-all duration-150 ease-default outline-none select-none",
-      "focus-visible:ring-3 focus-visible:ring-ring/50",
-      "data-disabled:pointer-events-none data-disabled:opacity-50",
-      "[&_svg]:size-4 [&_svg]:shrink-0",
-    ],
+    trigger: "",
     swipeArea: "",
     portal: "",
     backdrop: [
@@ -27,7 +22,7 @@ const drawer = tv({
       "supports-[-webkit-touch-callout:none]:[--viewport-padding:0.625rem]",
     ],
     popup: [
-      "-mr-(--bleed) h-full w-[calc(20rem+var(--bleed))] max-w-[calc(100vw-3rem+var(--bleed))] transform-[translateX(var(--drawer-swipe-movement-x))] touch-auto overscroll-contain rounded-lg border border-border bg-sidebar p-6 pr-[calc(1.5rem+var(--bleed))] text-sidebar-foreground shadow-sm transition-transform duration-300 ease-default outline-none",
+      "-mr-(--bleed) h-full w-[calc(20rem+var(--bleed))] max-w-[calc(100vw-3rem+var(--bleed))] transform-[translateX(var(--drawer-swipe-movement-x))] touch-auto overscroll-contain rounded-lg border border-border bg-popover p-6 pr-[calc(1.5rem+var(--bleed))] text-popover-foreground shadow-lg transition-transform duration-300 ease-default outline-none",
       "[--bleed:3rem]",
       "data-ending-style:transform-[translateX(calc(100%-var(--bleed)+var(--viewport-padding)+2px))] data-ending-style:duration-[calc(var(--drawer-swipe-strength)*250ms)]",
       "data-starting-style:transform-[translateX(calc(100%-var(--bleed)+var(--viewport-padding)+2px))]",
@@ -36,15 +31,12 @@ const drawer = tv({
     ],
     content: "mx-auto flex size-full max-w-lg flex-col gap-6",
     header: "grid shrink-0 grid-cols-[auto_1fr] gap-1.5 border-b border-border pb-6",
-    title: "flex items-center gap-3 text-sm font-medium [&_svg]:size-4",
+    title:
+      "flex items-center gap-3 text-base leading-none font-semibold text-foreground [&_svg]:size-4",
     description: "col-span-2 text-sm text-muted-foreground",
     footer: "flex shrink-0 items-center justify-end gap-2 border-t border-border pt-6",
-    close: [
-      "inline-flex min-h-8 shrink-0 items-center justify-center gap-1.5 rounded-md px-2 text-sm font-medium whitespace-nowrap transition-all duration-150 ease-default outline-none select-none",
-      "focus-visible:ring-3 focus-visible:ring-ring/50",
-      "data-disabled:pointer-events-none data-disabled:opacity-50",
+    close:
       "in-data-[slot=drawer-header]:col-start-2 in-data-[slot=drawer-header]:row-start-1 in-data-[slot=drawer-header]:ms-auto in-data-[slot=drawer-header]:aspect-square in-data-[slot=drawer-header]:min-h-[calc(1lh)] in-data-[slot=drawer-header]:px-0 [&_svg]:size-4 [&_svg]:shrink-0",
-    ],
   },
 });
 

@@ -20,11 +20,13 @@
         "func-style": "off",
         "no-ternary": "allow",
         "no-duplicate-imports": "allow",
-        "sort-keys": "off"
+        "sort-keys": "off",
+        "id-length": "allow"
       }
     }
   ],
   "env": {
     "builtin": true
-  }
+  },
+  "ignorePatterns": [".cursor/**/*"]
 }

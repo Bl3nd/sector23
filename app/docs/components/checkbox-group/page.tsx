@@ -11,7 +11,7 @@ export default function CheckboxGroupPage() {
 
   return (
     <div className="flex flex-col items-center justify-center py-10">
-      <CheckboxGroup aria-labelledby={id} defaultValue={["option-1"]} disabled>
+      <CheckboxGroup aria-labelledby={id} defaultValue={["option-1"]}>
         <CheckboxGroupLegend id={id}>Options</CheckboxGroupLegend>
         <Label className="flex items-center gap-2">
           <Checkbox name="option" value="option-1">
