@@ -1,8 +1,12 @@
 import type { NextConfig } from "next";
 
+import withMarkdoc from "@markdoc/next.js";
+
 const nextConfig: NextConfig = {
   /* Config options here */
   reactCompiler: true,
+  turbopack: {},
+  pageExtensions: ["js", "jsx", "md", "ts", "tsx"],
   images: {
     remotePatterns: [
       {
@@ -13,4 +17,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withMarkdoc({ schemaPath: "./app/markdoc", dir: process.cwd() })(nextConfig);

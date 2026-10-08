@@ -1,0 +1,32 @@
+diff --git a/src/loader.js b/src/loader.js
+index 2702550767da91042ef27790b210d4c0b55228c4..4a31752c70fa7e8036bd5d8c3cf95ead8eb4de19 100644
+--- a/src/loader.js
++++ b/src/loader.js
+@@ -93,11 +93,26 @@ async function load(source) {
+     const directoryExists = await fs.promises.stat(schemaDir);
+ 
+     // This creates import strings that cause the config to be imported runtime
++    const resourcePath = this.resourcePath;
+     async function importAtRuntime(variable) {
++      const extensions = ['.ts', '.tsx', '.js', '.jsx'];
++      for (const ext of extensions) {
++        const file = path.join(schemaDir, variable + ext);
++        try {
++          await fs.promises.access(file);
++        } catch {
++          continue;
++        }
++        // Turbopack's getResolve fails on the bare name, so import the file relative to the page.
++        const fromDir = path.dirname(resourcePath);
++        let spec = path.relative(fromDir, file).split(path.sep).join('/');
++        if (!spec.startsWith('.')) spec = './' + spec;
++        return `import * as ${variable} from '${spec}'`;
++      }
+       try {
+         const module = await resolve(schemaDir, variable);
+         return `import * as ${variable} from '${normalize(module)}'`;
+-      } catch (error) {
++      } catch {
+         return `const ${variable} = {};`;
+       }
+     }
