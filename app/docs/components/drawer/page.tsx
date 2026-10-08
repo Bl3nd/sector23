@@ -40,8 +40,8 @@ export default function DrawerPage() {
                 </DrawerHeader>
                 <div className="min-h-0 flex-1 overflow-y-auto bg-muted" />
                 <DrawerFooter>
-                  <DrawerClose className="min-h-9 text-base">Close</DrawerClose>
-                  <Button size="lg">Checkout</Button>
+                  <DrawerClose render={<Button variant="outline" />}>Close</DrawerClose>
+                  <Button size="md">Checkout</Button>
                 </DrawerFooter>
               </DrawerContent>
             </DrawerPopup>

@@ -15,5 +15,6 @@
     "stylesheet": "./app/globals.css",
     "functions": ["tv"]
   },
+  "printWidth": 100,
   "ignorePatterns": [".vscode/settings.json", "tsconfig.json"]
 }

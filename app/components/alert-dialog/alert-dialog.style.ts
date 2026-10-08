@@ -2,12 +2,7 @@ import { tv } from "tailwind-variants";
 
 const alertDialog = tv({
   slots: {
-    trigger: [
-      "inline-flex min-h-8 shrink-0 items-center justify-center gap-1.5 rounded-md px-2 text-sm font-medium whitespace-nowrap transition-all duration-150 ease-default outline-none select-none",
-      "focus-visible:ring-3 focus-visible:ring-ring/50",
-      "data-disabled:pointer-events-none data-disabled:opacity-50",
-      "[&_svg]:size-4 [&_svg]:shrink-0",
-    ],
+    trigger: "",
     portal: "",
     backdrop: [
       "fixed inset-0 min-h-dvh bg-black/20 backdrop-blur-xs transition-all duration-150 ease-default",
@@ -21,16 +16,11 @@ const alertDialog = tv({
       "data-ending-style:scale-95 data-ending-style:opacity-0",
       "data-starting-style:scale-95 data-starting-style:opacity-0",
     ],
-    header: "flex flex-col gap-2 p-4",
-    title: "text-lg leading-none font-semibold text-foreground",
+    header: "flex flex-col gap-1.5 p-4",
+    title: "text-base leading-none font-semibold text-foreground",
     description: "text-sm text-muted-foreground",
     footer: "flex flex-wrap items-center justify-end gap-2 p-4",
-    close: [
-      "inline-flex min-h-8 shrink-0 items-center justify-center gap-1.5 rounded-md px-2 text-sm font-medium whitespace-nowrap transition-all duration-150 ease-default outline-none select-none",
-      "focus-visible:ring-3 focus-visible:ring-ring/50",
-      "data-disabled:pointer-events-none data-disabled:opacity-50",
-      "[&_svg]:size-4 [&_svg]:shrink-0",
-    ],
+    close: "",
   },
 });
 

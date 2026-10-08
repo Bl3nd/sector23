@@ -28,7 +28,7 @@ export default function DialogPage() {
               </DialogDescription>
             </DialogHeader>
             <DialogFooter>
-              <DialogClose>Close</DialogClose>
+              <DialogClose render={<Button variant="outline" />}>Close</DialogClose>
               <DialogClose render={<Button variant="destructive" />}>Delete project</DialogClose>
             </DialogFooter>
           </DialogPopup>
