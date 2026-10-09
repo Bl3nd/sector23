@@ -1,9 +1,5 @@
 ---
 title: Accordion
-nextjs:
-  metadata:
-    title: Accordion
-    description: A description
 ---
 
-Accordion...
+{% component-demo component="accordion-01" /%}

@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRightIcon } from "lucide-react";
 
 import { Button } from "@/app/components/button";
 import {
@@ -85,9 +85,7 @@ export default function NavigationMenuPage() {
             <NavigationMenuItem key={department.label}>
               <NavigationMenuTrigger render={<Button variant="ghost" />}>
                 {department.label}
-                <NavigationMenuIcon>
-                  <ChevronDown />
-                </NavigationMenuIcon>
+                <NavigationMenuIcon />
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="grid gap-6 sm:grid-cols-[repeat(3,9rem)_14rem]">
@@ -119,7 +117,7 @@ export default function NavigationMenuPage() {
                     </span>
                     <span className="text-sm opacity-80">{department.featured.description}</span>
                     <span className="mt-2 flex items-center gap-1 text-sm font-medium">
-                      Shop now <ArrowRight className="size-4" />
+                      Shop now <ArrowRightIcon className="size-4" />
                     </span>
                   </NavigationMenuLink>
                 </div>
@@ -130,9 +128,7 @@ export default function NavigationMenuPage() {
           <NavigationMenuItem>
             <NavigationMenuTrigger render={<Button variant="ghost" />}>
               Collections
-              <NavigationMenuIcon>
-                <ChevronDown />
-              </NavigationMenuIcon>
+              <NavigationMenuIcon />
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-1 sm:w-md sm:grid-cols-2">

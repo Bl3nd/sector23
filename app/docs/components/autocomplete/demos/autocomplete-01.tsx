@@ -38,7 +38,7 @@ const tags: Tag[] = [
   { id: "t10", value: "design" },
 ];
 
-export default function AutocompletePage() {
+export default function Autocomplete01() {
   const id = useId();
 
   return (

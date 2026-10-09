@@ -1,6 +1,7 @@
 "use client";
 
 import { NavigationMenu as BaseNavigationMenu } from "@base-ui/react/navigation-menu";
+import { ChevronDownIcon } from "lucide-react";
 
 import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
 
@@ -48,13 +49,15 @@ function NavigationMenuTrigger({ className, ...props }: BaseNavigationMenu.Trigg
   );
 }
 
-function NavigationMenuIcon({ className, ...props }: BaseNavigationMenu.Icon.Props) {
+function NavigationMenuIcon({ className, children, ...props }: BaseNavigationMenu.Icon.Props) {
   return (
     <BaseNavigationMenu.Icon
       data-slot="navigation-menu-icon"
       className={mergeSlotClassName(navigationMenu().icon, className)}
       {...props}
-    />
+    >
+      {children ?? <ChevronDownIcon />}
+    </BaseNavigationMenu.Icon>
   );
 }
 

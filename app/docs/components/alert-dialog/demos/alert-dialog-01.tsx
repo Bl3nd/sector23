@@ -14,7 +14,7 @@ import {
 } from "@/app/components/alert-dialog";
 import { Button } from "@/app/components/button";
 
-export default function AlertDialogPage() {
+export default function AlertDialog01() {
   return (
     <div className="flex flex-col items-center justify-center py-10">
       <AlertDialog>
