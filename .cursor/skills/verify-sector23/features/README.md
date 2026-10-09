@@ -71,6 +71,7 @@ Each feature file starts with an H1 title and one paragraph describing the user-
 - [Toast](./toast.md) covers creating a toast and its later absence.
 - [Toggle](./toggle.md) covers pressing and releasing the Bold toggle on its demo page.
 - [Toggle group](./toggle-group.md) covers moving the pressed alignment toggle from left to center.
+- [Demo viewport](./demo-viewport.md) covers the mobile, tablet, and desktop widths on a component demo.
 - [Toolbar](./toolbar.md) covers pressing Align center.
 - [Tooltip](./tooltip.md) covers showing the Bold text tooltip.
 
