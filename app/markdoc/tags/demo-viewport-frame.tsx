@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
 import { MonitorIcon, SmartphoneIcon, TabletIcon } from "lucide-react";
+import { useState, type ReactNode } from "react";
 
 import { Toggle } from "@/app/components/toggle";
 import { ToggleGroup } from "@/app/components/toggle-group";
