@@ -75,4 +75,4 @@ Each feature file starts with an H1 title and one paragraph describing the user-
 - [Toolbar](./toolbar.md) covers pressing Align center.
 - [Tooltip](./tooltip.md) covers showing the Bold text tooltip.
 
-Avatar (`app/docs/components/avatar/page.tsx`), button (`app/docs/components/button/page.tsx`), meter (`app/docs/components/meter/page.tsx`), and separator (`app/docs/components/separator/page.tsx`) do not change visible state, so they stay unmapped. Driving a mapped feature does not verify another one.
+Avatar (`app/docs/components/avatar/page.md`), button (`app/docs/components/button/page.md`), meter (`app/docs/components/meter/page.md`), and separator (`app/docs/components/separator/page.md`) do not change visible state, so they stay unmapped. Driving a mapped feature does not verify another one.
