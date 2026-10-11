@@ -1,5 +1,6 @@
 "use client";
 
+import { useDirection } from "@base-ui/react";
 import { Popover as BasePopover } from "@base-ui/react/popover";
 
 import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
@@ -25,11 +26,14 @@ function PopoverTrigger({ className, ...props }: BasePopover.Trigger.Props) {
 }
 
 function PopoverPortal({ className, ...props }: BasePopover.Portal.Props) {
+  const direction = useDirection();
+
   return (
     <BasePopover.Portal
       data-slot="popover-portal"
       className={mergeSlotClassName(popover().portal, className)}
       {...props}
+      dir={direction}
     />
   );
 }

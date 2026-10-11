@@ -1,5 +1,6 @@
 "use client";
 
+import { useDirection } from "@base-ui/react";
 import { Slider as BaseSlider } from "@base-ui/react/slider";
 
 import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
@@ -7,11 +8,14 @@ import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
 import { slider } from "./slider.style";
 
 function Slider({ className, ...props }: BaseSlider.Root.Props) {
+  const direction = useDirection();
+
   return (
     <BaseSlider.Root
       data-slot="slider"
       className={mergeSlotClassName(slider().root, className)}
       {...props}
+      dir={direction}
     />
   );
 }

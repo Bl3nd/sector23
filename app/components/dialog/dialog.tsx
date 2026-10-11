@@ -1,6 +1,6 @@
 "use client";
 
-import { mergeProps, useRender } from "@base-ui/react";
+import { mergeProps, useDirection, useRender } from "@base-ui/react";
 import { Dialog as BaseDialog } from "@base-ui/react/dialog";
 
 import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
@@ -24,11 +24,14 @@ function DialogTrigger({ className, ...props }: BaseDialog.Trigger.Props) {
 }
 
 function DialogPortal({ className, ...props }: BaseDialog.Portal.Props) {
+  const direction = useDirection();
+
   return (
     <BaseDialog.Portal
       data-slot="dialog-portal"
       className={mergeSlotClassName(dialog().portal, className)}
       {...props}
+      dir={direction}
     />
   );
 }

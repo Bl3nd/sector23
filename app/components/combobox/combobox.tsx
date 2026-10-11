@@ -1,6 +1,6 @@
 "use client";
 
-import { mergeProps, useRender } from "@base-ui/react";
+import { mergeProps, useDirection, useRender } from "@base-ui/react";
 import { Combobox as BaseCombobox } from "@base-ui/react/combobox";
 import { CheckIcon, ChevronDownIcon, XIcon } from "lucide-react";
 
@@ -38,10 +38,13 @@ function ComboboxLabel({ className, ...props }: BaseCombobox.Label.Props) {
 }
 
 function ComboboxControl({ className, render, ...props }: useRender.ComponentProps<"div">) {
+  const direction = useDirection();
+
   const control = useRender({
     defaultTagName: "div",
     props: {
       ...mergeProps<"div">({ className: combobox().control({ className }) }, props),
+      dir: direction,
       "data-slot": "combobox-control",
     },
     render,
@@ -156,11 +159,14 @@ function ComboboxChipRemove({ className, ...props }: BaseCombobox.ChipRemove.Pro
 }
 
 function ComboboxPortal({ className, ...props }: BaseCombobox.Portal.Props) {
+  const direction = useDirection();
+
   return (
     <BaseCombobox.Portal
       data-slot="combobox-portal"
       className={mergeSlotClassName(combobox().portal, className)}
       {...props}
+      dir={direction}
     />
   );
 }

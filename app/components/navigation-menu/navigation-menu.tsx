@@ -1,5 +1,6 @@
 "use client";
 
+import { useDirection } from "@base-ui/react";
 import { NavigationMenu as BaseNavigationMenu } from "@base-ui/react/navigation-menu";
 import { ChevronDownIcon } from "lucide-react";
 
@@ -10,11 +11,14 @@ import { navigationMenu } from "./navigation-menu.style";
 const POSITIONER_SIDE_OFFSET = 10;
 
 function NavigationMenu({ className, ...props }: BaseNavigationMenu.Root.Props) {
+  const direction = useDirection();
+
   return (
     <BaseNavigationMenu.Root
       data-slot="navigation-menu"
       className={mergeSlotClassName(navigationMenu().root, className)}
       {...props}
+      dir={direction}
     />
   );
 }
@@ -82,11 +86,14 @@ function NavigationMenuLink({ className, ...props }: BaseNavigationMenu.Link.Pro
 }
 
 function NavigationMenuPortal({ className, ...props }: BaseNavigationMenu.Portal.Props) {
+  const direction = useDirection();
+
   return (
     <BaseNavigationMenu.Portal
       data-slot="navigation-menu-portal"
       className={mergeSlotClassName(navigationMenu().portal, className)}
       {...props}
+      dir={direction}
     />
   );
 }

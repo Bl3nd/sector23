@@ -15,6 +15,7 @@ const switchStyle = tv({
     thumb: [
       "size-3 rounded-full bg-foreground transition-all duration-300 ease-default",
       "data-checked:translate-x-3.75 data-checked:bg-primary-foreground",
+      "rtl:data-checked:-translate-x-3.75",
     ],
   },
 });

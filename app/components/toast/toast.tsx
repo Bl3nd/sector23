@@ -1,6 +1,6 @@
 "use client";
 
-import { mergeProps, useRender } from "@base-ui/react";
+import { mergeProps, useDirection, useRender } from "@base-ui/react";
 import { Toast as BaseToast } from "@base-ui/react/toast";
 
 import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
@@ -44,11 +44,14 @@ function Toast({ className, ...props }: BaseToast.Root.Props) {
 }
 
 function ToastContent({ className, ...props }: BaseToast.Content.Props) {
+  const direction = useDirection();
+
   return (
     <BaseToast.Content
       data-slot="toast-content"
       className={mergeSlotClassName(toast().content, className)}
       {...props}
+      dir={direction}
     />
   );
 }

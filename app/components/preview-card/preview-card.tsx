@@ -1,6 +1,6 @@
 "use client";
 
-import { mergeProps, useRender } from "@base-ui/react";
+import { mergeProps, useDirection, useRender } from "@base-ui/react";
 import { PreviewCard as BasePreviewCard } from "@base-ui/react/preview-card";
 
 import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
@@ -26,11 +26,14 @@ function PreviewCardTrigger({ className, ...props }: BasePreviewCard.Trigger.Pro
 }
 
 function PreviewCardPortal({ className, ...props }: BasePreviewCard.Portal.Props) {
+  const direction = useDirection();
+
   return (
     <BasePreviewCard.Portal
       data-slot="preview-card-portal"
       className={mergeSlotClassName(previewCard().portal, className)}
       {...props}
+      dir={direction}
     />
   );
 }

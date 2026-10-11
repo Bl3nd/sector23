@@ -1,5 +1,6 @@
 "use client";
 
+import { useDirection } from "@base-ui/react";
 import { ScrollArea as BaseScrollArea } from "@base-ui/react/scroll-area";
 
 import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
@@ -7,11 +8,14 @@ import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
 import { scrollArea } from "./scroll-area.style";
 
 function ScrollArea({ className, ...props }: BaseScrollArea.Root.Props) {
+  const direction = useDirection();
+
   return (
     <BaseScrollArea.Root
       data-slot="scroll-area"
       className={mergeSlotClassName(scrollArea().root, className)}
       {...props}
+      dir={direction}
     />
   );
 }

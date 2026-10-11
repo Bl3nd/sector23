@@ -1,5 +1,6 @@
 "use client";
 
+import { useDirection } from "@base-ui/react";
 import { Select as BaseSelect } from "@base-ui/react/select";
 import { CheckIcon, ChevronDownIcon, ChevronsUpDownIcon, ChevronUpIcon } from "lucide-react";
 
@@ -16,21 +17,27 @@ function Select<Value, Multiple extends boolean | undefined = false>(
 }
 
 function SelectLabel({ className, ...props }: BaseSelect.Label.Props) {
+  const direction = useDirection();
+
   return (
     <BaseSelect.Label
       data-slot="select-label"
       className={mergeSlotClassName(select().label, className)}
       {...props}
+      dir={direction}
     />
   );
 }
 
 function SelectTrigger({ className, ...props }: BaseSelect.Trigger.Props) {
+  const direction = useDirection();
+
   return (
     <BaseSelect.Trigger
       data-slot="select-trigger"
       className={mergeSlotClassName(select().trigger, className)}
       {...props}
+      dir={direction}
     />
   );
 }
@@ -58,11 +65,14 @@ function SelectIcon({ className, children, ...props }: BaseSelect.Icon.Props) {
 }
 
 function SelectPortal({ className, ...props }: BaseSelect.Portal.Props) {
+  const direction = useDirection();
+
   return (
     <BaseSelect.Portal
       data-slot="select-portal"
       className={mergeSlotClassName(select().portal, className)}
       {...props}
+      dir={direction}
     />
   );
 }

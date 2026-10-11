@@ -1,5 +1,6 @@
 "use client";
 
+import { useDirection } from "@base-ui/react";
 import { ContextMenu as BaseContextMenu } from "@base-ui/react/context-menu";
 
 import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
@@ -11,21 +12,27 @@ function ContextMenu(props: BaseContextMenu.Root.Props) {
 }
 
 function ContextMenuTrigger({ className, ...props }: BaseContextMenu.Trigger.Props) {
+  const direction = useDirection();
+
   return (
     <BaseContextMenu.Trigger
       data-slot="context-menu-trigger"
       className={mergeSlotClassName(contextMenu().trigger, className)}
       {...props}
+      dir={direction}
     />
   );
 }
 
 function ContextMenuPortal({ className, ...props }: BaseContextMenu.Portal.Props) {
+  const direction = useDirection();
+
   return (
     <BaseContextMenu.Portal
       data-slot="context-menu-portal"
       className={mergeSlotClassName(contextMenu().portal, className)}
       {...props}
+      dir={direction}
     />
   );
 }

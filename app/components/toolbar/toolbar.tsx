@@ -1,5 +1,6 @@
 "use client";
 
+import { useDirection } from "@base-ui/react";
 import { Toolbar as BaseToolbar } from "@base-ui/react/toolbar";
 
 import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
@@ -7,11 +8,14 @@ import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
 import { toolbar } from "./toolbar.style";
 
 function Toolbar({ className, ...props }: BaseToolbar.Root.Props) {
+  const direction = useDirection();
+
   return (
     <BaseToolbar.Root
       data-slot="toolbar"
       className={mergeSlotClassName(toolbar().root, className)}
       {...props}
+      dir={direction}
     />
   );
 }

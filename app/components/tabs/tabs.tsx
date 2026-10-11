@@ -1,6 +1,6 @@
 "use client";
 
-import { mergeProps, useRender } from "@base-ui/react";
+import { mergeProps, useDirection, useRender } from "@base-ui/react";
 import { Tabs as BaseTabs } from "@base-ui/react/tabs";
 
 import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
@@ -8,11 +8,14 @@ import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
 import { tabs } from "./tabs.style";
 
 function Tabs({ className, ...props }: BaseTabs.Root.Props) {
+  const direction = useDirection();
+
   return (
     <BaseTabs.Root
       data-slot="tabs"
       className={mergeSlotClassName(tabs().root, className)}
       {...props}
+      dir={direction}
     />
   );
 }

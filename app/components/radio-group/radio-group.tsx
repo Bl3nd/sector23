@@ -1,6 +1,6 @@
 "use client";
 
-import { mergeProps, useRender } from "@base-ui/react";
+import { mergeProps, useDirection, useRender } from "@base-ui/react";
 import { Radio as BaseRadio } from "@base-ui/react/radio";
 import { RadioGroup as BaseRadioGroup } from "@base-ui/react/radio-group";
 
@@ -9,11 +9,14 @@ import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
 import { radioGroup } from "./radio-group.style";
 
 function RadioGroup({ className, ...props }: BaseRadioGroup.Props) {
+  const direction = useDirection();
+
   return (
     <BaseRadioGroup
       data-slot="radio-group"
       className={mergeSlotClassName(radioGroup().root, className)}
       {...props}
+      dir={direction}
     />
   );
 }

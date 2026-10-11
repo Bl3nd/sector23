@@ -2,10 +2,14 @@
 
 import type { ComponentProps } from "react";
 
+import { useDirection } from "@base-ui/react";
+
 import { label } from "./label.style";
 
 function Label({ className, ...props }: ComponentProps<"label">) {
-  return <label data-slot="label" className={label({ className })} {...props} />;
+  const direction = useDirection();
+
+  return <label data-slot="label" className={label({ className })} {...props} dir={direction} />;
 }
 
 export { Label };
