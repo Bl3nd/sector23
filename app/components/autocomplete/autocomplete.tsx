@@ -1,6 +1,6 @@
 "use client";
 
-import { mergeProps, useRender } from "@base-ui/react";
+import { mergeProps, useDirection, useRender } from "@base-ui/react";
 import { Autocomplete as BaseAutocomplete } from "@base-ui/react/autocomplete";
 import { ChevronDownIcon, XIcon } from "lucide-react";
 import React from "react";
@@ -29,10 +29,13 @@ function Autocomplete<ItemValue>({ items, ...props }: BaseAutocomplete.Root.Prop
 }
 
 function AutocompleteControl({ className, render, ...props }: useRender.ComponentProps<"div">) {
+  const direction = useDirection();
+
   const control = useRender({
     defaultTagName: "div",
     props: {
       ...mergeProps<"div">({ className: autocomplete().control({ className }) }, props),
+      dir: direction,
       "data-slot": "autocomplete-control",
     },
     render,
@@ -128,11 +131,14 @@ function AutocompleteValue(props: BaseAutocomplete.Value.Props) {
 }
 
 function AutocompletePortal({ className, ...props }: BaseAutocomplete.Portal.Props) {
+  const direction = useDirection();
+
   return (
     <BaseAutocomplete.Portal
       data-slot="autocomplete-portal"
       className={mergeSlotClassName(autocomplete().portal, className)}
       {...props}
+      dir={direction}
     />
   );
 }

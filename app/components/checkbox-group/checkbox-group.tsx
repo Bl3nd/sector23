@@ -1,6 +1,6 @@
 "use client";
 
-import { mergeProps, useRender } from "@base-ui/react";
+import { mergeProps, useDirection, useRender } from "@base-ui/react";
 import { CheckboxGroup as BaseCheckboxGroup } from "@base-ui/react/checkbox-group";
 
 import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
@@ -8,11 +8,14 @@ import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
 import { checkboxGroup } from "./checkbox-group.style";
 
 function CheckboxGroup({ className, ...props }: BaseCheckboxGroup.Props) {
+  const direction = useDirection();
+
   return (
     <BaseCheckboxGroup
       data-slot="checkbox-group"
       className={mergeSlotClassName(checkboxGroup().root, className)}
       {...props}
+      dir={direction}
     />
   );
 }

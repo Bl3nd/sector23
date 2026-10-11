@@ -1,5 +1,6 @@
 "use client";
 
+import { useDirection } from "@base-ui/react";
 import { NumberField as BaseNumberField } from "@base-ui/react/number-field";
 import { MinusIcon, MoveHorizontalIcon, PlusIcon } from "lucide-react";
 
@@ -8,11 +9,14 @@ import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
 import { numberField } from "./number-field.style";
 
 function NumberField({ className, ...props }: BaseNumberField.Root.Props) {
+  const direction = useDirection();
+
   return (
     <BaseNumberField.Root
       data-slot="number-field"
       className={mergeSlotClassName(numberField().root, className)}
       {...props}
+      dir={direction}
     />
   );
 }

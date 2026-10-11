@@ -1,5 +1,6 @@
 "use client";
 
+import { useDirection } from "@base-ui/react";
 import { Field as BaseField } from "@base-ui/react/field";
 
 import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
@@ -7,11 +8,14 @@ import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
 import { field } from "./field.style";
 
 function Field({ className, ...props }: BaseField.Root.Props) {
+  const direction = useDirection();
+
   return (
     <BaseField.Root
       data-slot="field"
       className={mergeSlotClassName(field().root, className)}
       {...props}
+      dir={direction}
     />
   );
 }

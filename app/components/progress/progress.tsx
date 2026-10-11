@@ -1,5 +1,6 @@
 "use client";
 
+import { useDirection } from "@base-ui/react";
 import { Progress as BaseProgress } from "@base-ui/react/progress";
 
 import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
@@ -7,11 +8,14 @@ import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
 import { progress } from "./progress.style";
 
 function Progress({ className, ...props }: BaseProgress.Root.Props) {
+  const direction = useDirection();
+
   return (
     <BaseProgress.Root
       data-slot="progress"
       className={mergeSlotClassName(progress().root, className)}
       {...props}
+      dir={direction}
     />
   );
 }

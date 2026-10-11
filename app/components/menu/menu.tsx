@@ -1,5 +1,6 @@
 "use client";
 
+import { useDirection } from "@base-ui/react";
 import { Menu as BaseMenu } from "@base-ui/react/menu";
 
 import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
@@ -25,11 +26,14 @@ function MenuTrigger({ className, ...props }: BaseMenu.Trigger.Props) {
 }
 
 function MenuPortal({ className, ...props }: BaseMenu.Portal.Props) {
+  const direction = useDirection();
+
   return (
     <BaseMenu.Portal
       data-slot="menu-portal"
       className={mergeSlotClassName(menu().portal, className)}
       {...props}
+      dir={direction}
     />
   );
 }
