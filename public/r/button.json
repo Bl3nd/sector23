@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/button/button.style.ts",
+      "content": "import type { VariantProps } from \"tailwind-variants\";\n\nimport { tv } from \"tailwind-variants\";\n\nconst button = tv({\n  base: [\n    \"inline-flex shrink-0 items-center justify-center rounded-md font-medium whitespace-nowrap shadow-sm transition-all duration-150 ease-default outline-none select-none\",\n    \"focus-visible:ring-2 focus-visible:ring-ring/50\",\n    \"data-disabled:pointer-events-none data-disabled:opacity-50\",\n    \"[&_svg]:shrink-0\",\n  ],\n  defaultVariants: {\n    size: \"md\",\n    variant: \"primary\",\n  },\n  variants: {\n    size: {\n      lg: \"min-h-9 gap-2 px-2 text-base [&_svg]:size-5\",\n      md: \"min-h-8 gap-1.5 px-2 text-sm [&_svg]:size-4\",\n      sm: \"min-h-7 gap-1 px-2 text-xs [&_svg]:size-3\",\n    },\n    variant: {\n      primary: [\n        \"bg-primary text-primary-foreground\",\n        \"hover:bg-primary/90\",\n        \"data-popup-open:bg-primary/80\",\n      ],\n      secondary: [\n        \"bg-secondary text-secondary-foreground\",\n        \"hover:bg-secondary/90\",\n        \"data-popup-open:bg-secondary/80\",\n      ],\n      destructive: [\n        \"bg-destructive text-destructive-foreground\",\n        \"hover:bg-destructive/90\",\n        \"focus-visible:ring-destructive/50\",\n        \"data-popup-open:bg-destructive/80\",\n      ],\n      outline: [\n        \"border border-border\",\n        \"hover:bg-accent hover:text-accent-foreground\",\n        \"data-popup-open:bg-accent/80 data-popup-open:text-accent-foreground\",\n      ],\n      ghost: [\n        \"shadow-none\",\n        \"hover:bg-accent hover:text-accent-foreground\",\n        \"data-popup-open:bg-accent/80 data-popup-open:text-accent-foreground\",\n      ],\n      \"ghost-emphasized\": [\n        \"text-muted-foreground shadow-none\",\n        \"hover:text-accent-foreground\",\n        \"data-popup-open:text-accent-foreground\",\n      ],\n    },\n  },\n});\n\ntype ButtonVariantProps = VariantProps<typeof button>;\n\nexport { button };\nexport type { ButtonVariantProps };\n",
+      "type": "registry:ui",
+      "target": "@ui/button/button.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/button/button.tsx",
+      "content": "\"use client\";\n\nimport { useDirection } from \"@base-ui/react\";\nimport { Button as BaseButton } from \"@base-ui/react/button\";\n\nimport { mergeVariantClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport type { ButtonVariantProps } from \"./button.style\";\n\nimport { button } from \"./button.style\";\n\nfunction Button({ size, variant, className, ...props }: BaseButton.Props & ButtonVariantProps) {\n  const direction = useDirection();\n\n  return (\n    <BaseButton\n      data-slot=\"button\"\n      className={mergeVariantClassName(button, { size, variant }, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nexport { Button };\n",
+      "type": "registry:ui",
+      "target": "@ui/button/button.tsx"
+    },
+    {
+      "path": "registry/sector23/ui/button/index.ts",
+      "content": "export { Button } from \"./button\";\n",
+      "type": "registry:ui",
+      "target": "@ui/button/index.ts"
+    }
+  ],
+  "type": "registry:ui"
+}

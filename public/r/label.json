@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/label/index.ts",
+      "content": "export { Label } from \"./label\";\n",
+      "type": "registry:ui",
+      "target": "@ui/label/index.ts"
+    },
+    {
+      "path": "registry/sector23/ui/label/label.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst label = tv({\n  base: \"text-sm font-medium text-foreground select-none\",\n});\n\nexport { label };\n",
+      "type": "registry:ui",
+      "target": "@ui/label/label.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/label/label.tsx",
+      "content": "\"use client\";\n\nimport type { ComponentProps } from \"react\";\n\nimport { useDirection } from \"@base-ui/react\";\n\nimport { label } from \"./label.style\";\n\nfunction Label({ className, ...props }: ComponentProps<\"label\">) {\n  const direction = useDirection();\n\n  return <label data-slot=\"label\" className={label({ className })} {...props} dir={direction} />;\n}\n\nexport { Label };\n",
+      "type": "registry:ui",
+      "target": "@ui/label/label.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

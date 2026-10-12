@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/switch/index.ts",
+      "content": "export { Switch, SwitchThumb } from \"./switch\";\n",
+      "type": "registry:ui",
+      "target": "@ui/switch/index.ts"
+    },
+    {
+      "path": "registry/sector23/ui/switch/switch.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst switchStyle = tv({\n  slots: {\n    root: [\n      \"flex h-4 w-8 shrink-0 items-center rounded-full border border-input bg-background p-0.5 transition-all duration-150 ease-default outline-none\",\n      \"focus-visible:ring-2 focus-visible:ring-ring/50\",\n      \"data-checked:bg-primary\",\n      \"data-disabled:pointer-events-none data-disabled:opacity-50\",\n      \"data-invalid:border-destructive/50\",\n      \"focus-visible:data-invalid:ring-destructive/50\",\n      \"dark:bg-input/15\",\n      \"dark:data-checked:bg-primary\",\n    ],\n    thumb: [\n      \"size-3 rounded-full bg-foreground transition-all duration-300 ease-default\",\n      \"data-checked:translate-x-3.75 data-checked:bg-primary-foreground\",\n      \"rtl:data-checked:-translate-x-3.75\",\n    ],\n  },\n});\n\nexport { switchStyle };\n",
+      "type": "registry:ui",
+      "target": "@ui/switch/switch.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/switch/switch.tsx",
+      "content": "\"use client\";\n\nimport { useDirection } from \"@base-ui/react\";\nimport { Switch as BaseSwitch } from \"@base-ui/react/switch\";\n\nimport { mergeSlotClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { switchStyle } from \"./switch.style\";\n\nfunction Switch({ className, ...props }: BaseSwitch.Root.Props) {\n  const direction = useDirection();\n\n  return (\n    <BaseSwitch.Root\n      data-slot=\"switch\"\n      className={mergeSlotClassName(switchStyle().root, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nfunction SwitchThumb({ className, ...props }: BaseSwitch.Thumb.Props) {\n  return (\n    <BaseSwitch.Thumb\n      data-slot=\"switch-thumb\"\n      className={mergeSlotClassName(switchStyle().thumb, className)}\n      {...props}\n    />\n  );\n}\n\nexport { Switch, SwitchThumb };\n",
+      "type": "registry:ui",
+      "target": "@ui/switch/switch.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

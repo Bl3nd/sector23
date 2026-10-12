@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menubar",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/menubar/index.ts",
+      "content": "export { Menubar } from \"./menubar\";\n",
+      "type": "registry:ui",
+      "target": "@ui/menubar/index.ts"
+    },
+    {
+      "path": "registry/sector23/ui/menubar/menubar.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst menubar = tv({\n  base: \"flex items-center\",\n});\n\nexport { menubar };\n",
+      "type": "registry:ui",
+      "target": "@ui/menubar/menubar.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/menubar/menubar.tsx",
+      "content": "\"use client\";\n\nimport { useDirection } from \"@base-ui/react\";\nimport { Menubar as BaseMenubar } from \"@base-ui/react/menubar\";\n\nimport { mergeVariantClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { menubar } from \"./menubar.style\";\n\nfunction Menubar({ className, ...props }: BaseMenubar.Props) {\n  const direction = useDirection();\n\n  return (\n    <BaseMenubar\n      data-slot=\"menubar\"\n      className={mergeVariantClassName(menubar, {}, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nexport { Menubar };\n",
+      "type": "registry:ui",
+      "target": "@ui/menubar/menubar.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

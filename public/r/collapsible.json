@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/collapsible/collapsible.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst collapsible = tv({\n  slots: {\n    root: \"\",\n    trigger: \"\",\n    panel: [\n      \"h-(--collapsible-panel-height) overflow-hidden transition-[height] duration-300 ease-default\",\n      \"data-disabled:opacity-50\",\n      \"data-ending-style:h-0\",\n      \"data-starting-style:h-0\",\n    ],\n  },\n});\n\nexport { collapsible };\n",
+      "type": "registry:ui",
+      "target": "@ui/collapsible/collapsible.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/collapsible/collapsible.tsx",
+      "content": "\"use client\";\n\nimport { useDirection } from \"@base-ui/react\";\nimport { Collapsible as BaseCollapsible } from \"@base-ui/react/collapsible\";\n\nimport { mergeSlotClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { collapsible } from \"./collapsible.style\";\n\nfunction Collapsible({ className, ...props }: BaseCollapsible.Root.Props) {\n  const direction = useDirection();\n\n  return (\n    <BaseCollapsible.Root\n      data-slot=\"collapsible\"\n      className={mergeSlotClassName(collapsible().root, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nfunction CollapsibleTrigger({ className, ...props }: BaseCollapsible.Trigger.Props) {\n  return (\n    <BaseCollapsible.Trigger\n      data-slot=\"collapsible-trigger\"\n      className={mergeSlotClassName(collapsible().trigger, className)}\n      {...props}\n    />\n  );\n}\n\nfunction CollapsiblePanel({ className, ...props }: BaseCollapsible.Panel.Props) {\n  return (\n    <BaseCollapsible.Panel\n      data-slot=\"collapsible-panel\"\n      className={mergeSlotClassName(collapsible().panel, className)}\n      {...props}\n    />\n  );\n}\n\nexport { Collapsible, CollapsibleTrigger, CollapsiblePanel };\n",
+      "type": "registry:ui",
+      "target": "@ui/collapsible/collapsible.tsx"
+    },
+    {
+      "path": "registry/sector23/ui/collapsible/index.ts",
+      "content": "export { Collapsible, CollapsibleTrigger, CollapsiblePanel } from \"./collapsible\";\n",
+      "type": "registry:ui",
+      "target": "@ui/collapsible/index.ts"
+    }
+  ],
+  "type": "registry:ui"
+}

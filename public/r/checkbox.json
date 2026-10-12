@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "lucide-react@^1.55.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/checkbox/checkbox.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst checkbox = tv({\n  slots: {\n    root: [\n      \"flex size-4 shrink-0 items-center justify-center rounded-sm border border-input bg-background transition-all duration-150 ease-default outline-none\",\n      \"focus-visible:ring-2 focus-visible:ring-ring/50\",\n      \"data-checked:bg-primary data-checked:text-primary-foreground\",\n      \"data-disabled:pointer-events-none data-disabled:opacity-50\",\n      \"data-invalid:border-destructive/50\",\n      \"focus-visible:data-invalid:ring-destructive/50\",\n      \"dark:bg-input/15\",\n      \"dark:data-checked:bg-primary dark:data-checked:text-primary-foreground\",\n    ],\n    indicator: [\n      \"flex items-center justify-center transition-[scale,opacity] duration-300 ease-default\",\n      \"data-ending-style:scale-95 data-ending-style:opacity-0\",\n      \"data-starting-style:scale-95 data-starting-style:opacity-0\",\n      \"data-unchecked:hidden\",\n      \"[&>svg]:size-3 [&>svg]:shrink-0\",\n    ],\n  },\n});\n\nexport { checkbox };\n",
+      "type": "registry:ui",
+      "target": "@ui/checkbox/checkbox.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/checkbox/checkbox.tsx",
+      "content": "\"use client\";\n\nimport { Checkbox as BaseCheckbox } from \"@base-ui/react/checkbox\";\nimport { CheckIcon, MinusIcon } from \"lucide-react\";\n\nimport { mergeSlotClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { checkbox } from \"./checkbox.style\";\n\nfunction Checkbox({ className, ...props }: BaseCheckbox.Root.Props) {\n  return (\n    <BaseCheckbox.Root\n      data-slot=\"checkbox\"\n      className={mergeSlotClassName(checkbox().root, className)}\n      {...props}\n    />\n  );\n}\n\nfunction CheckboxIndicator({ className, render, ...props }: BaseCheckbox.Indicator.Props) {\n  return (\n    <BaseCheckbox.Indicator\n      data-slot=\"checkbox-indicator\"\n      className={mergeSlotClassName(checkbox().indicator, className)}\n      render={\n        render !== undefined\n          ? render\n          : (indicatorProps, state) => (\n              <span {...indicatorProps}>{state.indeterminate ? <MinusIcon /> : <CheckIcon />}</span>\n            )\n      }\n      {...props}\n    />\n  );\n}\n\nexport { Checkbox, CheckboxIndicator };\n",
+      "type": "registry:ui",
+      "target": "@ui/checkbox/checkbox.tsx"
+    },
+    {
+      "path": "registry/sector23/ui/checkbox/index.ts",
+      "content": "export { Checkbox, CheckboxIndicator } from \"./checkbox\";\n",
+      "type": "registry:ui",
+      "target": "@ui/checkbox/index.ts"
+    }
+  ],
+  "type": "registry:ui"
+}

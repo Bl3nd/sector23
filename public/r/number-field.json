@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-field",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "lucide-react@^1.55.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/number-field/index.ts",
+      "content": "export {\n  NumberField,\n  NumberFieldScrubArea,\n  NumberFieldScrubAreaCursor,\n  NumberFieldGroup,\n  NumberFieldDecrement,\n  NumberFieldInput,\n  NumberFieldIncrement,\n} from \"./number-field\";\n",
+      "type": "registry:ui",
+      "target": "@ui/number-field/index.ts"
+    },
+    {
+      "path": "registry/sector23/ui/number-field/number-field.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst numberField = tv({\n  slots: {\n    root: \"flex flex-col items-start gap-1.5\",\n    scrubArea: [\n      \"w-full cursor-ew-resize select-none\",\n      \"data-disabled:pointer-events-none data-disabled:opacity-50\",\n      \"[&>label]:cursor-ew-resize\",\n    ],\n    scrubAreaCursor: \"\",\n    group: [\n      \"group flex h-8 items-center rounded-md border border-input bg-background shadow-sm transition-all duration-150 ease-default\",\n      \"focus-within:ring-2 focus-within:ring-ring/50\",\n      \"data-disabled:pointer-events-none data-disabled:opacity-50\",\n      \"data-invalid:border-destructive/50\",\n      \"focus-within:data-invalid:ring-destructive/50\",\n      \"dark:bg-input/15\",\n    ],\n    decrement: [\n      \"flex h-full w-8 items-center justify-center rounded-s-[inherit] bg-input/20 text-foreground transition-colors duration-150 ease-default select-none\",\n      \"hover:bg-accent hover:text-accent-foreground\",\n      \"[&>svg]:size-4\",\n    ],\n    input: [\n      \"h-full items-center rounded-[inherit] text-center text-sm text-foreground tabular-nums outline-none\",\n      \"group-has-data-[slot='number-field-decrement']:rounded-s-none\",\n      \"group-has-data-[slot='number-field-increment']:rounded-e-none\",\n      \"placeholder:text-muted-foreground\",\n    ],\n    increment: [\n      \"flex h-full w-8 items-center justify-center rounded-e-[inherit] bg-input/20 text-foreground transition-colors duration-150 ease-default select-none\",\n      \"hover:bg-accent hover:text-accent-foreground\",\n      \"[&>svg]:size-4\",\n    ],\n  },\n});\n\nexport { numberField };\n",
+      "type": "registry:ui",
+      "target": "@ui/number-field/number-field.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/number-field/number-field.tsx",
+      "content": "\"use client\";\n\nimport { useDirection } from \"@base-ui/react\";\nimport { NumberField as BaseNumberField } from \"@base-ui/react/number-field\";\nimport { MinusIcon, MoveHorizontalIcon, PlusIcon } from \"lucide-react\";\n\nimport { mergeSlotClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { numberField } from \"./number-field.style\";\n\nfunction NumberField({ className, ...props }: BaseNumberField.Root.Props) {\n  const direction = useDirection();\n\n  return (\n    <BaseNumberField.Root\n      data-slot=\"number-field\"\n      className={mergeSlotClassName(numberField().root, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nfunction NumberFieldScrubArea({ className, ...props }: BaseNumberField.ScrubArea.Props) {\n  return (\n    <BaseNumberField.ScrubArea\n      data-slot=\"number-field-scrub-area\"\n      className={mergeSlotClassName(numberField().scrubArea, className)}\n      {...props}\n    />\n  );\n}\n\nfunction NumberFieldScrubAreaCursor({\n  className,\n  children,\n  ...props\n}: BaseNumberField.ScrubAreaCursor.Props) {\n  return (\n    <BaseNumberField.ScrubAreaCursor\n      data-slot=\"number-field-scrub-area-cursor\"\n      className={mergeSlotClassName(numberField().scrubAreaCursor, className)}\n      {...props}\n    >\n      {children ?? <MoveHorizontalIcon />}\n    </BaseNumberField.ScrubAreaCursor>\n  );\n}\n\nfunction NumberFieldGroup({ className, ...props }: BaseNumberField.Group.Props) {\n  return (\n    <BaseNumberField.Group\n      data-slot=\"number-field-group\"\n      className={mergeSlotClassName(numberField().group, className)}\n      {...props}\n    />\n  );\n}\n\nfunction NumberFieldDecrement({ className, children, ...props }: BaseNumberField.Decrement.Props) {\n  return (\n    <BaseNumberField.Decrement\n      data-slot=\"number-field-decrement\"\n      className={mergeSlotClassName(numberField().decrement, className)}\n      {...props}\n    >\n      {children ?? <MinusIcon />}\n    </BaseNumberField.Decrement>\n  );\n}\n\nfunction NumberFieldInput({ className, ...props }: BaseNumberField.Input.Props) {\n  return (\n    <BaseNumberField.Input\n      data-slot=\"number-field-input\"\n      className={mergeSlotClassName(numberField().input, className)}\n      {...props}\n    />\n  );\n}\n\nfunction NumberFieldIncrement({ className, children, ...props }: BaseNumberField.Increment.Props) {\n  return (\n    <BaseNumberField.Increment\n      data-slot=\"number-field-increment\"\n      className={mergeSlotClassName(numberField().increment, className)}\n      {...props}\n    >\n      {children ?? <PlusIcon />}\n    </BaseNumberField.Increment>\n  );\n}\n\nexport {\n  NumberField,\n  NumberFieldScrubArea,\n  NumberFieldScrubAreaCursor,\n  NumberFieldGroup,\n  NumberFieldDecrement,\n  NumberFieldInput,\n  NumberFieldIncrement,\n};\n",
+      "type": "registry:ui",
+      "target": "@ui/number-field/number-field.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

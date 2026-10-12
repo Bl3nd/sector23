@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/radio-group/index.ts",
+      "content": "export { RadioGroup, RadioGroupLegend, Radio, RadioIndicator } from \"./radio-group\";\n",
+      "type": "registry:ui",
+      "target": "@ui/radio-group/index.ts"
+    },
+    {
+      "path": "registry/sector23/ui/radio-group/radio-group.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst radioGroup = tv({\n  slots: {\n    root: \"flex flex-col items-start gap-2 text-foreground\",\n    legend: \"text-sm font-semibold text-foreground\",\n    radio: [\n      \"flex size-4 shrink-0 items-center justify-center rounded-full border border-input bg-background transition-all duration-150 ease-default outline-none\",\n      \"focus-visible:ring-2 focus-visible:ring-ring/50\",\n      \"data-checked:bg-primary data-checked:text-primary-foreground\",\n      \"data-disabled:pointer-events-none data-disabled:opacity-50\",\n      \"data-invalid:border-destructive/50\",\n      \"focus-visible:data-invalid:ring-destructive/50\",\n      \"dark:bg-input/15\",\n      \"dark:data-checked:bg-primary dark:data-checked:text-primary-foreground\",\n    ],\n    radioIndicator: [\n      \"flex items-center justify-center transition-[scale,opacity] duration-300 ease-default\",\n      \"before:size-2 before:rounded-full before:bg-current\",\n      \"data-ending-style:scale-95 data-ending-style:opacity-0\",\n      \"data-starting-style:scale-95 data-starting-style:opacity-0\",\n      \"data-unchecked:hidden\",\n    ],\n  },\n});\n\nexport { radioGroup };\n",
+      "type": "registry:ui",
+      "target": "@ui/radio-group/radio-group.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/radio-group/radio-group.tsx",
+      "content": "\"use client\";\n\nimport { mergeProps, useDirection, useRender } from \"@base-ui/react\";\nimport { Radio as BaseRadio } from \"@base-ui/react/radio\";\nimport { RadioGroup as BaseRadioGroup } from \"@base-ui/react/radio-group\";\n\nimport { mergeSlotClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { radioGroup } from \"./radio-group.style\";\n\nfunction RadioGroup({ className, ...props }: BaseRadioGroup.Props) {\n  const direction = useDirection();\n\n  return (\n    <BaseRadioGroup\n      data-slot=\"radio-group\"\n      className={mergeSlotClassName(radioGroup().root, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nfunction RadioGroupLegend({ className, render, ...props }: useRender.ComponentProps<\"div\">) {\n  const legend = useRender({\n    defaultTagName: \"div\",\n    props: {\n      ...mergeProps({ className: radioGroup().legend({ className }) }, props),\n      \"data-slot\": \"radio-group-legend\",\n    },\n    render,\n  });\n\n  return legend;\n}\n\nfunction Radio({ className, ...props }: BaseRadio.Root.Props) {\n  return (\n    <BaseRadio.Root\n      data-slot=\"radio\"\n      className={mergeSlotClassName(radioGroup().radio, className)}\n      {...props}\n    />\n  );\n}\n\nfunction RadioIndicator({ className, ...props }: BaseRadio.Indicator.Props) {\n  return (\n    <BaseRadio.Indicator\n      data-slot=\"radio-indicator\"\n      className={mergeSlotClassName(radioGroup().radioIndicator, className)}\n      {...props}\n    />\n  );\n}\n\nexport { RadioGroup, RadioGroupLegend, Radio, RadioIndicator };\n",
+      "type": "registry:ui",
+      "target": "@ui/radio-group/radio-group.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

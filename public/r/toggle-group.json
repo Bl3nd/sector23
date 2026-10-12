@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/toggle-group/index.ts",
+      "content": "export { ToggleGroup } from \"./toggle-group\";\n",
+      "type": "registry:ui",
+      "target": "@ui/toggle-group/index.ts"
+    },
+    {
+      "path": "registry/sector23/ui/toggle-group/toggle-group.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst toggleGroup = tv({\n  base: [\n    \"flex items-center gap-2 rounded-lg border border-border p-1\",\n    \"*:data-slot:border-none *:data-slot:shadow-none\",\n    \"*:data-slot:focus-visible:z-1\",\n  ],\n});\n\nexport { toggleGroup };\n",
+      "type": "registry:ui",
+      "target": "@ui/toggle-group/toggle-group.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/toggle-group/toggle-group.tsx",
+      "content": "\"use client\";\n\nimport { useDirection } from \"@base-ui/react\";\nimport { ToggleGroup as BaseToggleGroup } from \"@base-ui/react/toggle-group\";\n\nimport { mergeSlotClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { toggleGroup } from \"./toggle-group.style\";\n\nfunction ToggleGroup({ className, ...props }: BaseToggleGroup.Props) {\n  const direction = useDirection();\n\n  return (\n    <BaseToggleGroup\n      data-slot=\"toggle-group\"\n      className={mergeSlotClassName(toggleGroup, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nexport { ToggleGroup };\n",
+      "type": "registry:ui",
+      "target": "@ui/toggle-group/toggle-group.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

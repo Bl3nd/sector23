@@ -10,7 +10,7 @@
     "lint:fix": "oxlint --fix",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
-    "build:registry": "bunx --bun shadcn@latest build"
+    "build:registry": "bun scripts/registry.ts && bunx --bun shadcn build"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
