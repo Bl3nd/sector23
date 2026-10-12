@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "meter",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/meter/index.ts",
+      "content": "export { Meter, MeterLabel, MeterTrack, MeterIndicator, MeterValue } from \"./meter\";\n",
+      "type": "registry:ui",
+      "target": "@ui/meter/index.ts"
+    },
+    {
+      "path": "registry/sector23/ui/meter/meter.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst meter = tv({\n  slots: {\n    root: \"grid max-w-full grid-cols-[1fr_auto] gap-y-1.5\",\n    label: \"text-sm font-medium text-foreground\",\n    value: \"text-sm text-foreground tabular-nums\",\n    track: \"col-span-2 h-2 overflow-hidden rounded-full bg-muted\",\n    indicator: \"bg-primary transition-[width] duration-500 ease-emphasized\",\n  },\n});\n\nexport { meter };\n",
+      "type": "registry:ui",
+      "target": "@ui/meter/meter.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/meter/meter.tsx",
+      "content": "\"use client\";\n\nimport { useDirection } from \"@base-ui/react\";\nimport { Meter as BaseMeter } from \"@base-ui/react/meter\";\n\nimport { mergeSlotClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { meter } from \"./meter.style\";\n\nfunction Meter({ className, ...props }: BaseMeter.Root.Props) {\n  const direction = useDirection();\n\n  return (\n    <BaseMeter.Root\n      data-slot=\"meter\"\n      className={mergeSlotClassName(meter().root, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nfunction MeterLabel({ className, ...props }: BaseMeter.Label.Props) {\n  return (\n    <BaseMeter.Label\n      data-slot=\"meter-label\"\n      className={mergeSlotClassName(meter().label, className)}\n      {...props}\n    />\n  );\n}\n\nfunction MeterTrack({ className, ...props }: BaseMeter.Track.Props) {\n  return (\n    <BaseMeter.Track\n      data-slot=\"meter-track\"\n      className={mergeSlotClassName(meter().track, className)}\n      {...props}\n    />\n  );\n}\n\nfunction MeterIndicator({ className, ...props }: BaseMeter.Indicator.Props) {\n  return (\n    <BaseMeter.Indicator\n      data-slot=\"meter-indicator\"\n      className={mergeSlotClassName(meter().indicator, className)}\n      {...props}\n    />\n  );\n}\n\nfunction MeterValue({ className, ...props }: BaseMeter.Value.Props) {\n  return (\n    <BaseMeter.Value\n      data-slot=\"meter-value\"\n      className={mergeSlotClassName(meter().value, className)}\n      {...props}\n    />\n  );\n}\n\nexport { Meter, MeterLabel, MeterTrack, MeterIndicator, MeterValue };\n",
+      "type": "registry:ui",
+      "target": "@ui/meter/meter.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

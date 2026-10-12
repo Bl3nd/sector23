@@ -17,8 +17,8 @@ import {
   AutocompletePortal,
   AutocompletePositioner,
   AutocompleteTrigger,
-} from "@/app/components/autocomplete";
-import { Label } from "@/app/components/label";
+} from "@/registry/sector23/ui/autocomplete";
+import { Label } from "@/registry/sector23/ui/label";
 
 interface Tag {
   id: string;

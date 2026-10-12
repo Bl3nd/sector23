@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/progress/index.ts",
+      "content": "export {\n  Progress,\n  ProgressLabel,\n  ProgressTrack,\n  ProgressIndicator,\n  ProgressValue,\n} from \"./progress\";\n",
+      "type": "registry:ui",
+      "target": "@ui/progress/index.ts"
+    },
+    {
+      "path": "registry/sector23/ui/progress/progress.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst progress = tv({\n  slots: {\n    root: \"grid grid-cols-[1fr_auto] gap-y-1.5\",\n    label: \"text-sm font-medium text-foreground\",\n    value: \"text-sm text-foreground tabular-nums\",\n    track: \"col-span-2 h-2 overflow-hidden rounded-full bg-muted\",\n    indicator: [\n      \"bg-primary transition-[width] duration-500 ease-emphasized\",\n      \"data-progressing:bg-primary/80\",\n      \"motion-safe:data-progressing:animate-pulse\",\n    ],\n  },\n});\n\nexport { progress };\n",
+      "type": "registry:ui",
+      "target": "@ui/progress/progress.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/progress/progress.tsx",
+      "content": "\"use client\";\n\nimport { useDirection } from \"@base-ui/react\";\nimport { Progress as BaseProgress } from \"@base-ui/react/progress\";\n\nimport { mergeSlotClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { progress } from \"./progress.style\";\n\nfunction Progress({ className, ...props }: BaseProgress.Root.Props) {\n  const direction = useDirection();\n\n  return (\n    <BaseProgress.Root\n      data-slot=\"progress\"\n      className={mergeSlotClassName(progress().root, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nfunction ProgressLabel({ className, ...props }: BaseProgress.Label.Props) {\n  return (\n    <BaseProgress.Label\n      data-slot=\"progress-label\"\n      className={mergeSlotClassName(progress().label, className)}\n      {...props}\n    />\n  );\n}\n\nfunction ProgressTrack({ className, ...props }: BaseProgress.Track.Props) {\n  return (\n    <BaseProgress.Track\n      data-slot=\"progress-track\"\n      className={mergeSlotClassName(progress().track, className)}\n      {...props}\n    />\n  );\n}\n\nfunction ProgressIndicator({ className, ...props }: BaseProgress.Indicator.Props) {\n  return (\n    <BaseProgress.Indicator\n      data-slot=\"progress-indicator\"\n      className={mergeSlotClassName(progress().indicator, className)}\n      {...props}\n    />\n  );\n}\n\nfunction ProgressValue({ className, ...props }: BaseProgress.Value.Props) {\n  return (\n    <BaseProgress.Value\n      data-slot=\"progress-value\"\n      className={mergeSlotClassName(progress().value, className)}\n      {...props}\n    />\n  );\n}\n\nexport { Progress, ProgressLabel, ProgressTrack, ProgressIndicator, ProgressValue };\n",
+      "type": "registry:ui",
+      "target": "@ui/progress/progress.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

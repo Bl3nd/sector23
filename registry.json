@@ -1,0 +1,6 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "sector23",
+  "homepage": "http://localhost:3000",
+  "include": ["registry/sector23/registry.json"]
+}

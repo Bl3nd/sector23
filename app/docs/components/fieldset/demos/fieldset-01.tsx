@@ -1,6 +1,6 @@
-import { Field, FieldLabel } from "@/app/components/field";
-import { Fieldset, FieldsetLegend } from "@/app/components/fieldset";
-import { Input } from "@/app/components/input";
+import { Field, FieldLabel } from "@/registry/sector23/ui/field";
+import { Fieldset, FieldsetLegend } from "@/registry/sector23/ui/fieldset";
+import { Input } from "@/registry/sector23/ui/input";
 
 export default function Fieldset01() {
   return (

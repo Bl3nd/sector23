@@ -1,7 +1,7 @@
 import { AlignCenterIcon, AlignLeftIcon, AlignRightIcon } from "lucide-react";
 
-import { Toggle } from "@/app/components/toggle";
-import { ToggleGroup } from "@/app/components/toggle-group";
+import { Toggle } from "@/registry/sector23/ui/toggle";
+import { ToggleGroup } from "@/registry/sector23/ui/toggle-group";
 
 export default function ToggleGroup01() {
   return (

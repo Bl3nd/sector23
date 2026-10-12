@@ -1,4 +1,4 @@
-import { Button } from "@/app/components/button";
+import { Button } from "@/registry/sector23/ui/button";
 import {
   Dialog,
   DialogBackdrop,
@@ -10,7 +10,7 @@ import {
   DialogPortal,
   DialogTitle,
   DialogTrigger,
-} from "@/app/components/dialog";
+} from "@/registry/sector23/ui/dialog";
 
 export default function Dialog01() {
   return (

@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 
-import { Button } from "@/app/components/button";
+import { Button } from "@/registry/sector23/ui/button";
 import {
   Toast,
   ToastClose,
@@ -15,7 +15,7 @@ import {
   ToastTitle,
   ToastViewport,
   useToastManager,
-} from "@/app/components/toast";
+} from "@/registry/sector23/ui/toast";
 
 export default function Toast01() {
   return (

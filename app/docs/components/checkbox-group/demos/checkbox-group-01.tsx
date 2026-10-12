@@ -2,9 +2,9 @@
 
 import { useId } from "react";
 
-import { Checkbox, CheckboxIndicator } from "@/app/components/checkbox";
-import { CheckboxGroup, CheckboxGroupLegend } from "@/app/components/checkbox-group";
-import { Label } from "@/app/components/label";
+import { Checkbox, CheckboxIndicator } from "@/registry/sector23/ui/checkbox";
+import { CheckboxGroup, CheckboxGroupLegend } from "@/registry/sector23/ui/checkbox-group";
+import { Label } from "@/registry/sector23/ui/label";
 
 export default function CheckboxGroup01() {
   const id = useId();

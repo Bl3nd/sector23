@@ -9,7 +9,7 @@ import {
   ProgressLabel,
   ProgressTrack,
   ProgressValue,
-} from "@/app/components/progress";
+} from "@/registry/sector23/ui/progress";
 
 export default function Progress01() {
   const [value, setValue] = useState(10);

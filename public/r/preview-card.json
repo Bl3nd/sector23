@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "preview-card",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/preview-card/index.ts",
+      "content": "export {\n  createPreviewCardHandle,\n  PreviewCard,\n  PreviewCardTrigger,\n  PreviewCardPortal,\n  PreviewCardBackdrop,\n  PreviewCardPositioner,\n  PreviewCardPopup,\n  PreviewCardArrow,\n  PreviewCardViewport,\n  PreviewCardContent,\n} from \"./preview-card\";\n",
+      "type": "registry:ui",
+      "target": "@ui/preview-card/index.ts"
+    },
+    {
+      "path": "registry/sector23/ui/preview-card/preview-card.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst previewCard = tv({\n  slots: {\n    trigger: [\n      \"rounded-sm font-medium text-foreground underline underline-offset-2 transition-all duration-150 ease-default outline-none\",\n      \"hover:text-foreground/90\",\n      \"focus-visible:ring-2 focus-visible:ring-ring/50\",\n      \"data-popup-open:text-foreground/80\",\n    ],\n    portal: \"\",\n    backdrop: \"\",\n    positioner: \"\",\n    popup: [\n      \"relative flex h-(--popup-height,auto) w-(--popup-width,auto) origin-(--transform-origin) flex-col rounded-md border border-border bg-popover text-popover-foreground shadow-md transition-[scale,opacity] duration-200 ease-default outline-none\",\n      \"data-ending-style:scale-95 data-ending-style:opacity-0\",\n      \"data-starting-style:scale-95 data-starting-style:opacity-0\",\n    ],\n    arrow: [\n      \"relative block h-1.5 w-3 overflow-clip\",\n      \"before:absolute before:bottom-0 before:left-1/2 before:h-[calc(6px*sqrt(2))] before:w-[calc(6px*sqrt(2))] before:transform-[translate(-50%,50%)_rotate(45deg)] before:border before:border-border before:bg-popover before:content-['']\",\n      \"data-[side=bottom]:-top-1.5\",\n      \"data-[side=inline-end]:-inset-s-2.25 data-[side=inline-end]:-rotate-90\",\n      \"data-[side=inline-start]:-inset-e-2.25 data-[side=inline-start]:rotate-90\",\n      \"data-[side=left]:-right-2.25 data-[side=left]:rotate-90\",\n      \"data-[side=right]:-left-2.25 data-[side=right]:-rotate-90\",\n      \"data-[side=top]:-bottom-1.5 data-[side=top]:rotate-180\",\n    ],\n    viewport: \"\",\n    content: \"flex flex-col p-3\",\n  },\n});\n\nexport { previewCard };\n",
+      "type": "registry:ui",
+      "target": "@ui/preview-card/preview-card.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/preview-card/preview-card.tsx",
+      "content": "\"use client\";\n\nimport { mergeProps, useDirection, useRender } from \"@base-ui/react\";\nimport { PreviewCard as BasePreviewCard } from \"@base-ui/react/preview-card\";\n\nimport { mergeSlotClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { previewCard } from \"./preview-card.style\";\n\nconst POSITIONER_SIDE_OFFSET = 8;\n\nconst createPreviewCardHandle = BasePreviewCard.createHandle;\n\nfunction PreviewCard(props: BasePreviewCard.Root.Props) {\n  return <BasePreviewCard.Root {...props} />;\n}\n\nfunction PreviewCardTrigger({ className, ...props }: BasePreviewCard.Trigger.Props) {\n  return (\n    <BasePreviewCard.Trigger\n      data-slot=\"preview-card-trigger\"\n      className={mergeSlotClassName(previewCard().trigger, className)}\n      {...props}\n    />\n  );\n}\n\nfunction PreviewCardPortal({ className, ...props }: BasePreviewCard.Portal.Props) {\n  const direction = useDirection();\n\n  return (\n    <BasePreviewCard.Portal\n      data-slot=\"preview-card-portal\"\n      className={mergeSlotClassName(previewCard().portal, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nfunction PreviewCardBackdrop({ className, ...props }: BasePreviewCard.Backdrop.Props) {\n  return (\n    <BasePreviewCard.Backdrop\n      data-slot=\"preview-card-backdrop\"\n      className={mergeSlotClassName(previewCard().backdrop, className)}\n      {...props}\n    />\n  );\n}\n\nfunction PreviewCardPositioner({\n  className,\n  sideOffset = POSITIONER_SIDE_OFFSET,\n  ...props\n}: BasePreviewCard.Positioner.Props) {\n  return (\n    <BasePreviewCard.Positioner\n      data-slot=\"preview-card-positioner\"\n      className={mergeSlotClassName(previewCard().positioner, className)}\n      sideOffset={sideOffset}\n      {...props}\n    />\n  );\n}\n\nfunction PreviewCardPopup({ className, ...props }: BasePreviewCard.Popup.Props) {\n  return (\n    <BasePreviewCard.Popup\n      data-slot=\"preview-card-popup\"\n      className={mergeSlotClassName(previewCard().popup, className)}\n      {...props}\n    />\n  );\n}\n\nfunction PreviewCardArrow({ className, ...props }: BasePreviewCard.Arrow.Props) {\n  return (\n    <BasePreviewCard.Arrow\n      data-slot=\"preview-card-arrow\"\n      className={mergeSlotClassName(previewCard().arrow, className)}\n      {...props}\n    />\n  );\n}\n\nfunction PreviewCardViewport({ className, ...props }: BasePreviewCard.Viewport.Props) {\n  return (\n    <BasePreviewCard.Viewport\n      data-slot=\"preview-card-viewport\"\n      className={mergeSlotClassName(previewCard().viewport, className)}\n      {...props}\n    />\n  );\n}\n\nfunction PreviewCardContent({ className, render, ...props }: useRender.ComponentProps<\"div\">) {\n  const content = useRender({\n    defaultTagName: \"div\",\n    props: {\n      ...mergeProps<\"div\">({ className: previewCard().content({ className }) }, props),\n      \"data-slot\": \"preview-card-content\",\n    },\n    render,\n  });\n\n  return content;\n}\n\nexport {\n  createPreviewCardHandle,\n  PreviewCard,\n  PreviewCardTrigger,\n  PreviewCardPortal,\n  PreviewCardBackdrop,\n  PreviewCardPositioner,\n  PreviewCardPopup,\n  PreviewCardArrow,\n  PreviewCardViewport,\n  PreviewCardContent,\n};\n",
+      "type": "registry:ui",
+      "target": "@ui/preview-card/preview-card.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

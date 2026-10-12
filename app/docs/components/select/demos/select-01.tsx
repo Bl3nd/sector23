@@ -19,7 +19,7 @@ import {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-} from "@/app/components/select";
+} from "@/registry/sector23/ui/select";
 
 const timezoneGroups = [
   {

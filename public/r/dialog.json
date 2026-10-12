@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/dialog/dialog.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst dialog = tv({\n  slots: {\n    trigger: \"\",\n    portal: \"\",\n    backdrop: [\n      \"fixed inset-0 min-h-dvh bg-black/20 transition-all duration-150 ease-default\",\n      \"data-ending-style:opacity-0 data-starting-style:opacity-0\",\n      \"supports-[-webkit-touch-callout:none]:absolute\",\n      \"dark:bg-black/50\",\n    ],\n    viewport: \"\",\n    popup: [\n      \"fixed top-1/2 left-1/2 flex w-md max-w-[calc(100vw-3rem)] -translate-x-1/2 -translate-y-1/2 flex-col rounded-lg border border-border bg-popover text-popover-foreground shadow-lg transition-[scale,opacity] duration-300 ease-default outline-none\",\n      \"data-ending-style:scale-95 data-ending-style:opacity-0\",\n      \"data-starting-style:scale-95 data-starting-style:opacity-0\",\n    ],\n    header: \"flex flex-col gap-1.5 p-4\",\n    title: \"text-base leading-none font-semibold text-foreground\",\n    description: \"text-sm text-muted-foreground\",\n    footer: \"flex flex-wrap items-center justify-end gap-2 p-4\",\n    close: \"\",\n  },\n});\n\nexport { dialog };\n",
+      "type": "registry:ui",
+      "target": "@ui/dialog/dialog.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/dialog/dialog.tsx",
+      "content": "\"use client\";\n\nimport { mergeProps, useDirection, useRender } from \"@base-ui/react\";\nimport { Dialog as BaseDialog } from \"@base-ui/react/dialog\";\n\nimport { mergeSlotClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { dialog } from \"./dialog.style\";\n\ntype DialogHandle = ReturnType<typeof createDialogHandle>;\n\nconst createDialogHandle = BaseDialog.createHandle;\n\nfunction Dialog(props: BaseDialog.Root.Props) {\n  return <BaseDialog.Root {...props} />;\n}\n\nfunction DialogTrigger({ className, ...props }: BaseDialog.Trigger.Props) {\n  return (\n    <BaseDialog.Trigger\n      data-slot=\"dialog-trigger\"\n      className={mergeSlotClassName(dialog().trigger, className)}\n      {...props}\n    />\n  );\n}\n\nfunction DialogPortal({ className, ...props }: BaseDialog.Portal.Props) {\n  const direction = useDirection();\n\n  return (\n    <BaseDialog.Portal\n      data-slot=\"dialog-portal\"\n      className={mergeSlotClassName(dialog().portal, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nfunction DialogBackdrop({ className, ...props }: BaseDialog.Backdrop.Props) {\n  return (\n    <BaseDialog.Backdrop\n      data-slot=\"dialog-backdrop\"\n      className={mergeSlotClassName(dialog().backdrop, className)}\n      {...props}\n    />\n  );\n}\n\nfunction DialogViewport({ className, ...props }: BaseDialog.Viewport.Props) {\n  return (\n    <BaseDialog.Viewport\n      data-slot=\"dialog-viewport\"\n      className={mergeSlotClassName(dialog().viewport, className)}\n      {...props}\n    />\n  );\n}\n\nfunction DialogPopup({ className, ...props }: BaseDialog.Popup.Props) {\n  return (\n    <BaseDialog.Popup\n      data-slot=\"dialog-popup\"\n      className={mergeSlotClassName(dialog().popup, className)}\n      {...props}\n    />\n  );\n}\n\nfunction DialogHeader({ className, render, ...props }: useRender.ComponentProps<\"div\">) {\n  const header = useRender({\n    defaultTagName: \"div\",\n    props: {\n      ...mergeProps<\"div\">({ className: dialog().header({ className }) }, props),\n      \"data-slot\": \"dialog-header\",\n    },\n    render,\n  });\n\n  return header;\n}\n\nfunction DialogTitle({ className, ...props }: BaseDialog.Title.Props) {\n  return (\n    <BaseDialog.Title\n      data-slot=\"dialog-title\"\n      className={mergeSlotClassName(dialog().title, className)}\n      {...props}\n    />\n  );\n}\n\nfunction DialogDescription({ className, ...props }: BaseDialog.Description.Props) {\n  return (\n    <BaseDialog.Description\n      data-slot=\"dialog-description\"\n      className={mergeSlotClassName(dialog().description, className)}\n      {...props}\n    />\n  );\n}\n\nfunction DialogFooter({ className, render, ...props }: useRender.ComponentProps<\"div\">) {\n  const footer = useRender({\n    defaultTagName: \"div\",\n    props: {\n      ...mergeProps<\"div\">({ className: dialog().footer({ className }) }, props),\n      \"data-slot\": \"dialog-footer\",\n    },\n    render,\n  });\n\n  return footer;\n}\n\nfunction DialogClose({ className, ...props }: BaseDialog.Close.Props) {\n  return (\n    <BaseDialog.Close\n      data-slot=\"dialog-close\"\n      className={mergeSlotClassName(dialog().close, className)}\n      {...props}\n    />\n  );\n}\n\nexport {\n  createDialogHandle,\n  Dialog,\n  DialogTrigger,\n  DialogPortal,\n  DialogBackdrop,\n  DialogViewport,\n  DialogPopup,\n  DialogHeader,\n  DialogTitle,\n  DialogDescription,\n  DialogFooter,\n  DialogClose,\n};\nexport type { DialogHandle };\n",
+      "type": "registry:ui",
+      "target": "@ui/dialog/dialog.tsx"
+    },
+    {
+      "path": "registry/sector23/ui/dialog/index.ts",
+      "content": "export {\n  createDialogHandle,\n  Dialog,\n  DialogTrigger,\n  DialogPortal,\n  DialogBackdrop,\n  DialogViewport,\n  DialogPopup,\n  DialogHeader,\n  DialogTitle,\n  DialogDescription,\n  DialogFooter,\n  DialogClose,\n} from \"./dialog\";\nexport type { DialogHandle } from \"./dialog\";\n",
+      "type": "registry:ui",
+      "target": "@ui/dialog/index.ts"
+    }
+  ],
+  "type": "registry:ui"
+}

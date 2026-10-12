@@ -1,6 +1,6 @@
 import { BoldIcon } from "lucide-react";
 
-import { Toggle } from "@/app/components/toggle";
+import { Toggle } from "@/registry/sector23/ui/toggle";
 
 export default function Toggle01() {
   return (

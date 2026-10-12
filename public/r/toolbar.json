@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toolbar",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/toolbar/index.ts",
+      "content": "export {\n  Toolbar,\n  ToolbarButton,\n  ToolbarLink,\n  ToolbarSeparator,\n  ToolbarGroup,\n  ToolbarInput,\n} from \"./toolbar\";\n",
+      "type": "registry:ui",
+      "target": "@ui/toolbar/index.ts"
+    },
+    {
+      "path": "registry/sector23/ui/toolbar/toolbar.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst toolbar = tv({\n  slots: {\n    root: \"flex max-w-full items-center gap-2 rounded-lg border border-border p-1 **:data-slot:shadow-none\",\n    button: \"\",\n    link: \"flex min-h-8 items-center justify-center rounded-md px-2 text-sm font-medium text-muted-foreground transition-all duration-150 ease-default outline-none hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring/50\",\n    separator: [\n      \"min-w-px self-stretch bg-border\",\n      \"data-[orientation=horizontal]:my-1 data-[orientation=horizontal]:h-px\",\n      \"data-[orientation=vertical]:mx-1 data-[orientation=vertical]:w-px\",\n    ],\n    group: \"flex items-center gap-2\",\n    input: \"\",\n  },\n});\n\nexport { toolbar };\n",
+      "type": "registry:ui",
+      "target": "@ui/toolbar/toolbar.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/toolbar/toolbar.tsx",
+      "content": "\"use client\";\n\nimport { useDirection } from \"@base-ui/react\";\nimport { Toolbar as BaseToolbar } from \"@base-ui/react/toolbar\";\n\nimport { mergeSlotClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { toolbar } from \"./toolbar.style\";\n\nfunction Toolbar({ className, ...props }: BaseToolbar.Root.Props) {\n  const direction = useDirection();\n\n  return (\n    <BaseToolbar.Root\n      data-slot=\"toolbar\"\n      className={mergeSlotClassName(toolbar().root, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nfunction ToolbarButton({ className, ...props }: BaseToolbar.Button.Props) {\n  return (\n    <BaseToolbar.Button\n      data-slot=\"toolbar-button\"\n      className={mergeSlotClassName(toolbar().button, className)}\n      {...props}\n    />\n  );\n}\n\nfunction ToolbarLink({ className, ...props }: BaseToolbar.Link.Props) {\n  return (\n    <BaseToolbar.Link\n      data-slot=\"toolbar-link\"\n      className={mergeSlotClassName(toolbar().link, className)}\n      {...props}\n    />\n  );\n}\n\nfunction ToolbarSeparator({ className, ...props }: BaseToolbar.Separator.Props) {\n  return (\n    <BaseToolbar.Separator\n      data-slot=\"toolbar-separator\"\n      className={mergeSlotClassName(toolbar().separator, className)}\n      {...props}\n    />\n  );\n}\n\nfunction ToolbarGroup({ className, ...props }: BaseToolbar.Group.Props) {\n  return (\n    <BaseToolbar.Group\n      data-slot=\"toolbar-group\"\n      className={mergeSlotClassName(toolbar().group, className)}\n      {...props}\n    />\n  );\n}\n\nfunction ToolbarInput({ className, ...props }: BaseToolbar.Input.Props) {\n  return (\n    <BaseToolbar.Input\n      data-slot=\"toolbar-input\"\n      className={mergeSlotClassName(toolbar().input, className)}\n      {...props}\n    />\n  );\n}\n\nexport { Toolbar, ToolbarButton, ToolbarLink, ToolbarSeparator, ToolbarGroup, ToolbarInput };\n",
+      "type": "registry:ui",
+      "target": "@ui/toolbar/toolbar.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

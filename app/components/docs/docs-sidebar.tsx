@@ -1,8 +1,12 @@
 import { ChevronDownIcon, PanelLeftClose } from "lucide-react";
 import Link from "next/link";
 
-import { Button } from "../button";
-import { Collapsible, CollapsiblePanel, CollapsibleTrigger } from "../collapsible";
+import { Button } from "../../../registry/sector23/ui/button";
+import {
+  Collapsible,
+  CollapsiblePanel,
+  CollapsibleTrigger,
+} from "../../../registry/sector23/ui/collapsible";
 import {
   Drawer,
   DrawerBackdrop,
@@ -14,14 +18,14 @@ import {
   DrawerTitle,
   DrawerViewport,
   type DrawerHandle,
-} from "../drawer";
+} from "../../../registry/sector23/ui/drawer";
 import {
   ScrollArea,
   ScrollAreaContent,
   ScrollAreaScrollbar,
   ScrollAreaThumb,
   ScrollAreaViewport,
-} from "../scroll-area";
+} from "../../../registry/sector23/ui/scroll-area";
 
 const docs = [
   {

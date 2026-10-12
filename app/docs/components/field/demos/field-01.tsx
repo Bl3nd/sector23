@@ -1,5 +1,5 @@
-import { Field, FieldDescription, FieldError, FieldLabel } from "@/app/components/field";
-import { Input } from "@/app/components/input";
+import { Field, FieldDescription, FieldError, FieldLabel } from "@/registry/sector23/ui/field";
+import { Input } from "@/registry/sector23/ui/input";
 
 export default function Field01() {
   return (

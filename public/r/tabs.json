@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/tabs/index.ts",
+      "content": "export { Tabs, TabsList, TabsTab, TabsIndicator, TabsContent, TabsPanel } from \"./tabs\";\n",
+      "type": "registry:ui",
+      "target": "@ui/tabs/index.ts"
+    },
+    {
+      "path": "registry/sector23/ui/tabs/tabs.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst tabs = tv({\n  slots: {\n    root: \"\",\n    list: \"relative z-1 mb-1 flex w-fit gap-2 rounded-lg border border-border bg-muted p-1\",\n    tab: [\n      \"flex h-8 items-center justify-center rounded-md bg-transparent px-2 text-sm font-medium break-keep whitespace-nowrap text-muted-foreground transition-all duration-150 ease-default outline-none select-none\",\n      \"hover:text-foreground\",\n      \"focus-visible:ring-2 focus-visible:ring-ring/50\",\n      \"data-active:text-accent-foreground\",\n      \"data-disabled:pointer-events-none data-disabled:opacity-50\",\n    ],\n    indicator:\n      \"absolute top-0 left-0 -z-1 h-(--active-tab-height) w-(--active-tab-width) translate-x-(--active-tab-left) translate-y-(--active-tab-top) rounded-md bg-accent transition-[translate,width,height] duration-300 ease-default\",\n    content: \"grid w-full grid-cols-1 rounded-md border border-border\",\n    panel: [\n      \"col-start-1 row-start-1 flex w-full overflow-hidden rounded-[inherit] p-3 outline-none\",\n      \"focus-visible:z-1 focus-visible:ring-2 focus-visible:ring-ring/50\",\n      \"[[hidden]]:hidden\",\n    ],\n  },\n});\n\nexport { tabs };\n",
+      "type": "registry:ui",
+      "target": "@ui/tabs/tabs.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/tabs/tabs.tsx",
+      "content": "\"use client\";\n\nimport { mergeProps, useDirection, useRender } from \"@base-ui/react\";\nimport { Tabs as BaseTabs } from \"@base-ui/react/tabs\";\n\nimport { mergeSlotClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { tabs } from \"./tabs.style\";\n\nfunction Tabs({ className, ...props }: BaseTabs.Root.Props) {\n  const direction = useDirection();\n\n  return (\n    <BaseTabs.Root\n      data-slot=\"tabs\"\n      className={mergeSlotClassName(tabs().root, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nfunction TabsList({ className, ...props }: BaseTabs.List.Props) {\n  return (\n    <BaseTabs.List\n      data-slot=\"tabs-list\"\n      className={mergeSlotClassName(tabs().list, className)}\n      {...props}\n    />\n  );\n}\n\nfunction TabsTab({ className, ...props }: BaseTabs.Tab.Props) {\n  return (\n    <BaseTabs.Tab\n      data-slot=\"tabs-tab\"\n      className={mergeSlotClassName(tabs().tab, className)}\n      {...props}\n    />\n  );\n}\n\nfunction TabsIndicator({ className, ...props }: BaseTabs.Indicator.Props) {\n  return (\n    <BaseTabs.Indicator\n      data-slot=\"tabs-indicator\"\n      className={mergeSlotClassName(tabs().indicator, className)}\n      {...props}\n    />\n  );\n}\n\nfunction TabsContent({ className, render, ...props }: useRender.ComponentProps<\"div\">) {\n  const content = useRender({\n    defaultTagName: \"div\",\n    props: {\n      ...mergeProps<\"div\">({ className: tabs().content({ className }) }, props),\n      \"data-slot\": \"tabs-content\",\n    },\n    render,\n  });\n\n  return content;\n}\n\nfunction TabsPanel({ className, ...props }: BaseTabs.Panel.Props) {\n  return (\n    <BaseTabs.Panel\n      data-slot=\"tabs-panel\"\n      className={mergeSlotClassName(tabs().panel, className)}\n      {...props}\n    />\n  );\n}\n\nexport { Tabs, TabsList, TabsTab, TabsIndicator, TabsContent, TabsPanel };\n",
+      "type": "registry:ui",
+      "target": "@ui/tabs/tabs.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

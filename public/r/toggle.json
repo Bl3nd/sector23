@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/toggle/index.ts",
+      "content": "export { Toggle } from \"./toggle\";\n",
+      "type": "registry:ui",
+      "target": "@ui/toggle/index.ts"
+    },
+    {
+      "path": "registry/sector23/ui/toggle/toggle.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst toggle = tv({\n  base: [\n    \"inline-flex size-8 shrink-0 items-center justify-center rounded-md border border-border bg-transparent text-foreground shadow-sm transition-all duration-150 ease-default outline-none select-none\",\n    \"hover:bg-accent hover:text-accent-foreground\",\n    \"focus-visible:ring-2 focus-visible:ring-ring/50\",\n    \"data-disabled:pointer-events-none data-disabled:opacity-50\",\n    \"data-pressed:bg-accent/80 data-pressed:text-accent-foreground\",\n    \"[&>svg]:size-4 [&>svg]:shrink-0\",\n  ],\n});\n\nexport { toggle };\n",
+      "type": "registry:ui",
+      "target": "@ui/toggle/toggle.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/toggle/toggle.tsx",
+      "content": "\"use client\";\n\nimport { useDirection } from \"@base-ui/react\";\nimport { Toggle as BaseToggle } from \"@base-ui/react/toggle\";\n\nimport { mergeSlotClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { toggle } from \"./toggle.style\";\n\nfunction Toggle({ className, ...props }: BaseToggle.Props) {\n  const direction = useDirection();\n\n  return (\n    <BaseToggle\n      data-slot=\"toggle\"\n      className={mergeSlotClassName(toggle, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nexport { Toggle };\n",
+      "type": "registry:ui",
+      "target": "@ui/toggle/toggle.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

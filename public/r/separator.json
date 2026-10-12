@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/separator/index.ts",
+      "content": "export { Separator } from \"./separator\";\n",
+      "type": "registry:ui",
+      "target": "@ui/separator/index.ts"
+    },
+    {
+      "path": "registry/sector23/ui/separator/separator.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst separator = tv({\n  base: \"self-stretch bg-border data-[orientation=horizontal]:h-px data-[orientation=vertical]:w-px\",\n});\n\nexport { separator };\n",
+      "type": "registry:ui",
+      "target": "@ui/separator/separator.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/separator/separator.tsx",
+      "content": "\"use client\";\n\nimport { Separator as BaseSeparator } from \"@base-ui/react/separator\";\n\nimport { mergeVariantClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { separator } from \"./separator.style\";\n\nfunction Separator({ className, ...props }: BaseSeparator.Props) {\n  return (\n    <BaseSeparator\n      data-slot=\"separator\"\n      className={mergeVariantClassName(separator, {}, className)}\n      {...props}\n    />\n  );\n}\n\nexport { Separator };\n",
+      "type": "registry:ui",
+      "target": "@ui/separator/separator.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

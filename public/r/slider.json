@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/slider/index.ts",
+      "content": "export {\n  Slider,\n  SliderLabel,\n  SliderValue,\n  SliderControl,\n  SliderTrack,\n  SliderIndicator,\n  SliderThumb,\n} from \"./slider\";\n",
+      "type": "registry:ui",
+      "target": "@ui/slider/index.ts"
+    },
+    {
+      "path": "registry/sector23/ui/slider/slider.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst slider = tv({\n  slots: {\n    root: \"grid max-w-full grid-cols-[1fr_auto]\",\n    label: \"text-sm font-medium text-foreground select-none data-disabled:opacity-50\",\n    value: \"text-sm text-foreground tabular-nums data-disabled:opacity-50\",\n    control: \"col-span-2 flex touch-none items-center py-3 select-none data-disabled:opacity-50\",\n    track: \"h-1 w-full rounded-full bg-muted\",\n    indicator: \"rounded-[inherit] bg-primary select-none\",\n    thumb: [\n      \"size-4 rounded-full border border-primary bg-background select-none\",\n      \"has-focus-visible:ring-2 has-focus-visible:ring-ring/50\",\n    ],\n  },\n});\n\nexport { slider };\n",
+      "type": "registry:ui",
+      "target": "@ui/slider/slider.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/slider/slider.tsx",
+      "content": "\"use client\";\n\nimport { useDirection } from \"@base-ui/react\";\nimport { Slider as BaseSlider } from \"@base-ui/react/slider\";\n\nimport { mergeSlotClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { slider } from \"./slider.style\";\n\nfunction Slider({ className, ...props }: BaseSlider.Root.Props) {\n  const direction = useDirection();\n\n  return (\n    <BaseSlider.Root\n      data-slot=\"slider\"\n      className={mergeSlotClassName(slider().root, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nfunction SliderLabel({ className, ...props }: BaseSlider.Label.Props) {\n  return (\n    <BaseSlider.Label\n      data-slot=\"slider-label\"\n      className={mergeSlotClassName(slider().label, className)}\n      {...props}\n    />\n  );\n}\n\nfunction SliderValue({ className, ...props }: BaseSlider.Value.Props) {\n  return (\n    <BaseSlider.Value\n      data-slot=\"slider-value\"\n      className={mergeSlotClassName(slider().value, className)}\n      {...props}\n    />\n  );\n}\n\nfunction SliderControl({ className, ...props }: BaseSlider.Control.Props) {\n  return (\n    <BaseSlider.Control\n      data-slot=\"slider-control\"\n      className={mergeSlotClassName(slider().control, className)}\n      {...props}\n    />\n  );\n}\n\nfunction SliderTrack({ className, ...props }: BaseSlider.Track.Props) {\n  return (\n    <BaseSlider.Track\n      data-slot=\"slider-track\"\n      className={mergeSlotClassName(slider().track, className)}\n      {...props}\n    />\n  );\n}\n\nfunction SliderIndicator({ className, ...props }: BaseSlider.Indicator.Props) {\n  return (\n    <BaseSlider.Indicator\n      data-slot=\"slider-indicator\"\n      className={mergeSlotClassName(slider().indicator, className)}\n      {...props}\n    />\n  );\n}\n\nfunction SliderThumb({ className, ...props }: BaseSlider.Thumb.Props) {\n  return (\n    <BaseSlider.Thumb\n      data-slot=\"slider-thumb\"\n      className={mergeSlotClassName(slider().thumb, className)}\n      {...props}\n    />\n  );\n}\n\nexport {\n  Slider,\n  SliderLabel,\n  SliderValue,\n  SliderControl,\n  SliderTrack,\n  SliderIndicator,\n  SliderThumb,\n};\n",
+      "type": "registry:ui",
+      "target": "@ui/slider/slider.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

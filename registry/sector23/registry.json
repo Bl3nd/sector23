@@ -1,0 +1,1304 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "theme",
+      "type": "registry:theme",
+      "title": "Sector23 theme",
+      "description": "Sector23 tokens, Tailwind theme bridges, and base styles.",
+      "docs": "Sector23 requires Tailwind CSS v4, and adding a component fills in missing Sector23 tokens while keeping the tokens your project already has, so adding this theme item itself is what replaces an existing palette.",
+      "cssVars": {
+        "theme": {
+          "color-background": "var(--background)",
+          "color-foreground": "var(--foreground)",
+          "color-card": "var(--card)",
+          "color-card-foreground": "var(--card-foreground)",
+          "color-popover": "var(--popover)",
+          "color-popover-foreground": "var(--popover-foreground)",
+          "color-primary": "var(--primary)",
+          "color-primary-foreground": "var(--primary-foreground)",
+          "color-secondary": "var(--secondary)",
+          "color-secondary-foreground": "var(--secondary-foreground)",
+          "color-muted": "var(--muted)",
+          "color-muted-foreground": "var(--muted-foreground)",
+          "color-accent": "var(--accent)",
+          "color-accent-foreground": "var(--accent-foreground)",
+          "color-destructive": "var(--destructive)",
+          "color-destructive-foreground": "var(--destructive-foreground)",
+          "color-border": "var(--border)",
+          "color-input": "var(--input)",
+          "color-ring": "var(--ring)",
+          "color-chart-1": "var(--chart-1)",
+          "color-chart-2": "var(--chart-2)",
+          "color-chart-3": "var(--chart-3)",
+          "color-chart-4": "var(--chart-4)",
+          "color-chart-5": "var(--chart-5)",
+          "color-sidebar": "var(--sidebar)",
+          "color-sidebar-foreground": "var(--sidebar-foreground)",
+          "color-sidebar-primary": "var(--sidebar-primary)",
+          "color-sidebar-primary-foreground": "var(--sidebar-primary-foreground)",
+          "color-sidebar-accent": "var(--sidebar-accent)",
+          "color-sidebar-accent-foreground": "var(--sidebar-accent-foreground)",
+          "color-sidebar-border": "var(--sidebar-border)",
+          "color-sidebar-ring": "var(--sidebar-ring)",
+          "font-sans": "var(--font-sans)",
+          "font-mono": "var(--font-mono)",
+          "font-serif": "var(--font-serif)",
+          "radius-sm": "calc(var(--radius) - 4px)",
+          "radius-md": "calc(var(--radius) - 2px)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "calc(var(--radius) + 4px)",
+          "shadow-2xs": "var(--shadow-2xs)",
+          "shadow-xs": "var(--shadow-xs)",
+          "shadow-sm": "var(--shadow-sm)",
+          "shadow": "var(--shadow)",
+          "shadow-md": "var(--shadow-md)",
+          "shadow-lg": "var(--shadow-lg)",
+          "shadow-xl": "var(--shadow-xl)",
+          "shadow-2xl": "var(--shadow-2xl)",
+          "ease-fast": "cubic-bezier(0.25, 0.8, 0.25, 1)",
+          "ease-default": "cubic-bezier(0.2, 0, 0, 1)",
+          "ease-emphasized": "cubic-bezier(0.16, 1, 0.3, 1)"
+        },
+        "light": {
+          "background": "oklch(1 0 0)",
+          "foreground": "oklch(0.1448 0 0)",
+          "card": "oklch(1 0 0)",
+          "card-foreground": "oklch(0.1448 0 0)",
+          "popover": "oklch(1 0 0)",
+          "popover-foreground": "oklch(0.1448 0 0)",
+          "primary": "oklch(0.2046 0 0)",
+          "primary-foreground": "oklch(1 0 0)",
+          "secondary": "oklch(0.9702 0 0)",
+          "secondary-foreground": "oklch(0.2046 0 0)",
+          "muted": "oklch(0.9702 0 0)",
+          "muted-foreground": "oklch(0.5452 0 0)",
+          "accent": "oklch(0.9401 0 0)",
+          "accent-foreground": "oklch(0.2046 0 0)",
+          "destructive": "oklch(0.5802 0.2214 19.3902)",
+          "destructive-foreground": "oklch(1 0 0)",
+          "border": "oklch(0.9219 0 0)",
+          "input": "oklch(0.8699 0 0)",
+          "ring": "oklch(0.5555 0 0)",
+          "chart-1": "oklch(0.2686 0 0)",
+          "chart-2": "oklch(0.4386 0 0)",
+          "chart-3": "oklch(0.5999 0 0)",
+          "chart-4": "oklch(0.7476 0 0)",
+          "chart-5": "oklch(0.8699 0 0)",
+          "sidebar": "oklch(1 0 0)",
+          "sidebar-foreground": "oklch(0.1448 0 0)",
+          "sidebar-primary": "oklch(0.2046 0 0)",
+          "sidebar-primary-foreground": "oklch(1 0 0)",
+          "sidebar-accent": "oklch(0.9702 0 0)",
+          "sidebar-accent-foreground": "oklch(0.2046 0 0)",
+          "sidebar-border": "oklch(0.9219 0 0)",
+          "sidebar-ring": "oklch(0.5555 0 0)",
+          "font-sans": "Quicksand, ui-sans-serif, sans-serif, system-ui",
+          "font-serif": "Lora, ui-serif, serif",
+          "font-mono": "JetBrains Mono, ui-monospace, monospace",
+          "radius": "0.5rem",
+          "shadow-x": "0",
+          "shadow-y": "1px",
+          "shadow-blur": "5px",
+          "shadow-spread": "0px",
+          "shadow-opacity": "0.1",
+          "shadow-color": "#0a2540",
+          "shadow-2xs": "0 1px 5px 0px hsl(210 72.973% 14.5098% / 0.05)",
+          "shadow-xs": "0 1px 5px 0px hsl(210 72.973% 14.5098% / 0.05)",
+          "shadow-sm": "0 1px 5px 0px hsl(210 72.973% 14.5098% / 0.1), 0 1px 2px -1px hsl(210 72.973% 14.5098% / 0.1)",
+          "shadow": "0 1px 5px 0px hsl(210 72.973% 14.5098% / 0.1), 0 1px 2px -1px hsl(210 72.973% 14.5098% / 0.1)",
+          "shadow-md": "0 1px 5px 0px hsl(210 72.973% 14.5098% / 0.1), 0 2px 4px -1px hsl(210 72.973% 14.5098% / 0.1)",
+          "shadow-lg": "0 1px 5px 0px hsl(210 72.973% 14.5098% / 0.1), 0 4px 6px -1px hsl(210 72.973% 14.5098% / 0.1)",
+          "shadow-xl": "0 1px 5px 0px hsl(210 72.973% 14.5098% / 0.1), 0 8px 10px -1px hsl(210 72.973% 14.5098% / 0.1)",
+          "shadow-2xl": "0 1px 5px 0px hsl(210 72.973% 14.5098% / 0.25)",
+          "tracking-normal": "0em",
+          "spacing": "0.25rem"
+        },
+        "dark": {
+          "background": "oklch(0.1448 0 0)",
+          "foreground": "oklch(0.9702 0 0)",
+          "card": "oklch(0.1867 0 0)",
+          "card-foreground": "oklch(0.9702 0 0)",
+          "popover": "oklch(0.209 0 0)",
+          "popover-foreground": "oklch(0.9702 0 0)",
+          "primary": "oklch(0.9702 0 0)",
+          "primary-foreground": "oklch(0.1448 0 0)",
+          "secondary": "oklch(0.2686 0 0)",
+          "secondary-foreground": "oklch(0.9702 0 0)",
+          "muted": "oklch(0.252 0 0)",
+          "muted-foreground": "oklch(0.709 0 0)",
+          "accent": "oklch(0.3012 0 0)",
+          "accent-foreground": "oklch(0.9702 0 0)",
+          "destructive": "oklch(0.6046 0.228 24.4565)",
+          "destructive-foreground": "oklch(0.1448 0 0)",
+          "border": "oklch(0.2809 0 0)",
+          "input": "oklch(0.3211 0 0)",
+          "ring": "oklch(0.7155 0 0)",
+          "chart-1": "oklch(0.9702 0 0)",
+          "chart-2": "oklch(0.8328 0 0)",
+          "chart-3": "oklch(0.6895 0 0)",
+          "chart-4": "oklch(0.5382 0 0)",
+          "chart-5": "oklch(0.3753 0 0)",
+          "sidebar": "oklch(0.1448 0 0)",
+          "sidebar-foreground": "oklch(0.9702 0 0)",
+          "sidebar-primary": "oklch(0.9702 0 0)",
+          "sidebar-primary-foreground": "oklch(0.1448 0 0)",
+          "sidebar-accent": "oklch(0.2686 0 0)",
+          "sidebar-accent-foreground": "oklch(0.9702 0 0)",
+          "sidebar-border": "oklch(0.2809 0 0)",
+          "sidebar-ring": "oklch(0.7155 0 0)",
+          "font-sans": "Quicksand, ui-sans-serif, sans-serif, system-ui",
+          "font-serif": "Lora, ui-serif, serif",
+          "font-mono": "JetBrains Mono, ui-monospace, monospace",
+          "radius": "0.5rem",
+          "shadow-x": "0",
+          "shadow-y": "1px",
+          "shadow-blur": "5px",
+          "shadow-spread": "0px",
+          "shadow-opacity": "0.1",
+          "shadow-color": "#000000",
+          "shadow-2xs": "0 1px 5px 0px hsl(0 0% 0% / 0.05)",
+          "shadow-xs": "0 1px 5px 0px hsl(0 0% 0% / 0.05)",
+          "shadow-sm": "0 1px 5px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1)",
+          "shadow": "0 1px 5px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1)",
+          "shadow-md": "0 1px 5px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1)",
+          "shadow-lg": "0 1px 5px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1)",
+          "shadow-xl": "0 1px 5px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1)",
+          "shadow-2xl": "0 1px 5px 0px hsl(0 0% 0% / 0.25)"
+        }
+      },
+      "css": {
+        "@custom-variant dark (&:is(.dark *))": {},
+        "@layer base": {
+          "body": {
+            "@apply bg-background text-foreground": {}
+          }
+        },
+        ".lucide": {
+          "stroke-width": "1"
+        },
+        ".lucide *": {
+          "vector-effect": "non-scaling-stroke"
+        }
+      }
+    },
+    {
+      "name": "merge-base-ui",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "lib/merge-base-ui.ts",
+          "type": "registry:lib",
+          "target": "@lib/merge-base-ui.ts"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/accordion/accordion.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/accordion/accordion.style.ts"
+        },
+        {
+          "path": "ui/accordion/accordion.tsx",
+          "type": "registry:ui",
+          "target": "@ui/accordion/accordion.tsx"
+        },
+        {
+          "path": "ui/accordion/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/accordion/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/alert-dialog/alert-dialog.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/alert-dialog/alert-dialog.style.ts"
+        },
+        {
+          "path": "ui/alert-dialog/alert-dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert-dialog/alert-dialog.tsx"
+        },
+        {
+          "path": "ui/alert-dialog/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/alert-dialog/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "autocomplete",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "lucide-react@^1.55.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/autocomplete/autocomplete.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/autocomplete/autocomplete.style.ts"
+        },
+        {
+          "path": "ui/autocomplete/autocomplete.tsx",
+          "type": "registry:ui",
+          "target": "@ui/autocomplete/autocomplete.tsx"
+        },
+        {
+          "path": "ui/autocomplete/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/autocomplete/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/avatar/avatar.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/avatar/avatar.style.ts"
+        },
+        {
+          "path": "ui/avatar/avatar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/avatar/avatar.tsx"
+        },
+        {
+          "path": "ui/avatar/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/avatar/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/button/button.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/button/button.style.ts"
+        },
+        {
+          "path": "ui/button/button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button/button.tsx"
+        },
+        {
+          "path": "ui/button/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/button/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "lucide-react@^1.55.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/checkbox/checkbox.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/checkbox/checkbox.style.ts"
+        },
+        {
+          "path": "ui/checkbox/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/checkbox/checkbox.tsx"
+        },
+        {
+          "path": "ui/checkbox/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/checkbox/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-group",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/checkbox-group/checkbox-group.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/checkbox-group/checkbox-group.style.ts"
+        },
+        {
+          "path": "ui/checkbox-group/checkbox-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/checkbox-group/checkbox-group.tsx"
+        },
+        {
+          "path": "ui/checkbox-group/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/checkbox-group/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/collapsible/collapsible.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/collapsible/collapsible.style.ts"
+        },
+        {
+          "path": "ui/collapsible/collapsible.tsx",
+          "type": "registry:ui",
+          "target": "@ui/collapsible/collapsible.tsx"
+        },
+        {
+          "path": "ui/collapsible/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/collapsible/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "lucide-react@^1.55.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/combobox/combobox.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/combobox/combobox.style.ts"
+        },
+        {
+          "path": "ui/combobox/combobox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/combobox/combobox.tsx"
+        },
+        {
+          "path": "ui/combobox/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/combobox/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/context-menu/context-menu.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/context-menu/context-menu.style.ts"
+        },
+        {
+          "path": "ui/context-menu/context-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/context-menu/context-menu.tsx"
+        },
+        {
+          "path": "ui/context-menu/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/context-menu/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/dialog/dialog.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/dialog/dialog.style.ts"
+        },
+        {
+          "path": "ui/dialog/dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dialog/dialog.tsx"
+        },
+        {
+          "path": "ui/dialog/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/dialog/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/drawer/drawer.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/drawer/drawer.style.ts"
+        },
+        {
+          "path": "ui/drawer/drawer.tsx",
+          "type": "registry:ui",
+          "target": "@ui/drawer/drawer.tsx"
+        },
+        {
+          "path": "ui/drawer/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/drawer/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/field/field.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/field/field.style.ts"
+        },
+        {
+          "path": "ui/field/field.tsx",
+          "type": "registry:ui",
+          "target": "@ui/field/field.tsx"
+        },
+        {
+          "path": "ui/field/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/field/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "fieldset",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/fieldset/fieldset.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/fieldset/fieldset.style.ts"
+        },
+        {
+          "path": "ui/fieldset/fieldset.tsx",
+          "type": "registry:ui",
+          "target": "@ui/fieldset/fieldset.tsx"
+        },
+        {
+          "path": "ui/fieldset/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/fieldset/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/form/form.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/form/form.style.ts"
+        },
+        {
+          "path": "ui/form/form.tsx",
+          "type": "registry:ui",
+          "target": "@ui/form/form.tsx"
+        },
+        {
+          "path": "ui/form/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/form/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/input/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/input/index.ts"
+        },
+        {
+          "path": "ui/input/input.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/input/input.style.ts"
+        },
+        {
+          "path": "ui/input/input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "ui/label/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/label/index.ts"
+        },
+        {
+          "path": "ui/label/label.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/label/label.style.ts"
+        },
+        {
+          "path": "ui/label/label.tsx",
+          "type": "registry:ui",
+          "target": "@ui/label/label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menu",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/menu/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/menu/index.ts"
+        },
+        {
+          "path": "ui/menu/menu.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/menu/menu.style.ts"
+        },
+        {
+          "path": "ui/menu/menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/menu/menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/menubar/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/menubar/index.ts"
+        },
+        {
+          "path": "ui/menubar/menubar.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/menubar/menubar.style.ts"
+        },
+        {
+          "path": "ui/menubar/menubar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/menubar/menubar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "meter",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/meter/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/meter/index.ts"
+        },
+        {
+          "path": "ui/meter/meter.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/meter/meter.style.ts"
+        },
+        {
+          "path": "ui/meter/meter.tsx",
+          "type": "registry:ui",
+          "target": "@ui/meter/meter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "lucide-react@^1.55.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/navigation-menu/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/navigation-menu/index.ts"
+        },
+        {
+          "path": "ui/navigation-menu/navigation-menu.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/navigation-menu/navigation-menu.style.ts"
+        },
+        {
+          "path": "ui/navigation-menu/navigation-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/navigation-menu/navigation-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "number-field",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "lucide-react@^1.55.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/number-field/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/number-field/index.ts"
+        },
+        {
+          "path": "ui/number-field/number-field.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/number-field/number-field.style.ts"
+        },
+        {
+          "path": "ui/number-field/number-field.tsx",
+          "type": "registry:ui",
+          "target": "@ui/number-field/number-field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "otp-field",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/otp-field/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/otp-field/index.ts"
+        },
+        {
+          "path": "ui/otp-field/otp-field.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/otp-field/otp-field.style.ts"
+        },
+        {
+          "path": "ui/otp-field/otp-field.tsx",
+          "type": "registry:ui",
+          "target": "@ui/otp-field/otp-field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/popover/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/popover/index.ts"
+        },
+        {
+          "path": "ui/popover/popover.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/popover/popover.style.ts"
+        },
+        {
+          "path": "ui/popover/popover.tsx",
+          "type": "registry:ui",
+          "target": "@ui/popover/popover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "preview-card",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/preview-card/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/preview-card/index.ts"
+        },
+        {
+          "path": "ui/preview-card/preview-card.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/preview-card/preview-card.style.ts"
+        },
+        {
+          "path": "ui/preview-card/preview-card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/preview-card/preview-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/progress/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/progress/index.ts"
+        },
+        {
+          "path": "ui/progress/progress.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/progress/progress.style.ts"
+        },
+        {
+          "path": "ui/progress/progress.tsx",
+          "type": "registry:ui",
+          "target": "@ui/progress/progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/radio-group/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/radio-group/index.ts"
+        },
+        {
+          "path": "ui/radio-group/radio-group.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/radio-group/radio-group.style.ts"
+        },
+        {
+          "path": "ui/radio-group/radio-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/radio-group/radio-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/scroll-area/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/scroll-area/index.ts"
+        },
+        {
+          "path": "ui/scroll-area/scroll-area.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/scroll-area/scroll-area.style.ts"
+        },
+        {
+          "path": "ui/scroll-area/scroll-area.tsx",
+          "type": "registry:ui",
+          "target": "@ui/scroll-area/scroll-area.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "lucide-react@^1.55.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/select/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/select/index.ts"
+        },
+        {
+          "path": "ui/select/select.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/select/select.style.ts"
+        },
+        {
+          "path": "ui/select/select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/select/select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/separator/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/separator/index.ts"
+        },
+        {
+          "path": "ui/separator/separator.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/separator/separator.style.ts"
+        },
+        {
+          "path": "ui/separator/separator.tsx",
+          "type": "registry:ui",
+          "target": "@ui/separator/separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/slider/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/slider/index.ts"
+        },
+        {
+          "path": "ui/slider/slider.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/slider/slider.style.ts"
+        },
+        {
+          "path": "ui/slider/slider.tsx",
+          "type": "registry:ui",
+          "target": "@ui/slider/slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/switch/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/switch/index.ts"
+        },
+        {
+          "path": "ui/switch/switch.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/switch/switch.style.ts"
+        },
+        {
+          "path": "ui/switch/switch.tsx",
+          "type": "registry:ui",
+          "target": "@ui/switch/switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/tabs/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/tabs/index.ts"
+        },
+        {
+          "path": "ui/tabs/tabs.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/tabs/tabs.style.ts"
+        },
+        {
+          "path": "ui/tabs/tabs.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tabs/tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/toast/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/toast/index.ts"
+        },
+        {
+          "path": "ui/toast/toast.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/toast/toast.style.ts"
+        },
+        {
+          "path": "ui/toast/toast.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toast/toast.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/toggle/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/toggle/index.ts"
+        },
+        {
+          "path": "ui/toggle/toggle.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/toggle/toggle.style.ts"
+        },
+        {
+          "path": "ui/toggle/toggle.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toggle/toggle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/toggle-group/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/toggle-group/index.ts"
+        },
+        {
+          "path": "ui/toggle-group/toggle-group.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/toggle-group/toggle-group.style.ts"
+        },
+        {
+          "path": "ui/toggle-group/toggle-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toggle-group/toggle-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toolbar",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/toolbar/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/toolbar/index.ts"
+        },
+        {
+          "path": "ui/toolbar/toolbar.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/toolbar/toolbar.style.ts"
+        },
+        {
+          "path": "ui/toolbar/toolbar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toolbar/toolbar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.9.0",
+        "tailwind-variants@^3.3.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/merge-base-ui.json"
+      ],
+      "files": [
+        {
+          "path": "ui/tooltip/index.ts",
+          "type": "registry:ui",
+          "target": "@ui/tooltip/index.ts"
+        },
+        {
+          "path": "ui/tooltip/tooltip.style.ts",
+          "type": "registry:ui",
+          "target": "@ui/tooltip/tooltip.style.ts"
+        },
+        {
+          "path": "ui/tooltip/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tooltip/tooltip.tsx"
+        }
+      ]
+    }
+  ]
+}

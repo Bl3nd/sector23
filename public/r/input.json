@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/input/index.ts",
+      "content": "export { Input } from \"./input\";\n",
+      "type": "registry:ui",
+      "target": "@ui/input/index.ts"
+    },
+    {
+      "path": "registry/sector23/ui/input/input.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst input = tv({\n  base: [\n    \"flex h-8 w-full items-center justify-center rounded-md border border-input bg-background px-2 text-sm font-normal shadow-sm transition-all duration-150 ease-default outline-none\",\n    \"file:me-2 file:rounded-sm file:bg-input/50 file:px-2 file:py-px file:font-medium\",\n    \"placeholder:text-muted-foreground\",\n    \"focus-visible:ring-2 focus-visible:ring-ring/50\",\n    \"data-disabled:pointer-events-none data-disabled:opacity-50\",\n    \"data-invalid:border-destructive/50\",\n    \"focus-visible:data-invalid:ring-destructive/50\",\n    \"dark:bg-input/15\",\n    \"[[type='file']]:py-1\",\n  ],\n});\n\nexport { input };\n",
+      "type": "registry:ui",
+      "target": "@ui/input/input.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/input/input.tsx",
+      "content": "\"use client\";\n\nimport { useDirection } from \"@base-ui/react\";\nimport { Input as BaseInput } from \"@base-ui/react/input\";\n\nimport { mergeVariantClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { input } from \"./input.style\";\n\nfunction Input({ className, ...props }: BaseInput.Props) {\n  const direction = useDirection();\n\n  return (\n    <BaseInput\n      data-slot=\"input\"\n      className={mergeVariantClassName(input, {}, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nexport { Input };\n",
+      "type": "registry:ui",
+      "target": "@ui/input/input.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/alert-dialog/alert-dialog.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst alertDialog = tv({\n  slots: {\n    trigger: \"\",\n    portal: \"\",\n    backdrop: [\n      \"fixed inset-0 min-h-dvh bg-black/20 backdrop-blur-xs transition-all duration-150 ease-default\",\n      \"data-ending-style:opacity-0 data-starting-style:opacity-0\",\n      \"supports-[-webkit-touch-callout:none]:absolute\",\n      \"dark:bg-black/50\",\n    ],\n    viewport: \"\",\n    popup: [\n      \"fixed top-1/2 left-1/2 flex w-md max-w-[calc(100vw-3rem)] -translate-x-1/2 -translate-y-1/2 flex-col rounded-lg border border-border bg-popover text-popover-foreground shadow-lg transition-[scale,opacity] duration-300 ease-default outline-none\",\n      \"data-ending-style:scale-95 data-ending-style:opacity-0\",\n      \"data-starting-style:scale-95 data-starting-style:opacity-0\",\n    ],\n    header: \"flex flex-col gap-1.5 p-4\",\n    title: \"text-base leading-none font-semibold text-foreground\",\n    description: \"text-sm text-muted-foreground\",\n    footer: \"flex flex-wrap items-center justify-end gap-2 p-4\",\n    close: \"\",\n  },\n});\n\nexport { alertDialog };\n",
+      "type": "registry:ui",
+      "target": "@ui/alert-dialog/alert-dialog.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/alert-dialog/alert-dialog.tsx",
+      "content": "\"use client\";\n\nimport { mergeProps, useDirection, useRender } from \"@base-ui/react\";\nimport { AlertDialog as BaseAlertDialog } from \"@base-ui/react/alert-dialog\";\n\nimport { mergeSlotClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { alertDialog } from \"./alert-dialog.style\";\n\nconst createAlertDialogHandle = BaseAlertDialog.createHandle;\n\nfunction AlertDialog(props: BaseAlertDialog.Root.Props) {\n  return <BaseAlertDialog.Root {...props} />;\n}\n\nfunction AlertDialogTrigger({ className, ...props }: BaseAlertDialog.Trigger.Props) {\n  return (\n    <BaseAlertDialog.Trigger\n      data-slot=\"alert-dialog-trigger\"\n      className={mergeSlotClassName(alertDialog().trigger, className)}\n      {...props}\n    />\n  );\n}\n\nfunction AlertDialogPortal({ className, ...props }: BaseAlertDialog.Portal.Props) {\n  return (\n    <BaseAlertDialog.Portal\n      data-slot=\"alert-dialog-portal\"\n      className={mergeSlotClassName(alertDialog().portal, className)}\n      {...props}\n    />\n  );\n}\n\nfunction AlertDialogBackdrop({ className, ...props }: BaseAlertDialog.Backdrop.Props) {\n  return (\n    <BaseAlertDialog.Backdrop\n      data-slot=\"alert-dialog-backdrop\"\n      className={mergeSlotClassName(alertDialog().backdrop, className)}\n      {...props}\n    />\n  );\n}\n\nfunction AlertDialogViewport({ className, ...props }: BaseAlertDialog.Viewport.Props) {\n  return (\n    <BaseAlertDialog.Viewport\n      data-slot=\"alert-dialog-viewport\"\n      className={mergeSlotClassName(alertDialog().viewport, className)}\n      {...props}\n    />\n  );\n}\n\nfunction AlertDialogPopup({ className, ...props }: BaseAlertDialog.Popup.Props) {\n  const direction = useDirection();\n\n  return (\n    <BaseAlertDialog.Popup\n      data-slot=\"alert-dialog-popup\"\n      className={mergeSlotClassName(alertDialog().popup, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nfunction AlertDialogHeader({ className, render, ...props }: useRender.ComponentProps<\"div\">) {\n  const header = useRender({\n    defaultTagName: \"div\",\n    props: {\n      ...mergeProps<\"div\">({ className: alertDialog().header({ className }) }, props),\n      \"data-slot\": \"alert-dialog-header\",\n    },\n    render,\n  });\n\n  return header;\n}\n\nfunction AlertDialogTitle({ className, ...props }: BaseAlertDialog.Title.Props) {\n  return (\n    <BaseAlertDialog.Title\n      data-slot=\"alert-dialog-title\"\n      className={mergeSlotClassName(alertDialog().title, className)}\n      {...props}\n    />\n  );\n}\n\nfunction AlertDialogDescription({ className, ...props }: BaseAlertDialog.Description.Props) {\n  return (\n    <BaseAlertDialog.Description\n      data-slot=\"alert-dialog-description\"\n      className={mergeSlotClassName(alertDialog().description, className)}\n      {...props}\n    />\n  );\n}\n\nfunction AlertDialogFooter({ className, render, ...props }: useRender.ComponentProps<\"div\">) {\n  const footer = useRender({\n    defaultTagName: \"div\",\n    props: {\n      ...mergeProps<\"div\">({ className: alertDialog().footer({ className }) }, props),\n      \"data-slot\": \"alert-dialog-footer\",\n    },\n    render,\n  });\n\n  return footer;\n}\n\nfunction AlertDialogClose({ className, ...props }: BaseAlertDialog.Close.Props) {\n  return (\n    <BaseAlertDialog.Close\n      data-slot=\"alert-dialog-close\"\n      className={mergeSlotClassName(alertDialog().close, className)}\n      {...props}\n    />\n  );\n}\n\nexport {\n  createAlertDialogHandle,\n  AlertDialog,\n  AlertDialogTrigger,\n  AlertDialogPortal,\n  AlertDialogBackdrop,\n  AlertDialogViewport,\n  AlertDialogPopup,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogClose,\n};\n",
+      "type": "registry:ui",
+      "target": "@ui/alert-dialog/alert-dialog.tsx"
+    },
+    {
+      "path": "registry/sector23/ui/alert-dialog/index.ts",
+      "content": "export {\n  createAlertDialogHandle,\n  AlertDialog,\n  AlertDialogTrigger,\n  AlertDialogPortal,\n  AlertDialogBackdrop,\n  AlertDialogViewport,\n  AlertDialogPopup,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogClose,\n} from \"./alert-dialog\";\n",
+      "type": "registry:ui",
+      "target": "@ui/alert-dialog/index.ts"
+    }
+  ],
+  "type": "registry:ui"
+}

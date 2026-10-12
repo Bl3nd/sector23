@@ -1,4 +1,4 @@
-import { Avatar } from "@/app/components/avatar";
+import { Avatar } from "@/registry/sector23/ui/avatar";
 import {
   PreviewCard,
   PreviewCardArrow,
@@ -7,7 +7,7 @@ import {
   PreviewCardPortal,
   PreviewCardPositioner,
   PreviewCardTrigger,
-} from "@/app/components/preview-card";
+} from "@/registry/sector23/ui/preview-card";
 
 const engineer = {
   name: "Priya Raman",

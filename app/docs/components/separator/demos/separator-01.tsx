@@ -1,5 +1,5 @@
 // oxlint-disable no-magic-numbers
-import { Separator } from "@/app/components/separator";
+import { Separator } from "@/registry/sector23/ui/separator";
 
 const links = [
   { label: "Docs", href: "#" },

@@ -2,8 +2,13 @@
 
 import { useId } from "react";
 
-import { Label } from "@/app/components/label";
-import { Radio, RadioGroup, RadioGroupLegend, RadioIndicator } from "@/app/components/radio-group";
+import { Label } from "@/registry/sector23/ui/label";
+import {
+  Radio,
+  RadioGroup,
+  RadioGroupLegend,
+  RadioIndicator,
+} from "@/registry/sector23/ui/radio-group";
 
 export default function RadioGroup01() {
   const id = useId();

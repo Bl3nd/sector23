@@ -1,5 +1,5 @@
-import { Input } from "@/app/components/input";
-import { Label } from "@/app/components/label";
+import { Input } from "@/registry/sector23/ui/input";
+import { Label } from "@/registry/sector23/ui/label";
 
 export default function Label01() {
   return (

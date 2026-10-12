@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/popover/index.ts",
+      "content": "export {\n  createPopoverHandle,\n  Popover,\n  PopoverTrigger,\n  PopoverPortal,\n  PopoverBackdrop,\n  PopoverPositioner,\n  PopoverPopup,\n  PopoverArrow,\n  PopoverViewport,\n  PopoverTitle,\n  PopoverDescription,\n  PopoverClose,\n} from \"./popover\";\n",
+      "type": "registry:ui",
+      "target": "@ui/popover/index.ts"
+    },
+    {
+      "path": "registry/sector23/ui/popover/popover.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst popover = tv({\n  slots: {\n    trigger: \"\",\n    portal: \"\",\n    backdrop: \"\",\n    positioner: \"\",\n    popup: [\n      \"relative flex h-(--popup-height,auto) w-(--popup-width,auto) max-w-full origin-(--transform-origin) flex-col gap-1.5 rounded-md border border-border bg-popover p-3 text-popover-foreground shadow-md transition-[scale,opacity] duration-200 ease-default outline-none\",\n      \"data-ending-style:scale-95 data-ending-style:opacity-0\",\n      \"data-starting-style:scale-95 data-starting-style:opacity-0\",\n    ],\n    arrow: [\n      \"relative block h-1.5 w-3 overflow-clip\",\n      \"before:absolute before:bottom-0 before:left-1/2 before:h-[calc(6px*sqrt(2))] before:w-[calc(6px*sqrt(2))] before:transform-[translate(-50%,50%)_rotate(45deg)] before:border before:border-border before:bg-popover before:content-['']\",\n      \"data-[side=bottom]:-top-1.5\",\n      \"data-[side=inline-end]:-inset-s-2.25 data-[side=inline-end]:-rotate-90\",\n      \"data-[side=inline-start]:-inset-e-2.25 data-[side=inline-start]:rotate-90\",\n      \"data-[side=left]:-right-2.25 data-[side=left]:rotate-90\",\n      \"data-[side=right]:-left-2.25 data-[side=right]:-rotate-90\",\n      \"data-[side=top]:-bottom-1.5 data-[side=top]:rotate-180\",\n    ],\n    viewport: \"\",\n    title: \"text-sm font-semibold\",\n    description: \"text-sm text-muted-foreground\",\n    close: \"\",\n  },\n});\n\nexport { popover };\n",
+      "type": "registry:ui",
+      "target": "@ui/popover/popover.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/popover/popover.tsx",
+      "content": "\"use client\";\n\nimport { useDirection } from \"@base-ui/react\";\nimport { Popover as BasePopover } from \"@base-ui/react/popover\";\n\nimport { mergeSlotClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { popover } from \"./popover.style\";\n\nconst POSITIONER_SIDE_OFFSET = 8;\n\nconst createPopoverHandle = BasePopover.createHandle;\n\nfunction Popover(props: BasePopover.Root.Props) {\n  return <BasePopover.Root {...props} />;\n}\n\nfunction PopoverTrigger({ className, ...props }: BasePopover.Trigger.Props) {\n  return (\n    <BasePopover.Trigger\n      data-slot=\"popover-trigger\"\n      className={mergeSlotClassName(popover().trigger, className)}\n      {...props}\n    />\n  );\n}\n\nfunction PopoverPortal({ className, ...props }: BasePopover.Portal.Props) {\n  const direction = useDirection();\n\n  return (\n    <BasePopover.Portal\n      data-slot=\"popover-portal\"\n      className={mergeSlotClassName(popover().portal, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nfunction PopoverBackdrop({ className, ...props }: BasePopover.Backdrop.Props) {\n  return (\n    <BasePopover.Backdrop\n      data-slot=\"popover-backdrop\"\n      className={mergeSlotClassName(popover().backdrop, className)}\n      {...props}\n    />\n  );\n}\n\nfunction PopoverPositioner({\n  className,\n  sideOffset = POSITIONER_SIDE_OFFSET,\n  ...props\n}: BasePopover.Positioner.Props) {\n  return (\n    <BasePopover.Positioner\n      data-slot=\"popover-positioner\"\n      className={mergeSlotClassName(popover().positioner, className)}\n      sideOffset={sideOffset}\n      {...props}\n    />\n  );\n}\n\nfunction PopoverPopup({ className, ...props }: BasePopover.Popup.Props) {\n  return (\n    <BasePopover.Popup\n      data-slot=\"popover-popup\"\n      className={mergeSlotClassName(popover().popup, className)}\n      {...props}\n    />\n  );\n}\n\nfunction PopoverArrow({ className, ...props }: BasePopover.Arrow.Props) {\n  return (\n    <BasePopover.Arrow\n      data-slot=\"popover-arrow\"\n      className={mergeSlotClassName(popover().arrow, className)}\n      {...props}\n    />\n  );\n}\n\nfunction PopoverViewport({ className, ...props }: BasePopover.Viewport.Props) {\n  return (\n    <BasePopover.Viewport\n      data-slot=\"popover-viewport\"\n      className={mergeSlotClassName(popover().viewport, className)}\n      {...props}\n    />\n  );\n}\n\nfunction PopoverTitle({ className, ...props }: BasePopover.Title.Props) {\n  return (\n    <BasePopover.Title\n      data-slot=\"popover-title\"\n      className={mergeSlotClassName(popover().title, className)}\n      {...props}\n    />\n  );\n}\n\nfunction PopoverDescription({ className, ...props }: BasePopover.Description.Props) {\n  return (\n    <BasePopover.Description\n      data-slot=\"popover-description\"\n      className={mergeSlotClassName(popover().description, className)}\n      {...props}\n    />\n  );\n}\n\nfunction PopoverClose({ className, ...props }: BasePopover.Close.Props) {\n  return (\n    <BasePopover.Close\n      data-slot=\"popover-close\"\n      className={mergeSlotClassName(popover().close, className)}\n      {...props}\n    />\n  );\n}\n\nexport {\n  createPopoverHandle,\n  Popover,\n  PopoverTrigger,\n  PopoverPortal,\n  PopoverBackdrop,\n  PopoverPositioner,\n  PopoverPopup,\n  PopoverArrow,\n  PopoverViewport,\n  PopoverTitle,\n  PopoverDescription,\n  PopoverClose,\n};\n",
+      "type": "registry:ui",
+      "target": "@ui/popover/popover.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

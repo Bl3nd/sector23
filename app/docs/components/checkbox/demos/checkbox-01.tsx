@@ -1,5 +1,5 @@
-import { Checkbox, CheckboxIndicator } from "@/app/components/checkbox";
-import { Label } from "@/app/components/label";
+import { Checkbox, CheckboxIndicator } from "@/registry/sector23/ui/checkbox";
+import { Label } from "@/registry/sector23/ui/label";
 
 export default function Checkbox01() {
   return (

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-group",
+  "dependencies": [
+    "@base-ui/react@^1.9.0",
+    "tailwind-variants@^3.3.1"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/theme.json",
+    "http://localhost:3000/r/merge-base-ui.json"
+  ],
+  "files": [
+    {
+      "path": "registry/sector23/ui/checkbox-group/checkbox-group.style.ts",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst checkboxGroup = tv({\n  slots: {\n    root: \"group flex flex-col gap-2\",\n    legend: \"text-sm font-semibold text-foreground group-data-disabled:opacity-50\",\n  },\n});\n\nexport { checkboxGroup };\n",
+      "type": "registry:ui",
+      "target": "@ui/checkbox-group/checkbox-group.style.ts"
+    },
+    {
+      "path": "registry/sector23/ui/checkbox-group/checkbox-group.tsx",
+      "content": "\"use client\";\n\nimport { mergeProps, useDirection, useRender } from \"@base-ui/react\";\nimport { CheckboxGroup as BaseCheckboxGroup } from \"@base-ui/react/checkbox-group\";\n\nimport { mergeSlotClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { checkboxGroup } from \"./checkbox-group.style\";\n\nfunction CheckboxGroup({ className, ...props }: BaseCheckboxGroup.Props) {\n  const direction = useDirection();\n\n  return (\n    <BaseCheckboxGroup\n      data-slot=\"checkbox-group\"\n      className={mergeSlotClassName(checkboxGroup().root, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nfunction CheckboxGroupLegend({ className, render, ...props }: useRender.ComponentProps<\"div\">) {\n  const legend = useRender({\n    defaultTagName: \"div\",\n    props: {\n      ...mergeProps({ className: checkboxGroup().legend({ className }) }, props),\n      \"data-slot\": \"checkbox-group-legend\",\n    },\n    render,\n  });\n\n  return legend;\n}\n\nexport { CheckboxGroup, CheckboxGroupLegend };\n",
+      "type": "registry:ui",
+      "target": "@ui/checkbox-group/checkbox-group.tsx"
+    },
+    {
+      "path": "registry/sector23/ui/checkbox-group/index.ts",
+      "content": "export { CheckboxGroup, CheckboxGroupLegend } from \"./checkbox-group\";\n",
+      "type": "registry:ui",
+      "target": "@ui/checkbox-group/index.ts"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,7 +1,7 @@
 import { BoldIcon, ItalicIcon, UnderlineIcon } from "lucide-react";
 
-import { Toggle } from "@/app/components/toggle";
-import { ToggleGroup } from "@/app/components/toggle-group";
+import { Toggle } from "@/registry/sector23/ui/toggle";
+import { ToggleGroup } from "@/registry/sector23/ui/toggle-group";
 import {
   Tooltip,
   TooltipArrow,
@@ -10,7 +10,7 @@ import {
   TooltipPositioner,
   TooltipProvider,
   TooltipTrigger,
-} from "@/app/components/tooltip";
+} from "@/registry/sector23/ui/tooltip";
 
 export default function Tooltip01() {
   return (
