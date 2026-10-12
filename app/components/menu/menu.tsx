@@ -9,7 +9,12 @@ import { menu } from "./menu.style";
 
 const POSITIONER_SIDE_OFFSET = 6;
 
+const useMenuFilter = BaseMenu.useFilter;
 const createMenuHandle = BaseMenu.createHandle;
+
+function MenuFilterProvider(props: BaseMenu.FilterProvider.Props) {
+  return <BaseMenu.FilterProvider {...props} />;
+}
 
 function Menu(props: BaseMenu.Root.Props) {
   return <BaseMenu.Root {...props} />;
@@ -208,7 +213,9 @@ function MenuViewport({ className, ...props }: BaseMenu.Viewport.Props) {
 }
 
 export {
+  useMenuFilter,
   createMenuHandle,
+  MenuFilterProvider,
   Menu,
   MenuTrigger,
   MenuPortal,

@@ -1,5 +1,7 @@
 export {
+  useMenuFilter,
   createMenuHandle,
+  MenuFilterProvider,
   Menu,
   MenuTrigger,
   MenuPortal,
