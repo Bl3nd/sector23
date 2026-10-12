@@ -47,43 +47,41 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <DirectionProvider direction="ltr">
         <body className="relative flex min-h-full flex-col">
           <ThemeProvider>
-            <div className="isolate h-screen">
-              <div className="flex h-full flex-col">
-                <header className="mb-2 flex items-center border-b border-border bg-muted px-4 py-2 sm:mb-4">
-                  <NavigationMenu>
-                    <NavigationMenuList>
-                      <NavigationMenuItem>
-                        <NavigationMenuLink
-                          render={<Link href="/" />}
-                          className="px-2 py-1.5 text-sm"
-                        >
-                          Home
-                        </NavigationMenuLink>
-                      </NavigationMenuItem>
-                      <NavigationMenuItem>
-                        <NavigationMenuLink
-                          render={<Link href="/docs" />}
-                          className="px-2 py-1.5 text-sm"
-                        >
-                          Docs
-                        </NavigationMenuLink>
-                      </NavigationMenuItem>
-                    </NavigationMenuList>
-                  </NavigationMenu>
-                </header>
-                {children}
-                <footer className="mt-auto mb-4 px-4 sm:px-6 lg:px-8">
-                  <p className="text-sm text-muted-foreground">
-                    Made with{" "}
-                    <Link
-                      href="https://markdoc.dev/"
-                      className="rounded-md font-medium text-primary underline transition-colors outline-none hover:text-primary/80 focus-visible:ring-2 focus-visible:ring-ring/50"
-                    >
-                      Markdoc
-                    </Link>
-                  </p>
-                </footer>
-              </div>
+            <div className="isolate flex min-h-screen flex-col [--header-height:3rem]">
+              <header className="sticky top-0 z-10 flex h-(--header-height) items-center border-b border-border bg-muted px-4">
+                <NavigationMenu>
+                  <NavigationMenuList>
+                    <NavigationMenuItem>
+                      <NavigationMenuLink
+                        render={<Link href="/" />}
+                        className="px-2 py-1.5 text-sm"
+                      >
+                        Home
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                      <NavigationMenuLink
+                        render={<Link href="/docs" />}
+                        className="px-2 py-1.5 text-sm"
+                      >
+                        Docs
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                  </NavigationMenuList>
+                </NavigationMenu>
+              </header>
+              {children}
+              <footer className="mt-auto mb-4 px-4 sm:px-6 lg:px-8">
+                <p className="text-sm text-muted-foreground">
+                  Powered by{" "}
+                  <Link
+                    href="https://markdoc.dev/"
+                    className="rounded-md font-medium text-primary underline transition-colors outline-none hover:text-primary/80 focus-visible:ring-2 focus-visible:ring-ring/50"
+                  >
+                    Markdoc
+                  </Link>
+                </p>
+              </footer>
             </div>
           </ThemeProvider>
         </body>

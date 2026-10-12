@@ -98,12 +98,26 @@ function parseDemoPath(raw: string): DemoPath {
   );
 }
 
-export function ComponentDemo({ component }: { component: string }) {
+export function ComponentDemo({
+  component,
+  showViewport = false,
+}: {
+  component: string;
+  showViewport?: boolean;
+}) {
   const Demo = demoRegistry[parseDemoPath(component)];
 
   return (
-    <DemoViewportFrame>
-      <Demo />
-    </DemoViewportFrame>
+    <>
+      {showViewport ? (
+        <DemoViewportFrame>
+          <Demo />
+        </DemoViewportFrame>
+      ) : (
+        <div className="mx-auto w-full max-w-xl rounded-md border border-border p-2">
+          <Demo />
+        </div>
+      )}
+    </>
   );
 }

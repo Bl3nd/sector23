@@ -12,3 +12,4 @@ export {
   DialogFooter,
   DialogClose,
 } from "./dialog";
+export type { DialogHandle } from "./dialog";

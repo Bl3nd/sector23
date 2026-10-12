@@ -17,3 +17,4 @@ export {
   DrawerFooter,
   DrawerClose,
 } from "./drawer";
+export type { DrawerHandle } from "./drawer";

@@ -7,6 +7,8 @@ import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
 
 import { dialog } from "./dialog.style";
 
+type DialogHandle = ReturnType<typeof createDialogHandle>;
+
 const createDialogHandle = BaseDialog.createHandle;
 
 function Dialog(props: BaseDialog.Root.Props) {
@@ -136,3 +138,4 @@ export {
   DialogFooter,
   DialogClose,
 };
+export type { DialogHandle };

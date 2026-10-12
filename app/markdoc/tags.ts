@@ -5,6 +5,7 @@ const tags = {
     selfClosing: true,
     attributes: {
       component: { type: "string" },
+      showViewport: { type: "boolean", default: false },
     },
     render: ComponentDemo,
   },

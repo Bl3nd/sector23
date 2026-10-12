@@ -7,6 +7,8 @@ import { mergeSlotClassName } from "@/app/lib/merge-base-ui";
 
 import { drawer } from "./drawer.style";
 
+type DrawerHandle = ReturnType<typeof createDrawerHandle>;
+
 const createDrawerHandle = BaseDrawer.createHandle;
 
 function DrawerProvider(props: BaseDrawer.Provider.Props) {
@@ -185,3 +187,4 @@ export {
   DrawerFooter,
   DrawerClose,
 };
+export type { DrawerHandle };
