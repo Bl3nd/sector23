@@ -5,7 +5,7 @@ import {
   TabsList,
   TabsPanel,
   TabsTab,
-} from "@/app/components/tabs";
+} from "@/registry/sector23/ui/tabs";
 
 export default function Tabs01() {
   return (

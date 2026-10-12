@@ -11,8 +11,8 @@ import {
   AlertDialogPortal,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/app/components/alert-dialog";
-import { Button } from "@/app/components/button";
+} from "@/registry/sector23/ui/alert-dialog";
+import { Button } from "@/registry/sector23/ui/button";
 
 export default function AlertDialog01() {
   return (

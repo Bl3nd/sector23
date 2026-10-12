@@ -6,16 +6,16 @@ import {
   PercentIcon,
 } from "lucide-react";
 
-import { Button } from "@/app/components/button";
-import { Toggle } from "@/app/components/toggle";
-import { ToggleGroup } from "@/app/components/toggle-group";
+import { Button } from "@/registry/sector23/ui/button";
+import { Toggle } from "@/registry/sector23/ui/toggle";
+import { ToggleGroup } from "@/registry/sector23/ui/toggle-group";
 import {
   Toolbar,
   ToolbarButton,
   ToolbarGroup,
   ToolbarLink,
   ToolbarSeparator,
-} from "@/app/components/toolbar";
+} from "@/registry/sector23/ui/toolbar";
 
 export default function Toolbar01() {
   return (

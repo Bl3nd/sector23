@@ -2,7 +2,7 @@
 
 import { useId } from "react";
 
-import { Label } from "@/app/components/label";
+import { Label } from "@/registry/sector23/ui/label";
 import {
   NumberField,
   NumberFieldDecrement,
@@ -11,7 +11,7 @@ import {
   NumberFieldInput,
   NumberFieldScrubArea,
   NumberFieldScrubAreaCursor,
-} from "@/app/components/number-field";
+} from "@/registry/sector23/ui/number-field";
 
 export default function NumberField01() {
   const id = useId();

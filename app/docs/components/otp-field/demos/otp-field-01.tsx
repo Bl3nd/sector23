@@ -1,8 +1,8 @@
 // oxlint-disable no-magic-numbers
 import { useId } from "react";
 
-import { Label } from "@/app/components/label";
-import { OTPField, OTPFieldInput } from "@/app/components/otp-field";
+import { Label } from "@/registry/sector23/ui/label";
+import { OTPField, OTPFieldInput } from "@/registry/sector23/ui/otp-field";
 
 const OTP_LENGTH = 6;
 

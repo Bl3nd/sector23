@@ -1,5 +1,5 @@
-import { Label } from "@/app/components/label";
-import { Switch, SwitchThumb } from "@/app/components/switch";
+import { Label } from "@/registry/sector23/ui/label";
+import { Switch, SwitchThumb } from "@/registry/sector23/ui/switch";
 
 export default function Switch01() {
   return (

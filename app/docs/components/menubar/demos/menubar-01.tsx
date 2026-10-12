@@ -11,7 +11,7 @@ import {
   ZoomOutIcon,
 } from "lucide-react";
 
-import { Button } from "@/app/components/button";
+import { Button } from "@/registry/sector23/ui/button";
 import {
   Menu,
   MenuItem,
@@ -22,8 +22,8 @@ import {
   MenuSubmenu,
   MenuSubmenuTrigger,
   MenuTrigger,
-} from "@/app/components/menu";
-import { Menubar } from "@/app/components/menubar";
+} from "@/registry/sector23/ui/menu";
+import { Menubar } from "@/registry/sector23/ui/menubar";
 
 export default function Menubar01() {
   return (

@@ -1,7 +1,7 @@
-import { Button } from "@/app/components/button";
-import { Field, FieldError, FieldLabel } from "@/app/components/field";
-import { Form } from "@/app/components/form";
-import { Input } from "@/app/components/input";
+import { Button } from "@/registry/sector23/ui/button";
+import { Field, FieldError, FieldLabel } from "@/registry/sector23/ui/field";
+import { Form } from "@/registry/sector23/ui/form";
+import { Input } from "@/registry/sector23/ui/input";
 
 export default function Form01() {
   return (

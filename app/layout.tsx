@@ -11,7 +11,7 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-} from "./components/navigation-menu";
+} from "../registry/sector23/ui/navigation-menu";
 import { ThemeProvider } from "./components/theme-provider";
 
 const fontSans = Quicksand({

@@ -1,6 +1,6 @@
 import { ChevronDownIcon, FileIcon, FilePlusIcon, FolderIcon, FolderPlusIcon } from "lucide-react";
 
-import { Button } from "@/app/components/button";
+import { Button } from "@/registry/sector23/ui/button";
 import {
   Menu,
   MenuItem,
@@ -9,7 +9,7 @@ import {
   MenuPositioner,
   MenuSeparator,
   MenuTrigger,
-} from "@/app/components/menu";
+} from "@/registry/sector23/ui/menu";
 
 export default function Menu01() {
   return (

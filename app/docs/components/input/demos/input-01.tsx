@@ -1,4 +1,4 @@
-import { Input } from "@/app/components/input";
+import { Input } from "@/registry/sector23/ui/input";
 
 export default function Input01() {
   return (

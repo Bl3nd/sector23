@@ -1,6 +1,6 @@
 import { UserIcon } from "lucide-react";
 
-import { Button } from "@/app/components/button";
+import { Button } from "@/registry/sector23/ui/button";
 
 export default function Button01() {
   return (

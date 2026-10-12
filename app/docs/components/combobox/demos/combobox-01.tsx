@@ -18,8 +18,8 @@ import {
   ComboboxPortal,
   ComboboxPositioner,
   ComboboxTrigger,
-} from "@/app/components/combobox";
-import { Label } from "@/app/components/label";
+} from "@/registry/sector23/ui/combobox";
+import { Label } from "@/registry/sector23/ui/label";
 
 interface Country {
   code: string;

@@ -1,6 +1,6 @@
 import { ArrowRightIcon } from "lucide-react";
 
-import { Button } from "@/app/components/button";
+import { Button } from "@/registry/sector23/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,7 +13,7 @@ import {
   NavigationMenuPositioner,
   NavigationMenuTrigger,
   NavigationMenuViewport,
-} from "@/app/components/navigation-menu";
+} from "@/registry/sector23/ui/navigation-menu";
 
 interface Department {
   label: string;

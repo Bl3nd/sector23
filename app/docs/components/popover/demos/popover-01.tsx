@@ -1,4 +1,4 @@
-import { Button } from "@/app/components/button";
+import { Button } from "@/registry/sector23/ui/button";
 import {
   Popover,
   PopoverArrow,
@@ -9,7 +9,7 @@ import {
   PopoverPositioner,
   PopoverTitle,
   PopoverTrigger,
-} from "@/app/components/popover";
+} from "@/registry/sector23/ui/popover";
 
 const notifications = [
   { id: 1, message: "Sarah commented on Acme Website", time: "2 minutes ago" },

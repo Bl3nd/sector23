@@ -1,6 +1,6 @@
 import { MenuIcon, ShoppingCartIcon, XIcon } from "lucide-react";
 
-import { Button } from "@/app/components/button";
+import { Button } from "@/registry/sector23/ui/button";
 import {
   Drawer,
   DrawerBackdrop,
@@ -14,7 +14,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
   DrawerViewport,
-} from "@/app/components/drawer";
+} from "@/registry/sector23/ui/drawer";
 
 export default function Drawer01() {
   return (

@@ -4,7 +4,7 @@ import {
   ScrollAreaScrollbar,
   ScrollAreaThumb,
   ScrollAreaViewport,
-} from "@/app/components/scroll-area";
+} from "@/registry/sector23/ui/scroll-area";
 
 export default function ScrollArea01() {
   return (

@@ -1,12 +1,12 @@
 import { ChevronDownIcon } from "lucide-react";
 
-import { Accordion } from "@/app/components/accordion";
+import { Accordion } from "@/registry/sector23/ui/accordion";
 import {
   AccordionHeader,
   AccordionItem,
   AccordionPanel,
   AccordionTrigger,
-} from "@/app/components/accordion";
+} from "@/registry/sector23/ui/accordion";
 
 export default function Accordion01() {
   return (

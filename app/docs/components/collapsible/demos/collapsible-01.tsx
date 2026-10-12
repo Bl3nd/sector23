@@ -1,6 +1,10 @@
 import { ChevronDownIcon } from "lucide-react";
 
-import { Collapsible, CollapsiblePanel, CollapsibleTrigger } from "@/app/components/collapsible";
+import {
+  Collapsible,
+  CollapsiblePanel,
+  CollapsibleTrigger,
+} from "@/registry/sector23/ui/collapsible";
 
 export default function Collapsible01() {
   return (

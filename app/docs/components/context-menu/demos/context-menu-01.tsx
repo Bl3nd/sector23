@@ -18,7 +18,7 @@ import {
   ContextMenuPositioner,
   ContextMenuSeparator,
   ContextMenuTrigger,
-} from "@/app/components/context-menu";
+} from "@/registry/sector23/ui/context-menu";
 
 export default function ContextMenu01() {
   return (

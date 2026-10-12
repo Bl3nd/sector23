@@ -4,9 +4,9 @@ import type { ReactNode } from "react";
 
 import { MenuIcon } from "lucide-react";
 
-import { Button } from "@/app/components/button";
 import DocsSidebar from "@/app/components/docs/docs-sidebar";
-import { createDrawerHandle, DrawerTrigger } from "@/app/components/drawer";
+import { Button } from "@/registry/sector23/ui/button";
+import { createDrawerHandle, DrawerTrigger } from "@/registry/sector23/ui/drawer";
 
 const drawerHandle = createDrawerHandle();
 

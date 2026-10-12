@@ -6,7 +6,7 @@ import {
   SliderThumb,
   SliderTrack,
   SliderValue,
-} from "@/app/components/slider";
+} from "@/registry/sector23/ui/slider";
 
 export default function Slider01() {
   return (
