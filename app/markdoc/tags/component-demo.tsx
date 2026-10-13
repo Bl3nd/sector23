@@ -21,7 +21,11 @@ import {
   ButtonSize,
   ButtonVariant,
 } from "@/app/docs/components/button/demos";
-import CheckboxGroup01 from "@/app/docs/components/checkbox-group/demos/checkbox-group-01";
+import {
+  CheckboxGroupDefault,
+  CheckboxGroupDisabled,
+  CheckboxGroupParent,
+} from "@/app/docs/components/checkbox-group/demos";
 import {
   CheckboxDefault,
   CheckboxDisabled,
@@ -80,7 +84,9 @@ const demoRegistry = {
   "checkbox-default": CheckboxDefault,
   "checkbox-disabled": CheckboxDisabled,
   "checkbox-readonly": CheckboxReadonly,
-  "checkbox-group-01": CheckboxGroup01,
+  "checkbox-group-default": CheckboxGroupDefault,
+  "checkbox-group-parent": CheckboxGroupParent,
+  "checkbox-group-disabled": CheckboxGroupDisabled,
   "collapsible-01": Collapsible01,
   "combobox-01": Combobox01,
   "context-menu-01": ContextMenu01,
