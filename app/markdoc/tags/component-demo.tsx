@@ -22,7 +22,11 @@ import {
   ButtonVariant,
 } from "@/app/docs/components/button/demos";
 import CheckboxGroup01 from "@/app/docs/components/checkbox-group/demos/checkbox-group-01";
-import Checkbox01 from "@/app/docs/components/checkbox/demos/checkbox-01";
+import {
+  CheckboxDefault,
+  CheckboxDisabled,
+  CheckboxReadonly,
+} from "@/app/docs/components/checkbox/demos";
 import Collapsible01 from "@/app/docs/components/collapsible/demos/collapsible-01";
 import Combobox01 from "@/app/docs/components/combobox/demos/combobox-01";
 import ContextMenu01 from "@/app/docs/components/context-menu/demos/context-menu-01";
@@ -73,7 +77,9 @@ const demoRegistry = {
   "button-variant": ButtonVariant,
   "button-size": ButtonSize,
   "button-loading": ButtonLoading,
-  "checkbox-01": Checkbox01,
+  "checkbox-default": CheckboxDefault,
+  "checkbox-disabled": CheckboxDisabled,
+  "checkbox-readonly": CheckboxReadonly,
   "checkbox-group-01": CheckboxGroup01,
   "collapsible-01": Collapsible01,
   "combobox-01": Combobox01,
