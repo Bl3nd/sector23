@@ -15,7 +15,12 @@ import {
   AutocompleteReadonly,
 } from "@/app/docs/components/autocomplete/demos";
 import { AvatarDefault } from "@/app/docs/components/avatar/demos";
-import Button01 from "@/app/docs/components/button/demos/button-01";
+import {
+  ButtonDefault,
+  ButtonLoading,
+  ButtonSize,
+  ButtonVariant,
+} from "@/app/docs/components/button/demos";
 import CheckboxGroup01 from "@/app/docs/components/checkbox-group/demos/checkbox-group-01";
 import Checkbox01 from "@/app/docs/components/checkbox/demos/checkbox-01";
 import Collapsible01 from "@/app/docs/components/collapsible/demos/collapsible-01";
@@ -64,7 +69,10 @@ const demoRegistry = {
   "autocomplete-disabled": AutocompleteDisabled,
   "autocomplete-readonly": AutocompleteReadonly,
   "avatar-default": AvatarDefault,
-  "button-01": Button01,
+  "button-default": ButtonDefault,
+  "button-variant": ButtonVariant,
+  "button-size": ButtonSize,
+  "button-loading": ButtonLoading,
   "checkbox-01": Checkbox01,
   "checkbox-group-01": CheckboxGroup01,
   "collapsible-01": Collapsible01,
