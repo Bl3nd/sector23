@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "sector23",
-  "homepage": "http://localhost:3000",
+  "homepage": "https://sector23.vercel.app",
   "include": ["registry/sector23/registry.json"]
 }
