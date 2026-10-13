@@ -20,7 +20,10 @@ function ScrollArea({ className, ...props }: BaseScrollArea.Root.Props) {
   );
 }
 
-function ScrollAreaViewport({ className, ...props }: BaseScrollArea.Viewport.Props) {
+function ScrollAreaViewport({
+  className,
+  ...props
+}: BaseScrollArea.Viewport.Props) {
   return (
     <BaseScrollArea.Viewport
       data-slot="scroll-area-viewport"
@@ -30,7 +33,10 @@ function ScrollAreaViewport({ className, ...props }: BaseScrollArea.Viewport.Pro
   );
 }
 
-function ScrollAreaContent({ className, ...props }: BaseScrollArea.Content.Props) {
+function ScrollAreaContent({
+  className,
+  ...props
+}: BaseScrollArea.Content.Props) {
   return (
     <BaseScrollArea.Content
       data-slot="scroll-area-content"
@@ -40,7 +46,10 @@ function ScrollAreaContent({ className, ...props }: BaseScrollArea.Content.Props
   );
 }
 
-function ScrollAreaScrollbar({ className, ...props }: BaseScrollArea.Scrollbar.Props) {
+function ScrollAreaScrollbar({
+  className,
+  ...props
+}: BaseScrollArea.Scrollbar.Props) {
   return (
     <BaseScrollArea.Scrollbar
       data-slot="scroll-area-scrollbar"
@@ -60,7 +69,10 @@ function ScrollAreaThumb({ className, ...props }: BaseScrollArea.Thumb.Props) {
   );
 }
 
-function ScrollAreaCorner({ className, ...props }: BaseScrollArea.Corner.Props) {
+function ScrollAreaCorner({
+  className,
+  ...props
+}: BaseScrollArea.Corner.Props) {
   return (
     <BaseScrollArea.Corner
       data-slot="scroll-area-corner"

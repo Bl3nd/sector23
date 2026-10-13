@@ -1,6 +1,13 @@
 #!/usr/bin/env bun
 import { spawn, spawnSync } from "node:child_process";
-import { existsSync, mkdirSync, openSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  mkdirSync,
+  openSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -17,7 +24,9 @@ const readyUrl = `${origin}${readyPath}`;
 const command = process.argv[2];
 
 if (!["launch", "doctor", "cleanup"].includes(command)) {
-  console.error("usage: bun .cursor/skills/verify-sector23/verify.mjs <launch|doctor|cleanup>");
+  console.error(
+    "usage: bun .cursor/skills/verify-sector23/verify.mjs <launch|doctor|cleanup>",
+  );
   process.exit(2);
 }
 
@@ -60,7 +69,9 @@ function commandLine(pid) {
 }
 
 function listeningPids(targetPort) {
-  const result = spawnSync("netstat", ["-ano", "-p", "tcp"], { encoding: "utf8" });
+  const result = spawnSync("netstat", ["-ano", "-p", "tcp"], {
+    encoding: "utf8",
+  });
   const pids = new Set();
   for (const line of (result.stdout ?? "").split(/\r?\n/)) {
     if (!line.includes("LISTENING")) {
@@ -236,9 +247,13 @@ function cleanup() {
       );
       process.exit(1);
     }
-    const killed = spawnSync("taskkill", ["/PID", String(pid), "/T", "/F"], { encoding: "utf8" });
+    const killed = spawnSync("taskkill", ["/PID", String(pid), "/T", "/F"], {
+      encoding: "utf8",
+    });
     if (killed.status !== 0 && alive(pid)) {
-      console.error((killed.stderr || killed.stdout || "taskkill failed").trim());
+      console.error(
+        (killed.stderr || killed.stdout || "taskkill failed").trim(),
+      );
       process.exit(1);
     }
   }

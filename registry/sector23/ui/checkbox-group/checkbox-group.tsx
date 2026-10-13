@@ -20,11 +20,18 @@ function CheckboxGroup({ className, ...props }: BaseCheckboxGroup.Props) {
   );
 }
 
-function CheckboxGroupLegend({ className, render, ...props }: useRender.ComponentProps<"div">) {
+function CheckboxGroupLegend({
+  className,
+  render,
+  ...props
+}: useRender.ComponentProps<"div">) {
   const legend = useRender({
     defaultTagName: "div",
     props: {
-      ...mergeProps({ className: checkboxGroup().legend({ className }) }, props),
+      ...mergeProps(
+        { className: checkboxGroup().legend({ className }) },
+        props,
+      ),
       "data-slot": "checkbox-group-legend",
     },
     render,

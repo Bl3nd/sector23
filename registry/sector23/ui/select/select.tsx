@@ -2,7 +2,12 @@
 
 import { useDirection } from "@base-ui/react";
 import { Select as BaseSelect } from "@base-ui/react/select";
-import { CheckIcon, ChevronDownIcon, ChevronsUpDownIcon, ChevronUpIcon } from "lucide-react";
+import {
+  CheckIcon,
+  ChevronDownIcon,
+  ChevronsUpDownIcon,
+  ChevronUpIcon,
+} from "lucide-react";
 
 import { mergeSlotClassName } from "@/registry/sector23/lib/merge-base-ui";
 
@@ -112,7 +117,11 @@ function SelectPopup({ className, ...props }: BaseSelect.Popup.Props) {
   );
 }
 
-function SelectScrollUpArrow({ className, children, ...props }: BaseSelect.ScrollUpArrow.Props) {
+function SelectScrollUpArrow({
+  className,
+  children,
+  ...props
+}: BaseSelect.ScrollUpArrow.Props) {
   return (
     <BaseSelect.ScrollUpArrow
       data-slot="select-scroll-up-arrow"
@@ -164,7 +173,11 @@ function SelectItemText({ className, ...props }: BaseSelect.ItemText.Props) {
   );
 }
 
-function SelectItemIndicator({ className, children, ...props }: BaseSelect.ItemIndicator.Props) {
+function SelectItemIndicator({
+  className,
+  children,
+  ...props
+}: BaseSelect.ItemIndicator.Props) {
   return (
     <BaseSelect.ItemIndicator
       data-slot="select-item-indicator"
@@ -196,7 +209,10 @@ function SelectGroup({ className, ...props }: BaseSelect.Group.Props) {
   );
 }
 
-function SelectGroupLabel({ className, ...props }: BaseSelect.GroupLabel.Props) {
+function SelectGroupLabel({
+  className,
+  ...props
+}: BaseSelect.GroupLabel.Props) {
   return (
     <BaseSelect.GroupLabel
       data-slot="select-group-label"

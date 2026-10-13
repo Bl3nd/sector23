@@ -25,7 +25,8 @@ export default function PreviewCard01() {
   return (
     <div className="flex flex-col items-center justify-center py-10">
       <p className="max-w-md text-sm">
-        Elevated checkout latency was traced to a saturated connection pool and mitigated by{" "}
+        Elevated checkout latency was traced to a saturated connection pool and
+        mitigated by{" "}
         <PreviewCard>
           <PreviewCardTrigger href="#">{engineer.name}</PreviewCardTrigger>
           <PreviewCardPortal>
@@ -36,8 +37,12 @@ export default function PreviewCard01() {
                   <div className="flex items-center gap-3">
                     <Avatar>{engineer.initials}</Avatar>
                     <div className="flex flex-col">
-                      <span className="text-sm font-medium">{engineer.name}</span>
-                      <span className="text-xs text-muted-foreground">{engineer.role}</span>
+                      <span className="text-sm font-medium">
+                        {engineer.name}
+                      </span>
+                      <span className="text-xs text-muted-foreground">
+                        {engineer.role}
+                      </span>
                     </div>
                   </div>
                   <div className="flex flex-col text-xs text-muted-foreground">
@@ -47,7 +52,9 @@ export default function PreviewCard01() {
                   <dl className="grid grid-cols-2 gap-2">
                     {engineer.stats.map((stat) => (
                       <div key={stat.label} className="flex flex-col">
-                        <dt className="text-xs text-muted-foreground">{stat.label}</dt>
+                        <dt className="text-xs text-muted-foreground">
+                          {stat.label}
+                        </dt>
                         <dd className="text-sm font-medium">{stat.value}</dd>
                       </div>
                     ))}

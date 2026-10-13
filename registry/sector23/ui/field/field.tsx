@@ -40,7 +40,10 @@ function FieldControl({ className, ...props }: BaseField.Control.Props) {
   );
 }
 
-function FieldDescription({ className, ...props }: BaseField.Description.Props) {
+function FieldDescription({
+  className,
+  ...props
+}: BaseField.Description.Props) {
   return (
     <BaseField.Description
       data-slot="field-description"
@@ -74,4 +77,12 @@ function FieldValidity(props: BaseField.Validity.Props) {
   return <BaseField.Validity {...props} />;
 }
 
-export { Field, FieldLabel, FieldControl, FieldDescription, FieldItem, FieldError, FieldValidity };
+export {
+  Field,
+  FieldLabel,
+  FieldControl,
+  FieldDescription,
+  FieldItem,
+  FieldError,
+  FieldValidity,
+};

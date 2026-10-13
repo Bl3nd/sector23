@@ -66,7 +66,9 @@ export default function Combobox01() {
         <ComboboxPortal>
           <ComboboxPositioner>
             <ComboboxPopup>
-              <ComboboxEmpty>We don&apos;t ship to that country yet.</ComboboxEmpty>
+              <ComboboxEmpty>
+                We don&apos;t ship to that country yet.
+              </ComboboxEmpty>
               <ComboboxList>
                 {(country: Country) => (
                   <ComboboxItem key={country.code} value={country}>

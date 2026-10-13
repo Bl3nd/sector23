@@ -9,7 +9,12 @@ import type { ButtonVariantProps } from "./button.style";
 
 import { button } from "./button.style";
 
-function Button({ size, variant, className, ...props }: BaseButton.Props & ButtonVariantProps) {
+function Button({
+  size,
+  variant,
+  className,
+  ...props
+}: BaseButton.Props & ButtonVariantProps) {
   const direction = useDirection();
 
   return (

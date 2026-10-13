@@ -33,14 +33,18 @@ export default function Drawer01() {
                     <ShoppingCartIcon />
                     Shopping cart
                   </DrawerTitle>
-                  <DrawerDescription>View your shopping cart and checkout.</DrawerDescription>
+                  <DrawerDescription>
+                    View your shopping cart and checkout.
+                  </DrawerDescription>
                   <DrawerClose render={<Button variant="ghost" />}>
                     <XIcon />
                   </DrawerClose>
                 </DrawerHeader>
                 <div className="min-h-0 flex-1 overflow-y-auto bg-muted" />
                 <DrawerFooter>
-                  <DrawerClose render={<Button variant="outline" />}>Close</DrawerClose>
+                  <DrawerClose render={<Button variant="outline" />}>
+                    Close
+                  </DrawerClose>
                   <Button size="md">Checkout</Button>
                 </DrawerFooter>
               </DrawerContent>

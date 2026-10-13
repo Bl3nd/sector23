@@ -1,8 +1,19 @@
 import type { ReactNode } from "react";
 
-import Accordion01 from "@/app/docs/components/accordion/demos/accordion-01";
-import AlertDialog01 from "@/app/docs/components/alert-dialog/demos/alert-dialog-01";
-import Autocomplete01 from "@/app/docs/components/autocomplete/demos/autocomplete-01";
+import {
+  AccordionDefault,
+  AccordionHiddenUntilFound,
+  AccordionItemDisabled,
+  AccordionMultiple,
+  AccordionRootDisabled,
+} from "@/app/docs/components/accordion/demos";
+import { AlertDialogDefault } from "@/app/docs/components/alert-dialog/demos";
+import {
+  AutocompleteDefault,
+  AutocompleteDisabled,
+  AutocompleteInputDemo,
+  AutocompleteReadonly,
+} from "@/app/docs/components/autocomplete/demos";
 import Avatar01 from "@/app/docs/components/avatar/demos/avatar-01";
 import Button01 from "@/app/docs/components/button/demos/button-01";
 import CheckboxGroup01 from "@/app/docs/components/checkbox-group/demos/checkbox-group-01";
@@ -42,9 +53,16 @@ import Tooltip01 from "@/app/docs/components/tooltip/demos/tooltip-01";
 import { DemoViewportFrame } from "./demo-viewport-frame";
 
 const demoRegistry = {
-  "accordion-01": Accordion01,
-  "alert-dialog-01": AlertDialog01,
-  "autocomplete-01": Autocomplete01,
+  "accordion-default": AccordionDefault,
+  "accordion-multiple": AccordionMultiple,
+  "accordion-huf": AccordionHiddenUntilFound,
+  "accordion-root-disabled": AccordionRootDisabled,
+  "accordion-item-disabled": AccordionItemDisabled,
+  "alert-dialog-default": AlertDialogDefault,
+  "autocomplete-default": AutocompleteDefault,
+  "autocomplete-input": AutocompleteInputDemo,
+  "autocomplete-disabled": AutocompleteDisabled,
+  "autocomplete-readonly": AutocompleteReadonly,
   "avatar-01": Avatar01,
   "button-01": Button01,
   "checkbox-01": Checkbox01,
@@ -114,7 +132,7 @@ export function ComponentDemo({
           <Demo />
         </DemoViewportFrame>
       ) : (
-        <div className="mx-auto w-full max-w-xl rounded-md border border-border p-2">
+        <div className="mx-auto flex w-full flex-col items-center justify-center rounded-md border border-border p-6">
           <Demo />
         </div>
       )}

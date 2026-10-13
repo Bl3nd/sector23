@@ -15,7 +15,10 @@ function PreviewCard(props: BasePreviewCard.Root.Props) {
   return <BasePreviewCard.Root {...props} />;
 }
 
-function PreviewCardTrigger({ className, ...props }: BasePreviewCard.Trigger.Props) {
+function PreviewCardTrigger({
+  className,
+  ...props
+}: BasePreviewCard.Trigger.Props) {
   return (
     <BasePreviewCard.Trigger
       data-slot="preview-card-trigger"
@@ -25,7 +28,10 @@ function PreviewCardTrigger({ className, ...props }: BasePreviewCard.Trigger.Pro
   );
 }
 
-function PreviewCardPortal({ className, ...props }: BasePreviewCard.Portal.Props) {
+function PreviewCardPortal({
+  className,
+  ...props
+}: BasePreviewCard.Portal.Props) {
   const direction = useDirection();
 
   return (
@@ -38,7 +44,10 @@ function PreviewCardPortal({ className, ...props }: BasePreviewCard.Portal.Props
   );
 }
 
-function PreviewCardBackdrop({ className, ...props }: BasePreviewCard.Backdrop.Props) {
+function PreviewCardBackdrop({
+  className,
+  ...props
+}: BasePreviewCard.Backdrop.Props) {
   return (
     <BasePreviewCard.Backdrop
       data-slot="preview-card-backdrop"
@@ -63,7 +72,10 @@ function PreviewCardPositioner({
   );
 }
 
-function PreviewCardPopup({ className, ...props }: BasePreviewCard.Popup.Props) {
+function PreviewCardPopup({
+  className,
+  ...props
+}: BasePreviewCard.Popup.Props) {
   return (
     <BasePreviewCard.Popup
       data-slot="preview-card-popup"
@@ -73,7 +85,10 @@ function PreviewCardPopup({ className, ...props }: BasePreviewCard.Popup.Props) 
   );
 }
 
-function PreviewCardArrow({ className, ...props }: BasePreviewCard.Arrow.Props) {
+function PreviewCardArrow({
+  className,
+  ...props
+}: BasePreviewCard.Arrow.Props) {
   return (
     <BasePreviewCard.Arrow
       data-slot="preview-card-arrow"
@@ -83,7 +98,10 @@ function PreviewCardArrow({ className, ...props }: BasePreviewCard.Arrow.Props) 
   );
 }
 
-function PreviewCardViewport({ className, ...props }: BasePreviewCard.Viewport.Props) {
+function PreviewCardViewport({
+  className,
+  ...props
+}: BasePreviewCard.Viewport.Props) {
   return (
     <BasePreviewCard.Viewport
       data-slot="preview-card-viewport"
@@ -93,11 +111,18 @@ function PreviewCardViewport({ className, ...props }: BasePreviewCard.Viewport.P
   );
 }
 
-function PreviewCardContent({ className, render, ...props }: useRender.ComponentProps<"div">) {
+function PreviewCardContent({
+  className,
+  render,
+  ...props
+}: useRender.ComponentProps<"div">) {
   const content = useRender({
     defaultTagName: "div",
     props: {
-      ...mergeProps<"div">({ className: previewCard().content({ className }) }, props),
+      ...mergeProps<"div">(
+        { className: previewCard().content({ className }) },
+        props,
+      ),
       "data-slot": "preview-card-content",
     },
     render,

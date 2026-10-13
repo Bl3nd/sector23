@@ -3,7 +3,8 @@ import { tv } from "tailwind-variants";
 const checkboxGroup = tv({
   slots: {
     root: "group flex flex-col gap-2",
-    legend: "text-sm font-semibold text-foreground group-data-disabled:opacity-50",
+    legend:
+      "text-sm font-semibold text-foreground group-data-disabled:opacity-50",
   },
 });
 

@@ -50,7 +50,11 @@ function TabsIndicator({ className, ...props }: BaseTabs.Indicator.Props) {
   );
 }
 
-function TabsContent({ className, render, ...props }: useRender.ComponentProps<"div">) {
+function TabsContent({
+  className,
+  render,
+  ...props
+}: useRender.ComponentProps<"div">) {
   const content = useRender({
     defaultTagName: "div",
     props: {

@@ -1,4 +1,7 @@
-type BaseUIClassName<State> = string | ((state: State) => string | undefined) | undefined;
+type BaseUIClassName<State> =
+  | string
+  | ((state: State) => string | undefined)
+  | undefined;
 
 export function mergeVariantClassName<VariantProps extends object, State>(
   variant: (props?: VariantProps & { className?: string }) => string,

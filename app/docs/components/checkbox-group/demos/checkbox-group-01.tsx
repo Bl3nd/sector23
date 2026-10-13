@@ -3,7 +3,10 @@
 import { useId } from "react";
 
 import { Checkbox, CheckboxIndicator } from "@/registry/sector23/ui/checkbox";
-import { CheckboxGroup, CheckboxGroupLegend } from "@/registry/sector23/ui/checkbox-group";
+import {
+  CheckboxGroup,
+  CheckboxGroupLegend,
+} from "@/registry/sector23/ui/checkbox-group";
 import { Label } from "@/registry/sector23/ui/label";
 
 export default function CheckboxGroup01() {

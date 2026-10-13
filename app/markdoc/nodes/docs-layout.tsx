@@ -6,7 +6,10 @@ import { MenuIcon } from "lucide-react";
 
 import DocsSidebar from "@/app/components/docs/docs-sidebar";
 import { Button } from "@/registry/sector23/ui/button";
-import { createDrawerHandle, DrawerTrigger } from "@/registry/sector23/ui/drawer";
+import {
+  createDrawerHandle,
+  DrawerTrigger,
+} from "@/registry/sector23/ui/drawer";
 
 const drawerHandle = createDrawerHandle();
 
@@ -29,7 +32,9 @@ export function DocsLayout({
           >
             <MenuIcon />
           </DrawerTrigger>
-          <h1 className="font-serif text-3xl font-bold tracking-tight text-foreground">{title}</h1>
+          <h1 className="font-serif text-3xl font-bold tracking-tight text-foreground">
+            {title}
+          </h1>
         </div>
         {children}
       </article>

@@ -15,7 +15,10 @@ const useAutocompleteFilter = BaseAutocomplete.useFilter;
 const useAutocompleteFilteredItems = BaseAutocomplete.useFilteredItems;
 
 function Autocomplete<Items extends readonly { items: readonly unknown[] }[]>(
-  props: Omit<BaseAutocomplete.Root.Props<Items[number]["items"][number]>, "items"> & {
+  props: Omit<
+    BaseAutocomplete.Root.Props<Items[number]["items"][number]>,
+    "items"
+  > & {
     items: Items;
   },
 ): React.JSX.Element;
@@ -24,17 +27,29 @@ function Autocomplete<ItemValue>(
     items?: readonly ItemValue[] | undefined;
   },
 ): React.JSX.Element;
-function Autocomplete<ItemValue>({ items, ...props }: BaseAutocomplete.Root.Props<ItemValue>) {
-  return <BaseAutocomplete.Root items={items as unknown as ItemValue[]} {...props} />;
+function Autocomplete<ItemValue>({
+  items,
+  ...props
+}: BaseAutocomplete.Root.Props<ItemValue>) {
+  return (
+    <BaseAutocomplete.Root items={items as unknown as ItemValue[]} {...props} />
+  );
 }
 
-function AutocompleteControl({ className, render, ...props }: useRender.ComponentProps<"div">) {
+function AutocompleteControl({
+  className,
+  render,
+  ...props
+}: useRender.ComponentProps<"div">) {
   const direction = useDirection();
 
   const control = useRender({
     defaultTagName: "div",
     props: {
-      ...mergeProps<"div">({ className: autocomplete().control({ className }) }, props),
+      ...mergeProps<"div">(
+        { className: autocomplete().control({ className }) },
+        props,
+      ),
       dir: direction,
       "data-slot": "autocomplete-control",
     },
@@ -44,7 +59,10 @@ function AutocompleteControl({ className, render, ...props }: useRender.Componen
   return control;
 }
 
-function AutocompleteInputGroup({ className, ...props }: BaseAutocomplete.InputGroup.Props) {
+function AutocompleteInputGroup({
+  className,
+  ...props
+}: BaseAutocomplete.InputGroup.Props) {
   return (
     <BaseAutocomplete.InputGroup
       data-slot="autocomplete-input-group"
@@ -54,7 +72,10 @@ function AutocompleteInputGroup({ className, ...props }: BaseAutocomplete.InputG
   );
 }
 
-function AutocompleteInput({ className, ...props }: BaseAutocomplete.Input.Props) {
+function AutocompleteInput({
+  className,
+  ...props
+}: BaseAutocomplete.Input.Props) {
   return (
     <BaseAutocomplete.Input
       data-slot="autocomplete-input"
@@ -72,7 +93,10 @@ function AutocompleteInputGroupActions({
   const actions = useRender({
     defaultTagName: "div",
     props: {
-      ...mergeProps<"div">({ className: autocomplete().inputGroupActions({ className }) }, props),
+      ...mergeProps<"div">(
+        { className: autocomplete().inputGroupActions({ className }) },
+        props,
+      ),
       "data-slot": "autocomplete-input-group-actions",
     },
     render,
@@ -96,7 +120,11 @@ function AutocompleteTrigger({
   );
 }
 
-function AutocompleteIcon({ className, children, ...props }: BaseAutocomplete.Icon.Props) {
+function AutocompleteIcon({
+  className,
+  children,
+  ...props
+}: BaseAutocomplete.Icon.Props) {
   return (
     <BaseAutocomplete.Icon
       data-slot="autocomplete-icon"
@@ -130,7 +158,10 @@ function AutocompleteValue(props: BaseAutocomplete.Value.Props) {
   return <BaseAutocomplete.Value {...props} />;
 }
 
-function AutocompletePortal({ className, ...props }: BaseAutocomplete.Portal.Props) {
+function AutocompletePortal({
+  className,
+  ...props
+}: BaseAutocomplete.Portal.Props) {
   const direction = useDirection();
 
   return (
@@ -143,7 +174,10 @@ function AutocompletePortal({ className, ...props }: BaseAutocomplete.Portal.Pro
   );
 }
 
-function AutocompleteBackdrop({ className, ...props }: BaseAutocomplete.Backdrop.Props) {
+function AutocompleteBackdrop({
+  className,
+  ...props
+}: BaseAutocomplete.Backdrop.Props) {
   return (
     <BaseAutocomplete.Backdrop
       data-slot="autocomplete-backdrop"
@@ -168,7 +202,10 @@ function AutocompletePositioner({
   );
 }
 
-function AutocompletePopup({ className, ...props }: BaseAutocomplete.Popup.Props) {
+function AutocompletePopup({
+  className,
+  ...props
+}: BaseAutocomplete.Popup.Props) {
   return (
     <BaseAutocomplete.Popup
       data-slot="autocomplete-popup"
@@ -178,7 +215,10 @@ function AutocompletePopup({ className, ...props }: BaseAutocomplete.Popup.Props
   );
 }
 
-function AutocompleteArrow({ className, ...props }: BaseAutocomplete.Arrow.Props) {
+function AutocompleteArrow({
+  className,
+  ...props
+}: BaseAutocomplete.Arrow.Props) {
   return (
     <BaseAutocomplete.Arrow
       data-slot="autocomplete-arrow"
@@ -194,7 +234,10 @@ function AutocompleteStatus({
   show = true,
   children,
   ...props
-}: BaseAutocomplete.Status.Props & { show?: boolean; contentClassName?: string }) {
+}: BaseAutocomplete.Status.Props & {
+  show?: boolean;
+  contentClassName?: string;
+}) {
   return (
     <BaseAutocomplete.Status
       data-slot="autocomplete-status"
@@ -204,7 +247,9 @@ function AutocompleteStatus({
       {show && (
         <div
           data-slot="autocomplete-status-content"
-          className={autocomplete().statusContent({ className: contentClassName })}
+          className={autocomplete().statusContent({
+            className: contentClassName,
+          })}
         >
           {children}
         </div>
@@ -219,7 +264,10 @@ function AutocompleteEmpty({
   show = true,
   children,
   ...props
-}: BaseAutocomplete.Empty.Props & { show?: boolean; contentClassName?: string }) {
+}: BaseAutocomplete.Empty.Props & {
+  show?: boolean;
+  contentClassName?: string;
+}) {
   return (
     <BaseAutocomplete.Empty
       data-slot="autocomplete-empty"
@@ -229,7 +277,9 @@ function AutocompleteEmpty({
       {show && (
         <div
           data-slot="autocomplete-empty-content"
-          className={autocomplete().emptyContent({ className: contentClassName })}
+          className={autocomplete().emptyContent({
+            className: contentClassName,
+          })}
         >
           {children}
         </div>
@@ -238,7 +288,10 @@ function AutocompleteEmpty({
   );
 }
 
-function AutocompleteList({ className, ...props }: BaseAutocomplete.List.Props) {
+function AutocompleteList({
+  className,
+  ...props
+}: BaseAutocomplete.List.Props) {
   return (
     <BaseAutocomplete.List
       data-slot="autocomplete-list"
@@ -258,7 +311,10 @@ function AutocompleteRow({ className, ...props }: BaseAutocomplete.Row.Props) {
   );
 }
 
-function AutocompleteItem({ className, ...props }: BaseAutocomplete.Item.Props) {
+function AutocompleteItem({
+  className,
+  ...props
+}: BaseAutocomplete.Item.Props) {
   return (
     <BaseAutocomplete.Item
       data-slot="autocomplete-item"
@@ -268,7 +324,10 @@ function AutocompleteItem({ className, ...props }: BaseAutocomplete.Item.Props) 
   );
 }
 
-function AutocompleteSeparator({ className, ...props }: BaseAutocomplete.Separator.Props) {
+function AutocompleteSeparator({
+  className,
+  ...props
+}: BaseAutocomplete.Separator.Props) {
   return (
     <BaseAutocomplete.Separator
       data-slot="autocomplete-separator"
@@ -278,7 +337,10 @@ function AutocompleteSeparator({ className, ...props }: BaseAutocomplete.Separat
   );
 }
 
-function AutocompleteGroup({ className, ...props }: BaseAutocomplete.Group.Props) {
+function AutocompleteGroup({
+  className,
+  ...props
+}: BaseAutocomplete.Group.Props) {
   return (
     <BaseAutocomplete.Group
       data-slot="autocomplete-group"
@@ -288,7 +350,10 @@ function AutocompleteGroup({ className, ...props }: BaseAutocomplete.Group.Props
   );
 }
 
-function AutocompleteGroupLabel({ className, ...props }: BaseAutocomplete.GroupLabel.Props) {
+function AutocompleteGroupLabel({
+  className,
+  ...props
+}: BaseAutocomplete.GroupLabel.Props) {
   return (
     <BaseAutocomplete.GroupLabel
       data-slot="autocomplete-group-label"

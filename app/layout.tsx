@@ -34,7 +34,8 @@ export const metadata: Metadata = {
     default: "Sector23",
     template: "Sector23 | %s",
   },
-  description: "Sector23 is a React component library for building modern web applications.",
+  description:
+    "Sector23 is a React component library for building modern web applications.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

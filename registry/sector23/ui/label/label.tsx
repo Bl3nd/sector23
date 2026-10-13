@@ -9,7 +9,14 @@ import { label } from "./label.style";
 function Label({ className, ...props }: ComponentProps<"label">) {
   const direction = useDirection();
 
-  return <label data-slot="label" className={label({ className })} {...props} dir={direction} />;
+  return (
+    <label
+      data-slot="label"
+      className={label({ className })}
+      {...props}
+      dir={direction}
+    />
+  );
 }
 
 export { Label };

@@ -103,7 +103,10 @@ function PopoverTitle({ className, ...props }: BasePopover.Title.Props) {
   );
 }
 
-function PopoverDescription({ className, ...props }: BasePopover.Description.Props) {
+function PopoverDescription({
+  className,
+  ...props
+}: BasePopover.Description.Props) {
   return (
     <BasePopover.Description
       data-slot="popover-description"

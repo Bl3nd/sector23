@@ -27,10 +27,23 @@ const departments: Department[] = [
     columns: [
       {
         title: "Clothing",
-        links: ["New Arrivals", "Dresses", "Tops & Blouses", "Knitwear", "Jeans", "Outerwear"],
+        links: [
+          "New Arrivals",
+          "Dresses",
+          "Tops & Blouses",
+          "Knitwear",
+          "Jeans",
+          "Outerwear",
+        ],
       },
-      { title: "Shoes", links: ["Sneakers", "Boots", "Sandals", "Flats", "Heels"] },
-      { title: "Accessories", links: ["Bags", "Jewelry", "Hats", "Scarves", "Sunglasses"] },
+      {
+        title: "Shoes",
+        links: ["Sneakers", "Boots", "Sandals", "Flats", "Heels"],
+      },
+      {
+        title: "Accessories",
+        links: ["Bags", "Jewelry", "Hats", "Scarves", "Sunglasses"],
+      },
     ],
     featured: {
       eyebrow: "New Season",
@@ -43,10 +56,20 @@ const departments: Department[] = [
     columns: [
       {
         title: "Clothing",
-        links: ["New Arrivals", "T-Shirts", "Shirts", "Hoodies", "Chinos", "Jackets"],
+        links: [
+          "New Arrivals",
+          "T-Shirts",
+          "Shirts",
+          "Hoodies",
+          "Chinos",
+          "Jackets",
+        ],
       },
       { title: "Shoes", links: ["Sneakers", "Boots", "Loafers", "Running"] },
-      { title: "Accessories", links: ["Watches", "Wallets", "Belts", "Backpacks"] },
+      {
+        title: "Accessories",
+        links: ["Watches", "Wallets", "Belts", "Backpacks"],
+      },
     ],
     featured: {
       eyebrow: "Best Sellers",
@@ -57,8 +80,20 @@ const departments: Department[] = [
   {
     label: "Home",
     columns: [
-      { title: "Living", links: ["Throws & Blankets", "Cushions", "Candles", "Vases", "Wall Art"] },
-      { title: "Kitchen", links: ["Cookware", "Dinnerware", "Glassware", "Linens"] },
+      {
+        title: "Living",
+        links: [
+          "Throws & Blankets",
+          "Cushions",
+          "Candles",
+          "Vases",
+          "Wall Art",
+        ],
+      },
+      {
+        title: "Kitchen",
+        links: ["Cookware", "Dinnerware", "Glassware", "Linens"],
+      },
       { title: "Bedroom", links: ["Bedding", "Pillows", "Robes", "Storage"] },
     ],
     featured: {
@@ -70,10 +105,19 @@ const departments: Department[] = [
 ];
 
 const collections = [
-  { title: "Sustainable", description: "Made with recycled and organic materials." },
-  { title: "Workwear", description: "Polished pieces for the office and beyond." },
+  {
+    title: "Sustainable",
+    description: "Made with recycled and organic materials.",
+  },
+  {
+    title: "Workwear",
+    description: "Polished pieces for the office and beyond.",
+  },
   { title: "Activewear", description: "Performance gear that moves with you." },
-  { title: "Gift Guide", description: "Thoughtful picks for everyone on your list." },
+  {
+    title: "Gift Guide",
+    description: "Thoughtful picks for everyone on your list.",
+  },
 ];
 
 export default function NavigationMenu01() {
@@ -97,7 +141,10 @@ export default function NavigationMenu01() {
                       <ul className="flex flex-col">
                         {column.links.map((link) => (
                           <li key={link}>
-                            <NavigationMenuLink href="#" className="px-2 py-1.5 text-sm">
+                            <NavigationMenuLink
+                              href="#"
+                              className="px-2 py-1.5 text-sm"
+                            >
                               {link}
                             </NavigationMenuLink>
                           </li>
@@ -115,7 +162,9 @@ export default function NavigationMenu01() {
                     <span className="font-serif text-lg font-semibold">
                       {department.featured.title}
                     </span>
-                    <span className="text-sm opacity-80">{department.featured.description}</span>
+                    <span className="text-sm opacity-80">
+                      {department.featured.description}
+                    </span>
                     <span className="mt-2 flex items-center gap-1 text-sm font-medium">
                       Shop now <ArrowRightIcon className="size-4" />
                     </span>
@@ -134,8 +183,13 @@ export default function NavigationMenu01() {
               <ul className="grid gap-1 sm:w-md sm:grid-cols-2">
                 {collections.map((collection) => (
                   <li key={collection.title}>
-                    <NavigationMenuLink href="#" className="flex flex-col gap-1 p-3">
-                      <span className="text-sm font-medium">{collection.title}</span>
+                    <NavigationMenuLink
+                      href="#"
+                      className="flex flex-col gap-1 p-3"
+                    >
+                      <span className="text-sm font-medium">
+                        {collection.title}
+                      </span>
                       <span className="text-sm text-muted-foreground">
                         {collection.description}
                       </span>

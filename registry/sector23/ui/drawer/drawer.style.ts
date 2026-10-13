@@ -36,11 +36,13 @@ const drawer = tv({
       "supports-[-webkit-touch-callout:none]:border supports-[-webkit-touch-callout:none]:[--bleed:0px]",
     ],
     content: "mx-auto flex size-full max-w-lg flex-col gap-6",
-    header: "grid shrink-0 grid-cols-[auto_1fr] gap-1.5 border-b border-border pb-6",
+    header:
+      "grid shrink-0 grid-cols-[auto_1fr] gap-1.5 border-b border-border pb-6",
     title:
       "flex items-center gap-3 text-base leading-none font-semibold text-foreground [&_svg]:size-4",
     description: "col-span-2 text-sm text-muted-foreground",
-    footer: "flex shrink-0 items-center justify-end gap-2 border-t border-border pt-6",
+    footer:
+      "flex shrink-0 items-center justify-end gap-2 border-t border-border pt-6",
     close:
       "in-data-[slot=drawer-header]:col-start-2 in-data-[slot=drawer-header]:row-start-1 in-data-[slot=drawer-header]:ms-auto in-data-[slot=drawer-header]:aspect-square in-data-[slot=drawer-header]:min-h-[calc(1lh)] in-data-[slot=drawer-header]:px-0 [&_svg]:size-4 [&_svg]:shrink-0",
   },

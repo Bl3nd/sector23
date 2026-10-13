@@ -17,4 +17,6 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withMarkdoc({ schemaPath: "./app/markdoc", dir: process.cwd() })(nextConfig);
+export default withMarkdoc({ schemaPath: "./app/markdoc", dir: process.cwd() })(
+  nextConfig,
+);

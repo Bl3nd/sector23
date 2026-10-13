@@ -68,11 +68,18 @@ function DialogPopup({ className, ...props }: BaseDialog.Popup.Props) {
   );
 }
 
-function DialogHeader({ className, render, ...props }: useRender.ComponentProps<"div">) {
+function DialogHeader({
+  className,
+  render,
+  ...props
+}: useRender.ComponentProps<"div">) {
   const header = useRender({
     defaultTagName: "div",
     props: {
-      ...mergeProps<"div">({ className: dialog().header({ className }) }, props),
+      ...mergeProps<"div">(
+        { className: dialog().header({ className }) },
+        props,
+      ),
       "data-slot": "dialog-header",
     },
     render,
@@ -91,7 +98,10 @@ function DialogTitle({ className, ...props }: BaseDialog.Title.Props) {
   );
 }
 
-function DialogDescription({ className, ...props }: BaseDialog.Description.Props) {
+function DialogDescription({
+  className,
+  ...props
+}: BaseDialog.Description.Props) {
   return (
     <BaseDialog.Description
       data-slot="dialog-description"
@@ -101,11 +111,18 @@ function DialogDescription({ className, ...props }: BaseDialog.Description.Props
   );
 }
 
-function DialogFooter({ className, render, ...props }: useRender.ComponentProps<"div">) {
+function DialogFooter({
+  className,
+  render,
+  ...props
+}: useRender.ComponentProps<"div">) {
   const footer = useRender({
     defaultTagName: "div",
     props: {
-      ...mergeProps<"div">({ className: dialog().footer({ className }) }, props),
+      ...mergeProps<"div">(
+        { className: dialog().footer({ className }) },
+        props,
+      ),
       "data-slot": "dialog-footer",
     },
     render,

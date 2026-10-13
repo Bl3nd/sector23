@@ -21,7 +21,10 @@ function NumberField({ className, ...props }: BaseNumberField.Root.Props) {
   );
 }
 
-function NumberFieldScrubArea({ className, ...props }: BaseNumberField.ScrubArea.Props) {
+function NumberFieldScrubArea({
+  className,
+  ...props
+}: BaseNumberField.ScrubArea.Props) {
   return (
     <BaseNumberField.ScrubArea
       data-slot="number-field-scrub-area"
@@ -47,7 +50,10 @@ function NumberFieldScrubAreaCursor({
   );
 }
 
-function NumberFieldGroup({ className, ...props }: BaseNumberField.Group.Props) {
+function NumberFieldGroup({
+  className,
+  ...props
+}: BaseNumberField.Group.Props) {
   return (
     <BaseNumberField.Group
       data-slot="number-field-group"
@@ -57,7 +63,11 @@ function NumberFieldGroup({ className, ...props }: BaseNumberField.Group.Props) 
   );
 }
 
-function NumberFieldDecrement({ className, children, ...props }: BaseNumberField.Decrement.Props) {
+function NumberFieldDecrement({
+  className,
+  children,
+  ...props
+}: BaseNumberField.Decrement.Props) {
   return (
     <BaseNumberField.Decrement
       data-slot="number-field-decrement"
@@ -69,7 +79,10 @@ function NumberFieldDecrement({ className, children, ...props }: BaseNumberField
   );
 }
 
-function NumberFieldInput({ className, ...props }: BaseNumberField.Input.Props) {
+function NumberFieldInput({
+  className,
+  ...props
+}: BaseNumberField.Input.Props) {
   return (
     <BaseNumberField.Input
       data-slot="number-field-input"
@@ -79,7 +92,11 @@ function NumberFieldInput({ className, ...props }: BaseNumberField.Input.Props) 
   );
 }
 
-function NumberFieldIncrement({ className, children, ...props }: BaseNumberField.Increment.Props) {
+function NumberFieldIncrement({
+  className,
+  children,
+  ...props
+}: BaseNumberField.Increment.Props) {
   return (
     <BaseNumberField.Increment
       data-slot="number-field-increment"

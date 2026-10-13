@@ -13,7 +13,9 @@ export default function Separator01() {
       <div className="flex w-xs flex-col gap-4">
         <div className="flex flex-col gap-1">
           <h4 className="text-sm font-medium">Sector 23 UI</h4>
-          <p className="text-sm text-muted-foreground">Accessible components built on Base UI.</p>
+          <p className="text-sm text-muted-foreground">
+            Accessible components built on Base UI.
+          </p>
         </div>
         <Separator />
         <nav className="flex h-5 items-center gap-4 text-sm">

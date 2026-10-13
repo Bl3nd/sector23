@@ -40,7 +40,10 @@ function AccordionHeader({ className, ...props }: BaseAccordion.Header.Props) {
   );
 }
 
-function AccordionTrigger({ className, ...props }: BaseAccordion.Trigger.Props) {
+function AccordionTrigger({
+  className,
+  ...props
+}: BaseAccordion.Trigger.Props) {
   return (
     <BaseAccordion.Trigger
       data-slot="accordion-trigger"
@@ -72,4 +75,10 @@ function AccordionPanel({
   );
 }
 
-export { Accordion, AccordionItem, AccordionHeader, AccordionTrigger, AccordionPanel };
+export {
+  Accordion,
+  AccordionItem,
+  AccordionHeader,
+  AccordionTrigger,
+  AccordionPanel,
+};

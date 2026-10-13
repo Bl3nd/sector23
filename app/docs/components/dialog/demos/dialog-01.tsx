@@ -16,20 +16,26 @@ export default function Dialog01() {
   return (
     <div className="flex flex-col items-center justify-center py-10">
       <Dialog>
-        <DialogTrigger render={<Button variant="destructive" />}>Delete project</DialogTrigger>
+        <DialogTrigger render={<Button variant="destructive" />}>
+          Delete project
+        </DialogTrigger>
         <DialogPortal>
           <DialogBackdrop />
           <DialogPopup>
             <DialogHeader>
               <DialogTitle>Delete project?</DialogTitle>
               <DialogDescription>
-                This will permanently delete Acme Website and all of its files. This action cannot
-                be undone.
+                This will permanently delete Acme Website and all of its files.
+                This action cannot be undone.
               </DialogDescription>
             </DialogHeader>
             <DialogFooter>
-              <DialogClose render={<Button variant="outline" />}>Close</DialogClose>
-              <DialogClose render={<Button variant="destructive" />}>Delete project</DialogClose>
+              <DialogClose render={<Button variant="outline" />}>
+                Close
+              </DialogClose>
+              <DialogClose render={<Button variant="destructive" />}>
+                Delete project
+              </DialogClose>
             </DialogFooter>
           </DialogPopup>
         </DialogPortal>

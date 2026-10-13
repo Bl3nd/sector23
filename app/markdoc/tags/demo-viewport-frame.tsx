@@ -17,7 +17,10 @@ const STAGE_HATCH =
 
 type Viewport = keyof typeof VIEWPORT_FRAMES;
 
-function parseViewportChange(groupValue: readonly string[], current: Viewport): Viewport {
+function parseViewportChange(
+  groupValue: readonly string[],
+  current: Viewport,
+): Viewport {
   const [next, extra] = groupValue;
 
   if (next === undefined) {
@@ -29,7 +32,9 @@ function parseViewportChange(groupValue: readonly string[], current: Viewport): 
     return next as Viewport;
   }
 
-  throw new Error(`Expected one viewport, received ${JSON.stringify(groupValue)}.`);
+  throw new Error(
+    `Expected one viewport, received ${JSON.stringify(groupValue)}.`,
+  );
 }
 
 export interface DemoViewportFrameProps {
@@ -47,7 +52,9 @@ export function DemoViewportFrame({ children }: DemoViewportFrameProps) {
       <ToggleGroup
         aria-label="Demo viewport"
         value={[viewport]}
-        onValueChange={(groupValue) => setViewport(parseViewportChange(groupValue, viewport))}
+        onValueChange={(groupValue) =>
+          setViewport(parseViewportChange(groupValue, viewport))
+        }
       >
         {(Object.keys(VIEWPORT_FRAMES) as Viewport[]).map((id) => {
           const { label, Icon } = VIEWPORT_FRAMES[id];

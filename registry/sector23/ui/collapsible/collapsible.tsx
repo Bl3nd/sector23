@@ -20,7 +20,10 @@ function Collapsible({ className, ...props }: BaseCollapsible.Root.Props) {
   );
 }
 
-function CollapsibleTrigger({ className, ...props }: BaseCollapsible.Trigger.Props) {
+function CollapsibleTrigger({
+  className,
+  ...props
+}: BaseCollapsible.Trigger.Props) {
   return (
     <BaseCollapsible.Trigger
       data-slot="collapsible-trigger"
@@ -30,7 +33,10 @@ function CollapsibleTrigger({ className, ...props }: BaseCollapsible.Trigger.Pro
   );
 }
 
-function CollapsiblePanel({ className, ...props }: BaseCollapsible.Panel.Props) {
+function CollapsiblePanel({
+  className,
+  ...props
+}: BaseCollapsible.Panel.Props) {
   return (
     <BaseCollapsible.Panel
       data-slot="collapsible-panel"

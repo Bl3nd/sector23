@@ -17,7 +17,11 @@ function Checkbox({ className, ...props }: BaseCheckbox.Root.Props) {
   );
 }
 
-function CheckboxIndicator({ className, render, ...props }: BaseCheckbox.Indicator.Props) {
+function CheckboxIndicator({
+  className,
+  render,
+  ...props
+}: BaseCheckbox.Indicator.Props) {
   return (
     <BaseCheckbox.Indicator
       data-slot="checkbox-indicator"
@@ -26,7 +30,9 @@ function CheckboxIndicator({ className, render, ...props }: BaseCheckbox.Indicat
         render !== undefined
           ? render
           : (indicatorProps, state) => (
-              <span {...indicatorProps}>{state.indeterminate ? <MinusIcon /> : <CheckIcon />}</span>
+              <span {...indicatorProps}>
+                {state.indeterminate ? <MinusIcon /> : <CheckIcon />}
+              </span>
             )
       }
       {...props}

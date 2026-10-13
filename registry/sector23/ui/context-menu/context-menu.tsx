@@ -11,7 +11,10 @@ function ContextMenu(props: BaseContextMenu.Root.Props) {
   return <BaseContextMenu.Root {...props} />;
 }
 
-function ContextMenuTrigger({ className, ...props }: BaseContextMenu.Trigger.Props) {
+function ContextMenuTrigger({
+  className,
+  ...props
+}: BaseContextMenu.Trigger.Props) {
   const direction = useDirection();
 
   return (
@@ -24,7 +27,10 @@ function ContextMenuTrigger({ className, ...props }: BaseContextMenu.Trigger.Pro
   );
 }
 
-function ContextMenuPortal({ className, ...props }: BaseContextMenu.Portal.Props) {
+function ContextMenuPortal({
+  className,
+  ...props
+}: BaseContextMenu.Portal.Props) {
   const direction = useDirection();
 
   return (
@@ -37,7 +43,10 @@ function ContextMenuPortal({ className, ...props }: BaseContextMenu.Portal.Props
   );
 }
 
-function ContextMenuBackdrop({ className, ...props }: BaseContextMenu.Backdrop.Props) {
+function ContextMenuBackdrop({
+  className,
+  ...props
+}: BaseContextMenu.Backdrop.Props) {
   return (
     <BaseContextMenu.Backdrop
       data-slot="context-menu-backdrop"
@@ -47,7 +56,10 @@ function ContextMenuBackdrop({ className, ...props }: BaseContextMenu.Backdrop.P
   );
 }
 
-function ContextMenuPositioner({ className, ...props }: BaseContextMenu.Positioner.Props) {
+function ContextMenuPositioner({
+  className,
+  ...props
+}: BaseContextMenu.Positioner.Props) {
   return (
     <BaseContextMenu.Positioner
       data-slot="context-menu-positioner"
@@ -57,7 +69,10 @@ function ContextMenuPositioner({ className, ...props }: BaseContextMenu.Position
   );
 }
 
-function ContextMenuPopup({ className, ...props }: BaseContextMenu.Popup.Props) {
+function ContextMenuPopup({
+  className,
+  ...props
+}: BaseContextMenu.Popup.Props) {
   return (
     <BaseContextMenu.Popup
       data-slot="context-menu-popup"
@@ -67,7 +82,10 @@ function ContextMenuPopup({ className, ...props }: BaseContextMenu.Popup.Props) 
   );
 }
 
-function ContextMenuArrow({ className, ...props }: BaseContextMenu.Arrow.Props) {
+function ContextMenuArrow({
+  className,
+  ...props
+}: BaseContextMenu.Arrow.Props) {
   return (
     <BaseContextMenu.Arrow
       data-slot="context-menu-arrow"
@@ -87,7 +105,10 @@ function ContextMenuItem({ className, ...props }: BaseContextMenu.Item.Props) {
   );
 }
 
-function ContextMenuLinkItem({ className, ...props }: BaseContextMenu.LinkItem.Props) {
+function ContextMenuLinkItem({
+  className,
+  ...props
+}: BaseContextMenu.LinkItem.Props) {
   return (
     <BaseContextMenu.LinkItem
       data-slot="context-menu-link-item"
@@ -97,7 +118,10 @@ function ContextMenuLinkItem({ className, ...props }: BaseContextMenu.LinkItem.P
   );
 }
 
-function ContextMenuSeparator({ className, ...props }: BaseContextMenu.Separator.Props) {
+function ContextMenuSeparator({
+  className,
+  ...props
+}: BaseContextMenu.Separator.Props) {
   return (
     <BaseContextMenu.Separator
       data-slot="context-menu-separator"
@@ -108,10 +132,18 @@ function ContextMenuSeparator({ className, ...props }: BaseContextMenu.Separator
 }
 
 function ContextMenuSubmenu(props: BaseContextMenu.SubmenuRoot.Props) {
-  return <BaseContextMenu.SubmenuRoot data-slot="context-menu-submenu-root" {...props} />;
+  return (
+    <BaseContextMenu.SubmenuRoot
+      data-slot="context-menu-submenu-root"
+      {...props}
+    />
+  );
 }
 
-function ContextMenuSubmenuTrigger({ className, ...props }: BaseContextMenu.SubmenuTrigger.Props) {
+function ContextMenuSubmenuTrigger({
+  className,
+  ...props
+}: BaseContextMenu.SubmenuTrigger.Props) {
   return (
     <BaseContextMenu.SubmenuTrigger
       data-slot="context-menu-submenu-trigger"
@@ -121,7 +153,10 @@ function ContextMenuSubmenuTrigger({ className, ...props }: BaseContextMenu.Subm
   );
 }
 
-function ContextMenuGroup({ className, ...props }: BaseContextMenu.Group.Props) {
+function ContextMenuGroup({
+  className,
+  ...props
+}: BaseContextMenu.Group.Props) {
   return (
     <BaseContextMenu.Group
       data-slot="context-menu-group"
@@ -131,7 +166,10 @@ function ContextMenuGroup({ className, ...props }: BaseContextMenu.Group.Props) 
   );
 }
 
-function ContextMenuGroupLabel({ className, ...props }: BaseContextMenu.GroupLabel.Props) {
+function ContextMenuGroupLabel({
+  className,
+  ...props
+}: BaseContextMenu.GroupLabel.Props) {
   return (
     <BaseContextMenu.GroupLabel
       data-slot="context-menu-group-label"
@@ -141,7 +179,10 @@ function ContextMenuGroupLabel({ className, ...props }: BaseContextMenu.GroupLab
   );
 }
 
-function ContextMenuRadioGroup({ className, ...props }: BaseContextMenu.RadioGroup.Props) {
+function ContextMenuRadioGroup({
+  className,
+  ...props
+}: BaseContextMenu.RadioGroup.Props) {
   return (
     <BaseContextMenu.RadioGroup
       data-slot="context-menu-radio-group"
@@ -151,7 +192,10 @@ function ContextMenuRadioGroup({ className, ...props }: BaseContextMenu.RadioGro
   );
 }
 
-function ContextMenuRadioItem({ className, ...props }: BaseContextMenu.RadioItem.Props) {
+function ContextMenuRadioItem({
+  className,
+  ...props
+}: BaseContextMenu.RadioItem.Props) {
   return (
     <BaseContextMenu.RadioItem
       data-slot="context-menu-radio-item"
@@ -168,13 +212,19 @@ function ContextMenuRadioItemIndicator({
   return (
     <BaseContextMenu.RadioItemIndicator
       data-slot="context-menu-radio-item-indicator"
-      className={mergeSlotClassName(contextMenu().radioItemIndicator, className)}
+      className={mergeSlotClassName(
+        contextMenu().radioItemIndicator,
+        className,
+      )}
       {...props}
     />
   );
 }
 
-function ContextMenuCheckboxItem({ className, ...props }: BaseContextMenu.CheckboxItem.Props) {
+function ContextMenuCheckboxItem({
+  className,
+  ...props
+}: BaseContextMenu.CheckboxItem.Props) {
   return (
     <BaseContextMenu.CheckboxItem
       data-slot="context-menu-checkbox-item"
@@ -191,7 +241,10 @@ function ContextMenuCheckboxItemIndicator({
   return (
     <BaseContextMenu.CheckboxItemIndicator
       data-slot="context-menu-checkbox-item-indicator"
-      className={mergeSlotClassName(contextMenu().checkboxItemIndicator, className)}
+      className={mergeSlotClassName(
+        contextMenu().checkboxItemIndicator,
+        className,
+      )}
       {...props}
     />
   );

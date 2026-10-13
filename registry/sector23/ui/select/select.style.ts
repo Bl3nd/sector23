@@ -41,7 +41,8 @@ const select = tv({
     itemIndicator: "[&>svg]:size-4 [&>svg]:shrink-0",
     separator: "my-1 h-px bg-border",
     group: "",
-    groupLabel: "px-2 py-0.5 text-xs font-semibold tracking-tight text-muted-foreground uppercase",
+    groupLabel:
+      "px-2 py-0.5 text-xs font-semibold tracking-tight text-muted-foreground uppercase",
     scrollDownArrow: [
       "bottom-0 z-1 flex h-4 w-full cursor-default items-center justify-center bg-popover text-center text-xs",
       "before:absolute before:left-0 before:h-full before:w-full before:content-['']",

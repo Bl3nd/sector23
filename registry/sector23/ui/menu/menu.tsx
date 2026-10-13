@@ -122,7 +122,10 @@ function MenuSubmenu(props: BaseMenu.SubmenuRoot.Props) {
   return <BaseMenu.SubmenuRoot {...props} />;
 }
 
-function MenuSubmenuTrigger({ className, ...props }: BaseMenu.SubmenuTrigger.Props) {
+function MenuSubmenuTrigger({
+  className,
+  ...props
+}: BaseMenu.SubmenuTrigger.Props) {
   return (
     <BaseMenu.SubmenuTrigger
       data-slot="menu-submenu-trigger"
@@ -172,7 +175,10 @@ function MenuRadioItem({ className, ...props }: BaseMenu.RadioItem.Props) {
   );
 }
 
-function MenuRadioItemIndicator({ className, ...props }: BaseMenu.RadioItemIndicator.Props) {
+function MenuRadioItemIndicator({
+  className,
+  ...props
+}: BaseMenu.RadioItemIndicator.Props) {
   return (
     <BaseMenu.RadioItemIndicator
       data-slot="menu-radio-item-indicator"
@@ -182,7 +188,10 @@ function MenuRadioItemIndicator({ className, ...props }: BaseMenu.RadioItemIndic
   );
 }
 
-function MenuCheckboxItem({ className, ...props }: BaseMenu.CheckboxItem.Props) {
+function MenuCheckboxItem({
+  className,
+  ...props
+}: BaseMenu.CheckboxItem.Props) {
   return (
     <BaseMenu.CheckboxItem
       data-slot="menu-checkbox-item"
@@ -192,7 +201,10 @@ function MenuCheckboxItem({ className, ...props }: BaseMenu.CheckboxItem.Props) 
   );
 }
 
-function MenuCheckboxItemIndicator({ className, ...props }: BaseMenu.CheckboxItemIndicator.Props) {
+function MenuCheckboxItemIndicator({
+  className,
+  ...props
+}: BaseMenu.CheckboxItemIndicator.Props) {
   return (
     <BaseMenu.CheckboxItemIndicator
       data-slot="menu-checkbox-item-indicator"

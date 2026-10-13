@@ -18,7 +18,10 @@ export default function Tabs01() {
           <TabsIndicator />
         </TabsList>
         <TabsContent>
-          <TabsPanel value="account" className="justify-center text-center text-sm text-foreground">
+          <TabsPanel
+            value="account"
+            className="justify-center text-center text-sm text-foreground"
+          >
             <p>Account</p>
           </TabsPanel>
           <TabsPanel
@@ -27,7 +30,10 @@ export default function Tabs01() {
           >
             <p>Settings</p>
           </TabsPanel>
-          <TabsPanel value="billing" className="justify-center text-center text-sm text-foreground">
+          <TabsPanel
+            value="billing"
+            className="justify-center text-center text-sm text-foreground"
+          >
             <p>Billing</p>
           </TabsPanel>
         </TabsContent>

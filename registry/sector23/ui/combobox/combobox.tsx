@@ -14,7 +14,10 @@ const useComboboxFilter = BaseCombobox.useFilter;
 const useComboboxFilteredItems = BaseCombobox.useFilteredItems;
 
 function Combobox<Items extends readonly { items: readonly unknown[] }[]>(
-  props: Omit<BaseCombobox.Root.Props<Items[number]["items"][number]>, "items"> & {
+  props: Omit<
+    BaseCombobox.Root.Props<Items[number]["items"][number]>,
+    "items"
+  > & {
     items: Items;
   },
 ): React.JSX.Element;
@@ -23,8 +26,13 @@ function Combobox<ItemValue>(
     items?: readonly ItemValue[] | undefined;
   },
 ): React.JSX.Element;
-function Combobox<ItemValue>({ items, ...props }: BaseCombobox.Root.Props<ItemValue>) {
-  return <BaseCombobox.Root items={items as unknown as ItemValue[]} {...props} />;
+function Combobox<ItemValue>({
+  items,
+  ...props
+}: BaseCombobox.Root.Props<ItemValue>) {
+  return (
+    <BaseCombobox.Root items={items as unknown as ItemValue[]} {...props} />
+  );
 }
 
 function ComboboxLabel({ className, ...props }: BaseCombobox.Label.Props) {
@@ -37,13 +45,20 @@ function ComboboxLabel({ className, ...props }: BaseCombobox.Label.Props) {
   );
 }
 
-function ComboboxControl({ className, render, ...props }: useRender.ComponentProps<"div">) {
+function ComboboxControl({
+  className,
+  render,
+  ...props
+}: useRender.ComponentProps<"div">) {
   const direction = useDirection();
 
   const control = useRender({
     defaultTagName: "div",
     props: {
-      ...mergeProps<"div">({ className: combobox().control({ className }) }, props),
+      ...mergeProps<"div">(
+        { className: combobox().control({ className }) },
+        props,
+      ),
       dir: direction,
       "data-slot": "combobox-control",
     },
@@ -53,7 +68,10 @@ function ComboboxControl({ className, render, ...props }: useRender.ComponentPro
   return control;
 }
 
-function ComboboxInputGroup({ className, ...props }: BaseCombobox.InputGroup.Props) {
+function ComboboxInputGroup({
+  className,
+  ...props
+}: BaseCombobox.InputGroup.Props) {
   return (
     <BaseCombobox.InputGroup
       data-slot="combobox-input-group"
@@ -81,7 +99,10 @@ function ComboboxInputGroupActions({
   const actions = useRender({
     defaultTagName: "div",
     props: {
-      ...mergeProps<"div">({ className: combobox().inputGroupActions({ className }) }, props),
+      ...mergeProps<"div">(
+        { className: combobox().inputGroupActions({ className }) },
+        props,
+      ),
       "data-slot": "combobox-input-group-actions",
     },
     render,
@@ -100,7 +121,11 @@ function ComboboxTrigger({ className, ...props }: BaseCombobox.Trigger.Props) {
   );
 }
 
-function ComboboxIcon({ className, children, ...props }: BaseCombobox.Icon.Props) {
+function ComboboxIcon({
+  className,
+  children,
+  ...props
+}: BaseCombobox.Icon.Props) {
   return (
     <BaseCombobox.Icon
       data-slot="combobox-icon"
@@ -112,7 +137,11 @@ function ComboboxIcon({ className, children, ...props }: BaseCombobox.Icon.Props
   );
 }
 
-function ComboboxClear({ className, children, ...props }: BaseCombobox.Clear.Props) {
+function ComboboxClear({
+  className,
+  children,
+  ...props
+}: BaseCombobox.Clear.Props) {
   return (
     <BaseCombobox.Clear
       data-slot="combobox-clear"
@@ -148,7 +177,10 @@ function ComboboxChip({ className, ...props }: BaseCombobox.Chip.Props) {
   );
 }
 
-function ComboboxChipRemove({ className, ...props }: BaseCombobox.ChipRemove.Props) {
+function ComboboxChipRemove({
+  className,
+  ...props
+}: BaseCombobox.ChipRemove.Props) {
   return (
     <BaseCombobox.ChipRemove
       data-slot="combobox-chip-remove"
@@ -171,7 +203,10 @@ function ComboboxPortal({ className, ...props }: BaseCombobox.Portal.Props) {
   );
 }
 
-function ComboboxBackdrop({ className, ...props }: BaseCombobox.Backdrop.Props) {
+function ComboboxBackdrop({
+  className,
+  ...props
+}: BaseCombobox.Backdrop.Props) {
   return (
     <BaseCombobox.Backdrop
       data-slot="combobox-backdrop"
@@ -312,7 +347,10 @@ function ComboboxItemIndicator({
   );
 }
 
-function ComboboxSeparator({ className, ...props }: BaseCombobox.Separator.Props) {
+function ComboboxSeparator({
+  className,
+  ...props
+}: BaseCombobox.Separator.Props) {
   return (
     <BaseCombobox.Separator
       data-slot="combobox-separator"
@@ -332,7 +370,10 @@ function ComboboxGroup({ className, ...props }: BaseCombobox.Group.Props) {
   );
 }
 
-function ComboboxGroupLabel({ className, ...props }: BaseCombobox.GroupLabel.Props) {
+function ComboboxGroupLabel({
+  className,
+  ...props
+}: BaseCombobox.GroupLabel.Props) {
   return (
     <BaseCombobox.GroupLabel
       data-slot="combobox-group-label"

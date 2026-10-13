@@ -40,7 +40,10 @@ function ToolbarLink({ className, ...props }: BaseToolbar.Link.Props) {
   );
 }
 
-function ToolbarSeparator({ className, ...props }: BaseToolbar.Separator.Props) {
+function ToolbarSeparator({
+  className,
+  ...props
+}: BaseToolbar.Separator.Props) {
   return (
     <BaseToolbar.Separator
       data-slot="toolbar-separator"
@@ -70,4 +73,11 @@ function ToolbarInput({ className, ...props }: BaseToolbar.Input.Props) {
   );
 }
 
-export { Toolbar, ToolbarButton, ToolbarLink, ToolbarSeparator, ToolbarGroup, ToolbarInput };
+export {
+  Toolbar,
+  ToolbarButton,
+  ToolbarLink,
+  ToolbarSeparator,
+  ToolbarGroup,
+  ToolbarInput,
+};

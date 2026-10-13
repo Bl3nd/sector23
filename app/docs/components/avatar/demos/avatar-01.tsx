@@ -1,6 +1,10 @@
 import { UserIcon } from "lucide-react";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/registry/sector23/ui/avatar";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/registry/sector23/ui/avatar";
 
 export default function Avatar01() {
   return (

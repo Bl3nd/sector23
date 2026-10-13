@@ -10,7 +10,10 @@ import { navigationMenu } from "./navigation-menu.style";
 
 const POSITIONER_SIDE_OFFSET = 10;
 
-function NavigationMenu({ className, ...props }: BaseNavigationMenu.Root.Props) {
+function NavigationMenu({
+  className,
+  ...props
+}: BaseNavigationMenu.Root.Props) {
   const direction = useDirection();
 
   return (
@@ -23,7 +26,10 @@ function NavigationMenu({ className, ...props }: BaseNavigationMenu.Root.Props) 
   );
 }
 
-function NavigationMenuList({ className, ...props }: BaseNavigationMenu.List.Props) {
+function NavigationMenuList({
+  className,
+  ...props
+}: BaseNavigationMenu.List.Props) {
   return (
     <BaseNavigationMenu.List
       data-slot="navigation-menu-list"
@@ -33,7 +39,10 @@ function NavigationMenuList({ className, ...props }: BaseNavigationMenu.List.Pro
   );
 }
 
-function NavigationMenuItem({ className, ...props }: BaseNavigationMenu.Item.Props) {
+function NavigationMenuItem({
+  className,
+  ...props
+}: BaseNavigationMenu.Item.Props) {
   return (
     <BaseNavigationMenu.Item
       data-slot="navigation-menu-item"
@@ -43,7 +52,10 @@ function NavigationMenuItem({ className, ...props }: BaseNavigationMenu.Item.Pro
   );
 }
 
-function NavigationMenuTrigger({ className, ...props }: BaseNavigationMenu.Trigger.Props) {
+function NavigationMenuTrigger({
+  className,
+  ...props
+}: BaseNavigationMenu.Trigger.Props) {
   return (
     <BaseNavigationMenu.Trigger
       data-slot="navigation-menu-trigger"
@@ -53,7 +65,11 @@ function NavigationMenuTrigger({ className, ...props }: BaseNavigationMenu.Trigg
   );
 }
 
-function NavigationMenuIcon({ className, children, ...props }: BaseNavigationMenu.Icon.Props) {
+function NavigationMenuIcon({
+  className,
+  children,
+  ...props
+}: BaseNavigationMenu.Icon.Props) {
   return (
     <BaseNavigationMenu.Icon
       data-slot="navigation-menu-icon"
@@ -65,7 +81,10 @@ function NavigationMenuIcon({ className, children, ...props }: BaseNavigationMen
   );
 }
 
-function NavigationMenuContent({ className, ...props }: BaseNavigationMenu.Content.Props) {
+function NavigationMenuContent({
+  className,
+  ...props
+}: BaseNavigationMenu.Content.Props) {
   return (
     <BaseNavigationMenu.Content
       data-slot="navigation-menu-content"
@@ -75,7 +94,10 @@ function NavigationMenuContent({ className, ...props }: BaseNavigationMenu.Conte
   );
 }
 
-function NavigationMenuLink({ className, ...props }: BaseNavigationMenu.Link.Props) {
+function NavigationMenuLink({
+  className,
+  ...props
+}: BaseNavigationMenu.Link.Props) {
   return (
     <BaseNavigationMenu.Link
       data-slot="navigation-menu-link"
@@ -85,7 +107,10 @@ function NavigationMenuLink({ className, ...props }: BaseNavigationMenu.Link.Pro
   );
 }
 
-function NavigationMenuPortal({ className, ...props }: BaseNavigationMenu.Portal.Props) {
+function NavigationMenuPortal({
+  className,
+  ...props
+}: BaseNavigationMenu.Portal.Props) {
   const direction = useDirection();
 
   return (
@@ -98,7 +123,10 @@ function NavigationMenuPortal({ className, ...props }: BaseNavigationMenu.Portal
   );
 }
 
-function NavigationMenuBackdrop({ className, ...props }: BaseNavigationMenu.Backdrop.Props) {
+function NavigationMenuBackdrop({
+  className,
+  ...props
+}: BaseNavigationMenu.Backdrop.Props) {
   return (
     <BaseNavigationMenu.Backdrop
       data-slot="navigation-menu-backdrop"
@@ -123,7 +151,10 @@ function NavigationMenuPositioner({
   );
 }
 
-function NavigationMenuPopup({ className, ...props }: BaseNavigationMenu.Popup.Props) {
+function NavigationMenuPopup({
+  className,
+  ...props
+}: BaseNavigationMenu.Popup.Props) {
   return (
     <BaseNavigationMenu.Popup
       data-slot="navigation-menu-popup"
@@ -133,7 +164,10 @@ function NavigationMenuPopup({ className, ...props }: BaseNavigationMenu.Popup.P
   );
 }
 
-function NavigationMenuArrow({ className, ...props }: BaseNavigationMenu.Arrow.Props) {
+function NavigationMenuArrow({
+  className,
+  ...props
+}: BaseNavigationMenu.Arrow.Props) {
   return (
     <BaseNavigationMenu.Arrow
       data-slot="navigation-menu-arrow"
@@ -143,7 +177,10 @@ function NavigationMenuArrow({ className, ...props }: BaseNavigationMenu.Arrow.P
   );
 }
 
-function NavigationMenuViewport({ className, ...props }: BaseNavigationMenu.Viewport.Props) {
+function NavigationMenuViewport({
+  className,
+  ...props
+}: BaseNavigationMenu.Viewport.Props) {
   return (
     <BaseNavigationMenu.Viewport
       data-slot="navigation-menu-viewport"

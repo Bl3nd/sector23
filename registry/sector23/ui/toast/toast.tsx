@@ -56,7 +56,11 @@ function ToastContent({ className, ...props }: BaseToast.Content.Props) {
   );
 }
 
-function ToastHeader({ className, render, ...props }: useRender.ComponentProps<"div">) {
+function ToastHeader({
+  className,
+  render,
+  ...props
+}: useRender.ComponentProps<"div">) {
   const header = useRender({
     defaultTagName: "div",
     props: {
@@ -79,7 +83,10 @@ function ToastTitle({ className, ...props }: BaseToast.Title.Props) {
   );
 }
 
-function ToastDescription({ className, ...props }: BaseToast.Description.Props) {
+function ToastDescription({
+  className,
+  ...props
+}: BaseToast.Description.Props) {
   return (
     <BaseToast.Description
       data-slot="toast-description"

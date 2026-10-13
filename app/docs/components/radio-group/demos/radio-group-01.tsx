@@ -16,7 +16,9 @@ export default function RadioGroup01() {
   return (
     <div className="flex flex-col items-center justify-center py-10">
       <RadioGroup aria-labelledby={id} defaultValue="option-1">
-        <RadioGroupLegend id={id}>What is your favorite color?</RadioGroupLegend>
+        <RadioGroupLegend id={id}>
+          What is your favorite color?
+        </RadioGroupLegend>
         <Label className="flex items-center gap-2">
           <Radio value="option-1">
             <RadioIndicator />

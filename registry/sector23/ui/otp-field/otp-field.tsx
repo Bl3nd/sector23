@@ -30,7 +30,10 @@ function OTPFieldInput({ className, ...props }: BaseOTPField.Input.Props) {
   );
 }
 
-function OTPFieldSeparator({ className, ...props }: BaseOTPField.Separator.Props) {
+function OTPFieldSeparator({
+  className,
+  ...props
+}: BaseOTPField.Separator.Props) {
   return (
     <BaseOTPField.Separator
       data-slot="otp-field-separator"

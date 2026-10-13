@@ -1,4 +1,10 @@
-import { ChevronDownIcon, FileIcon, FilePlusIcon, FolderIcon, FolderPlusIcon } from "lucide-react";
+import {
+  ChevronDownIcon,
+  FileIcon,
+  FilePlusIcon,
+  FolderIcon,
+  FolderPlusIcon,
+} from "lucide-react";
 
 import { Button } from "@/registry/sector23/ui/button";
 import {

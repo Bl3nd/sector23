@@ -12,3 +12,4 @@ export {
   AlertDialogFooter,
   AlertDialogClose,
 } from "./alert-dialog";
+export type { AlertDialogHandle } from "./alert-dialog";

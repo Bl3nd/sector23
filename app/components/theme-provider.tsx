@@ -47,7 +47,10 @@ function ThemeHotkey() {
   return undefined;
 }
 
-function ThemeProvider({ children, ...props }: React.ComponentProps<typeof NextThemesProvider>) {
+function ThemeProvider({
+  children,
+  ...props
+}: React.ComponentProps<typeof NextThemesProvider>) {
   return (
     <NextThemesProvider
       attribute="class"

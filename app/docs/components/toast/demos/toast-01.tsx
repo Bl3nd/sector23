@@ -56,7 +56,9 @@ function Toasts() {
                 <ToastTitle />
                 <ToastDescription />
               </ToastHeader>
-              <ToastClose render={<Button variant="outline" />}>Dismiss</ToastClose>
+              <ToastClose render={<Button variant="outline" />}>
+                Dismiss
+              </ToastClose>
             </ToastContent>
           </Toast>
         ))}

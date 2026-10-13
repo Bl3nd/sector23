@@ -21,7 +21,11 @@ function RadioGroup({ className, ...props }: BaseRadioGroup.Props) {
   );
 }
 
-function RadioGroupLegend({ className, render, ...props }: useRender.ComponentProps<"div">) {
+function RadioGroupLegend({
+  className,
+  render,
+  ...props
+}: useRender.ComponentProps<"div">) {
   const legend = useRender({
     defaultTagName: "div",
     props: {

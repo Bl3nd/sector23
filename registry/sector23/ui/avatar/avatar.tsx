@@ -6,7 +6,11 @@ import { mergeSlotClassName } from "@/registry/sector23/lib/merge-base-ui";
 
 import { avatar, type AvatarVariantProps } from "./avatar.style";
 
-function Avatar({ className, size, ...props }: BaseAvatar.Root.Props & AvatarVariantProps) {
+function Avatar({
+  className,
+  size,
+  ...props
+}: BaseAvatar.Root.Props & AvatarVariantProps) {
   return (
     <BaseAvatar.Root
       data-slot="avatar"

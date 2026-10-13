@@ -16,7 +16,9 @@ export default function Progress01() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setValue((current) => Math.min(100, Math.round(current + Math.random() * 25)));
+      setValue((current) =>
+        Math.min(100, Math.round(current + Math.random() * 25)),
+      );
     }, 1000);
     return () => clearInterval(interval);
   }, []);

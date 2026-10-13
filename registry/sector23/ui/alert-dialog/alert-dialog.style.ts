@@ -1,5 +1,15 @@
 import { tv } from "tailwind-variants";
 
+/*
+Slots and their data-attributes and css variables:
+
+trigger: data-popup-open/data-disabled
+backdrop: data-open/data-closed/data-starting-style/data-ending-style
+viewport: data-open/data-closed/data-nested/data-nested-dialog-open/data-starting-style/data-ending-style
+popup: data-open/data-closed/data-nested/data-nested-dialog-open/data-starting-style/data-ending-style; --nested-dialogs
+close: data-disabled
+*/
+
 const alertDialog = tv({
   slots: {
     trigger: "",

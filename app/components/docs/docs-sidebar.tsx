@@ -205,7 +205,9 @@ function DocsDesktopSidebar() {
     <div className="hidden contain-size sm:block sm:w-64 sm:shrink-0">
       <div className="sticky top-(--header-height) flex h-[min(100%,calc(100dvh-var(--header-height)))] flex-col">
         <div className="shrink-0 py-4">
-          <h1 className="text-base leading-none font-semibold text-foreground">Sector23 UI Docs</h1>
+          <h1 className="text-base leading-none font-semibold text-foreground">
+            Sector23 UI Docs
+          </h1>
         </div>
         <ScrollArea className="min-h-0 flex-1">
           <ScrollAreaViewport>

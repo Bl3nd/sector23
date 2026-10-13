@@ -16,8 +16,8 @@ export default function Collapsible01() {
         </CollapsibleTrigger>
         <CollapsiblePanel>
           <p className="pt-2 text-sm">
-            Accessible, unstyled primitives from Base UI, paired with Tailwind CSS styles you can
-            copy into your project and customize.
+            Accessible, unstyled primitives from Base UI, paired with Tailwind
+            CSS styles you can copy into your project and customize.
           </p>
         </CollapsiblePanel>
       </Collapsible>

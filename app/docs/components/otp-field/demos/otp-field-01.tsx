@@ -18,7 +18,11 @@ export default function OTPField01() {
           {Array.from({ length: OTP_LENGTH }, (_, index) => (
             <OTPFieldInput
               key={index}
-              aria-label={index === 0 ? undefined : `Character ${index + 1} of ${OTP_LENGTH}`}
+              aria-label={
+                index === 0
+                  ? undefined
+                  : `Character ${index + 1} of ${OTP_LENGTH}`
+              }
             />
           ))}
         </OTPField>

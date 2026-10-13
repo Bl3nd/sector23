@@ -40,7 +40,10 @@ function ProgressTrack({ className, ...props }: BaseProgress.Track.Props) {
   );
 }
 
-function ProgressIndicator({ className, ...props }: BaseProgress.Indicator.Props) {
+function ProgressIndicator({
+  className,
+  ...props
+}: BaseProgress.Indicator.Props) {
   return (
     <BaseProgress.Indicator
       data-slot="progress-indicator"
@@ -60,4 +63,10 @@ function ProgressValue({ className, ...props }: BaseProgress.Value.Props) {
   );
 }
 
-export { Progress, ProgressLabel, ProgressTrack, ProgressIndicator, ProgressValue };
+export {
+  Progress,
+  ProgressLabel,
+  ProgressTrack,
+  ProgressIndicator,
+  ProgressValue,
+};

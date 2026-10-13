@@ -15,7 +15,10 @@ function DrawerProvider(props: BaseDrawer.Provider.Props) {
   return <BaseDrawer.Provider {...props} />;
 }
 
-function DrawerIndentBackground({ className, ...props }: BaseDrawer.IndentBackground.Props) {
+function DrawerIndentBackground({
+  className,
+  ...props
+}: BaseDrawer.IndentBackground.Props) {
   return (
     <BaseDrawer.IndentBackground
       data-slot="drawer-indent-background"
@@ -112,11 +115,18 @@ function DrawerContent({ className, ...props }: BaseDrawer.Content.Props) {
   );
 }
 
-function DrawerHeader({ className, render, ...props }: useRender.ComponentProps<"div">) {
+function DrawerHeader({
+  className,
+  render,
+  ...props
+}: useRender.ComponentProps<"div">) {
   const header = useRender({
     defaultTagName: "div",
     props: {
-      ...mergeProps<"div">({ className: drawer().header({ className }) }, props),
+      ...mergeProps<"div">(
+        { className: drawer().header({ className }) },
+        props,
+      ),
       "data-slot": "drawer-header",
     },
     render,
@@ -135,7 +145,10 @@ function DrawerTitle({ className, ...props }: BaseDrawer.Title.Props) {
   );
 }
 
-function DrawerDescription({ className, ...props }: BaseDrawer.Description.Props) {
+function DrawerDescription({
+  className,
+  ...props
+}: BaseDrawer.Description.Props) {
   return (
     <BaseDrawer.Description
       data-slot="drawer-description"
@@ -145,11 +158,18 @@ function DrawerDescription({ className, ...props }: BaseDrawer.Description.Props
   );
 }
 
-function DrawerFooter({ className, render, ...props }: useRender.ComponentProps<"div">) {
+function DrawerFooter({
+  className,
+  render,
+  ...props
+}: useRender.ComponentProps<"div">) {
   const footer = useRender({
     defaultTagName: "div",
     props: {
-      ...mergeProps<"div">({ className: drawer().footer({ className }) }, props),
+      ...mergeProps<"div">(
+        { className: drawer().footer({ className }) },
+        props,
+      ),
       "data-slot": "drawer-footer",
     },
     render,

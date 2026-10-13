@@ -45,7 +45,10 @@ const timezoneGroups = [
       { label: "India Standard Time (UTC+05:30)", value: "Asia/Kolkata" },
       { label: "China Standard Time (UTC+08:00)", value: "Asia/Shanghai" },
       { label: "Japan Standard Time (UTC+09:00)", value: "Asia/Tokyo" },
-      { label: "Australian Eastern Time (UTC+10:00)", value: "Australia/Sydney" },
+      {
+        label: "Australian Eastern Time (UTC+10:00)",
+        value: "Australia/Sydney",
+      },
     ],
   },
 ];
@@ -73,7 +76,10 @@ export default function Select01() {
                       <SelectGroup>
                         <SelectGroupLabel>{group.region}</SelectGroupLabel>
                         {group.timezones.map((timezone) => (
-                          <SelectItem key={timezone.value} value={timezone.value}>
+                          <SelectItem
+                            key={timezone.value}
+                            value={timezone.value}
+                          >
                             <SelectItemText>{timezone.label}</SelectItemText>
                             <SelectItemIndicator />
                           </SelectItem>
