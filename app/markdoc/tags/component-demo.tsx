@@ -14,7 +14,7 @@ import {
   AutocompleteInputDemo,
   AutocompleteReadonly,
 } from "@/app/docs/components/autocomplete/demos";
-import Avatar01 from "@/app/docs/components/avatar/demos/avatar-01";
+import { AvatarDefault } from "@/app/docs/components/avatar/demos";
 import Button01 from "@/app/docs/components/button/demos/button-01";
 import CheckboxGroup01 from "@/app/docs/components/checkbox-group/demos/checkbox-group-01";
 import Checkbox01 from "@/app/docs/components/checkbox/demos/checkbox-01";
@@ -63,7 +63,7 @@ const demoRegistry = {
   "autocomplete-input": AutocompleteInputDemo,
   "autocomplete-disabled": AutocompleteDisabled,
   "autocomplete-readonly": AutocompleteReadonly,
-  "avatar-01": Avatar01,
+  "avatar-default": AvatarDefault,
   "button-01": Button01,
   "checkbox-01": Checkbox01,
   "checkbox-group-01": CheckboxGroup01,
