@@ -12,7 +12,7 @@
   "files": [
     {
       "path": "registry/sector23/ui/meter/index.ts",
-      "content": "export { Meter, MeterLabel, MeterTrack, MeterIndicator, MeterValue } from \"./meter\";\n",
+      "content": "export {\n  Meter,\n  MeterLabel,\n  MeterTrack,\n  MeterIndicator,\n  MeterValue,\n} from \"./meter\";\n",
       "type": "registry:ui",
       "target": "@ui/meter/index.ts"
     },

@@ -18,13 +18,13 @@
     },
     {
       "path": "registry/sector23/ui/collapsible/collapsible.tsx",
-      "content": "\"use client\";\n\nimport { useDirection } from \"@base-ui/react\";\nimport { Collapsible as BaseCollapsible } from \"@base-ui/react/collapsible\";\n\nimport { mergeSlotClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { collapsible } from \"./collapsible.style\";\n\nfunction Collapsible({ className, ...props }: BaseCollapsible.Root.Props) {\n  const direction = useDirection();\n\n  return (\n    <BaseCollapsible.Root\n      data-slot=\"collapsible\"\n      className={mergeSlotClassName(collapsible().root, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nfunction CollapsibleTrigger({ className, ...props }: BaseCollapsible.Trigger.Props) {\n  return (\n    <BaseCollapsible.Trigger\n      data-slot=\"collapsible-trigger\"\n      className={mergeSlotClassName(collapsible().trigger, className)}\n      {...props}\n    />\n  );\n}\n\nfunction CollapsiblePanel({ className, ...props }: BaseCollapsible.Panel.Props) {\n  return (\n    <BaseCollapsible.Panel\n      data-slot=\"collapsible-panel\"\n      className={mergeSlotClassName(collapsible().panel, className)}\n      {...props}\n    />\n  );\n}\n\nexport { Collapsible, CollapsibleTrigger, CollapsiblePanel };\n",
+      "content": "\"use client\";\n\nimport { useDirection } from \"@base-ui/react\";\nimport { Collapsible as BaseCollapsible } from \"@base-ui/react/collapsible\";\n\nimport { mergeSlotClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport { collapsible } from \"./collapsible.style\";\n\nfunction Collapsible({ className, ...props }: BaseCollapsible.Root.Props) {\n  const direction = useDirection();\n\n  return (\n    <BaseCollapsible.Root\n      data-slot=\"collapsible\"\n      className={mergeSlotClassName(collapsible().root, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nfunction CollapsibleTrigger({\n  className,\n  ...props\n}: BaseCollapsible.Trigger.Props) {\n  return (\n    <BaseCollapsible.Trigger\n      data-slot=\"collapsible-trigger\"\n      className={mergeSlotClassName(collapsible().trigger, className)}\n      {...props}\n    />\n  );\n}\n\nfunction CollapsiblePanel({\n  className,\n  ...props\n}: BaseCollapsible.Panel.Props) {\n  return (\n    <BaseCollapsible.Panel\n      data-slot=\"collapsible-panel\"\n      className={mergeSlotClassName(collapsible().panel, className)}\n      {...props}\n    />\n  );\n}\n\nexport { Collapsible, CollapsibleTrigger, CollapsiblePanel };\n",
       "type": "registry:ui",
       "target": "@ui/collapsible/collapsible.tsx"
     },
     {
       "path": "registry/sector23/ui/collapsible/index.ts",
-      "content": "export { Collapsible, CollapsibleTrigger, CollapsiblePanel } from \"./collapsible\";\n",
+      "content": "export {\n  Collapsible,\n  CollapsibleTrigger,\n  CollapsiblePanel,\n} from \"./collapsible\";\n",
       "type": "registry:ui",
       "target": "@ui/collapsible/index.ts"
     }

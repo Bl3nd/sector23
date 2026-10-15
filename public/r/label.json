@@ -23,7 +23,7 @@
     },
     {
       "path": "registry/sector23/ui/label/label.tsx",
-      "content": "\"use client\";\n\nimport type { ComponentProps } from \"react\";\n\nimport { useDirection } from \"@base-ui/react\";\n\nimport { label } from \"./label.style\";\n\nfunction Label({ className, ...props }: ComponentProps<\"label\">) {\n  const direction = useDirection();\n\n  return <label data-slot=\"label\" className={label({ className })} {...props} dir={direction} />;\n}\n\nexport { Label };\n",
+      "content": "\"use client\";\n\nimport type { ComponentProps } from \"react\";\n\nimport { useDirection } from \"@base-ui/react\";\n\nimport { label } from \"./label.style\";\n\nfunction Label({ className, ...props }: ComponentProps<\"label\">) {\n  const direction = useDirection();\n\n  return (\n    <label\n      data-slot=\"label\"\n      className={label({ className })}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nexport { Label };\n",
       "type": "registry:ui",
       "target": "@ui/label/label.tsx"
     }

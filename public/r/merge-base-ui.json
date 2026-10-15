@@ -4,7 +4,7 @@
   "files": [
     {
       "path": "registry/sector23/lib/merge-base-ui.ts",
-      "content": "type BaseUIClassName<State> = string | ((state: State) => string | undefined) | undefined;\n\nexport function mergeVariantClassName<VariantProps extends object, State>(\n  variant: (props?: VariantProps & { className?: string }) => string,\n  variantProps: VariantProps,\n  className: BaseUIClassName<State>,\n) {\n  return (state: State) =>\n    variant({\n      ...variantProps,\n      className: typeof className === \"function\" ? className(state) : className,\n    });\n}\n\nexport function mergeSlotClassName<State>(\n  slot: (props?: { className?: string }) => string,\n  className: BaseUIClassName<State>,\n) {\n  return mergeVariantClassName(slot, {}, className);\n}\n",
+      "content": "type BaseUIClassName<State> =\n  | string\n  | ((state: State) => string | undefined)\n  | undefined;\n\nexport function mergeVariantClassName<VariantProps extends object, State>(\n  variant: (props?: VariantProps & { className?: string }) => string,\n  variantProps: VariantProps,\n  className: BaseUIClassName<State>,\n) {\n  return (state: State) =>\n    variant({\n      ...variantProps,\n      className: typeof className === \"function\" ? className(state) : className,\n    });\n}\n\nexport function mergeSlotClassName<State>(\n  slot: (props?: { className?: string }) => string,\n  className: BaseUIClassName<State>,\n) {\n  return mergeVariantClassName(slot, {}, className);\n}\n",
       "type": "registry:lib",
       "target": "@lib/merge-base-ui.ts"
     }

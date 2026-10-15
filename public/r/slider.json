@@ -18,7 +18,7 @@
     },
     {
       "path": "registry/sector23/ui/slider/slider.style.ts",
-      "content": "import { tv } from \"tailwind-variants\";\n\nconst slider = tv({\n  slots: {\n    root: \"grid max-w-full grid-cols-[1fr_auto]\",\n    label: \"text-sm font-medium text-foreground select-none data-disabled:opacity-50\",\n    value: \"text-sm text-foreground tabular-nums data-disabled:opacity-50\",\n    control: \"col-span-2 flex touch-none items-center py-3 select-none data-disabled:opacity-50\",\n    track: \"h-1 w-full rounded-full bg-muted\",\n    indicator: \"rounded-[inherit] bg-primary select-none\",\n    thumb: [\n      \"size-4 rounded-full border border-primary bg-background select-none\",\n      \"has-focus-visible:ring-2 has-focus-visible:ring-ring/50\",\n    ],\n  },\n});\n\nexport { slider };\n",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst slider = tv({\n  slots: {\n    root: \"grid max-w-full grid-cols-[1fr_auto]\",\n    label:\n      \"text-sm font-medium text-foreground select-none data-disabled:opacity-50\",\n    value: \"text-sm text-foreground tabular-nums data-disabled:opacity-50\",\n    control:\n      \"col-span-2 flex touch-none items-center py-3 select-none data-disabled:opacity-50\",\n    track: \"h-1 w-full rounded-full bg-muted\",\n    indicator: \"rounded-[inherit] bg-primary select-none\",\n    thumb: [\n      \"size-4 rounded-full border border-primary bg-background select-none\",\n      \"has-focus-visible:ring-2 has-focus-visible:ring-ring/50\",\n    ],\n  },\n});\n\nexport { slider };\n",
       "type": "registry:ui",
       "target": "@ui/slider/slider.style.ts"
     },
