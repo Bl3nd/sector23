@@ -13,9 +13,11 @@ const switchStyle = tv({
       "dark:data-checked:bg-primary",
     ],
     thumb: [
-      "size-3 rounded-full bg-foreground transition-all duration-300 ease-default",
+      "flex size-3 items-center justify-center rounded-full bg-foreground transition-all duration-300 ease-default",
       "data-checked:translate-x-3.75 data-checked:bg-primary-foreground",
       "rtl:data-checked:-translate-x-3.75",
+      "[&>svg]:size-2 [&>svg]:shrink-0 [&>svg]:text-primary-foreground",
+      "dark:[&>svg]:text-primary",
     ],
   },
 });

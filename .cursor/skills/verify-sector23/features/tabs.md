@@ -16,7 +16,7 @@ The tabs demo opens on Account. Choosing Settings shows the Settings panel and l
 Preconditions:
 
 - Sector23 is healthy at `http://127.0.0.1:4173`.
-- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23`.
+- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23 Docs | Toggle`.
 
 - **Open the demo.** Go to the tabs page. Run `browser_navigate` with url `http://127.0.0.1:4173/docs/components/tabs`, then `browser_lock` with action `lock`, then `browser_snapshot`. The tab named `Account` has state `selected`, and a text node named `Account` is present.
 - **Select Settings.** Click the Settings tab. Run `browser_click` on the snapshot ref whose role is `tab` and name is `Settings`. That tab has state `selected`, the text node is named `Settings`, and `Account` is no longer selected.

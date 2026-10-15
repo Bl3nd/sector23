@@ -16,7 +16,7 @@ The collapsible demo starts closed. Opening "What's included in Sector23?" shows
 Preconditions:
 
 - Sector23 is healthy at `http://127.0.0.1:4173`.
-- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23`.
+- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23 Docs | Toggle`.
 
 - **Open the demo.** Go to the collapsible page. Run `browser_navigate` with url `http://127.0.0.1:4173/docs/components/collapsible`, then `browser_lock` with action `lock`, then `browser_snapshot`. The button named `What's included in Sector23?` is collapsed. The page does not show `Base UI`.
 - **Open it.** Click that button. Run `browser_click` on the snapshot ref whose role is `button` and name is `What's included in Sector23?`. The button is expanded, and the page shows `Accessible, unstyled primitives from Base UI, paired with Tailwind CSS styles you can copy into your project and customize.`

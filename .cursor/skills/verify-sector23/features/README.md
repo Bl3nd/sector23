@@ -5,7 +5,7 @@ This directory is the maintained source for verifying the user-facing behavior o
 ## Baseline preconditions
 
 - Launch Sector23 at `http://127.0.0.1:4173` with `bun .cursor/skills/verify-sector23/verify.mjs launch`.
-- Run `bun .cursor/skills/verify-sector23/verify.mjs doctor` and require `url=http://127.0.0.1:4173` and `title=Sector23`.
+- Run `bun .cursor/skills/verify-sector23/verify.mjs doctor` and require `url=http://127.0.0.1:4173` and `title=Sector23 Docs | Toggle`.
 - There is no seed data and no login.
 - Never drive an instance that was not started by this verification run. Port 3000 is not a fallback.
 
@@ -21,7 +21,7 @@ This directory is the maintained source for verifying the user-facing behavior o
 ## Proof and skip reporting
 
 - Capture the user action and the resulting state, not only the final screen.
-- UI proof includes an accessibility snapshot and a screenshot. The snapshot must show the document title `Sector23`.
+- UI proof includes an accessibility snapshot and a screenshot. The snapshot must show the document title `Sector23 Docs | <Component>`.
 - Theme proof also includes the `dark` or `light` class token before and after the key.
 - Record the feature id and entry point with every artifact.
 - Report an unreachable path with the attempted command and the unmet precondition.

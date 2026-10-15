@@ -16,7 +16,7 @@ The preview card stays hidden until Priya Raman is hovered or focused. The card 
 Preconditions:
 
 - Sector23 is healthy at `http://127.0.0.1:4173`.
-- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23`.
+- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23 Docs | Toggle`.
 
 - **Open the demo.** Go to the preview card page. Run `browser_navigate` with url `http://127.0.0.1:4173/docs/components/preview-card`, then `browser_lock` with action `lock`, then `browser_snapshot`. A link named `Priya Raman` is present. The text `Site Reliability Engineer` is absent.
 - **Show the card.** Hover the link named `Priya Raman`. A click focuses the link, adds `#` to the URL, and does not show `Site Reliability Engineer`. The card appears after a real pointer hover.

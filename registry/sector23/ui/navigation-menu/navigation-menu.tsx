@@ -94,10 +94,9 @@ function NavigationMenuContent({
   );
 }
 
-function NavigationMenuLink({
-  className,
-  ...props
-}: BaseNavigationMenu.Link.Props) {
+type NavigationMenuLinkProps = BaseNavigationMenu.Link.Props;
+
+function NavigationMenuLink({ className, ...props }: NavigationMenuLinkProps) {
   return (
     <BaseNavigationMenu.Link
       data-slot="navigation-menu-link"
@@ -205,3 +204,4 @@ export {
   NavigationMenuArrow,
   NavigationMenuViewport,
 };
+export type { NavigationMenuLinkProps };

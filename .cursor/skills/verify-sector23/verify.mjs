@@ -144,7 +144,7 @@ async function waitUntilReady(pid) {
       const response = await fetch(readyUrl);
       if (response.ok) {
         const html = await response.text();
-        if (html.includes("<title>Sector23</title>")) {
+        if (html.includes("<title>Sector23 Docs | Toggle</title>")) {
           return;
         }
       }
@@ -176,7 +176,7 @@ function doctor() {
     [
       "-NoProfile",
       "-Command",
-      `$r = Invoke-WebRequest -UseBasicParsing ${readyUrl}; if ($r.StatusCode -ne 200 -or $r.Content -notlike '*<title>Sector23</title>*') { exit 1 }; Write-Output $r.StatusCode`,
+      `$r = Invoke-WebRequest -UseBasicParsing ${readyUrl}; if ($r.StatusCode -ne 200 -or $r.Content -notlike '*<title>Sector23 Docs | Toggle</title>*') { exit 1 }; Write-Output $r.StatusCode`,
     ],
     { encoding: "utf8" },
   );
@@ -188,7 +188,7 @@ function doctor() {
   console.log(`url=${origin}`);
   console.log(`pid=${pid}`);
   console.log(`ready=${readyUrl}`);
-  console.log(`title=Sector23`);
+  console.log(`title=Sector23 Docs | Toggle`);
 }
 
 async function launch() {

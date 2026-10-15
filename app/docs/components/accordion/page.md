@@ -1,5 +1,7 @@
 ---
-title: Accordion
+nextjs:
+  metadata:
+    title: Accordion
 ---
 
 {% component-demo component="accordion-default" /%}

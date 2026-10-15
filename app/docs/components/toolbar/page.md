@@ -1,5 +1,7 @@
 ---
-title: Toolbar
+nextjs:
+  metadata:
+    title: Toolbar
 ---
 
 {% component-demo component="toolbar-01" /%}

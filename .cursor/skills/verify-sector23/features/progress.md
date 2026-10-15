@@ -16,7 +16,7 @@ The progress demo labels itself Uploading... and the value climbs from 10 toward
 Preconditions:
 
 - Sector23 is healthy at `http://127.0.0.1:4173`.
-- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23`.
+- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23 Docs | Toggle`.
 
 - **Open the demo.** Go to the progress page. Run `browser_navigate` with url `http://127.0.0.1:4173/docs/components/progress`, then `browser_lock` with action `lock`. The page shows `Uploading...`. Read `aria-valuenow` on the progressbar. The accessibility snapshot can omit that progressbar.
 - **Wait.** Read `aria-valuenow` again after about a second. The second value is greater than the first, or it has reached 100. The label is still `Uploading...`.

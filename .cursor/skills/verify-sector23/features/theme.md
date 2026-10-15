@@ -17,14 +17,14 @@ Pressing `d` flips the document between the `dark` and `light` theme classes. Pr
 Preconditions:
 
 - Sector23 is healthy at `http://127.0.0.1:4173`.
-- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23`.
+- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23 Docs | Toggle`.
 - Focus is not in an editable control.
 
 - **Open a page without a text field.** Go to the tabs demo. Run `browser_navigate` with url `http://127.0.0.1:4173/docs/components/tabs`, then `browser_lock` with action `lock`.
 - **Read the theme.** Read the document class. Run `browser_cdp` with method `Runtime.evaluate`, params `{ "expression": "document.documentElement.classList.contains('dark') ? 'dark' : document.documentElement.classList.contains('light') ? 'light' : 'neither'", "returnByValue": true }`. The value is `dark` or `light`. Record it as the start token.
 - **Flip.** Press `d`. Run `browser_press_key` with key `d`, then run the same `Runtime.evaluate`. The value is the other token.
 - **Restore.** Press `d` again. Run `browser_press_key` with key `d`, then run the same `Runtime.evaluate`. The value is the start token.
-- **Proof.** Save the three tokens to `artifacts/theme/class-tokens.txt` in order, and copy a screenshot of each theme to `artifacts/theme/before.png` and `artifacts/theme/after.png`. The document title on the page is `Sector23`.
+- **Proof.** Save the three tokens to `artifacts/theme/class-tokens.txt` in order, and copy a screenshot of each theme to `artifacts/theme/before.png` and `artifacts/theme/after.png`. The document title on the page is `Sector23 Docs | Tabs`.
 
 ## Gotchas
 

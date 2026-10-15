@@ -17,7 +17,7 @@ From the repo root:
 bun .cursor/skills/verify-sector23/verify.mjs launch
 ```
 
-That starts `bun --bun next dev --hostname 127.0.0.1 --port 4173` and waits until `http://127.0.0.1:4173/docs/components/toggle` returns 200 with `<title>Sector23</title>`. A second launch while that server is still healthy prints `already running` and the same URL.
+That starts `bun --bun next dev --hostname 127.0.0.1 --port 4173` and waits until `http://127.0.0.1:4173/docs/components/toggle` returns 200 with `<title>Sector23 Docs | Toggle</title>`. A second launch while that server is still healthy prints `already running` and the same URL.
 
 The helper records the process id in `.cursor/skills/verify-sector23/run/server.pid` and the log in `.cursor/skills/verify-sector23/run/server.log`. Next listens from a child of that process. The helper treats that child as part of the server it started.
 
@@ -31,7 +31,7 @@ Run this before driving, and again whenever the page looks wrong:
 bun .cursor/skills/verify-sector23/verify.mjs doctor
 ```
 
-A healthy instance prints `ok`, `url=http://127.0.0.1:4173`, the recorded pid, `ready=http://127.0.0.1:4173/docs/components/toggle`, and `title=Sector23`. Any other result means this instance is not worth driving. Do not point the browser at a different origin to compensate.
+A healthy instance prints `ok`, `url=http://127.0.0.1:4173`, the recorded pid, `ready=http://127.0.0.1:4173/docs/components/toggle`, and `title=Sector23 Docs | Toggle`. Any other result means this instance is not worth driving. Do not point the browser at a different origin to compensate.
 
 ## Drive
 

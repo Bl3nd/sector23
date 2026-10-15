@@ -16,7 +16,7 @@ The volume slider opens at 25. Arrow Right raises the value.
 Preconditions:
 
 - Sector23 is healthy at `http://127.0.0.1:4173`.
-- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23`.
+- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23 Docs | Toggle`.
 
 - **Open the demo.** Go to the slider page. Run `browser_navigate` with url `http://127.0.0.1:4173/docs/components/slider`, then `browser_lock` with action `lock`, then `browser_snapshot`. The slider named `Volume` shows `25`.
 - **Raise it.** Focus the thumb and press Arrow Right. A click on the slider ref can be intercepted by the thumb. Click the thumb, then run `browser_press_key` with key `ArrowRight`. The value changes from `25` to `26`.
