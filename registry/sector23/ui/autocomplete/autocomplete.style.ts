@@ -1,20 +1,5 @@
 import { tv } from "tailwind-variants";
 
-/* 
-Slots and their data-attributes and css variables:
-
-inputGroup: data-popup-open/data-popup-side/data-list-empty/data-pressed/data-disabled/data-readonly/data-valid/data-invalid/data-dirty/data-touched/data-filled/data-focused
-input: data-popup-open/data-popup-side/data-list-empty/data-pressed/data-disabled/data-readonly/data-required/data-valid/data-invalid/data-dirty/data-touched/data-filled/data-focused
-trigger: data-popup-open/data-popup-side/data-list-empty/data-pressed/data-disabled/data-readonly/data-required/data-valid/data-invalid/data-dirty/data-touched/data-filled/data-focused
-clear: data-popup-open/data-disabled/data-visible/data-starting-style/data-ending-style
-backdrop: data-open/data-closed/data-starting-style/data-ending-style
-positioner: data-open/data-closed/data-anchor-hidden/data-align/data-empty/data-side; --anchor-height/--anchor-width/--available-height/--available-width/--transform-origin
-popup: data-open/data-closed/data-anchor-hidden/data-align/data-empty/data-side/data-starting-style/data-ending-style
-arrow: data-open/data-closed/data-uncentered/data-align/data-side
-item: data-highlighted/data-disabled
-separator: data-orientation
-*/
-
 const autocomplete = tv({
   slots: {
     control: "flex flex-col gap-1.5",
@@ -29,10 +14,10 @@ const autocomplete = tv({
       "focus-visible:ring-2 focus-visible:ring-ring/50",
       "in-data-[slot='autocomplete-input-group']:group-has-[[data-slot='autocomplete-clear'],[data-slot='autocomplete-trigger']]:pe-9",
       "not-in-data-[slot='autocomplete-input-group']:data-disabled:opacity-50",
-      "not-in-data-[slot='autocomplete-input-group']:data-readonly:opacity-60",
       "data-invalid:border-destructive/50",
-      "data-readonly:cursor-default",
       "focus-visible:data-invalid:ring-destructive/50",
+      "data-readonly:cursor-default",
+      "not-in-data-[slot='autocomplete-input-group']:data-readonly:opacity-60",
       "dark:bg-input/15",
     ],
     inputGroupActions: [
@@ -47,8 +32,8 @@ const autocomplete = tv({
     icon: "[&>svg]:size-4 [&>svg]:shrink-0",
     clear: [
       "invisible flex items-center justify-center rounded-md p-0.5 transition-colors duration-150 ease-default",
-      "hover:bg-accent hover:text-accent-foreground",
       "group-data-readonly:pointer-events-none",
+      "hover:bg-accent hover:text-accent-foreground",
       "data-visible:visible",
       "[&>svg]:size-4 [&>svg]:shrink-0",
     ],

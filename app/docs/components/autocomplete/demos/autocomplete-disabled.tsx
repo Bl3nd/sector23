@@ -42,34 +42,66 @@ export function AutocompleteDisabled() {
   const id = useId();
 
   return (
-    <Autocomplete items={tags} itemToStringValue={(tag) => tag.value} disabled>
-      <AutocompleteControl>
-        <Label htmlFor={id}>Search tags</Label>
-        <AutocompleteInputGroup>
-          <AutocompleteInput placeholder="e.g. feature" id={id} />
-          <AutocompleteInputGroupActions>
-            <AutocompleteClear />
-            <AutocompleteTrigger>
-              <AutocompleteIcon />
-            </AutocompleteTrigger>
-          </AutocompleteInputGroupActions>
-        </AutocompleteInputGroup>
-      </AutocompleteControl>
+    <div className="flex flex-col gap-4">
+      <Autocomplete
+        items={tags}
+        itemToStringValue={(tag) => tag.value}
+        disabled
+      >
+        <AutocompleteControl>
+          <Label htmlFor={id}>Search tags</Label>
+          <AutocompleteInputGroup>
+            <AutocompleteInput placeholder="e.g. feature" id={id} />
+            <AutocompleteInputGroupActions>
+              <AutocompleteClear />
+              <AutocompleteTrigger>
+                <AutocompleteIcon />
+              </AutocompleteTrigger>
+            </AutocompleteInputGroupActions>
+          </AutocompleteInputGroup>
+        </AutocompleteControl>
 
-      <AutocompletePortal>
-        <AutocompletePositioner>
-          <AutocompletePopup>
-            <AutocompleteEmpty>No tags found.</AutocompleteEmpty>
-            <AutocompleteList>
-              {(tag: Tag) => (
-                <AutocompleteItem key={tag.id} value={tag}>
-                  {tag.value}
-                </AutocompleteItem>
-              )}
-            </AutocompleteList>
-          </AutocompletePopup>
-        </AutocompletePositioner>
-      </AutocompletePortal>
-    </Autocomplete>
+        <AutocompletePortal>
+          <AutocompletePositioner>
+            <AutocompletePopup>
+              <AutocompleteEmpty>No tags found.</AutocompleteEmpty>
+              <AutocompleteList>
+                {(tag: Tag) => (
+                  <AutocompleteItem key={tag.id} value={tag}>
+                    {tag.value}
+                  </AutocompleteItem>
+                )}
+              </AutocompleteList>
+            </AutocompletePopup>
+          </AutocompletePositioner>
+        </AutocompletePortal>
+      </Autocomplete>
+
+      <Autocomplete
+        items={tags}
+        itemToStringValue={(tag) => tag.value}
+        disabled
+      >
+        <Label className="flex flex-col gap-1.5">
+          Search tags
+          <AutocompleteInput placeholder="e.g. feature" />
+        </Label>
+
+        <AutocompletePortal>
+          <AutocompletePositioner>
+            <AutocompletePopup>
+              <AutocompleteEmpty>No tags found.</AutocompleteEmpty>
+              <AutocompleteList>
+                {(tag: Tag) => (
+                  <AutocompleteItem key={tag.id} value={tag}>
+                    {tag.value}
+                  </AutocompleteItem>
+                )}
+              </AutocompleteList>
+            </AutocompletePopup>
+          </AutocompletePositioner>
+        </AutocompletePortal>
+      </Autocomplete>
+    </div>
   );
 }

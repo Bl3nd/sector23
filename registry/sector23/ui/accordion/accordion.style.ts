@@ -1,15 +1,5 @@
 import { tv } from "tailwind-variants";
 
-/*
-Slots and their data-attributes and css variables:
-
-root: data-disabled
-item: data-open/data-disabled/data-index
-header: data-open/data-disabled/data-index
-trigger: data-panel-open/data-disabled/data-index
-panel: data-open/data-disabled/data-index/data-starting-style/data-ending-style; --accordion-panel-height/--accordion-panel-width
-*/
-
 const accordion = tv({
   slots: {
     root: "flex w-full flex-col",

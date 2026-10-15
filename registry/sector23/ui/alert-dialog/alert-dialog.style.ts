@@ -1,22 +1,13 @@
 import { tv } from "tailwind-variants";
 
-/*
-Slots and their data-attributes and css variables:
-
-trigger: data-popup-open/data-disabled
-backdrop: data-open/data-closed/data-starting-style/data-ending-style
-viewport: data-open/data-closed/data-nested/data-nested-dialog-open/data-starting-style/data-ending-style
-popup: data-open/data-closed/data-nested/data-nested-dialog-open/data-starting-style/data-ending-style; --nested-dialogs
-close: data-disabled
-*/
-
 const alertDialog = tv({
   slots: {
     trigger: "",
     portal: "",
     backdrop: [
       "fixed inset-0 min-h-dvh bg-black/20 backdrop-blur-xs transition-all duration-150 ease-default",
-      "data-ending-style:opacity-0 data-starting-style:opacity-0",
+      "data-ending-style:opacity-0",
+      "data-starting-style:opacity-0",
       "supports-[-webkit-touch-callout:none]:absolute",
       "dark:bg-black/50",
     ],

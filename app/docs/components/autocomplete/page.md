@@ -13,6 +13,10 @@ nextjs:
 
 {% component-demo component="autocomplete-input" /%}
 
+### Form integration
+
+{% component-demo component="autocomplete-form" /%}
+
 ### Disabled
 
 {% component-demo component="autocomplete-disabled" /%}

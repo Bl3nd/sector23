@@ -1,3 +1,4 @@
+// oxlint-disable no-magic-numbers
 "use client";
 
 import { Loader2Icon, SendIcon } from "lucide-react";

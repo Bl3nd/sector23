@@ -7,10 +7,14 @@ import {
   AccordionMultiple,
   AccordionRootDisabled,
 } from "@/app/docs/components/accordion/demos";
-import { AlertDialogDefault } from "@/app/docs/components/alert-dialog/demos";
+import {
+  AlertDialogDefault,
+  AlertDialogDisabled,
+} from "@/app/docs/components/alert-dialog/demos";
 import {
   AutocompleteDefault,
   AutocompleteDisabled,
+  AutocompleteForm,
   AutocompleteInputDemo,
   AutocompleteReadonly,
 } from "@/app/docs/components/autocomplete/demos";
@@ -76,8 +80,10 @@ const demoRegistry = {
   "accordion-root-disabled": AccordionRootDisabled,
   "accordion-item-disabled": AccordionItemDisabled,
   "alert-dialog-default": AlertDialogDefault,
+  "alert-dialog-disabled": AlertDialogDisabled,
   "autocomplete-default": AutocompleteDefault,
   "autocomplete-input": AutocompleteInputDemo,
+  "autocomplete-form": AutocompleteForm,
   "autocomplete-disabled": AutocompleteDisabled,
   "autocomplete-readonly": AutocompleteReadonly,
   "avatar-default": AvatarDefault,
