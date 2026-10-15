@@ -201,8 +201,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -230,8 +230,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -260,8 +260,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -289,8 +289,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -318,8 +318,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -348,8 +348,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -377,8 +377,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -406,8 +406,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -436,8 +436,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -465,8 +465,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -494,8 +494,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -523,8 +523,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -552,8 +552,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -581,8 +581,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -610,8 +610,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -639,8 +639,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -668,7 +668,7 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json"
+        "https://sector23.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -696,8 +696,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -725,8 +725,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -754,8 +754,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -784,8 +784,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -814,8 +814,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -843,8 +843,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -872,8 +872,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -901,8 +901,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -930,8 +930,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -959,8 +959,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -988,8 +988,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -1018,8 +1018,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -1047,8 +1047,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -1076,8 +1076,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -1105,8 +1105,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -1134,8 +1134,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -1163,8 +1163,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -1192,8 +1192,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -1221,8 +1221,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -1250,8 +1250,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
@@ -1279,8 +1279,8 @@
         "tailwind-variants@^3.3.1"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/merge-base-ui.json"
+        "https://sector23.vercel.app/r/theme.json",
+        "https://sector23.vercel.app/r/merge-base-ui.json"
       ],
       "files": [
         {
