@@ -13,26 +13,12 @@ const POSITIONER_SIDE_OFFSET = 6;
 const useComboboxFilter = BaseCombobox.useFilter;
 const useComboboxFilteredItems = BaseCombobox.useFilteredItems;
 
-function Combobox<Items extends readonly { items: readonly unknown[] }[]>(
-  props: Omit<
-    BaseCombobox.Root.Props<Items[number]["items"][number]>,
-    "items"
-  > & {
-    items: Items;
-  },
-): React.JSX.Element;
-function Combobox<ItemValue>(
-  props: Omit<BaseCombobox.Root.Props<ItemValue>, "items"> & {
-    items?: readonly ItemValue[] | undefined;
-  },
-): React.JSX.Element;
-function Combobox<ItemValue>({
-  items,
-  ...props
-}: BaseCombobox.Root.Props<ItemValue>) {
-  return (
-    <BaseCombobox.Root items={items as unknown as ItemValue[]} {...props} />
-  );
+function Combobox<
+  Value,
+  Multiple extends boolean | undefined = false,
+  Item = Value,
+>({ ...props }: BaseCombobox.Root.Props<Value, Multiple, Item>) {
+  return <BaseCombobox.Root {...props} />;
 }
 
 function ComboboxLabel({ className, ...props }: BaseCombobox.Label.Props) {
@@ -179,6 +165,7 @@ function ComboboxChip({ className, ...props }: BaseCombobox.Chip.Props) {
 
 function ComboboxChipRemove({
   className,
+  children,
   ...props
 }: BaseCombobox.ChipRemove.Props) {
   return (
@@ -186,7 +173,9 @@ function ComboboxChipRemove({
       data-slot="combobox-chip-remove"
       className={mergeSlotClassName(combobox().chipRemove, className)}
       {...props}
-    />
+    >
+      {children ?? <XIcon />}
+    </BaseCombobox.ChipRemove>
   );
 }
 

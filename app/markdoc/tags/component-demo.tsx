@@ -32,7 +32,11 @@ import {
   CheckboxReadonly,
 } from "@/app/docs/components/checkbox/demos";
 import { CollapsibleDefault } from "@/app/docs/components/collapsible/demos";
-import Combobox01 from "@/app/docs/components/combobox/demos/combobox-01";
+import {
+  ComboboxDefault,
+  ComboboxInputDemo,
+  ComboboxMultiple,
+} from "@/app/docs/components/combobox/demos";
 import ContextMenu01 from "@/app/docs/components/context-menu/demos/context-menu-01";
 import Dialog01 from "@/app/docs/components/dialog/demos/dialog-01";
 import Drawer01 from "@/app/docs/components/drawer/demos/drawer-01";
@@ -88,7 +92,9 @@ const demoRegistry = {
   "checkbox-group-parent": CheckboxGroupParent,
   "checkbox-group-disabled": CheckboxGroupDisabled,
   "collapsible-default": CollapsibleDefault,
-  "combobox-01": Combobox01,
+  "combobox-default": ComboboxDefault,
+  "combobox-multiple": ComboboxMultiple,
+  "combobox-input": ComboboxInputDemo,
   "context-menu-01": ContextMenu01,
   "dialog-01": Dialog01,
   "drawer-01": Drawer01,
