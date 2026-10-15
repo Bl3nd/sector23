@@ -1,5 +1,7 @@
 ---
-title: Checkbox
+nextjs:
+  metadata:
+    title: Checkbox
 ---
 
 {% component-demo component="checkbox-default" /%}

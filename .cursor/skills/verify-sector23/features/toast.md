@@ -16,7 +16,7 @@ Create toast adds a notification titled with the next count, with the descriptio
 Preconditions:
 
 - Sector23 is healthy at `http://127.0.0.1:4173`.
-- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23`.
+- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23 Docs | Toggle`.
 - The page was loaded fresh, so the next title is `Toast 1 created`.
 
 - **Open the demo.** Go to the toast page. Run `browser_navigate` with url `http://127.0.0.1:4173/docs/components/toast`, then `browser_lock` with action `lock`, then `browser_snapshot`. A button named `Create toast` is present, and a region named `Notifications` contains no toast heading.

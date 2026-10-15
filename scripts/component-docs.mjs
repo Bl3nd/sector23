@@ -10,6 +10,11 @@ import {
 } from "node:fs";
 import { join } from "node:path";
 
+import Markdoc from "@markdoc/markdoc";
+
+import { docs } from "../app/components/docs/docs-content.ts";
+import { parseDocFrontmatter } from "../app/markdoc/frontmatter.ts";
+
 const componentsRoot = "app/docs/components";
 const registryPath = "app/markdoc/tags/component-demo.tsx";
 const tailMarker = "type DemoPath = keyof typeof demoRegistry;";
@@ -23,7 +28,29 @@ function titleFromSlug(slug) {
 }
 
 function pageMarkdown(slug) {
-  return `---\ntitle: ${titleFromSlug(slug)}\n---\n\n{% component-demo component="${slug}-01" /%}\n`;
+  return `---\nnextjs:\n  metadata:\n    title: ${titleFromSlug(slug)}\n---\n\n{% component-demo component="${slug}-01" /%}\n`;
+}
+
+const sidebarTitles = new Map(
+  docs
+    .flatMap((section) => section.items ?? [])
+    .filter((item) => item.href?.startsWith("/docs/components/"))
+    .map((item) => [item.href.slice("/docs/components/".length), item.title]),
+);
+
+function checkFrontmatter(slug, source) {
+  let title;
+  try {
+    const ast = Markdoc.parse(source);
+    title = parseDocFrontmatter(ast.attributes.frontmatter).nextjs.metadata.title;
+  } catch (error) {
+    return `${slug}: ${error.message}`;
+  }
+  const sidebarTitle = sidebarTitles.get(slug);
+  if (sidebarTitle !== undefined && sidebarTitle !== title) {
+    return `${slug}: sidebar title "${sidebarTitle}" differs from nextjs.metadata.title "${title}"`;
+  }
+  return null;
 }
 
 function listSlugs() {
@@ -154,8 +181,11 @@ function check() {
     }
     if (!existsSync(mdPath)) {
       failures.push(`${slug}: missing page.md`);
-    } else if (readFileSync(mdPath, "utf8") !== pageMarkdown(slug)) {
-      failures.push(`${slug}: page.md does not match the title template`);
+    } else {
+      const failure = checkFrontmatter(slug, readFileSync(mdPath, "utf8"));
+      if (failure) {
+        failures.push(failure);
+      }
     }
     if (!existsSync(demoPath)) {
       failures.push(`${slug}: missing demos/${slug}-01.tsx`);

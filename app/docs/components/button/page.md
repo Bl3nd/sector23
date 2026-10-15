@@ -1,5 +1,7 @@
 ---
-title: Button
+nextjs:
+  metadata:
+    title: Button
 ---
 
 {% component-demo component="button-default" /%}

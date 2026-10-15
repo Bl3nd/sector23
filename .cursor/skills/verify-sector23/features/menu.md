@@ -16,7 +16,7 @@ The menu demo starts closed. Opening File shows New file. Choosing nothing leave
 Preconditions:
 
 - Sector23 is healthy at `http://127.0.0.1:4173`.
-- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23`.
+- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23 Docs | Toggle`.
 
 - **Open the demo.** Go to the menu page. Run `browser_navigate` with url `http://127.0.0.1:4173/docs/components/menu`, then `browser_lock` with action `lock`, then `browser_snapshot`. A button named `File` is collapsed. No menuitem named `New file` is present.
 - **Open File.** Click `File`. Run `browser_click` on the snapshot ref whose role is `button` and name is `File`. A menuitem whose name starts with `New file` is present. The accessible name includes the shortcut, `New file Ctrl + N`. A menuitem named `Exit application` is present.

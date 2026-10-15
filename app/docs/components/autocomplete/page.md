@@ -1,5 +1,8 @@
 ---
-title: Autocomplete
+nextjs:
+  metadata:
+    title: Autocomplete
+    description: A searchable input
 ---
 
 {% component-demo component="autocomplete-default" /%}

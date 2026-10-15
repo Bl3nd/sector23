@@ -16,7 +16,7 @@ Right-clicking the dashed area opens a menu. Rename is one of the items. The men
 Preconditions:
 
 - Sector23 is healthy at `http://127.0.0.1:4173`.
-- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23`.
+- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23 Docs | Toggle`.
 
 - **Open the demo.** Go to the context menu page. Run `browser_navigate` with url `http://127.0.0.1:4173/docs/components/context-menu`, then `browser_lock` with action `lock`, then `browser_snapshot`. The words `Right click me` are on screen. No menuitem named `Rename` is present.
 - **Open the menu.** Right-click the dashed area. The trigger has no role, so it has no snapshot ref. Take `browser_take_screenshot`, then `browser_mouse_click_xy` with button `right` on the center of that dashed box. A menuitem named `Rename` is present. `Share` is `aria-disabled`.

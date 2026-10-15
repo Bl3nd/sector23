@@ -18,7 +18,7 @@
     },
     {
       "path": "registry/sector23/ui/button/button.tsx",
-      "content": "\"use client\";\n\nimport { useDirection } from \"@base-ui/react\";\nimport { Button as BaseButton } from \"@base-ui/react/button\";\n\nimport { mergeVariantClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport type { ButtonVariantProps } from \"./button.style\";\n\nimport { button } from \"./button.style\";\n\nfunction Button({ size, variant, className, ...props }: BaseButton.Props & ButtonVariantProps) {\n  const direction = useDirection();\n\n  return (\n    <BaseButton\n      data-slot=\"button\"\n      className={mergeVariantClassName(button, { size, variant }, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nexport { Button };\n",
+      "content": "\"use client\";\n\nimport { useDirection } from \"@base-ui/react\";\nimport { Button as BaseButton } from \"@base-ui/react/button\";\n\nimport { mergeVariantClassName } from \"@/registry/sector23/lib/merge-base-ui\";\n\nimport type { ButtonVariantProps } from \"./button.style\";\n\nimport { button } from \"./button.style\";\n\nfunction Button({\n  size,\n  variant,\n  className,\n  ...props\n}: BaseButton.Props & ButtonVariantProps) {\n  const direction = useDirection();\n\n  return (\n    <BaseButton\n      data-slot=\"button\"\n      className={mergeVariantClassName(button, { size, variant }, className)}\n      {...props}\n      dir={direction}\n    />\n  );\n}\n\nexport { Button };\n",
       "type": "registry:ui",
       "target": "@ui/button/button.tsx"
     },

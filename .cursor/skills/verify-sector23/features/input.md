@@ -16,7 +16,7 @@ The input demo is one empty email field. Typing shows that text in the field.
 Preconditions:
 
 - Sector23 is healthy at `http://127.0.0.1:4173`.
-- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23`.
+- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23 Docs | Toggle`.
 
 - **Open the demo.** Go to the input page. Run `browser_navigate` with url `http://127.0.0.1:4173/docs/components/input`, then `browser_lock` with action `lock`, then `browser_snapshot`. One textbox is present. Its name and placeholder are `Enter you email`, and its value is empty.
 - **Type.** Type into that textbox. Run `browser_type` on the snapshot ref whose role is `textbox` and name is `Enter you email`, with text `ada@sector23.dev`. The textbox value is `ada@sector23.dev`.

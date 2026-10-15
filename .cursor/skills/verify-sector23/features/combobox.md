@@ -16,7 +16,7 @@ The combobox demo picks a shipping country. Choosing Canada fills the field with
 Preconditions:
 
 - Sector23 is healthy at `http://127.0.0.1:4173`.
-- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23`.
+- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23 Docs | Toggle`.
 
 - **Open the demo.** Go to the combobox page. Run `browser_navigate` with url `http://127.0.0.1:4173/docs/components/combobox`, then `browser_lock` with action `lock`, then `browser_snapshot`. A combobox named `Shipping country` is collapsed. Its placeholder is `e.g. Canada`.
 - **Open the list.** Click the combobox. Run `browser_click` on the snapshot ref whose role is `combobox` and name is `Shipping country`. The list includes an option named `Canada`.
