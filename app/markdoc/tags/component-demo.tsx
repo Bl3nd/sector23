@@ -19,12 +19,7 @@ import {
   AutocompleteReadonly,
 } from "@/app/docs/components/autocomplete/demos";
 import { AvatarDefault } from "@/app/docs/components/avatar/demos";
-import {
-  ButtonDefault,
-  ButtonLoading,
-  ButtonSize,
-  ButtonVariant,
-} from "@/app/docs/components/button/demos";
+import { ButtonPlayground } from "@/app/docs/components/button/demos";
 import {
   CheckboxGroupDefault,
   CheckboxGroupDisabled,
@@ -87,10 +82,7 @@ const demoRegistry = {
   "autocomplete-disabled": AutocompleteDisabled,
   "autocomplete-readonly": AutocompleteReadonly,
   "avatar-default": AvatarDefault,
-  "button-default": ButtonDefault,
-  "button-variant": ButtonVariant,
-  "button-size": ButtonSize,
-  "button-loading": ButtonLoading,
+  "button-playground": ButtonPlayground,
   "checkbox-default": CheckboxDefault,
   "checkbox-disabled": CheckboxDisabled,
   "checkbox-readonly": CheckboxReadonly,
