@@ -10,6 +10,7 @@ import {
 import {
   AlertDialogDefault,
   AlertDialogDisabled,
+  AlertDialogInnerScroll,
 } from "@/app/docs/components/alert-dialog/demos";
 import {
   AutocompleteDefault,
@@ -80,6 +81,7 @@ const demoRegistry = {
   "accordion-root-disabled": AccordionRootDisabled,
   "accordion-item-disabled": AccordionItemDisabled,
   "alert-dialog-default": AlertDialogDefault,
+  "alert-dialog-inner-scroll": AlertDialogInnerScroll,
   "alert-dialog-disabled": AlertDialogDisabled,
   "autocomplete-default": AutocompleteDefault,
   "autocomplete-input": AutocompleteInputDemo,

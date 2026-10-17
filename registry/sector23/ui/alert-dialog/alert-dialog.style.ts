@@ -11,7 +11,7 @@ const alertDialog = tv({
       "supports-[-webkit-touch-callout:none]:absolute",
       "dark:bg-black/50",
     ],
-    viewport: "",
+    viewport: "fixed inset-0 flex items-center justify-center overflow-hidden",
     popup: [
       "fixed top-1/2 left-1/2 flex w-md max-w-[calc(100vw-3rem)] -translate-x-1/2 -translate-y-1/2 flex-col rounded-lg border border-border bg-popover text-popover-foreground shadow-lg transition-[scale,opacity] duration-300 ease-default outline-none",
       "data-ending-style:scale-95 data-ending-style:opacity-0",

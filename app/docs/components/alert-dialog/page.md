@@ -8,6 +8,10 @@ nextjs:
 
 ### Examples
 
+## Inner scroll
+
+{% component-demo component="alert-dialog-inner-scroll" /%}
+
 ## Disabled
 
 {% component-demo component="alert-dialog-disabled" /%}
