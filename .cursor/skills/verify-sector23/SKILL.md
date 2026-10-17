@@ -5,7 +5,7 @@ description: Drive the Sector23 Next.js component docs in a browser and prove a 
 
 # Verify Sector23
 
-Sector23 is a React component library. The user-facing surface is the Next.js docs site. `/` renders an empty page whose document title is `Sector23`. Each component demo is its own route under `/docs/components/<name>`. There is no shared navigation, auth, seed data, or CLI. The feature map lists every docs demo that changes visible state. Avatar, meter, and separator do not change visible state, so they stay unmapped. Driving one mapped demo does not verify the others.
+Sector23 is a React component library. The user-facing surface is the Next.js docs site. `/` renders an empty page whose document title is `Sector23`. Each component demo is its own route under `/docs/components/<name>`. There is no shared navigation, auth, seed data, or CLI. The feature map lists every docs demo that changes visible state. Avatar, button, meter, and separator do not change visible state, so they stay unmapped. Driving one mapped demo does not verify the others.
 
 The harness is the Cursor IDE browser (`cursor-ide-browser`). Launch, health, and teardown go through the helper below. Do not install a second browser driver.
 

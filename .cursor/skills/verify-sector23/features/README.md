@@ -41,7 +41,6 @@ Each feature file starts with an H1 title and one paragraph describing the user-
 - [Accordion](./accordion.md) covers opening the "How to use Sector23?" panel. The first item stays disabled.
 - [Alert dialog](./alert-dialog.md) covers opening the Atlas launch confirmation and dismissing it with Cancel.
 - [Autocomplete](./autocomplete.md) covers filtering to `security` and choosing it.
-- [Button](./button.md) covers changing size, content, disabled, and variant on the one Button demo, including the narrow-screen Controls drawer.
 - [Checkbox](./checkbox.md) covers checking Accept terms and conditions.
 - [Checkbox group](./checkbox-group.md) covers checking Option 2 while Option 1 stays checked.
 - [Collapsible](./collapsible.md) covers opening "What's included in Sector23?".
@@ -76,4 +75,4 @@ Each feature file starts with an H1 title and one paragraph describing the user-
 - [Toolbar](./toolbar.md) covers pressing Align center.
 - [Tooltip](./tooltip.md) covers showing the Bold text tooltip.
 
-Avatar (`app/docs/components/avatar/page.md`), meter (`app/docs/components/meter/page.md`), and separator (`app/docs/components/separator/page.md`) do not change visible state, so they stay unmapped. Driving a mapped feature does not verify another one.
+Avatar (`app/docs/components/avatar/page.md`), button (`app/docs/components/button/page.md`), meter (`app/docs/components/meter/page.md`), and separator (`app/docs/components/separator/page.md`) do not change visible state, so they stay unmapped. Driving a mapped feature does not verify another one.
