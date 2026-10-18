@@ -44,7 +44,7 @@ const autocomplete = tv({
     positioner: "outline-none",
     // Default Popup transition does not work as intended as with other popups. So we have omitted the transition classes.
     popup: [
-      "w-(--anchor-width) max-w-(--available-width) rounded-md border border-border bg-popover text-popover-foreground shadow-md outline-none",
+      "max-w-(--available-width) min-w-(--anchor-width) rounded-md border border-border bg-popover text-popover-foreground shadow-md outline-none",
     ],
     arrow: "",
     status: "",
@@ -66,7 +66,7 @@ const autocomplete = tv({
       "data-[orientation=horizontal]:my-1 data-[orientation=horizontal]:h-px",
       "data-[orientation=vertical]:mx-1 data-[orientation=vertical]:w-px",
     ],
-    group: "flex flex-col",
+    group: "flex flex-col not-last:mb-1",
     groupLabel: "mb-0.5 px-2 text-xs font-medium text-muted-foreground",
   },
 });

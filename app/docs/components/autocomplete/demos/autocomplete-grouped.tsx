@@ -109,7 +109,7 @@ export function AutocompleteGrouped() {
       <AutocompletePortal>
         <AutocompletePositioner>
           <AutocompletePopup>
-            <ScrollArea className="h-[min(19.5rem,calc(100dvh-3rem))]">
+            <ScrollArea className="max-h-[min(19.5rem,calc(100dvh-3rem))]">
               <ScrollAreaViewport>
                 <ScrollAreaContent className="p-0 pe-1.5">
                   <AutocompleteEmpty>No tags found.</AutocompleteEmpty>

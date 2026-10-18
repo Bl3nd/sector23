@@ -17,6 +17,10 @@ nextjs:
 
 {% component-demo component="autocomplete-input" /%}
 
+### Grid
+
+{% component-demo component="autocomplete-grid" /%}
+
 ### Invalid
 
 {% component-demo component="autocomplete-field" /%}
@@ -24,6 +28,10 @@ nextjs:
 ### Disabled
 
 {% component-demo component="autocomplete-disabled" /%}
+
+### Disabled item
+
+{% component-demo component="autocomplete-disabled-item" /%}
 
 ### Readonly
 
