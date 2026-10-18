@@ -1,14 +1,8 @@
 import { tv } from "tailwind-variants";
 
-/*
-Data attributes:
-
-data-disabled
-*/
-
 const checkboxGroup = tv({
   slots: {
-    root: "group flex flex-col gap-2",
+    root: "group flex flex-col gap-3",
     legend: [
       "text-sm font-semibold text-foreground",
       "group-data-disabled:opacity-50",

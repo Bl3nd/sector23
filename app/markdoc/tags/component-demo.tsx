@@ -30,6 +30,7 @@ import {
 import {
   CheckboxGroupDefault,
   CheckboxGroupDisabled,
+  CheckboxGroupForm,
   CheckboxGroupParent,
 } from "@/app/docs/components/checkbox-group/demos";
 import {
@@ -101,6 +102,7 @@ const demoRegistry = {
   "checkbox-disabled": CheckboxDisabled,
   "checkbox-readonly": CheckboxReadonly,
   "checkbox-group-default": CheckboxGroupDefault,
+  "checkbox-group-form": CheckboxGroupForm,
   "checkbox-group-parent": CheckboxGroupParent,
   "checkbox-group-disabled": CheckboxGroupDisabled,
   "collapsible-default": CollapsibleDefault,
