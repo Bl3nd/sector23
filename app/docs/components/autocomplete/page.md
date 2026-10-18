@@ -9,13 +9,13 @@ nextjs:
 
 ## Examples
 
-### Grouped
-
-{% component-demo component="autocomplete-grouped" /%}
-
 ### Without input group
 
 {% component-demo component="autocomplete-input" /%}
+
+### Grouped
+
+{% component-demo component="autocomplete-grouped" /%}
 
 ### Grid
 

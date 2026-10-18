@@ -42,7 +42,7 @@ const combobox = tv({
     ],
     trigger: [
       "flex cursor-default items-center justify-center rounded-md p-0.5 transition-colors duration-150 ease-default",
-      "hover:bg-accent hover:text-accent-foreground",
+      "hover:bg-accent hover:text-accent-foreground data-readonly:pointer-events-none",
     ],
     icon: "[&>svg]:size-4 [&>svg]:shrink-0",
     chips: "flex w-full flex-wrap items-center gap-1 px-2 py-0.5",
@@ -63,11 +63,14 @@ const combobox = tv({
     ],
     arrow: "",
     status: "",
-    statusContent: "",
+    statusContent: [
+      "px-3.5 py-1.5 text-sm text-muted-foreground",
+      "[&>svg]:size-4 [&>svg]:shrink-0",
+    ],
     empty: "",
     emptyContent: "px-3.5 py-3 text-sm text-muted-foreground",
     list: "p-1.5 data-empty:p-0",
-    row: "",
+    row: "grid",
     item: [
       "flex min-h-8 items-center gap-2 rounded-md px-2 text-sm outline-none select-none",
       "data-disabled:opacity-50",
@@ -75,9 +78,13 @@ const combobox = tv({
       "data-highlighted:before:absolute data-highlighted:before:inset-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-md data-highlighted:before:bg-accent data-highlighted:before:content-['']",
     ],
     itemIndicator: "ms-auto [&>svg]:size-4 [&>svg]:shrink-0",
-    separator: "",
-    group: "",
-    groupLabel: "",
+    separator: [
+      "self-stretch bg-border",
+      "data-[orientation=horizontal]:my-1 data-[orientation=horizontal]:h-px",
+      "data-[orientation=vertical]:mx-1 data-[orientation=vertical]:w-px",
+    ],
+    group: "flex flex-col not-last:mb-1",
+    groupLabel: "mb-0.5 px-2 text-xs font-medium text-muted-foreground",
   },
 });
 

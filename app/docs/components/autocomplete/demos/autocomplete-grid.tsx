@@ -20,6 +20,7 @@ import {
 } from "@/registry/sector23/ui/autocomplete";
 import { Button } from "@/registry/sector23/ui/button";
 import { Input } from "@/registry/sector23/ui/input";
+import { Label } from "@/registry/sector23/ui/label";
 import {
   ScrollArea,
   ScrollAreaContent,
@@ -63,15 +64,18 @@ export function AutocompleteGrid() {
   }
 
   return (
-    <div className="flex w-full max-w-xs items-center gap-2">
-      <Input
-        ref={textInputRef}
-        type="text"
-        aria-label="Message"
-        placeholder="What would you like to say?"
-        value={textValue}
-        onChange={(e) => setTextValue(e.target.value)}
-      />
+    <div className="flex w-full max-w-xs items-center justify-center gap-2">
+      <Label className="flex flex-col gap-1.5">
+        Message
+        <Input
+          ref={textInputRef}
+          type="text"
+          aria-label="Message"
+          placeholder="What would you like to say?"
+          value={textValue}
+          onChange={(e) => setTextValue(e.target.value)}
+        />
+      </Label>
 
       <Autocomplete
         items={emojiGroups}
@@ -89,7 +93,7 @@ export function AutocompleteGrid() {
         <AutocompleteTrigger
           render={<Button variant="outline" />}
           aria-label="Choose an emoji"
-          className="aspect-square p-0"
+          className="aspect-square self-baseline-last p-0"
         >
           <FaceSlightlySmilingPlusIcon />
         </AutocompleteTrigger>

@@ -45,8 +45,14 @@ import {
 } from "@/app/docs/components/collapsible/demos";
 import {
   ComboboxDefault,
+  ComboboxDisabled,
+  ComboboxDisabledItem,
+  ComboboxGrid,
+  ComboboxGrouped,
   ComboboxInputDemo,
+  ComboboxInvalid,
   ComboboxMultiple,
+  ComboboxReadonly,
 } from "@/app/docs/components/combobox/demos";
 import ContextMenu01 from "@/app/docs/components/context-menu/demos/context-menu-01";
 import Dialog01 from "@/app/docs/components/dialog/demos/dialog-01";
@@ -114,6 +120,12 @@ const demoRegistry = {
   "combobox-default": ComboboxDefault,
   "combobox-multiple": ComboboxMultiple,
   "combobox-input": ComboboxInputDemo,
+  "combobox-grouped": ComboboxGrouped,
+  "combobox-grid": ComboboxGrid,
+  "combobox-invalid": ComboboxInvalid,
+  "combobox-disabled": ComboboxDisabled,
+  "combobox-disabled-item": ComboboxDisabledItem,
+  "combobox-readonly": ComboboxReadonly,
   "context-menu-01": ContextMenu01,
   "dialog-01": Dialog01,
   "drawer-01": Drawer01,
