@@ -1,13 +1,5 @@
 import { tv } from "tailwind-variants";
 
-/*
-Slots and their data-attributes and css variables:
-
-root: data-open/data-closed/data-starting-style/data-ending-style
-trigger: data-panel-open
-panel: data-open/data-closed/data-starting-style/data-ending-style; --collapsible-panel-height/--collapsible-panel-width
-*/
-
 const collapsible = tv({
   slots: {
     root: "",

@@ -5,3 +5,9 @@ nextjs:
 ---
 
 {% component-demo component="collapsible-default" /%}
+
+## Examples
+
+### Disabled
+
+{% component-demo component="collapsible-disabled" /%}

@@ -39,7 +39,10 @@ import {
   CheckboxField,
   CheckboxReadonly,
 } from "@/app/docs/components/checkbox/demos";
-import { CollapsibleDefault } from "@/app/docs/components/collapsible/demos";
+import {
+  CollapsibleDefault,
+  CollapsibleDisabled,
+} from "@/app/docs/components/collapsible/demos";
 import {
   ComboboxDefault,
   ComboboxInputDemo,
@@ -107,6 +110,7 @@ const demoRegistry = {
   "checkbox-group-parent": CheckboxGroupParent,
   "checkbox-group-disabled": CheckboxGroupDisabled,
   "collapsible-default": CollapsibleDefault,
+  "collapsible-disabled": CollapsibleDisabled,
   "combobox-default": ComboboxDefault,
   "combobox-multiple": ComboboxMultiple,
   "combobox-input": ComboboxInputDemo,
