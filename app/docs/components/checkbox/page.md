@@ -8,9 +8,9 @@ nextjs:
 
 ## Examples
 
-### Form integration
+### Invalid
 
-{% component-demo component="checkbox-form" /%}
+{% component-demo component="checkbox-field" /%}
 
 ### Disabled
 

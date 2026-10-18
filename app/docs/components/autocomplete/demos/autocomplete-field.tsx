@@ -15,13 +15,11 @@ import {
   AutocompletePositioner,
   AutocompleteTrigger,
 } from "@/registry/sector23/ui/autocomplete";
-import { Button } from "@/registry/sector23/ui/button";
 import {
   Field,
   FieldDescription,
   FieldLabel,
 } from "@/registry/sector23/ui/field";
-import { Form } from "@/registry/sector23/ui/form";
 
 interface Tag {
   id: string;
@@ -41,42 +39,38 @@ const tags: Tag[] = [
   { id: "t10", value: "design" },
 ];
 
-export function AutocompleteForm() {
+export function AutocompleteField() {
   return (
-    <Form className="max-w-50">
-      <Field name="tags">
-        <Autocomplete items={tags} required mode="both">
-          <AutocompleteControl>
-            <FieldLabel>Tags</FieldLabel>
-            <AutocompleteInputGroup>
-              <AutocompleteInput placeholder="e.g. feature" />
-              <AutocompleteInputGroupActions>
-                <AutocompleteClear />
-                <AutocompleteTrigger>
-                  <AutocompleteIcon />
-                </AutocompleteTrigger>
-              </AutocompleteInputGroupActions>
-            </AutocompleteInputGroup>
-          </AutocompleteControl>
-          <FieldDescription>Select tags to use</FieldDescription>
+    <Field name="tags" invalid className="max-w-52">
+      <Autocomplete items={tags} required mode="both">
+        <AutocompleteControl>
+          <FieldLabel>Tags</FieldLabel>
+          <AutocompleteInputGroup>
+            <AutocompleteInput placeholder="e.g. feature" />
+            <AutocompleteInputGroupActions>
+              <AutocompleteClear />
+              <AutocompleteTrigger>
+                <AutocompleteIcon />
+              </AutocompleteTrigger>
+            </AutocompleteInputGroupActions>
+          </AutocompleteInputGroup>
+        </AutocompleteControl>
+        <FieldDescription>Select tags to use</FieldDescription>
 
-          <AutocompletePortal>
-            <AutocompletePositioner>
-              <AutocompletePopup>
-                <AutocompleteList>
-                  {(tag: Tag) => (
-                    <AutocompleteItem key={tag.id} value={tag}>
-                      {tag.value}
-                    </AutocompleteItem>
-                  )}
-                </AutocompleteList>
-              </AutocompletePopup>
-            </AutocompletePositioner>
-          </AutocompletePortal>
-        </Autocomplete>
-      </Field>
-
-      <Button type="submit">Submit</Button>
-    </Form>
+        <AutocompletePortal>
+          <AutocompletePositioner>
+            <AutocompletePopup>
+              <AutocompleteList>
+                {(tag: Tag) => (
+                  <AutocompleteItem key={tag.id} value={tag}>
+                    {tag.value}
+                  </AutocompleteItem>
+                )}
+              </AutocompleteList>
+            </AutocompletePopup>
+          </AutocompletePositioner>
+        </AutocompletePortal>
+      </Autocomplete>
+    </Field>
   );
 }

@@ -2,20 +2,17 @@ import type { ReactNode } from "react";
 
 import {
   AccordionDefault,
-  AccordionHiddenUntilFound,
   AccordionItemDisabled,
-  AccordionMultiple,
   AccordionRootDisabled,
 } from "@/app/docs/components/accordion/demos";
 import {
   AlertDialogDefault,
-  AlertDialogDisabled,
   AlertDialogInnerScroll,
 } from "@/app/docs/components/alert-dialog/demos";
 import {
   AutocompleteDefault,
   AutocompleteDisabled,
-  AutocompleteForm,
+  AutocompleteField,
   AutocompleteGrouped,
   AutocompleteInputDemo,
   AutocompleteReadonly,
@@ -30,13 +27,12 @@ import {
 import {
   CheckboxGroupDefault,
   CheckboxGroupDisabled,
-  CheckboxGroupForm,
   CheckboxGroupParent,
 } from "@/app/docs/components/checkbox-group/demos";
 import {
   CheckboxDefault,
   CheckboxDisabled,
-  CheckboxForm,
+  CheckboxField,
   CheckboxReadonly,
 } from "@/app/docs/components/checkbox/demos";
 import { CollapsibleDefault } from "@/app/docs/components/collapsible/demos";
@@ -79,16 +75,13 @@ import { DemoViewportFrame } from "./demo-viewport-frame";
 
 const demoRegistry = {
   "accordion-default": AccordionDefault,
-  "accordion-multiple": AccordionMultiple,
-  "accordion-huf": AccordionHiddenUntilFound,
   "accordion-root-disabled": AccordionRootDisabled,
   "accordion-item-disabled": AccordionItemDisabled,
   "alert-dialog-default": AlertDialogDefault,
   "alert-dialog-inner-scroll": AlertDialogInnerScroll,
-  "alert-dialog-disabled": AlertDialogDisabled,
   "autocomplete-default": AutocompleteDefault,
   "autocomplete-input": AutocompleteInputDemo,
-  "autocomplete-form": AutocompleteForm,
+  "autocomplete-field": AutocompleteField,
   "autocomplete-disabled": AutocompleteDisabled,
   "autocomplete-readonly": AutocompleteReadonly,
   "autocomplete-grouped": AutocompleteGrouped,
@@ -98,11 +91,10 @@ const demoRegistry = {
   "button-size": ButtonSize,
   "button-loading": ButtonLoading,
   "checkbox-default": CheckboxDefault,
-  "checkbox-form": CheckboxForm,
+  "checkbox-field": CheckboxField,
   "checkbox-disabled": CheckboxDisabled,
   "checkbox-readonly": CheckboxReadonly,
   "checkbox-group-default": CheckboxGroupDefault,
-  "checkbox-group-form": CheckboxGroupForm,
   "checkbox-group-parent": CheckboxGroupParent,
   "checkbox-group-disabled": CheckboxGroupDisabled,
   "collapsible-default": CollapsibleDefault,

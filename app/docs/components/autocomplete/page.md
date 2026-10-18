@@ -17,9 +17,9 @@ nextjs:
 
 {% component-demo component="autocomplete-input" /%}
 
-### Form integration
+### Invalid
 
-{% component-demo component="autocomplete-form" /%}
+{% component-demo component="autocomplete-field" /%}
 
 ### Disabled
 
