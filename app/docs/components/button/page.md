@@ -19,3 +19,11 @@ nextjs:
 ### Loading state
 
 {% component-demo component="button-loading" /%}
+
+### Disabled
+
+{% component-demo component="button-disabled" /%}
+
+### Popup open
+
+{% component-demo component="button-popup-open" /%}

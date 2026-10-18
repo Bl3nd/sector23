@@ -22,7 +22,9 @@ import {
 import { AvatarDefault, AvatarSize } from "@/app/docs/components/avatar/demos";
 import {
   ButtonDefault,
+  ButtonDisabled,
   ButtonLoading,
+  ButtonPopupOpen,
   ButtonSize,
   ButtonVariant,
 } from "@/app/docs/components/button/demos";
@@ -95,6 +97,8 @@ const demoRegistry = {
   "button-variant": ButtonVariant,
   "button-size": ButtonSize,
   "button-loading": ButtonLoading,
+  "button-disabled": ButtonDisabled,
+  "button-popup-open": ButtonPopupOpen,
   "checkbox-default": CheckboxDefault,
   "checkbox-field": CheckboxField,
   "checkbox-disabled": CheckboxDisabled,
