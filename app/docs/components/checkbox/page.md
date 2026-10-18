@@ -8,6 +8,10 @@ nextjs:
 
 ## Examples
 
+### Form integration
+
+{% component-demo component="checkbox-form" /%}
+
 ### Disabled
 
 {% component-demo component="checkbox-disabled" /%}

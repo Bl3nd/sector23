@@ -1,11 +1,5 @@
 import { tv } from "tailwind-variants";
 
-/*
-Slots and their data-attributes and css variables:
-root: data-checked/data-unchecked/data-disabled/data-readonly/data-required/data-valid/data-invalid/data-dirty/data-touched/data-filled/data-focused/data-indeterminate
-indicator: data-checked/data-unchecked/data-disabled/data-readonly/data-required/data-valid/data-invalid/data-dirty/data-touched/data-filled/data-focused/data-indeterminate/data-starting-style/data-ending-style
-*/
-
 const checkbox = tv({
   slots: {
     root: [
@@ -14,8 +8,8 @@ const checkbox = tv({
       "data-checked:bg-primary data-checked:text-primary-foreground",
       "data-disabled:pointer-events-none data-disabled:opacity-50",
       "data-invalid:border-destructive/50",
-      "data-readonly:pointer-events-none data-readonly:opacity-60",
       "focus-visible:data-invalid:ring-destructive/50",
+      "data-readonly:pointer-events-none data-readonly:opacity-60",
       "dark:bg-input/15",
       "dark:data-checked:bg-primary dark:data-checked:text-primary-foreground",
     ],
