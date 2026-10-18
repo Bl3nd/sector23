@@ -19,7 +19,7 @@ import {
   AutocompleteInputDemo,
   AutocompleteReadonly,
 } from "@/app/docs/components/autocomplete/demos";
-import { AvatarDefault } from "@/app/docs/components/avatar/demos";
+import { AvatarDefault, AvatarSize } from "@/app/docs/components/avatar/demos";
 import {
   ButtonDefault,
   ButtonLoading,
@@ -90,6 +90,7 @@ const demoRegistry = {
   "autocomplete-grouped": AutocompleteGrouped,
   "autocomplete-grid": AutocompleteGrid,
   "avatar-default": AvatarDefault,
+  "avatar-size": AvatarSize,
   "button-default": ButtonDefault,
   "button-variant": ButtonVariant,
   "button-size": ButtonSize,
