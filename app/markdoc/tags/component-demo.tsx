@@ -16,6 +16,7 @@ import {
   AutocompleteDefault,
   AutocompleteDisabled,
   AutocompleteForm,
+  AutocompleteGrouped,
   AutocompleteInputDemo,
   AutocompleteReadonly,
 } from "@/app/docs/components/autocomplete/demos";
@@ -88,6 +89,7 @@ const demoRegistry = {
   "autocomplete-form": AutocompleteForm,
   "autocomplete-disabled": AutocompleteDisabled,
   "autocomplete-readonly": AutocompleteReadonly,
+  "autocomplete-grouped": AutocompleteGrouped,
   "avatar-default": AvatarDefault,
   "button-default": ButtonDefault,
   "button-variant": ButtonVariant,
