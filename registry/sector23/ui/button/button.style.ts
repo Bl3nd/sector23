@@ -2,12 +2,6 @@ import type { VariantProps } from "tailwind-variants";
 
 import { tv } from "tailwind-variants";
 
-/* 
-Data attributes:
-
-data-disabled
-*/
-
 const button = tv({
   base: [
     "inline-flex shrink-0 items-center justify-center rounded-md font-medium whitespace-nowrap shadow-sm transition-all duration-150 ease-default outline-none select-none",
@@ -22,9 +16,9 @@ const button = tv({
   },
   variants: {
     size: {
-      lg: "min-h-9 gap-2 px-2 text-base [&_svg]:size-5 [&>span]:gap-2",
-      md: "min-h-8 gap-1.5 px-2 text-sm [&_svg]:size-4 [&>span]:gap-1.5",
-      sm: "min-h-7 gap-1 px-2 text-xs [&_svg]:size-3 [&>span]:gap-1",
+      lg: "h-9 gap-2 px-2.5 text-sm [&_svg:not([class*='size-'])]:size-4 [&>span]:gap-2",
+      md: "h-8 gap-1.5 px-2 text-sm [&_svg:not([class*='size-'])]:size-4 [&>span]:gap-1.5",
+      sm: "h-7 gap-1 px-2 text-xs [&_svg:not([class*='size-'])]:size-3 [&>span]:gap-1",
     },
     variant: {
       primary: [
