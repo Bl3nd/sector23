@@ -19,7 +19,7 @@ const drawer = tv({
     viewport: [
       "fixed inset-0 flex items-stretch p-(--viewport-padding)",
       "[--viewport-padding:0rem]",
-      "data-[swipe-direction=left]:justify-start data-[swipe-direction=right]:justify-end",
+      "has-data-[swipe-direction=left]:justify-start has-data-[swipe-direction=right]:justify-end",
       "supports-[-webkit-touch-callout:none]:[--viewport-padding:0.625rem]",
     ],
     popup: [

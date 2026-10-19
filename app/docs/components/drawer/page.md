@@ -4,4 +4,4 @@ nextjs:
     title: Drawer
 ---
 
-{% component-demo component="drawer-01" /%}
+{% component-demo component="drawer-right" /%}
