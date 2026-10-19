@@ -18,7 +18,7 @@
     },
     {
       "path": "registry/sector23/ui/scroll-area/scroll-area.style.ts",
-      "content": "import { tv } from \"tailwind-variants\";\n\nconst scrollArea = tv({\n  slots: {\n    root: \"max-w-[calc(100vw-3rem)]\",\n    viewport:\n      \"h-full outline-none focus-visible:ring-2 focus-visible:ring-ring/50\",\n    content: \"flex flex-col p-2 pe-3 text-sm text-foreground\",\n    scrollbar: [\n      \"pointer-events-none m-px flex w-1.5 justify-center rounded-full bg-muted opacity-0 transition-opacity duration-300 ease-default\",\n      \"data-hovering:pointer-events-auto data-hovering:opacity-100\",\n      \"data-scrolling:pointer-events-auto data-scrolling:opacity-100 data-scrolling:duration-0\",\n    ],\n    thumb: \"w-full rounded-full bg-primary\",\n    corner: \"\",\n  },\n});\n\nexport { scrollArea };\n",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst scrollArea = tv({\n  slots: {\n    root: \"relative flex min-h-0 max-w-[calc(100vw-3rem)] flex-auto overflow-hidden\",\n    viewport:\n      \"min-h-0 flex-auto outline-none focus-visible:ring-2 focus-visible:ring-ring/50\",\n    content: \"flex flex-col p-2 pe-3 text-sm text-foreground\",\n    scrollbar: [\n      \"pointer-events-none m-px flex w-1.5 justify-center rounded-full bg-muted opacity-0 transition-opacity duration-300 ease-default\",\n      \"data-hovering:pointer-events-auto data-hovering:opacity-100\",\n      \"data-scrolling:pointer-events-auto data-scrolling:opacity-100 data-scrolling:duration-0\",\n    ],\n    thumb: \"w-full rounded-full bg-primary\",\n    corner: \"\",\n  },\n});\n\nexport { scrollArea };\n",
       "type": "registry:ui",
       "target": "@ui/scroll-area/scroll-area.style.ts"
     },

@@ -1,10 +1,15 @@
 "use client";
 
-import { Avatar as BaseAvatar } from "@base-ui/react/avatar";
+import {
+  Avatar as BaseAvatar,
+  type ImageLoadingStatus,
+} from "@base-ui/react/avatar";
 
 import { mergeSlotClassName } from "@/registry/sector23/lib/merge-base-ui";
 
 import { avatar, type AvatarVariantProps } from "./avatar.style";
+
+type AvatarImageLoadingStatus = ImageLoadingStatus;
 
 function Avatar({
   className,
@@ -41,3 +46,4 @@ function AvatarFallback({ className, ...props }: BaseAvatar.Fallback.Props) {
 }
 
 export { Avatar, AvatarImage, AvatarFallback };
+export type { AvatarImageLoadingStatus };

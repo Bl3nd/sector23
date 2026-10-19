@@ -10,8 +10,12 @@ import {
 
 export function AccordionRootDisabled() {
   return (
-    <Accordion className="max-w-sm" disabled>
-      <AccordionItem>
+    <Accordion
+      className="max-w-sm"
+      disabled
+      defaultValue={["item-1", "item-2", "item-3"]}
+    >
+      <AccordionItem value="item-1">
         <AccordionHeader>
           <AccordionTrigger>
             What is Sector23?
@@ -23,7 +27,7 @@ export function AccordionRootDisabled() {
           applications. It is built with Tailwind CSS and React.
         </AccordionPanel>
       </AccordionItem>
-      <AccordionItem>
+      <AccordionItem value="item-2">
         <AccordionHeader>
           <AccordionTrigger>
             How to use Sector23?
@@ -35,7 +39,7 @@ export function AccordionRootDisabled() {
           Shadcn Registry.
         </AccordionPanel>
       </AccordionItem>
-      <AccordionItem>
+      <AccordionItem value="item-3">
         <AccordionHeader>
           <AccordionTrigger>
             Is Sector23 free to use? I need to test long text here to get the

@@ -1,20 +1,5 @@
 import { tv } from "tailwind-variants";
 
-/* 
-Slots and their data-attributes and css variables:
-
-inputGroup: data-popup-open/data-popup-side/data-list-empty/data-pressed/data-disabled/data-readonly/data-valid/data-invalid/data-dirty/data-touched/data-filled/data-focused
-input: data-popup-open/data-popup-side/data-list-empty/data-pressed/data-disabled/data-readonly/data-required/data-valid/data-invalid/data-dirty/data-touched/data-filled/data-focused
-trigger: data-popup-open/data-popup-side/data-list-empty/data-pressed/data-disabled/data-readonly/data-required/data-valid/data-invalid/data-dirty/data-touched/data-filled/data-focused
-clear: data-popup-open/data-disabled/data-visible/data-starting-style/data-ending-style
-backdrop: data-open/data-closed/data-starting-style/data-ending-style
-positioner: data-open/data-closed/data-anchor-hidden/data-align/data-empty/data-side; --anchor-height/--anchor-width/--available-height/--available-width/--transform-origin
-popup: data-open/data-closed/data-anchor-hidden/data-align/data-empty/data-side/data-starting-style/data-ending-style
-arrow: data-open/data-closed/data-uncentered/data-align/data-side
-item: data-highlighted/data-disabled
-separator: data-orientation
-*/
-
 const autocomplete = tv({
   slots: {
     control: "flex flex-col gap-1.5",
@@ -29,10 +14,10 @@ const autocomplete = tv({
       "focus-visible:ring-2 focus-visible:ring-ring/50",
       "in-data-[slot='autocomplete-input-group']:group-has-[[data-slot='autocomplete-clear'],[data-slot='autocomplete-trigger']]:pe-9",
       "not-in-data-[slot='autocomplete-input-group']:data-disabled:opacity-50",
-      "not-in-data-[slot='autocomplete-input-group']:data-readonly:opacity-60",
       "data-invalid:border-destructive/50",
-      "data-readonly:cursor-default",
       "focus-visible:data-invalid:ring-destructive/50",
+      "data-readonly:cursor-default",
+      "not-in-data-[slot='autocomplete-input-group']:data-readonly:opacity-60",
       "dark:bg-input/15",
     ],
     inputGroupActions: [
@@ -42,13 +27,15 @@ const autocomplete = tv({
       "flex cursor-default items-center justify-center rounded-md p-0.5 transition-colors duration-150 ease-default",
       "group-has-[[data-slot='autocomplete-clear'][data-visible]]:hidden",
       "hover:bg-accent hover:text-accent-foreground",
+      "data-popup-open:bg-accent/80 data-popup-open:text-accent-foreground",
       "data-readonly:pointer-events-none",
     ],
     icon: "[&>svg]:size-4 [&>svg]:shrink-0",
     clear: [
       "invisible flex items-center justify-center rounded-md p-0.5 transition-colors duration-150 ease-default",
-      "hover:bg-accent hover:text-accent-foreground",
       "group-data-readonly:pointer-events-none",
+      "hover:not-data-disabled:bg-accent hover:not-data-disabled:text-accent-foreground",
+      "data-disabled:not-in-data-disabled:opacity-50",
       "data-visible:visible",
       "[&>svg]:size-4 [&>svg]:shrink-0",
     ],
@@ -57,23 +44,30 @@ const autocomplete = tv({
     positioner: "outline-none",
     // Default Popup transition does not work as intended as with other popups. So we have omitted the transition classes.
     popup: [
-      "w-(--anchor-width) max-w-(--available-width) rounded-md border border-border bg-popover text-popover-foreground shadow-md outline-none",
+      "max-w-(--available-width) min-w-(--anchor-width) rounded-md border border-border bg-popover text-popover-foreground shadow-md outline-none",
     ],
     arrow: "",
     status: "",
-    statusContent: "",
+    statusContent: [
+      "px-3.5 py-1.5 text-sm text-muted-foreground",
+      "[&>svg]:size-4 [&>svg]:shrink-0",
+    ],
     empty: "",
     emptyContent: "px-3.5 py-3 text-sm text-muted-foreground",
     list: "p-1.5 data-empty:p-0",
-    row: "",
+    row: "grid",
     item: [
       "flex min-h-8 items-center gap-2 rounded-md px-2 text-sm outline-none select-none",
       "data-disabled:opacity-50",
       "data-highlighted:bg-accent data-highlighted:text-accent-foreground",
     ],
-    separator: "",
-    group: "",
-    groupLabel: "",
+    separator: [
+      "self-stretch bg-border",
+      "data-[orientation=horizontal]:my-1 data-[orientation=horizontal]:h-px",
+      "data-[orientation=vertical]:mx-1 data-[orientation=vertical]:w-px",
+    ],
+    group: "flex flex-col not-last:mb-1",
+    groupLabel: "mb-0.5 px-2 text-xs font-medium text-muted-foreground",
   },
 });
 

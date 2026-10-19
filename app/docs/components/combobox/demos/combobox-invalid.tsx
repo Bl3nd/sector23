@@ -1,7 +1,5 @@
 "use client";
 
-import { useId } from "react";
-
 import {
   Combobox,
   ComboboxClear,
@@ -19,7 +17,7 @@ import {
   ComboboxPositioner,
   ComboboxTrigger,
 } from "@/registry/sector23/ui/combobox";
-import { Label } from "@/registry/sector23/ui/label";
+import { Field, FieldLabel } from "@/registry/sector23/ui/field";
 
 interface Country {
   code: string;
@@ -39,21 +37,18 @@ const countries: Country[] = [
   { code: "US", name: "United States" },
 ];
 
-export default function Combobox01() {
-  const id = useId();
-
+export function ComboboxInvalid() {
   return (
-    <div className="flex flex-col items-center justify-center py-10">
-      <Combobox
+    <Field name="country" invalid className="max-w-64">
+      <Combobox<Country>
         items={countries}
         itemToStringLabel={(country) => country.name}
         itemToStringValue={(country) => country.code}
-        name="country"
       >
-        <ComboboxControl className="w-full max-w-xs">
-          <Label htmlFor={id}>Shipping country</Label>
+        <ComboboxControl className="w-full max-w-64">
+          <FieldLabel>Shipping country</FieldLabel>
           <ComboboxInputGroup>
-            <ComboboxInput placeholder="e.g. Canada" id={id} />
+            <ComboboxInput placeholder="e.g. Canada" />
             <ComboboxInputGroupActions>
               <ComboboxClear />
               <ComboboxTrigger>
@@ -81,6 +76,6 @@ export default function Combobox01() {
           </ComboboxPositioner>
         </ComboboxPortal>
       </Combobox>
-    </div>
+    </Field>
   );
 }

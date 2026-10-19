@@ -8,14 +8,6 @@ nextjs:
 
 ## Examples
 
-### Multiple
-
-{% component-demo component="accordion-multiple" /%}
-
-### Hidden until found
-
-{% component-demo component="accordion-huf" /%}
-
 ### Disabled (Root)
 
 {% component-demo component="accordion-root-disabled" /%}

@@ -4,13 +4,15 @@ import { tv } from "tailwind-variants";
 
 const avatar = tv({
   slots: {
-    root: "inline-flex items-center justify-center overflow-hidden rounded-full bg-muted align-middle leading-none text-muted-foreground select-none [&_svg]:shrink-0",
+    root: "relative inline-flex items-center justify-center overflow-hidden rounded-full bg-muted align-middle leading-none text-muted-foreground select-none [&_svg]:shrink-0",
     image: [
-      "size-full object-cover transition-opacity duration-150 ease-default",
+      "absolute inset-0 size-full object-cover transition-opacity duration-150 ease-default",
       "data-ending-style:opacity-0",
+      "data-error:invisible",
+      "data-loading:invisible",
       "data-starting-style:opacity-0",
     ],
-    fallback: "flex size-full items-center justify-center",
+    fallback: "absolute inset-0 flex size-full items-center justify-center",
   },
   variants: {
     size: {

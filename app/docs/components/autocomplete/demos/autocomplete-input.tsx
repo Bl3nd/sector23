@@ -33,7 +33,7 @@ const tags: Tag[] = [
 export function AutocompleteInputDemo() {
   return (
     <Autocomplete items={tags} itemToStringValue={(tag) => tag.value}>
-      <Label className="flex flex-col gap-1.5">
+      <Label className="flex w-full max-w-50 flex-col gap-1.5">
         Search tags
         <AutocompleteInput placeholder="e.g. feature" />
       </Label>

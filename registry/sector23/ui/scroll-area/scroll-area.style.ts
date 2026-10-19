@@ -2,9 +2,9 @@ import { tv } from "tailwind-variants";
 
 const scrollArea = tv({
   slots: {
-    root: "max-w-[calc(100vw-3rem)]",
+    root: "relative flex min-h-0 max-w-[calc(100vw-3rem)] flex-auto overflow-hidden",
     viewport:
-      "h-full outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
+      "min-h-0 flex-auto outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
     content: "flex flex-col p-2 pe-3 text-sm text-foreground",
     scrollbar: [
       "pointer-events-none m-px flex w-1.5 justify-center rounded-full bg-muted opacity-0 transition-opacity duration-300 ease-default",

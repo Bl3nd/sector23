@@ -3,7 +3,7 @@ import { tv } from "tailwind-variants";
 const collapsible = tv({
   slots: {
     root: "",
-    trigger: "",
+    trigger: "group",
     panel: [
       "h-(--collapsible-panel-height) overflow-hidden transition-[height] duration-300 ease-default",
       "data-disabled:opacity-50",

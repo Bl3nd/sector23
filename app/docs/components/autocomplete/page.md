@@ -13,9 +13,25 @@ nextjs:
 
 {% component-demo component="autocomplete-input" /%}
 
+### Grouped
+
+{% component-demo component="autocomplete-grouped" /%}
+
+### Grid
+
+{% component-demo component="autocomplete-grid" /%}
+
+### Invalid
+
+{% component-demo component="autocomplete-field" /%}
+
 ### Disabled
 
 {% component-demo component="autocomplete-disabled" /%}
+
+### Disabled item
+
+{% component-demo component="autocomplete-disabled-item" /%}
 
 ### Readonly
 

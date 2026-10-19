@@ -2,26 +2,69 @@ import type { ReactNode } from "react";
 
 import {
   AccordionDefault,
-  AccordionHiddenUntilFound,
   AccordionItemDisabled,
-  AccordionMultiple,
   AccordionRootDisabled,
 } from "@/app/docs/components/accordion/demos";
-import { AlertDialogDefault } from "@/app/docs/components/alert-dialog/demos";
+import {
+  AlertDialogDefault,
+  AlertDialogInnerScroll,
+} from "@/app/docs/components/alert-dialog/demos";
 import {
   AutocompleteDefault,
   AutocompleteDisabled,
+  AutocompleteDisabledItem,
+  AutocompleteField,
+  AutocompleteGrid,
+  AutocompleteGrouped,
   AutocompleteInputDemo,
   AutocompleteReadonly,
 } from "@/app/docs/components/autocomplete/demos";
-import Avatar01 from "@/app/docs/components/avatar/demos/avatar-01";
-import Button01 from "@/app/docs/components/button/demos/button-01";
-import CheckboxGroup01 from "@/app/docs/components/checkbox-group/demos/checkbox-group-01";
-import Checkbox01 from "@/app/docs/components/checkbox/demos/checkbox-01";
-import Collapsible01 from "@/app/docs/components/collapsible/demos/collapsible-01";
-import Combobox01 from "@/app/docs/components/combobox/demos/combobox-01";
-import ContextMenu01 from "@/app/docs/components/context-menu/demos/context-menu-01";
-import Dialog01 from "@/app/docs/components/dialog/demos/dialog-01";
+import { AvatarDefault, AvatarSize } from "@/app/docs/components/avatar/demos";
+import {
+  ButtonDefault,
+  ButtonDisabled,
+  ButtonLoading,
+  ButtonPopupOpen,
+  ButtonSize,
+  ButtonVariant,
+} from "@/app/docs/components/button/demos";
+import {
+  CheckboxGroupDefault,
+  CheckboxGroupDisabled,
+  CheckboxGroupParent,
+} from "@/app/docs/components/checkbox-group/demos";
+import {
+  CheckboxDefault,
+  CheckboxDisabled,
+  CheckboxField,
+  CheckboxReadonly,
+} from "@/app/docs/components/checkbox/demos";
+import {
+  CollapsibleDefault,
+  CollapsibleDisabled,
+} from "@/app/docs/components/collapsible/demos";
+import {
+  ComboboxDefault,
+  ComboboxDisabled,
+  ComboboxDisabledItem,
+  ComboboxGrid,
+  ComboboxGrouped,
+  ComboboxInputDemo,
+  ComboboxInvalid,
+  ComboboxMultiple,
+  ComboboxReadonly,
+} from "@/app/docs/components/combobox/demos";
+import {
+  ContextMenuDefault,
+  ContextMenuItems,
+  ContextMenuNested,
+} from "@/app/docs/components/context-menu/demos";
+import {
+  DialogDefault,
+  DialogInnerScroll,
+  DialogNested,
+  DialogOuterScroll,
+} from "@/app/docs/components/dialog/demos";
 import Drawer01 from "@/app/docs/components/drawer/demos/drawer-01";
 import Field01 from "@/app/docs/components/field/demos/field-01";
 import Fieldset01 from "@/app/docs/components/fieldset/demos/fieldset-01";
@@ -54,23 +97,51 @@ import { DemoViewportFrame } from "./demo-viewport-frame";
 
 const demoRegistry = {
   "accordion-default": AccordionDefault,
-  "accordion-multiple": AccordionMultiple,
-  "accordion-huf": AccordionHiddenUntilFound,
   "accordion-root-disabled": AccordionRootDisabled,
   "accordion-item-disabled": AccordionItemDisabled,
   "alert-dialog-default": AlertDialogDefault,
+  "alert-dialog-inner-scroll": AlertDialogInnerScroll,
   "autocomplete-default": AutocompleteDefault,
   "autocomplete-input": AutocompleteInputDemo,
+  "autocomplete-field": AutocompleteField,
   "autocomplete-disabled": AutocompleteDisabled,
+  "autocomplete-disabled-item": AutocompleteDisabledItem,
   "autocomplete-readonly": AutocompleteReadonly,
-  "avatar-01": Avatar01,
-  "button-01": Button01,
-  "checkbox-01": Checkbox01,
-  "checkbox-group-01": CheckboxGroup01,
-  "collapsible-01": Collapsible01,
-  "combobox-01": Combobox01,
-  "context-menu-01": ContextMenu01,
-  "dialog-01": Dialog01,
+  "autocomplete-grouped": AutocompleteGrouped,
+  "autocomplete-grid": AutocompleteGrid,
+  "avatar-default": AvatarDefault,
+  "avatar-size": AvatarSize,
+  "button-default": ButtonDefault,
+  "button-variant": ButtonVariant,
+  "button-size": ButtonSize,
+  "button-loading": ButtonLoading,
+  "button-disabled": ButtonDisabled,
+  "button-popup-open": ButtonPopupOpen,
+  "checkbox-default": CheckboxDefault,
+  "checkbox-field": CheckboxField,
+  "checkbox-disabled": CheckboxDisabled,
+  "checkbox-readonly": CheckboxReadonly,
+  "checkbox-group-default": CheckboxGroupDefault,
+  "checkbox-group-parent": CheckboxGroupParent,
+  "checkbox-group-disabled": CheckboxGroupDisabled,
+  "collapsible-default": CollapsibleDefault,
+  "collapsible-disabled": CollapsibleDisabled,
+  "combobox-default": ComboboxDefault,
+  "combobox-multiple": ComboboxMultiple,
+  "combobox-input": ComboboxInputDemo,
+  "combobox-grouped": ComboboxGrouped,
+  "combobox-grid": ComboboxGrid,
+  "combobox-invalid": ComboboxInvalid,
+  "combobox-disabled": ComboboxDisabled,
+  "combobox-disabled-item": ComboboxDisabledItem,
+  "combobox-readonly": ComboboxReadonly,
+  "context-menu-default": ContextMenuDefault,
+  "context-menu-items": ContextMenuItems,
+  "context-menu-nested": ContextMenuNested,
+  "dialog-default": DialogDefault,
+  "dialog-inner-scroll": DialogInnerScroll,
+  "dialog-nested": DialogNested,
+  "dialog-outer-scroll": DialogOuterScroll,
   "drawer-01": Drawer01,
   "field-01": Field01,
   "fieldset-01": Fieldset01,

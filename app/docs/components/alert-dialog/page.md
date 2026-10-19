@@ -5,3 +5,9 @@ nextjs:
 ---
 
 {% component-demo component="alert-dialog-default" /%}
+
+### Examples
+
+## Inner scroll
+
+{% component-demo component="alert-dialog-inner-scroll" /%}

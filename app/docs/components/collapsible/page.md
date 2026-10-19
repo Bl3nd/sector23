@@ -4,4 +4,10 @@ nextjs:
     title: Collapsible
 ---
 
-{% component-demo component="collapsible-01" /%}
+{% component-demo component="collapsible-default" /%}
+
+## Examples
+
+### Disabled
+
+{% component-demo component="collapsible-disabled" /%}
