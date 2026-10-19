@@ -47,7 +47,7 @@ export function DrawerSnapPoints() {
                   <XIcon />
                 </DrawerClose>
               </DrawerHeader>
-              <DrawerFooter>
+              <div className="flex gap-2">
                 <Button
                   variant="outline"
                   onClick={() => setSnapPoint(snapPoints[1])}
@@ -60,6 +60,9 @@ export function DrawerSnapPoints() {
                 >
                   Peek sheet
                 </Button>
+              </div>
+              <div className="min-h-[50vh]" />
+              <DrawerFooter>
                 <DrawerClose render={<Button variant="outline" />}>
                   Close
                 </DrawerClose>
