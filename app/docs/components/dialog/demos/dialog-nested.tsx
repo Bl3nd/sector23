@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 import { Button } from "@/registry/sector23/ui/button";
 import {
   Dialog,
@@ -14,9 +18,14 @@ import {
 } from "@/registry/sector23/ui/dialog";
 
 export function DialogNested() {
+  const [parentOpen, setParentOpen] = useState(false);
+
   return (
-    <Dialog>
-      <DialogTrigger render={<Button variant="outline" />}>
+    <Dialog open={parentOpen} onOpenChange={setParentOpen}>
+      <DialogTrigger
+        render={<Button variant="outline" />}
+        onClick={() => setParentOpen(true)}
+      >
         Manage subscription
       </DialogTrigger>
       <DialogPortal>
@@ -40,7 +49,7 @@ export function DialogNested() {
                 </DialogTrigger>
                 <DialogPortal>
                   <DialogViewport>
-                    <DialogPopup className="translate-x-[calc(-50%+2rem)] translate-y-[calc(-50%+2rem)]">
+                    <DialogPopup>
                       <DialogHeader>
                         <DialogTitle>Cancel your plan?</DialogTitle>
                         <DialogDescription>
@@ -52,7 +61,10 @@ export function DialogNested() {
                         <DialogClose render={<Button variant="outline" />}>
                           Keep plan
                         </DialogClose>
-                        <DialogClose render={<Button variant="destructive" />}>
+                        <DialogClose
+                          render={<Button variant="destructive" />}
+                          onClick={() => setParentOpen(false)}
+                        >
                           Confirm cancellation
                         </DialogClose>
                       </DialogFooter>
