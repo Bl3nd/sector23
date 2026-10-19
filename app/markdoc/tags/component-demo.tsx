@@ -62,6 +62,7 @@ import {
 import {
   DialogDefault,
   DialogInnerScroll,
+  DialogNested,
   DialogOuterScroll,
 } from "@/app/docs/components/dialog/demos";
 import Drawer01 from "@/app/docs/components/drawer/demos/drawer-01";
@@ -139,6 +140,7 @@ const demoRegistry = {
   "context-menu-nested": ContextMenuNested,
   "dialog-default": DialogDefault,
   "dialog-inner-scroll": DialogInnerScroll,
+  "dialog-nested": DialogNested,
   "dialog-outer-scroll": DialogOuterScroll,
   "drawer-01": Drawer01,
   "field-01": Field01,
