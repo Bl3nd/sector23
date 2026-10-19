@@ -54,7 +54,11 @@ import {
   ComboboxMultiple,
   ComboboxReadonly,
 } from "@/app/docs/components/combobox/demos";
-import ContextMenu01 from "@/app/docs/components/context-menu/demos/context-menu-01";
+import {
+  ContextMenuDefault,
+  ContextMenuItems,
+  ContextMenuNested,
+} from "@/app/docs/components/context-menu/demos";
 import Dialog01 from "@/app/docs/components/dialog/demos/dialog-01";
 import Drawer01 from "@/app/docs/components/drawer/demos/drawer-01";
 import Field01 from "@/app/docs/components/field/demos/field-01";
@@ -126,7 +130,9 @@ const demoRegistry = {
   "combobox-disabled": ComboboxDisabled,
   "combobox-disabled-item": ComboboxDisabledItem,
   "combobox-readonly": ComboboxReadonly,
-  "context-menu-01": ContextMenu01,
+  "context-menu-default": ContextMenuDefault,
+  "context-menu-items": ContextMenuItems,
+  "context-menu-nested": ContextMenuNested,
   "dialog-01": Dialog01,
   "drawer-01": Drawer01,
   "field-01": Field01,

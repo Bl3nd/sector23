@@ -2,6 +2,7 @@
 
 import { useDirection } from "@base-ui/react";
 import { ContextMenu as BaseContextMenu } from "@base-ui/react/context-menu";
+import { CheckIcon, CircleSmallIcon } from "lucide-react";
 
 import { mergeSlotClassName } from "@/registry/sector23/lib/merge-base-ui";
 
@@ -207,6 +208,7 @@ function ContextMenuRadioItem({
 
 function ContextMenuRadioItemIndicator({
   className,
+  children,
   ...props
 }: BaseContextMenu.RadioItemIndicator.Props) {
   return (
@@ -217,7 +219,9 @@ function ContextMenuRadioItemIndicator({
         className,
       )}
       {...props}
-    />
+    >
+      {children ?? <CircleSmallIcon />}
+    </BaseContextMenu.RadioItemIndicator>
   );
 }
 
@@ -236,6 +240,7 @@ function ContextMenuCheckboxItem({
 
 function ContextMenuCheckboxItemIndicator({
   className,
+  children,
   ...props
 }: BaseContextMenu.CheckboxItemIndicator.Props) {
   return (
@@ -246,7 +251,9 @@ function ContextMenuCheckboxItemIndicator({
         className,
       )}
       {...props}
-    />
+    >
+      {children ?? <CheckIcon />}
+    </BaseContextMenu.CheckboxItemIndicator>
   );
 }
 export {
