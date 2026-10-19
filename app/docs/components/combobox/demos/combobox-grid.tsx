@@ -1,4 +1,3 @@
-// oxlint-disable no-magic-numbers
 "use client";
 
 import {
