@@ -47,7 +47,7 @@ Each feature file starts with an H1 title and one paragraph describing the user-
 - [Combobox](./combobox.md) covers choosing Canada.
 - [Context menu](./context-menu.md) covers right-clicking the dashed area until Rename is shown.
 - [Dialog](./dialog.md) covers opening the delete-project demo and dismissing it with Close.
-- [Drawer](./drawer.md) covers opening the shopping cart and dismissing it with Close.
+- [Drawer](./drawer.md) covers the default bottom sheet, left, up, the shopping cart, snap points, and the nested account drawer.
 - [Field](./field.md) covers the slug error after leaving the field empty.
 - [Fieldset](./fieldset.md) covers typing an email into Account Information.
 - [Form](./form.md) covers submitting the empty form and seeing Name and Email errors.
