@@ -59,7 +59,11 @@ import {
   ContextMenuItems,
   ContextMenuNested,
 } from "@/app/docs/components/context-menu/demos";
-import Dialog01 from "@/app/docs/components/dialog/demos/dialog-01";
+import {
+  DialogDefault,
+  DialogInnerScroll,
+  DialogOuterScroll,
+} from "@/app/docs/components/dialog/demos";
 import Drawer01 from "@/app/docs/components/drawer/demos/drawer-01";
 import Field01 from "@/app/docs/components/field/demos/field-01";
 import Fieldset01 from "@/app/docs/components/fieldset/demos/fieldset-01";
@@ -133,7 +137,9 @@ const demoRegistry = {
   "context-menu-default": ContextMenuDefault,
   "context-menu-items": ContextMenuItems,
   "context-menu-nested": ContextMenuNested,
-  "dialog-01": Dialog01,
+  "dialog-default": DialogDefault,
+  "dialog-inner-scroll": DialogInnerScroll,
+  "dialog-outer-scroll": DialogOuterScroll,
   "drawer-01": Drawer01,
   "field-01": Field01,
   "fieldset-01": Fieldset01,
