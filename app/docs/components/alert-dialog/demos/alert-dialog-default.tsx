@@ -24,8 +24,8 @@ export function AlertDialogDefault() {
         <AlertDialogBackdrop />
         <AlertDialogPopup>
           <AlertDialogHeader>
-            <div className="flex size-10 items-center justify-center rounded-full bg-destructive/5">
-              <AlertCircleIcon className="size-5 shrink-0 text-destructive" />
+            <div className="flex size-8 items-center justify-center rounded-full bg-destructive/5">
+              <AlertCircleIcon className="size-4 shrink-0 text-destructive" />
             </div>
             <AlertDialogTitle>Delete "Atlas launch"?</AlertDialogTitle>
             <AlertDialogDescription>

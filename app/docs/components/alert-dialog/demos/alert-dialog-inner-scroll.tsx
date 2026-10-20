@@ -64,7 +64,7 @@ export function AlertDialogInnerScroll() {
       <AlertDialogPortal>
         <AlertDialogBackdrop />
         <AlertDialogViewport>
-          <AlertDialogPopup className="max-h-[min(32rem,calc(100dvh-3rem))]">
+          <AlertDialogPopup className="h-2/3">
             <AlertDialogHeader>
               <AlertDialogTitle>
                 We&apos;ve updated our Terms of Service

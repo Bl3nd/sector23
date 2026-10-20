@@ -6,8 +6,12 @@ nextjs:
 
 {% component-demo component="alert-dialog-default" /%}
 
-### Examples
+## Examples
 
-## Inner scroll
+### Inner scroll
 
 {% component-demo component="alert-dialog-inner-scroll" /%}
+
+### Nested
+
+{% component-demo component="alert-dialog-nested" /%}
