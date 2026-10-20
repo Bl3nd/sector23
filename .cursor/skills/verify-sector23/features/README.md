@@ -38,7 +38,7 @@ Each feature file starts with an H1 title and one paragraph describing the user-
 
 ## Features
 
-- [Accordion](./accordion.md) covers opening the "How to use Sector23?" panel. The first item stays disabled.
+- [Accordion](./accordion.md) covers opening the "How do I track a package?" panel. The first item stays disabled.
 - [Alert dialog](./alert-dialog.md) covers opening the Atlas launch confirmation and dismissing it with Cancel.
 - [Autocomplete](./autocomplete.md) covers filtering to `security` and choosing it.
 - [Checkbox](./checkbox.md) covers checking Accept terms and conditions.

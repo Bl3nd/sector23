@@ -14,39 +14,38 @@ export function AccordionDefault() {
       <AccordionItem>
         <AccordionHeader>
           <AccordionTrigger>
-            What is Sector23?
+            When will my order ship?
             <ChevronDownIcon className="group-data-panel-open:rotate-180" />
           </AccordionTrigger>
         </AccordionHeader>
         <AccordionPanel>
-          Sector23 is a React component library for building modern web
-          applications. It is built with Tailwind CSS and React.
+          Orders placed before 2pm ship the same business day. Everything else
+          goes out the next business day.
         </AccordionPanel>
       </AccordionItem>
       <AccordionItem>
         <AccordionHeader>
           <AccordionTrigger>
-            How to use Sector23?
+            How do I change the delivery address?
             <ChevronDownIcon className="group-data-panel-open:rotate-180" />
           </AccordionTrigger>
         </AccordionHeader>
         <AccordionPanel>
-          To use Sector23, you need to install components you need from the
-          Shadcn Registry.
+          Open the order and choose <b>Change address</b> before it ships. After
+          that, contact the carrier with the tracking number.
         </AccordionPanel>
       </AccordionItem>
       <AccordionItem>
         <AccordionHeader>
           <AccordionTrigger>
-            Is Sector23 free to use? I need to test long text here to get the
-            icon to align with the first line of text and centered within the
-            line-height.
+            Can I return an item after I removed the tags, or does it have to
+            stay unused in the original packaging?
             <ChevronDownIcon className="group-data-panel-open:rotate-180" />
           </AccordionTrigger>
         </AccordionHeader>
         <AccordionPanel>
-          Yes, Sector23 is free to use. It is open source and available on
-          GitHub.
+          Unworn items can be returned within 30 days, even if the tags are off.
+          Worn or washed items are not eligible.
         </AccordionPanel>
       </AccordionItem>
     </Accordion>
