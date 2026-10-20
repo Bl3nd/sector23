@@ -23,7 +23,7 @@ nextjs:
 
 ### Invalid
 
-{% component-demo component="autocomplete-field" /%}
+{% component-demo component="autocomplete-invalid" /%}
 
 ### Disabled
 

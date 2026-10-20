@@ -103,11 +103,11 @@ export function AutocompleteGrid() {
               <AutocompleteInput
                 aria-label="Search for an emoji"
                 placeholder="Search emojis"
-                className="mb-1 border-0 border-b"
+                className="mb-1 border-0 border-b ring-inset"
               />
               <ScrollArea className="max-h-[min(27.5rem,calc(100dvh-3rem))]">
                 <ScrollAreaViewport>
-                  <ScrollAreaContent>
+                  <ScrollAreaContent className="p-0 pe-1">
                     <AutocompleteEmpty>No emojis found</AutocompleteEmpty>
                     <AutocompleteList aria-label="Emoji results">
                       {(group: EmojiGroup) => (
@@ -132,6 +132,7 @@ export function AutocompleteGrid() {
                                       handleInsertEmoji(rowItem.emoji);
                                       setEmojiPickerOpen(false);
                                     }}
+                                    className="aspect-square justify-center p-0"
                                   >
                                     {rowItem.emoji}
                                   </AutocompleteItem>

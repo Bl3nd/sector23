@@ -39,7 +39,7 @@ const tags: Tag[] = [
   { id: "t10", value: "design" },
 ];
 
-export function AutocompleteField() {
+export function AutocompleteInvalid() {
   return (
     <Field name="tags" invalid className="max-w-52">
       <Autocomplete items={tags} required mode="both">
@@ -59,7 +59,7 @@ export function AutocompleteField() {
 
         <AutocompletePortal>
           <AutocompletePositioner>
-            <AutocompletePopup>
+            <AutocompletePopup className="data-empty:hidden">
               <AutocompleteList>
                 {(tag: Tag) => (
                   <AutocompleteItem key={tag.id} value={tag}>
