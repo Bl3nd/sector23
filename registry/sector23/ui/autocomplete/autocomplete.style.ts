@@ -18,7 +18,6 @@ const autocomplete = tv({
       "focus-visible:data-invalid:ring-destructive",
       "data-readonly:cursor-default",
       "not-in-data-[slot='autocomplete-input-group']:data-readonly:opacity-60",
-
       "dark:bg-input/15",
     ],
     inputGroupActions: [
