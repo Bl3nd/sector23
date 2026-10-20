@@ -12,17 +12,11 @@ const autocomplete = tv({
       "flex h-9 w-full items-center rounded-md border border-input bg-background px-2 text-sm font-normal text-foreground shadow-sm transition-all duration-150 ease-default outline-none",
       "placeholder:text-muted-foreground",
       "focus-visible:ring-2 focus-visible:ring-ring",
-
-      // Add end padding when the input is in the input group and has either the clear or trigger button
       "in-data-[slot='autocomplete-input-group']:group-has-[[data-slot='autocomplete-clear'],[data-slot='autocomplete-trigger']]:pe-9",
-      // Do not add disabled opacity when inside the input group. Add it when not in the input group.
       "not-in-data-[slot='autocomplete-input-group']:data-disabled:opacity-50",
-
       "data-invalid:border-destructive/50",
       "focus-visible:data-invalid:ring-destructive",
       "data-readonly:cursor-default",
-
-      // Do not add readonly opacity when inside the input group. Add it when not in the input group.
       "not-in-data-[slot='autocomplete-input-group']:data-readonly:opacity-60",
 
       "dark:bg-input/15",
@@ -32,10 +26,7 @@ const autocomplete = tv({
     ],
     trigger: [
       "flex shrink-0 cursor-default items-center justify-center rounded-md p-0.5 transition-colors duration-150 ease-default",
-
-      // Hide the trigger button when the clear button is visible (keeps the button in the DOM)
       "group-has-[[data-slot='autocomplete-clear'][data-visible]]:hidden",
-
       "hover:bg-accent hover:text-accent-foreground",
       "data-popup-open:bg-accent/80 data-popup-open:text-accent-foreground",
       "data-readonly:pointer-events-none",
@@ -45,17 +36,13 @@ const autocomplete = tv({
       "invisible flex shrink-0 items-center justify-center rounded-md p-0.5 transition-colors duration-150 ease-default",
       "group-data-readonly:pointer-events-none",
       "hover:not-data-disabled:bg-accent hover:not-data-disabled:text-accent-foreground",
-
-      // Do not add disabled opacity when a parent element has the disabled attribute. Add it when not in a parent element with the disabled attribute.
       "data-disabled:not-in-data-disabled:opacity-50",
-
       "data-visible:visible",
       "[&>svg]:size-4 [&>svg]:shrink-0",
     ],
     portal: "",
     backdrop: "",
     positioner: "outline-none",
-    // Default Popup transition does not work as intended as with other popups. So we have omitted the transition classes.
     popup: [
       "relative max-w-(--available-width) min-w-(--anchor-width) origin-(--transform-origin) rounded-md border border-border bg-popover text-popover-foreground shadow-lg outline-none",
     ],
@@ -68,9 +55,7 @@ const autocomplete = tv({
       "data-[side=left]:-right-2.25",
       "data-[side=right]:-left-2.25",
       "data-[side=top]:-bottom-1.5 data-[side=top]:rotate-180",
-      // Left / inline-start rotation
       "[[data-side='left'],[data-side='inline-start']]:rotate-90",
-      // Right / inline-end rotation
       "[[data-side='right'],[data-side='inline-end']]:-rotate-90",
     ],
     status: "",
