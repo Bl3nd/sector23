@@ -4,21 +4,17 @@ import { tv } from "tailwind-variants";
 
 const button = tv({
   base: [
-    "inline-flex shrink-0 items-center justify-center rounded-md font-medium whitespace-nowrap shadow-sm transition-all duration-150 ease-default outline-none select-none",
-    "focus-visible:ring-2 focus-visible:ring-ring/50",
+    "inline-flex shrink-0 items-center justify-center rounded-md font-medium whitespace-nowrap shadow-md transition-all duration-150 ease-default outline-none select-none",
+    "focus-visible:ring-2 focus-visible:inset-ring-2 focus-visible:ring-ring focus-visible:inset-ring-background",
     "data-disabled:pointer-events-none data-disabled:opacity-50",
     "[&_svg]:shrink-0",
     "[&>span]:inline-flex [&>span]:items-center [&>span]:justify-center [&>span]:whitespace-nowrap",
   ],
-  defaultVariants: {
-    size: "md",
-    variant: "primary",
-  },
   variants: {
     size: {
-      lg: "h-9 gap-2 px-2.5 text-sm [&_svg:not([class*='size-'])]:size-4 [&>span]:gap-2",
-      md: "h-8 gap-1.5 px-2 text-sm [&_svg:not([class*='size-'])]:size-4 [&>span]:gap-1.5",
-      sm: "h-7 gap-1 px-2 text-xs [&_svg:not([class*='size-'])]:size-3 [&>span]:gap-1",
+      lg: "h-10 gap-3 px-3 text-base [&_svg:not([class*='size-'])]:size-4 [&>span]:gap-3",
+      md: "h-9 gap-2.5 px-2.75 text-sm [&_svg:not([class*='size-'])]:size-3.5 [&>span]:gap-2.5",
+      sm: "h-8 gap-2 px-2.5 text-xs [&_svg:not([class*='size-'])]:size-3 [&>span]:gap-2",
     },
     variant: {
       primary: [
@@ -53,6 +49,10 @@ const button = tv({
         "data-popup-open:text-accent-foreground",
       ],
     },
+  },
+  defaultVariants: {
+    size: "md",
+    variant: "primary",
   },
 });
 
