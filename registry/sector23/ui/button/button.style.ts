@@ -4,7 +4,8 @@ import { tv } from "tailwind-variants";
 
 const button = tv({
   base: [
-    "inline-flex shrink-0 items-center justify-center rounded-md font-medium whitespace-nowrap shadow-md transition-colors duration-150 ease-default outline-none select-none",
+    "inline-flex shrink-0 items-center justify-center rounded-md font-medium whitespace-nowrap shadow-md outline-none select-none",
+    "transition-[color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,--tw-gradient-from,--tw-gradient-via,--tw-gradient-to,box-shadow] duration-150 ease-default",
     "focus-visible:ring-2 focus-visible:inset-ring-2 focus-visible:ring-ring focus-visible:inset-ring-background",
     "data-disabled:pointer-events-none data-disabled:opacity-50",
     "[&_svg]:shrink-0",
