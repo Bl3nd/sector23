@@ -16,7 +16,7 @@ The text-alignment group opens with the left toggle pressed. Choosing center pre
 Preconditions:
 
 - Sector23 is healthy at `http://127.0.0.1:4173`.
-- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23 Docs | Toggle`.
+- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Toggle | Sector23`.
 
 - **Open the demo.** Go to the toggle group page. Run `browser_navigate` with url `http://127.0.0.1:4173/docs/components/toggle-group`, then `browser_lock` with action `lock`, then `browser_snapshot`. Three unnamed buttons are the alignment toggles. The first has state `pressed`. The second has state `released`.
 - **Choose center.** Click the second toggle. Run `browser_click` on that released button. It has state `pressed`. The first button has state `released`.

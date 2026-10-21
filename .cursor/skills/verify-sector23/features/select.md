@@ -16,7 +16,7 @@ The timezone select opens on the placeholder. Choosing Eastern Time shows that l
 Preconditions:
 
 - Sector23 is healthy at `http://127.0.0.1:4173`.
-- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23 Docs | Toggle`.
+- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Toggle | Sector23`.
 
 - **Open the demo.** Go to the select page. Run `browser_navigate` with url `http://127.0.0.1:4173/docs/components/select`, then `browser_lock` with action `lock`, then `browser_snapshot`. A combobox named `Timezone` is collapsed.
 - **Open the list.** Click that combobox. Run `browser_click` on the snapshot ref whose role is `combobox` and name is `Timezone`. The list includes an option named `Eastern Time (UTC−05:00)`.
