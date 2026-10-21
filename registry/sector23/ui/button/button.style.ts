@@ -4,7 +4,7 @@ import { tv } from "tailwind-variants";
 
 const button = tv({
   base: [
-    "inline-flex shrink-0 items-center justify-center rounded-md font-medium whitespace-nowrap shadow-md transition-all duration-150 ease-default outline-none select-none",
+    "inline-flex shrink-0 items-center justify-center rounded-md font-medium whitespace-nowrap shadow-md transition-colors duration-150 ease-default outline-none select-none",
     "focus-visible:ring-2 focus-visible:inset-ring-2 focus-visible:ring-ring focus-visible:inset-ring-background",
     "data-disabled:pointer-events-none data-disabled:opacity-50",
     "[&_svg]:shrink-0",
