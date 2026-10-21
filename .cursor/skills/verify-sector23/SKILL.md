@@ -5,7 +5,7 @@ description: Drive the Sector23 Next.js component docs in a browser and prove a 
 
 # Verify Sector23
 
-Sector23 is a React component library. The user-facing surface is the Next.js docs site. `/` renders an empty page whose document title is `Sector23`. Each component demo is its own route under `/docs/components/<name>`. There is no shared navigation, auth, seed data, or CLI. The feature map lists every docs demo that changes visible state. Avatar, button, meter, and separator do not change visible state, so they stay unmapped. Driving one mapped demo does not verify the others.
+Sector23 is a React component library. The user-facing surface is the Next.js docs site. `/` renders an empty page whose document title is `Sector23`. Each component demo is its own route under `/docs/components/<name>`, and the document title is `<Name> | Sector23`. The docs chrome includes Home, Docs, Getting Started, and Components. A demo does not require opening that menu. There is no auth, seed data, or CLI. The feature map lists every docs demo that changes visible state. Avatar, button, meter, and separator do not change visible state, so they stay unmapped. Driving one mapped demo does not verify the others.
 
 The harness is the Cursor IDE browser (`cursor-ide-browser`). Launch, health, and teardown go through the helper below. Do not install a second browser driver.
 
@@ -17,7 +17,7 @@ From the repo root:
 bun .cursor/skills/verify-sector23/verify.mjs launch
 ```
 
-That starts `bun --bun next dev --hostname 127.0.0.1 --port 4173` and waits until `http://127.0.0.1:4173/docs/components/toggle` returns 200 with `<title>Sector23 Docs | Toggle</title>`. A second launch while that server is still healthy prints `already running` and the same URL.
+That starts `bun --bun next dev --hostname 127.0.0.1 --port 4173` and waits until `http://127.0.0.1:4173/docs/components/toggle` returns 200 with `<title>Toggle | Sector23</title>`. A second launch while that server is still healthy prints `already running` and the same URL.
 
 The helper records the process id in `.cursor/skills/verify-sector23/run/server.pid` and the log in `.cursor/skills/verify-sector23/run/server.log`. Next listens from a child of that process. The helper treats that child as part of the server it started.
 
@@ -31,7 +31,7 @@ Run this before driving, and again whenever the page looks wrong:
 bun .cursor/skills/verify-sector23/verify.mjs doctor
 ```
 
-A healthy instance prints `ok`, `url=http://127.0.0.1:4173`, the recorded pid, `ready=http://127.0.0.1:4173/docs/components/toggle`, and `title=Sector23 Docs | Toggle`. Any other result means this instance is not worth driving. Do not point the browser at a different origin to compensate.
+A healthy instance prints `ok`, `url=http://127.0.0.1:4173`, the recorded pid, `ready=http://127.0.0.1:4173/docs/components/toggle`, and `title=Toggle | Sector23`. Any other result means this instance is not worth driving. Do not point the browser at a different origin to compensate.
 
 ## Drive
 
@@ -51,7 +51,7 @@ Write proof under `.cursor/skills/verify-sector23/artifacts/<feature-id>/`. Clea
 
 For each driven entry point, keep the action and the resulting state:
 
-- An accessibility snapshot from before the action and one from after it. Include the URL, document title `Sector23`, feature id, and entry point in the file.
+- An accessibility snapshot from before the action and one from after it. Include the URL, the document title, the feature id, and the entry point in the file. A component route title is `<Name> | Sector23`.
 - A screenshot copied out of the browser tool's temp path into this directory. `browser_take_screenshot` does not write the artifacts directory itself.
 - For theme, also record `document.documentElement.classList` before and after `d`, via `Runtime.evaluate`. The class token `dark` or `light` is the state. A screenshot alone is not that proof.
 
@@ -65,7 +65,7 @@ When the verification run is finished:
 bun .cursor/skills/verify-sector23/verify.mjs cleanup
 ```
 
-Cleanup reads `server.pid` and kills that process tree with `taskkill /PID <pid> /T /F` only when the command line contains `next` and `4173`. It then deletes the pid file and the log. It does not kill by process name, and it does not delete `.cursor/skills/verify-sector23/artifacts/`. Run it after a failed launch too, so a half-started server is not left behind.
+Cleanup reads `server.pid` and kills that process only when the command line contains `next` and `4173`. On Linux, when `/proc/<pid>` exists, it sends `SIGKILL` to the descendants and then to the root. Otherwise it uses `taskkill /PID <pid> /T /F`. It then deletes the pid file and the log. It does not kill by process name, and it does not delete `.cursor/skills/verify-sector23/artifacts/`. Run it after a failed launch too, so a half-started server is not left behind.
 
 ## Helpers
 

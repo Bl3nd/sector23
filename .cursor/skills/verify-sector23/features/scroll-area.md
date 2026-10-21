@@ -16,7 +16,7 @@ The scroll area shows the start of a passage. Scrolling down reveals the second 
 Preconditions:
 
 - Sector23 is healthy at `http://127.0.0.1:4173`.
-- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23 Docs | Toggle`.
+- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Toggle | Sector23`.
 
 - **Open the demo.** Go to the scroll area page. Run `browser_navigate` with url `http://127.0.0.1:4173/docs/components/scroll-area`, then `browser_lock` with action `lock`, then `browser_snapshot`. The visible text includes `Lorem ipsum dolor sit amet`. The sentence `Sed sed gravida dolor.` is not yet in view.
 - **Scroll down.** Scroll the second paragraph into view. The passage has no snapshot ref of its own. Run `browser_scroll` with `scrollIntoView` true on the text node whose name starts `Sed sed gravida dolor.` The viewport scrolls and that paragraph is visible. The opening `Lorem ipsum` sentence can leave the viewport.

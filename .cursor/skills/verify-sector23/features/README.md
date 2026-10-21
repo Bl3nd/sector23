@@ -5,7 +5,7 @@ This directory is the maintained source for verifying the user-facing behavior o
 ## Baseline preconditions
 
 - Launch Sector23 at `http://127.0.0.1:4173` with `bun .cursor/skills/verify-sector23/verify.mjs launch`.
-- Run `bun .cursor/skills/verify-sector23/verify.mjs doctor` and require `url=http://127.0.0.1:4173` and `title=Sector23 Docs | Toggle`.
+- Run `bun .cursor/skills/verify-sector23/verify.mjs doctor` and require `url=http://127.0.0.1:4173` and `title=Toggle | Sector23`.
 - There is no seed data and no login.
 - Never drive an instance that was not started by this verification run. Port 3000 is not a fallback.
 
@@ -21,7 +21,7 @@ This directory is the maintained source for verifying the user-facing behavior o
 ## Proof and skip reporting
 
 - Capture the user action and the resulting state, not only the final screen.
-- UI proof includes an accessibility snapshot and a screenshot. The snapshot must show the document title `Sector23 Docs | <Component>`.
+- UI proof includes an accessibility snapshot and a screenshot. The snapshot must show the document title `<Component> | Sector23`.
 - Theme proof also includes the `dark` or `light` class token before and after the key.
 - Record the feature id and entry point with every artifact.
 - Report an unreachable path with the attempted command and the unmet precondition.
@@ -43,15 +43,15 @@ Each feature file starts with an H1 title and one paragraph describing the user-
 - [Autocomplete](./autocomplete.md) covers filtering to `security` and choosing it.
 - [Checkbox](./checkbox.md) covers checking Accept terms and conditions.
 - [Checkbox group](./checkbox-group.md) covers checking Option 2 while Option 1 stays checked.
-- [Collapsible](./collapsible.md) covers opening "What's included in Sector23?".
+- [Collapsible](./collapsible.md) covers opening the first Statuses panel.
 - [Combobox](./combobox.md) covers choosing Canada.
 - [Context menu](./context-menu.md) covers right-clicking the dashed area until Rename is shown.
 - [Dialog](./dialog.md) covers opening the delete-project demo and dismissing it with Close.
 - [Drawer](./drawer.md) covers opening the shopping cart and dismissing it with Close.
-- [Field](./field.md) covers the slug error after leaving the field empty.
+- [Field](./field.md) covers the slug hint. The required error stays hidden until the field has been edited.
 - [Fieldset](./fieldset.md) covers typing an email into Account Information.
 - [Form](./form.md) covers submitting the empty form and seeing Name and Email errors.
-- [Input](./input.md) covers typing into the email field.
+- [Input](./input.md) covers typing into the textbox named `Enter you email`.
 - [Label](./label.md) covers typing into the Name field.
 - [Menu](./menu.md) covers opening File until New file is shown.
 - [Menubar](./menubar.md) covers opening File until New file is shown. Help stays disabled.
@@ -71,8 +71,8 @@ Each feature file starts with an H1 title and one paragraph describing the user-
 - [Toast](./toast.md) covers creating a toast and its later absence.
 - [Toggle](./toggle.md) covers pressing and releasing the Bold toggle on its demo page.
 - [Toggle group](./toggle-group.md) covers moving the pressed alignment toggle from left to center.
-- [Demo viewport](./demo-viewport.md) covers the mobile, tablet, and desktop widths on a component demo.
+- [Demo viewport](./demo-viewport.md) covers the missing width frame on accordion, alert dialog, and autocomplete.
 - [Toolbar](./toolbar.md) covers pressing Align center.
-- [Tooltip](./tooltip.md) covers showing the Bold text tooltip.
+- [Tooltip](./tooltip.md) covers the Bold toggle. A click presses it and leaves the tooltip closed.
 
 Avatar (`app/docs/components/avatar/page.md`), button (`app/docs/components/button/page.md`), meter (`app/docs/components/meter/page.md`), and separator (`app/docs/components/separator/page.md`) do not change visible state, so they stay unmapped. Driving a mapped feature does not verify another one.

@@ -16,7 +16,7 @@ Submitting the empty form shows errors for Name and Email. The page stays on the
 Preconditions:
 
 - Sector23 is healthy at `http://127.0.0.1:4173`.
-- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23 Docs | Toggle`.
+- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Toggle | Sector23`.
 
 - **Open the demo.** Go to the form page. Run `browser_navigate` with url `http://127.0.0.1:4173/docs/components/form`, then `browser_lock` with action `lock`, then `browser_snapshot`. Textboxes named `Name` and `Email` are empty. A button named `Submit` is present. No error text is shown.
 - **Submit empty.** Click Submit. Run `browser_click` on the snapshot ref whose role is `button` and name is `Submit`. Name and Email have state `invalid`. The page text is `Please fill out this field.` under each. The URL is still `http://127.0.0.1:4173/docs/components/form`.

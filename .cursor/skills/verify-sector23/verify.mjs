@@ -4,6 +4,7 @@ import {
   existsSync,
   mkdirSync,
   openSync,
+  readdirSync,
   readFileSync,
   rmSync,
   writeFileSync,
@@ -33,7 +34,7 @@ if (!["launch", "doctor", "cleanup"].includes(command)) {
 if (command === "launch") {
   await launch();
 } else if (command === "doctor") {
-  doctor();
+  await doctor();
 } else {
   cleanup();
 }
@@ -56,6 +57,17 @@ function alive(pid) {
 }
 
 function commandLine(pid) {
+  try {
+    const text = readFileSync(`/proc/${pid}/cmdline`)
+      .toString("utf8")
+      .replaceAll("\0", " ")
+      .trim();
+    if (text) {
+      return text;
+    }
+  } catch {
+    // Windows has no /proc entry for this pid.
+  }
   const result = spawnSync(
     "powershell.exe",
     [
@@ -69,6 +81,16 @@ function commandLine(pid) {
 }
 
 function listeningPids(targetPort) {
+  const ss = spawnSync("ss", ["-ltnp", `sport = :${targetPort}`], {
+    encoding: "utf8",
+  });
+  const fromSs = new Set();
+  for (const match of (ss.stdout ?? "").matchAll(/pid=(\d+)/g)) {
+    fromSs.add(Number(match[1]));
+  }
+  if (fromSs.size > 0) {
+    return [...fromSs];
+  }
   const result = spawnSync("netstat", ["-ano", "-p", "tcp"], {
     encoding: "utf8",
   });
@@ -99,6 +121,16 @@ function isOurServer(pid) {
 }
 
 function parentPid(pid) {
+  try {
+    const stat = readFileSync(`/proc/${pid}/stat`, "utf8");
+    const fields = stat.slice(stat.lastIndexOf(")") + 2).split(" ");
+    const parent = Number(fields[1]);
+    if (Number.isInteger(parent) && parent > 0) {
+      return parent;
+    }
+  } catch {
+    // Windows has no /proc entry for this pid.
+  }
   const result = spawnSync(
     "powershell.exe",
     [
@@ -144,7 +176,7 @@ async function waitUntilReady(pid) {
       const response = await fetch(readyUrl);
       if (response.ok) {
         const html = await response.text();
-        if (html.includes("<title>Sector23 Docs | Toggle</title>")) {
+        if (html.includes("<title>Toggle | Sector23</title>")) {
           return;
         }
       }
@@ -156,7 +188,7 @@ async function waitUntilReady(pid) {
   throw new Error(`timed out waiting for ${readyUrl}\n${tailLog()}`);
 }
 
-function doctor() {
+async function doctor() {
   const pid = readPid();
   if (pid === null || !isOurServer(pid)) {
     console.error(
@@ -171,16 +203,14 @@ function doctor() {
     );
     process.exit(1);
   }
-  const response = spawnSync(
-    "powershell.exe",
-    [
-      "-NoProfile",
-      "-Command",
-      `$r = Invoke-WebRequest -UseBasicParsing ${readyUrl}; if ($r.StatusCode -ne 200 -or $r.Content -notlike '*<title>Sector23 Docs | Toggle</title>*') { exit 1 }; Write-Output $r.StatusCode`,
-    ],
-    { encoding: "utf8" },
-  );
-  if (response.status !== 0) {
+  let html = "";
+  try {
+    const response = await fetch(readyUrl);
+    html = response.ok ? await response.text() : "";
+  } catch {
+    html = "";
+  }
+  if (!html.includes("<title>Toggle | Sector23</title>")) {
     console.error(`doctor: ${readyUrl} did not return the Sector23 document`);
     process.exit(1);
   }
@@ -188,7 +218,7 @@ function doctor() {
   console.log(`url=${origin}`);
   console.log(`pid=${pid}`);
   console.log(`ready=${readyUrl}`);
-  console.log(`title=Sector23 Docs | Toggle`);
+  console.log(`title=Toggle | Sector23`);
 }
 
 async function launch() {
@@ -237,6 +267,48 @@ async function launch() {
   console.log(`log=${logFile}`);
 }
 
+function descendantPids(pid) {
+  const children = [];
+  let entries = [];
+  try {
+    entries = readdirSync("/proc");
+  } catch {
+    return children;
+  }
+  for (const entry of entries) {
+    if (!/^\d+$/.test(entry)) {
+      continue;
+    }
+    const child = Number(entry);
+    if (parentPid(child) === pid) {
+      children.push(child, ...descendantPids(child));
+    }
+  }
+  return children;
+}
+
+function killProcessTree(pid) {
+  if (existsSync(`/proc/${pid}`)) {
+    for (const child of descendantPids(pid).reverse()) {
+      try {
+        process.kill(child, "SIGKILL");
+      } catch {
+        // The child already exited.
+      }
+    }
+    try {
+      process.kill(pid, "SIGKILL");
+    } catch {
+      // The root already exited.
+    }
+    return !alive(pid);
+  }
+  const killed = spawnSync("taskkill", ["/PID", String(pid), "/T", "/F"], {
+    encoding: "utf8",
+  });
+  return killed.status === 0 || !alive(pid);
+}
+
 function cleanup() {
   const pid = readPid();
   if (pid !== null && alive(pid)) {
@@ -247,13 +319,8 @@ function cleanup() {
       );
       process.exit(1);
     }
-    const killed = spawnSync("taskkill", ["/PID", String(pid), "/T", "/F"], {
-      encoding: "utf8",
-    });
-    if (killed.status !== 0 && alive(pid)) {
-      console.error(
-        (killed.stderr || killed.stdout || "taskkill failed").trim(),
-      );
+    if (!killProcessTree(pid) && alive(pid)) {
+      console.error(`cleanup failed to stop pid ${pid}`);
       process.exit(1);
     }
   }

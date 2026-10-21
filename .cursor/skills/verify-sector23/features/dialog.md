@@ -20,7 +20,7 @@ The closed dialog page lists four triggers: `Delete project`, `What's new`, `Key
 Preconditions:
 
 - Sector23 is healthy at `http://127.0.0.1:4173`.
-- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23 Docs | Toggle`.
+- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Toggle | Sector23`.
 
 - **Open the demo.** Go to the dialog page. Run `browser_navigate` with url `http://127.0.0.1:4173/docs/components/dialog`, then `browser_lock` with action `lock`, then `browser_snapshot`. The page has buttons named `Delete project`, `What's new`, `Keyboard shortcuts`, and `Manage subscription`, each with state `collapsed`. Drive Delete project through the steps below.
 - **Open the confirmation.** Click that button. Run `browser_click` on the snapshot ref whose role is `button`, name is `Delete project`, and state is `collapsed`. The resulting snapshot contains the heading `Delete project?`, the description text `Acme Website`, a button named `Close`, and a button named `Delete project` inside the dialog.

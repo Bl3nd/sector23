@@ -1,13 +1,10 @@
 # Demo viewport
 
-A component demo opens at a mobile width. Tablet makes the inner screen wider. Desktop makes it fill the stage. The stage stays the full width of the card, and a diagonal pattern shows in the unused part.
+The width frame is opt-in. Accordion, alert dialog, and autocomplete do not mount it. Those routes have no Mobile, Tablet, or Desktop buttons.
 
 ## Sub-features
 
-- `demo-viewport-mobile` opens with Mobile pressed and the inner screen at 390px.
-- `demo-viewport-tablet` presses Tablet and sets the inner screen to 768px.
-- `demo-viewport-desktop` presses Desktop and makes the inner screen as wide as the stage.
-- `demo-viewport-repress` presses Mobile again and leaves Mobile pressed.
+- `demo-viewport-absent` finds no `[data-slot="demo-viewport-frame"]` on accordion, alert dialog, and autocomplete.
 
 ## How to get to it (user POV)
 
@@ -20,19 +17,14 @@ A component demo opens at a mobile width. Tablet makes the inner screen wider. D
 Preconditions:
 
 - Sector23 is healthy at `http://127.0.0.1:4173`.
-- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23 Docs | Toggle`.
-- The browser window is wider than 768px, so tablet and desktop are different widths.
+- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Toggle | Sector23`.
 
-- **Open the demo.** Go to one entry route. Run `browser_navigate` with that url, then `browser_lock` with action `lock`, then `browser_snapshot`. The document title is `Sector23 Docs | Accordion`, `Sector23 Docs | Alert Dialog`, or `Sector23 Docs | Autocomplete`, matching the route. The button named Mobile has state `pressed`. Tablet and Desktop have state `released`.
-- **Read the mobile width.** The inner screen is `[data-slot="demo-viewport-frame"]` with `data-viewport="mobile"`. Its width is 390. The stage `[data-slot="demo-viewport-stage"]` is wider, and its background is a repeating diagonal gradient.
-- **Choose tablet.** Click the button named Tablet. It has state `pressed`. Mobile has state `released`. The inner screen has `data-viewport="tablet"` and width 768. The stage is still wider.
-- **Choose desktop.** Click the button named Desktop. It has state `pressed`. The inner screen has `data-viewport="desktop"` and the same width as the stage.
-- **Press Mobile again.** Click Mobile, then click Mobile a second time. It stays `pressed`. The inner screen returns to width 390.
-- **Proof.** Save the snapshot and a screenshot for the width you drove under `artifacts/demo-viewport/`.
+- **Open the demo.** Go to one entry route. Run `browser_navigate` with that url, then `browser_lock` with action `lock`, then `browser_snapshot`. The document title is `Accordion | Sector23`, `Alert Dialog | Sector23`, or `Autocomplete | Sector23`, matching the route. The snapshot has no button named Mobile, Tablet, or Desktop.
+- **Confirm the frame is absent.** Run `browser_cdp` with method `Runtime.evaluate` and expression `!!document.querySelector('[data-slot=demo-viewport-frame]')`. The value is false.
+- **Proof.** Save the snapshot and the evaluated result under `artifacts/demo-viewport/`. The proof is the absence of the frame. Do not report a width change.
 
 ## Gotchas
 
-- Drive each entry route. The three pages share `DemoViewportFrame`, and a pass on one page does not cover the others.
-- Tailwind `sm:` and `md:` follow the browser window, not the inner screen.
-- Alert dialog and autocomplete popups render on `document.body`. They do not stay inside the inner screen.
-- A window narrower than 768px makes tablet and desktop the same width. Widen the window before treating that as a failure.
+- `showViewport` defaults to false in the component demo tag, and no docs page sets it. The frame code exists. These routes do not mount it.
+- A pass that only checks one route does not cover the other two.
+- Do not turn `showViewport` on to manufacture the buttons. That is a product change, and this map records the pages as they are.

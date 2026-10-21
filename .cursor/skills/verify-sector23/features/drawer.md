@@ -17,7 +17,7 @@ The drawer demo starts closed. Open drawer shows a shopping cart. Close dismisse
 Preconditions:
 
 - Sector23 is healthy at `http://127.0.0.1:4173`.
-- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Sector23 Docs | Toggle`.
+- `bun .cursor/skills/verify-sector23/verify.mjs doctor` reports that URL and `title=Toggle | Sector23`.
 
 - **Open the demo.** Go to the drawer page. Run `browser_navigate` with url `http://127.0.0.1:4173/docs/components/drawer`, then `browser_lock` with action `lock`, then `browser_snapshot`. A button named `Open drawer` is collapsed. The page does not show `Shopping cart`.
 - **Open the drawer.** Click `Open drawer`. Run `browser_click` on the snapshot ref whose role is `button` and name is `Open drawer`. The snapshot contains the heading `Shopping cart`, the text `View your shopping cart and checkout.`, a button named `Close`, and a button named `Checkout`.
