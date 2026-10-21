@@ -4,7 +4,10 @@ import { tv } from "tailwind-variants";
 
 const avatar = tv({
   slots: {
-    root: "relative inline-flex items-center justify-center overflow-hidden rounded-full bg-muted align-middle leading-none text-muted-foreground select-none [&_svg]:shrink-0",
+    root: [
+      "relative inline-flex items-center justify-center overflow-hidden rounded-full bg-muted leading-none text-muted-foreground select-none",
+      "[&_svg]:shrink-0",
+    ],
     image: [
       "absolute inset-0 size-full object-cover transition-opacity duration-150 ease-default",
       "data-ending-style:opacity-0",
@@ -17,15 +20,15 @@ const avatar = tv({
   variants: {
     size: {
       sm: {
-        root: "size-7 text-xs [&_svg]:size-3",
+        root: "size-8 text-xs [&_svg]:size-3",
         fallback: "text-xs",
       },
       md: {
-        root: "size-8 text-sm [&_svg]:size-4",
+        root: "size-9 text-sm [&_svg]:size-4",
         fallback: "text-sm",
       },
       lg: {
-        root: "size-9 text-base [&_svg]:size-5",
+        root: "size-10 text-base [&_svg]:size-5",
         fallback: "text-base",
       },
     },
