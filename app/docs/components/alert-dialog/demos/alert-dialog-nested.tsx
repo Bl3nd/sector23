@@ -42,6 +42,7 @@ export function AlertDialogNested() {
             <Button
               variant="destructive"
               onClick={() => setConfirmDialogOpen(true)}
+              className="w-full sm:w-auto"
             >
               Delete project
             </Button>
@@ -66,6 +67,7 @@ export function AlertDialogNested() {
                   setAlertDialogOpen(false);
                   setConfirmDialogOpen(false);
                 }}
+                className="w-full sm:w-auto"
               >
                 Yes, delete project
               </Button>
