@@ -3,7 +3,7 @@ import { Label } from "@/registry/sector23/ui/label";
 
 export function CheckboxReadonly() {
   return (
-    <Label className="flex items-center gap-2">
+    <Label className="flex items-center gap-1.5">
       <Checkbox readOnly>
         <CheckboxIndicator />
       </Checkbox>

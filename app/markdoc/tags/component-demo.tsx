@@ -39,6 +39,7 @@ import {
   CheckboxDisabled,
   CheckboxField,
   CheckboxReadonly,
+  CheckboxSize,
 } from "@/app/docs/components/checkbox/demos";
 import {
   CollapsibleDefault,
@@ -120,6 +121,7 @@ const demoRegistry = {
   "button-disabled": ButtonDisabled,
   "button-popup-open": ButtonPopupOpen,
   "checkbox-default": CheckboxDefault,
+  "checkbox-size": CheckboxSize,
   "checkbox-field": CheckboxField,
   "checkbox-disabled": CheckboxDisabled,
   "checkbox-readonly": CheckboxReadonly,
