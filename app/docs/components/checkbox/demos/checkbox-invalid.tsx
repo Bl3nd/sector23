@@ -1,7 +1,7 @@
 import { Checkbox, CheckboxIndicator } from "@/registry/sector23/ui/checkbox";
 import { Field, FieldLabel } from "@/registry/sector23/ui/field";
 
-export function CheckboxField() {
+export function CheckboxInvalid() {
   return (
     <Field name="terms" className="w-fit" invalid>
       <FieldLabel className="flex items-center gap-1.5">

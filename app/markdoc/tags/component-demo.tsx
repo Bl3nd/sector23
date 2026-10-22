@@ -37,7 +37,7 @@ import {
 import {
   CheckboxDefault,
   CheckboxDisabled,
-  CheckboxField,
+  CheckboxInvalid,
   CheckboxReadonly,
   CheckboxSize,
 } from "@/app/docs/components/checkbox/demos";
@@ -122,7 +122,7 @@ const demoRegistry = {
   "button-popup-open": ButtonPopupOpen,
   "checkbox-default": CheckboxDefault,
   "checkbox-size": CheckboxSize,
-  "checkbox-field": CheckboxField,
+  "checkbox-invalid": CheckboxInvalid,
   "checkbox-disabled": CheckboxDisabled,
   "checkbox-readonly": CheckboxReadonly,
   "checkbox-group-default": CheckboxGroupDefault,

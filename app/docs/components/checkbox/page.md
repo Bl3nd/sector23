@@ -14,7 +14,7 @@ nextjs:
 
 ### Invalid
 
-{% component-demo component="checkbox-field" /%}
+{% component-demo component="checkbox-invalid" /%}
 
 ### Disabled
 
