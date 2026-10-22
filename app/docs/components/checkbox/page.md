@@ -8,6 +8,10 @@ nextjs:
 
 ## Examples
 
+### Size
+
+{% component-demo component="checkbox-size" /%}
+
 ### Invalid
 
 {% component-demo component="checkbox-field" /%}
