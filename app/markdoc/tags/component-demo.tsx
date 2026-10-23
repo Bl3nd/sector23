@@ -8,6 +8,7 @@ import {
 } from "@/app/docs/components/accordion/demos";
 import {
   AlertDialogDefault,
+  AlertDialogDetachedTriggers,
   AlertDialogInnerScroll,
   AlertDialogNested,
 } from "@/app/docs/components/alert-dialog/demos";
@@ -105,6 +106,7 @@ const demoRegistry = {
   "accordion-root-disabled": AccordionRootDisabled,
   "accordion-item-disabled": AccordionItemDisabled,
   "alert-dialog-default": AlertDialogDefault,
+  "alert-dialog-detached-triggers": AlertDialogDetachedTriggers,
   "alert-dialog-inner-scroll": AlertDialogInnerScroll,
   "alert-dialog-nested": AlertDialogNested,
   "autocomplete-default": AutocompleteDefault,
