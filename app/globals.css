@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "@twinkleplop/theme-github";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -193,4 +194,20 @@
 
 .lucide * {
   vector-effect: non-scaling-stroke;
+}
+
+.twinkleplop {
+  --code-padding: 1rem;
+  margin: 0;
+  padding: var(--code-padding);
+  overflow-x: auto;
+  background: var(--twp-background);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+}
+
+[data-slot="code-fold"]:not([data-expanded="true"]) .twinkleplop {
+  max-height: calc(var(--fold-lines) * 1lh + 2 * var(--code-padding));
+  overflow-y: hidden;
 }

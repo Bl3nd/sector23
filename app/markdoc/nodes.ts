@@ -2,6 +2,8 @@ import type { Node, RenderableTreeNode } from "@markdoc/markdoc";
 
 import { nodes as defaultNodes, Tag, type Config } from "@markdoc/markdoc";
 
+import { CodeBlock } from "./code/code-block";
+import { stripFinalNewline } from "./code/fold";
 import { parseDocFrontmatter } from "./frontmatter";
 import { DocsLayout } from "./nodes/docs-layout";
 import { Heading } from "./nodes/heading";
@@ -41,6 +43,20 @@ const nodes = {
   paragraph: {
     ...defaultNodes.paragraph,
     render: Paragraph,
+  },
+  fence: {
+    ...defaultNodes.fence,
+    render: CodeBlock,
+    transform(node: Node) {
+      return new Tag(
+        this.render.toString(),
+        {
+          code: stripFinalNewline(String(node.attributes.content)),
+          lang: node.attributes.language,
+        },
+        [],
+      );
+    },
   },
   heading: {
     render: Heading,

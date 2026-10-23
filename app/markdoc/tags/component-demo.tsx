@@ -95,6 +95,7 @@ import Toggle01 from "@/app/docs/components/toggle/demos/toggle-01";
 import Toolbar01 from "@/app/docs/components/toolbar/demos/toolbar-01";
 import Tooltip01 from "@/app/docs/components/tooltip/demos/tooltip-01";
 
+import { DemoCode } from "../code/demo-code";
 import { DemoViewportFrame } from "./demo-viewport-frame";
 
 const demoRegistry = {
@@ -198,19 +199,23 @@ export function ComponentDemo({
   component: string;
   showViewport?: boolean;
 }) {
-  const Demo = demoRegistry[parseDemoPath(component)];
+  const key = parseDemoPath(component);
+  const Demo = demoRegistry[key];
 
   return (
-    <>
-      {showViewport ? (
-        <DemoViewportFrame>
+    <figure className="mx-auto w-full overflow-hidden rounded-md border border-border [&_[data-slot=code-block]]:rounded-none [&_[data-slot=code-block]]:border-0">
+      <div className="flex w-full flex-col items-center justify-center p-6 *:data-[slot=demo-viewport]:w-full">
+        {showViewport ? (
+          <DemoViewportFrame>
+            <Demo />
+          </DemoViewportFrame>
+        ) : (
           <Demo />
-        </DemoViewportFrame>
-      ) : (
-        <div className="mx-auto flex w-full flex-col items-center justify-center rounded-md border border-border p-6">
-          <Demo />
-        </div>
-      )}
-    </>
+        )}
+      </div>
+      <div className="border-t border-border">
+        <DemoCode demoKey={key} />
+      </div>
+    </figure>
   );
 }

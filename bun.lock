@@ -8,12 +8,16 @@
         "@base-ui/react": "^1.9.0",
         "@markdoc/markdoc": "^0.5.10",
         "@markdoc/next.js": "^0.5.0",
+        "@twinkleplop/bash": "^0.1.7",
+        "@twinkleplop/theme-github": "^0.2.4",
+        "@twinkleplop/tsx": "^0.1.7",
         "js-yaml": "4.1.0",
         "lucide-react": "^1.61.0",
         "next": "16.4.2",
         "next-themes": "^0.4.6",
         "react": "19.3.1",
         "react-dom": "19.3.1",
+        "server-only": "^0.0.1",
         "shadcn": "^4.22.1",
         "tailwind-variants": "^3.3.1",
       },
@@ -327,6 +331,22 @@
     "@tailwindcss/postcss": ["@tailwindcss/postcss@4.3.3", "", { "dependencies": { "@alloc/quick-lru": "^5.2.0", "@tailwindcss/node": "4.3.3", "@tailwindcss/oxide": "4.3.3", "postcss": "^8.5.16", "tailwindcss": "4.3.3" } }, "sha512-JTSZZGQi1AyKirbLN3azmjVzef92tcX7h+iSqPdaeStyFpGpDlKvvpxeOE8njhbUanbRwr3z8DyzhICWnMtQeg=="],
 
     "@ts-morph/common": ["@ts-morph/common@0.27.0", "", { "dependencies": { "fast-glob": "^3.3.3", "minimatch": "^10.0.1", "path-browserify": "^1.0.1" } }, "sha512-Wf29UqxWDpc+i61k3oIOzcUfQt79PIT9y/MWfAGlrkjg6lBC1hwDECLXPVJAhWjiGbfBCxZd65F/LIZF3+jeJQ=="],
+
+    "@twinkleplop/bash": ["@twinkleplop/bash@0.1.7", "", { "dependencies": { "@twinkleplop/core": "0.3.1" } }, "sha512-/cBFzqKcfffT6aaWlSeUhjoXJS3VhG4Tz1sg1oJILooVlbD3WX2Ke+zRWFLS+GmoXrl8hlQF/ZsMNmila41/Jw=="],
+
+    "@twinkleplop/core": ["@twinkleplop/core@0.3.1", "", {}, "sha512-fMbce7NcJlVROsyI34tz3DCWkAWRWLRlBNCbgwz36mm6yoEO09eyafi8JRN5HJGQIzMr0qjXQ3t3asc7MFSh8Q=="],
+
+    "@twinkleplop/css": ["@twinkleplop/css@0.1.7", "", { "dependencies": { "@twinkleplop/core": "0.3.1" } }, "sha512-eznre7EgC0IBE3/jqAUKXG2S4iWLczOSAxwLnknS+9BQQGuD82u2A2rCok94E+nMpjkeshhbSvnQxDSEo8YpUA=="],
+
+    "@twinkleplop/html": ["@twinkleplop/html@0.1.7", "", { "dependencies": { "@twinkleplop/core": "0.3.1", "@twinkleplop/css": "0.1.7", "@twinkleplop/javascript": "0.1.7" } }, "sha512-tpc+I1OXR5UJYkIhna74rxxEBYUJMWTNkjAVH9sA6fKeWq9lmbLRhutb10PHeMuF6BTHuHgD9oyET7yKdZGeQA=="],
+
+    "@twinkleplop/javascript": ["@twinkleplop/javascript@0.1.7", "", { "dependencies": { "@twinkleplop/core": "0.3.1", "@twinkleplop/css": "0.1.7", "@twinkleplop/html": "0.1.7" } }, "sha512-qZDFx0bTM8YdKBTCxIS+6dZ1itaTnn1Udf2wFW5Uo+S6liGm40Lq2rlCk3PYa+Hm4lmX6HSzFeO4ZaDqk6Cn9Q=="],
+
+    "@twinkleplop/theme-github": ["@twinkleplop/theme-github@0.2.4", "", { "dependencies": { "@twinkleplop/core": "0.3.1" } }, "sha512-gCo1G/dGspjNSUoLPLE49MZx97LoEdGYQQHqh985Vfg0jsdupCPHRRvRkgXm8RsP7TvZ2ib/nORpCPNiauflSA=="],
+
+    "@twinkleplop/tsx": ["@twinkleplop/tsx@0.1.7", "", { "dependencies": { "@twinkleplop/core": "0.3.1", "@twinkleplop/javascript": "0.1.7", "@twinkleplop/typescript": "0.1.7" } }, "sha512-Vx7821K7/cciCZPpVj1gsxHp6pI75frlMVGoqtu8QjZH9l26DaiIM3wcv1NqvMDsNnQX7vOV1cTAXawJ9wyB5g=="],
+
+    "@twinkleplop/typescript": ["@twinkleplop/typescript@0.1.7", "", { "dependencies": { "@twinkleplop/core": "0.3.1", "@twinkleplop/javascript": "0.1.7" } }, "sha512-3lVdFUnOc40QQUJPnmTsiyTf7+RSEoXhDnmMwkUQ5Kzgemkk6eeXQGietPjxro8k+QuTAY/aQuWOtR/nUgfENw=="],
 
     "@types/bun": ["@types/bun@1.4.3", "", { "dependencies": { "bun-types": "1.4.3" } }, "sha512-N67Pqy8JXbAY/j0tNraS3V5mubGvc6rrrNDmDCtZLlFzccbUJPDb0tvgUBC5q4m8ybkP93Jcn1QB+RYQ6PvBhw=="],
 
@@ -807,6 +827,8 @@
     "send": ["send@1.2.1", "", { "dependencies": { "debug": "^4.4.3", "encodeurl": "^2.0.0", "escape-html": "^1.0.3", "etag": "^1.8.1", "fresh": "^2.0.0", "http-errors": "^2.0.1", "mime-types": "^3.0.2", "ms": "^2.1.3", "on-finished": "^2.4.1", "range-parser": "^1.2.1", "statuses": "^2.0.2" } }, "sha512-1gnZf7DFcoIcajTjTwjwuDjzuz4PPcY2StKPlsGAQ1+YH20IRVrBaXSWmdjowTJ6u8Rc01PoYOGHXfP1mYcZNQ=="],
 
     "serve-static": ["serve-static@2.2.1", "", { "dependencies": { "encodeurl": "^2.0.0", "escape-html": "^1.0.3", "parseurl": "^1.3.3", "send": "^1.2.0" } }, "sha512-xRXBn0pPqQTVQiC8wyQrKs2MOlX24zQ0POGaj0kultvoOCstBQM5yvOhAVSUwOMjQtTvsPWoNCHfPGwaaQJhTw=="],
+
+    "server-only": ["server-only@0.0.1", "", {}, "sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA=="],
 
     "setprototypeof": ["setprototypeof@1.2.0", "", {}, "sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw=="],
 
