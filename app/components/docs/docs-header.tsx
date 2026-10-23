@@ -24,7 +24,7 @@ const drawerHandle = createDrawerHandle();
 export default function DocsHeader() {
   return (
     <>
-      <header className="flex h-(--header-height) items-center justify-between border-b border-border px-4 sm:px-6 lg:px-8">
+      <header className="sticky top-0 z-10 flex h-(--header-height) items-center justify-between border-b border-border bg-background px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-2">
           <DrawerTrigger
             handle={drawerHandle}
