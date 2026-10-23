@@ -12,7 +12,7 @@ export function DocsLayout({
   description: string;
 }) {
   return (
-    <main className="flex flex-col gap-4 px-2 sm:px-0">
+    <main className="flex flex-col gap-4 px-4">
       <div className="gap-4 px-2">
         <article className="mt-2 flex flex-1 flex-col gap-4">
           <div className="flex flex-col gap-1.5">

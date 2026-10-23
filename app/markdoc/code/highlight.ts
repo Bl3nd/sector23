@@ -1,4 +1,6 @@
 import "server-only";
+import type { RenderOptions } from "@twinkleplop/core";
+
 import { language as bashLanguage } from "@twinkleplop/bash";
 import { language as tsxLanguage } from "@twinkleplop/tsx";
 
@@ -18,7 +20,10 @@ const LANGUAGE_ALIASES = new Map<string, CodeLanguage>([
   ["console", "bash"],
 ]);
 
-const highlighters: Record<CodeLanguage, (code: string) => string> = {
+const highlighters: Record<
+  CodeLanguage,
+  (code: string, options?: RenderOptions) => string
+> = {
   tsx: tsxLanguage(),
   bash: bashLanguage(),
 };
@@ -32,5 +37,7 @@ export function parseCodeLanguage(
 }
 
 export function highlight(code: string, lang: CodeLanguage): string {
-  return highlighters[lang](code);
+  return highlighters[lang](code, {
+    line_numbers: lang === "tsx" ? true : false,
+  });
 }

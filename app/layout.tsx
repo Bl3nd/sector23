@@ -43,7 +43,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <DirectionProvider direction="ltr">
-        <body className="relative h-dvh">
+        <body className="h-dvh">
           <ThemeProvider>
             <div className="isolate h-full [--header-height:3.5rem]">
               <DocsHeader />

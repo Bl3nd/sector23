@@ -1,7 +1,7 @@
 import { ChevronDownIcon } from "lucide-react";
 
-import { Accordion } from "@/registry/sector23/ui/accordion";
 import {
+  Accordion,
   AccordionHeader,
   AccordionItem,
   AccordionPanel,
@@ -15,7 +15,7 @@ export function AccordionDefault() {
         <AccordionHeader>
           <AccordionTrigger>
             When will my order ship?
-            <ChevronDownIcon className="group-data-panel-open:rotate-180" />
+            <ChevronDownIcon />
           </AccordionTrigger>
         </AccordionHeader>
         <AccordionPanel>
@@ -27,7 +27,7 @@ export function AccordionDefault() {
         <AccordionHeader>
           <AccordionTrigger>
             How do I change the delivery address?
-            <ChevronDownIcon className="group-data-panel-open:rotate-180" />
+            <ChevronDownIcon />
           </AccordionTrigger>
         </AccordionHeader>
         <AccordionPanel>
@@ -40,7 +40,7 @@ export function AccordionDefault() {
           <AccordionTrigger>
             Can I return an item after I removed the tags, or does it have to
             stay unused in the original packaging?
-            <ChevronDownIcon className="group-data-panel-open:rotate-180" />
+            <ChevronDownIcon />
           </AccordionTrigger>
         </AccordionHeader>
         <AccordionPanel>

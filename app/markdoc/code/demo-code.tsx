@@ -15,7 +15,11 @@ export function DemoCode({ demoKey }: { demoKey: string }): ReactNode {
   }
 
   return (
-    <CodeFold visibleLines={plan.visibleLines} totalLines={plan.totalLines}>
+    <CodeFold
+      code={code}
+      visibleLines={plan.visibleLines}
+      totalLines={plan.totalLines}
+    >
       {block}
     </CodeFold>
   );

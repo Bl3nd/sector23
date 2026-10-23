@@ -76,11 +76,11 @@
       "border": "oklch(0.9219 0 0)",
       "input": "oklch(0.8699 0 0)",
       "ring": "oklch(0.5555 0 0)",
-      "chart-1": "oklch(0.2686 0 0)",
-      "chart-2": "oklch(0.4386 0 0)",
-      "chart-3": "oklch(0.5999 0 0)",
-      "chart-4": "oklch(0.7476 0 0)",
-      "chart-5": "oklch(0.8699 0 0)",
+      "chart-1": "oklch(0.9702 0 0)",
+      "chart-2": "oklch(0.7228 0.1984 140.6052)",
+      "chart-3": "oklch(0.6144 0.1236 59.2673)",
+      "chart-4": "oklch(0.7396 0.1625 110.9842)",
+      "chart-5": "oklch(0.3753 0 0)",
       "sidebar": "oklch(1 0 0)",
       "sidebar-foreground": "oklch(0.1448 0 0)",
       "sidebar-primary": "oklch(0.2046 0 0)",
@@ -125,16 +125,16 @@
       "muted-foreground": "oklch(0.709 0 0)",
       "accent": "oklch(0.3012 0 0)",
       "accent-foreground": "oklch(0.9702 0 0)",
-      "destructive": "oklch(0.6046 0.228 24.4565)",
+      "destructive": "oklch(66.979% 0.21805 21.079)",
       "destructive-foreground": "oklch(0.1448 0 0)",
       "border": "oklch(0.2809 0 0)",
       "input": "oklch(0.3211 0 0)",
       "ring": "oklch(0.7155 0 0)",
-      "chart-1": "oklch(0.9702 0 0)",
-      "chart-2": "oklch(0.8328 0 0)",
-      "chart-3": "oklch(0.6895 0 0)",
-      "chart-4": "oklch(0.5382 0 0)",
-      "chart-5": "oklch(0.3753 0 0)",
+      "chart-1": "oklch(0.2686 0 0)",
+      "chart-2": "oklch(0.7238 0.212 140.7928)",
+      "chart-3": "oklch(0.7316 0.1503 59.316)",
+      "chart-4": "oklch(0.8951 0.1963 111.041)",
+      "chart-5": "oklch(0.8699 0 0)",
       "sidebar": "oklch(0.1448 0 0)",
       "sidebar-foreground": "oklch(0.9702 0 0)",
       "sidebar-primary": "oklch(0.9702 0 0)",
@@ -167,7 +167,7 @@
     "@custom-variant dark (&:is(.dark *))": {},
     "@layer base": {
       "body": {
-        "@apply bg-background text-foreground": {}
+        "@apply relative scroll-smooth bg-background text-foreground": {}
       }
     },
     ".lucide": {
