@@ -45,7 +45,7 @@ export default function RootLayout({
       <DirectionProvider direction="ltr">
         <body className="relative h-dvh">
           <ThemeProvider>
-            <div className="isolate h-full min-h-screen [--header-height:3.5rem]">
+            <div className="isolate h-full [--header-height:3.5rem]">
               <DocsHeader />
               {children}
             </div>
