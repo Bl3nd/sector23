@@ -7,17 +7,19 @@ import { mergeSlotClassName } from "@/registry/sector23/lib/merge-base-ui";
 
 import { alertDialog } from "./alert-dialog.style";
 
-type AlertDialogHandle = ReturnType<typeof BaseAlertDialog.createHandle>;
+type AlertDialogHandle<Payload = unknown> = BaseAlertDialog.Handle<Payload>;
 const createAlertDialogHandle = BaseAlertDialog.createHandle;
 
-function AlertDialog(props: BaseAlertDialog.Root.Props) {
+function AlertDialog<Payload = unknown>(
+  props: BaseAlertDialog.Root.Props<Payload>,
+) {
   return <BaseAlertDialog.Root {...props} />;
 }
 
-function AlertDialogTrigger({
+function AlertDialogTrigger<Payload = unknown>({
   className,
   ...props
-}: BaseAlertDialog.Trigger.Props) {
+}: BaseAlertDialog.Trigger.Props<Payload>) {
   return (
     <BaseAlertDialog.Trigger
       data-slot="alert-dialog-trigger"
