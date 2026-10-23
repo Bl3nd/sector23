@@ -12,10 +12,15 @@ export default function DocsLayout({ children }: LayoutProps<"/docs">) {
   return (
     <div className="flex h-[calc(100%-var(--header-height))]">
       <DocsDesktopSidebar />
-      <div className="flex-1">
+      <div className="min-w-0 flex-1">
         <ScrollArea className="h-full max-w-full">
           <ScrollAreaViewport className="overscroll-contain focus-visible:ring-0">
-            <ScrollAreaContent>{children}</ScrollAreaContent>
+            <ScrollAreaContent
+              // Base UI sets min-width: fit-content, which lets a long line widen the column.
+              style={{ minWidth: 0 }}
+            >
+              {children}
+            </ScrollAreaContent>
           </ScrollAreaViewport>
           <ScrollAreaScrollbar>
             <ScrollAreaThumb />
