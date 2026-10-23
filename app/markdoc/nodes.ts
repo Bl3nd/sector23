@@ -5,8 +5,10 @@ import { nodes as defaultNodes, Tag, type Config } from "@markdoc/markdoc";
 import { CodeBlock } from "./code/code-block";
 import { stripFinalNewline } from "./code/fold";
 import { parseDocFrontmatter } from "./frontmatter";
+import { Code } from "./nodes/code";
 import { DocsLayout } from "./nodes/docs-layout";
 import { Heading } from "./nodes/heading";
+import { Link } from "./nodes/link";
 import { Paragraph } from "./nodes/paragraph";
 
 function generateHeadingID(
@@ -71,6 +73,32 @@ const nodes = {
       const children = node.transformChildren(config);
       const id = generateHeadingID(children, attributes);
       return new Tag(this.render.toString(), { ...attributes, id }, children);
+    },
+  },
+  code: {
+    render: Code,
+    attributes: {
+      content: { type: String, render: false, required: true },
+    },
+    transform(node: Node, config: Config) {
+      const attributes = node.transformAttributes(config);
+      return new Tag(this.render.toString(), attributes, [
+        node.attributes.content,
+      ]);
+    },
+  },
+  link: {
+    render: Link,
+    attributes: {
+      href: { type: String, required: true },
+    },
+    transform(node: Node, config: Config) {
+      const attributes = node.transformAttributes(config);
+      return new Tag(
+        this.render.toString(),
+        attributes,
+        node.transformChildren(config),
+      );
     },
   },
 };

@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import {
+  AccordionAdditionalIcon,
   AccordionDefault,
   AccordionItemDisabled,
   AccordionRootDisabled,
@@ -100,6 +101,7 @@ import { DemoViewportFrame } from "./demo-viewport-frame";
 
 const demoRegistry = {
   "accordion-default": AccordionDefault,
+  "accordion-additional-icon": AccordionAdditionalIcon,
   "accordion-root-disabled": AccordionRootDisabled,
   "accordion-item-disabled": AccordionItemDisabled,
   "alert-dialog-default": AlertDialogDefault,
@@ -203,7 +205,7 @@ export function ComponentDemo({
   const Demo = demoRegistry[key];
 
   return (
-    <figure className="mx-auto w-full overflow-hidden rounded-md border border-border [&_[data-slot=code-block]]:rounded-none [&_[data-slot=code-block]]:border-0">
+    <figure className="mx-auto w-full overflow-hidden rounded-md border border-border **:data-[slot=code-block]:rounded-none **:data-[slot=code-block]:border-0">
       <div className="flex w-full flex-col items-center justify-center p-6 *:data-[slot=demo-viewport]:w-full">
         {showViewport ? (
           <DemoViewportFrame>
@@ -213,7 +215,7 @@ export function ComponentDemo({
           <Demo />
         )}
       </div>
-      <div className="border-t border-border">
+      <div className="w-full border-t border-border">
         <DemoCode demoKey={key} />
       </div>
     </figure>

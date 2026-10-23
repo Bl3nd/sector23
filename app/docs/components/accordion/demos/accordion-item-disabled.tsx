@@ -1,7 +1,7 @@
 import { ChevronDownIcon } from "lucide-react";
 
-import { Accordion } from "@/registry/sector23/ui/accordion";
 import {
+  Accordion,
   AccordionHeader,
   AccordionItem,
   AccordionPanel,
@@ -15,7 +15,7 @@ export function AccordionItemDisabled() {
         <AccordionHeader>
           <AccordionTrigger>
             When will my order ship?
-            <ChevronDownIcon className="group-data-panel-open:rotate-180" />
+            <ChevronDownIcon />
           </AccordionTrigger>
         </AccordionHeader>
         <AccordionPanel>
@@ -27,7 +27,7 @@ export function AccordionItemDisabled() {
         <AccordionHeader>
           <AccordionTrigger>
             How do I track a package?
-            <ChevronDownIcon className="group-data-panel-open:rotate-180" />
+            <ChevronDownIcon />
           </AccordionTrigger>
         </AccordionHeader>
         <AccordionPanel>
@@ -39,7 +39,7 @@ export function AccordionItemDisabled() {
         <AccordionHeader>
           <AccordionTrigger>
             Where is my refund?
-            <ChevronDownIcon className="group-data-panel-open:rotate-180" />
+            <ChevronDownIcon />
           </AccordionTrigger>
         </AccordionHeader>
         <AccordionPanel>
