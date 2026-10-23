@@ -14,7 +14,7 @@ export default function DocsLayout({ children }: LayoutProps<"/docs">) {
       <DocsDesktopSidebar />
       <div className="flex-1">
         <ScrollArea className="h-full max-w-full">
-          <ScrollAreaViewport className="focus-visible:ring-0">
+          <ScrollAreaViewport className="overscroll-contain focus-visible:ring-0">
             <ScrollAreaContent>{children}</ScrollAreaContent>
           </ScrollAreaViewport>
           <ScrollAreaScrollbar>

@@ -5,18 +5,21 @@ import Link from "next/link";
 export function DocsLayout({
   children,
   title,
+  description,
 }: {
   children: ReactNode;
   title: string;
+  description: string;
 }) {
   return (
     <main className="flex flex-col gap-4 px-2 sm:px-0">
       <div className="gap-4 px-2">
         <article className="mt-2 flex flex-1 flex-col gap-4">
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col gap-1.5">
             <h1 className="font-serif text-3xl font-bold tracking-tight text-foreground">
               {title}
             </h1>
+            <p className="text-sm text-muted-foreground">{description}</p>
           </div>
           {children}
         </article>
