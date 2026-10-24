@@ -13,6 +13,7 @@ import {
   AlertDialogNested,
 } from "@/app/docs/components/alert-dialog/demos";
 import {
+  AutocompleteCommandPalette,
   AutocompleteDefault,
   AutocompleteDisabled,
   AutocompleteDisabledItem,
@@ -21,6 +22,7 @@ import {
   AutocompleteInputDemo,
   AutocompleteInvalid,
   AutocompleteReadonly,
+  AutocompleteSize,
 } from "@/app/docs/components/autocomplete/demos";
 import { AvatarDefault, AvatarSize } from "@/app/docs/components/avatar/demos";
 import {
@@ -117,6 +119,8 @@ const demoRegistry = {
   "autocomplete-readonly": AutocompleteReadonly,
   "autocomplete-grouped": AutocompleteGrouped,
   "autocomplete-grid": AutocompleteGrid,
+  "autocomplete-size": AutocompleteSize,
+  "autocomplete-command-palette": AutocompleteCommandPalette,
   "avatar-default": AvatarDefault,
   "avatar-size": AvatarSize,
   "button-default": ButtonDefault,
