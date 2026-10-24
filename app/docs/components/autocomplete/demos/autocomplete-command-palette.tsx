@@ -86,7 +86,7 @@ export function AutocompleteCommandPalette() {
             autoHighlight="always"
             keepHighlight
           >
-            <div className="border-b border-border p-2">
+            <div className="p-2">
               <AutocompleteInput
                 aria-label="Search commands"
                 placeholder="Search commands"
@@ -95,7 +95,7 @@ export function AutocompleteCommandPalette() {
             <DialogClose className="sr-only">Close command palette</DialogClose>
 
             <ScrollArea className="max-h-[min(19.5rem,calc(100dvh-8rem))]">
-              <ScrollAreaViewport>
+              <ScrollAreaViewport className="border-t border-border">
                 <ScrollAreaContent className="p-0 pe-1.5">
                   <AutocompleteEmpty>No commands found.</AutocompleteEmpty>
                   <AutocompleteList>
