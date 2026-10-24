@@ -6,3 +6,5 @@ export { AutocompleteDisabledItem } from "./autocomplete-disabled-item";
 export { AutocompleteReadonly } from "./autocomplete-readonly";
 export { AutocompleteGrouped } from "./autocomplete-grouped";
 export { AutocompleteGrid } from "./autocomplete-grid";
+export { AutocompleteSize } from "./autocomplete-size";
+export { AutocompleteCommandPalette } from "./autocomplete-command-palette";

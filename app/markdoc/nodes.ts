@@ -5,12 +5,12 @@ import { nodes as defaultNodes, Tag, type Config } from "@markdoc/markdoc";
 import { CodeBlock } from "./code/code-block";
 import { stripFinalNewline } from "./code/fold";
 import { parseDocFrontmatter } from "./frontmatter";
-import { collectToc } from "./toc";
 import { Code } from "./nodes/code";
 import { DocsLayout } from "./nodes/docs-layout";
 import { Heading } from "./nodes/heading";
 import { Link } from "./nodes/link";
 import { Paragraph } from "./nodes/paragraph";
+import { collectToc } from "./toc";
 
 function generateHeadingID(
   children: RenderableTreeNode[],

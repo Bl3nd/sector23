@@ -3,11 +3,24 @@
 import { mergeProps, useDirection, useRender } from "@base-ui/react";
 import { Autocomplete as BaseAutocomplete } from "@base-ui/react/autocomplete";
 import { ChevronDownIcon, XIcon } from "lucide-react";
-import React from "react";
+import React, { createContext, useContext } from "react";
 
 import { mergeSlotClassName } from "@/registry/sector23/lib/merge-base-ui";
 
-import { autocomplete } from "./autocomplete.style";
+import {
+  autocomplete,
+  type AutocompleteVariantProps,
+} from "./autocomplete.style";
+
+type AutocompleteContext = AutocompleteVariantProps;
+
+const AutocompleteContext = createContext<AutocompleteContext>({
+  size: "md",
+});
+
+function useAutocomplete() {
+  return useContext(AutocompleteContext);
+}
 
 const POSITIONER_SIDE_OFFSET = 6;
 
@@ -20,19 +33,25 @@ function Autocomplete<Items extends readonly { items: readonly unknown[] }[]>(
     "items"
   > & {
     items: Items;
-  },
+  } & AutocompleteVariantProps,
 ): React.JSX.Element;
 function Autocomplete<ItemValue>(
   props: Omit<BaseAutocomplete.Root.Props<ItemValue>, "items"> & {
     items?: readonly ItemValue[] | undefined;
-  },
+  } & AutocompleteVariantProps,
 ): React.JSX.Element;
 function Autocomplete<ItemValue>({
+  size,
   items,
+  children,
   ...props
-}: BaseAutocomplete.Root.Props<ItemValue>) {
+}: BaseAutocomplete.Root.Props<ItemValue> & AutocompleteVariantProps) {
   return (
-    <BaseAutocomplete.Root items={items as unknown as ItemValue[]} {...props} />
+    <AutocompleteContext.Provider value={{ size }}>
+      <BaseAutocomplete.Root items={items as unknown as ItemValue[]} {...props}>
+        {children}
+      </BaseAutocomplete.Root>
+    </AutocompleteContext.Provider>
   );
 }
 
@@ -76,10 +95,12 @@ function AutocompleteInput({
   className,
   ...props
 }: BaseAutocomplete.Input.Props) {
+  const { size } = useAutocomplete();
+
   return (
     <BaseAutocomplete.Input
       data-slot="autocomplete-input"
-      className={mergeSlotClassName(autocomplete().input, className)}
+      className={mergeSlotClassName(autocomplete({ size }).input, className)}
       {...props}
     />
   );
@@ -90,11 +111,13 @@ function AutocompleteInputGroupActions({
   render,
   ...props
 }: useRender.ComponentProps<"div">) {
+  const { size } = useAutocomplete();
+
   const actions = useRender({
     defaultTagName: "div",
     props: {
       ...mergeProps<"div">(
-        { className: autocomplete().inputGroupActions({ className }) },
+        { className: autocomplete({ size }).inputGroupActions({ className }) },
         props,
       ),
       "data-slot": "autocomplete-input-group-actions",
@@ -125,10 +148,12 @@ function AutocompleteIcon({
   children,
   ...props
 }: BaseAutocomplete.Icon.Props) {
+  const { size } = useAutocomplete();
+
   return (
     <BaseAutocomplete.Icon
       data-slot="autocomplete-icon"
-      className={mergeSlotClassName(autocomplete().icon, className)}
+      className={mergeSlotClassName(autocomplete({ size }).icon, className)}
       {...props}
     >
       {children ?? <ChevronDownIcon />}
@@ -142,11 +167,13 @@ function AutocompleteClear({
   "aria-label": ariaLabel = "Clear search",
   ...props
 }: BaseAutocomplete.Clear.Props) {
+  const { size } = useAutocomplete();
+
   return (
     <BaseAutocomplete.Clear
       data-slot="autocomplete-clear"
       aria-label={ariaLabel}
-      className={mergeSlotClassName(autocomplete().clear, className)}
+      className={mergeSlotClassName(autocomplete({ size }).clear, className)}
       {...props}
     >
       {children ?? <XIcon />}
@@ -238,6 +265,8 @@ function AutocompleteStatus({
   show?: boolean;
   contentClassName?: string;
 }) {
+  const { size } = useAutocomplete();
+
   return (
     <BaseAutocomplete.Status
       data-slot="autocomplete-status"
@@ -247,7 +276,7 @@ function AutocompleteStatus({
       {show && (
         <div
           data-slot="autocomplete-status-content"
-          className={autocomplete().statusContent({
+          className={autocomplete({ size }).statusContent({
             className: contentClassName,
           })}
         >
@@ -268,6 +297,8 @@ function AutocompleteEmpty({
   show?: boolean;
   contentClassName?: string;
 }) {
+  const { size } = useAutocomplete();
+
   return (
     <BaseAutocomplete.Empty
       data-slot="autocomplete-empty"
@@ -277,7 +308,7 @@ function AutocompleteEmpty({
       {show && (
         <div
           data-slot="autocomplete-empty-content"
-          className={autocomplete().emptyContent({
+          className={autocomplete({ size }).emptyContent({
             className: contentClassName,
           })}
         >
@@ -315,10 +346,12 @@ function AutocompleteItem({
   className,
   ...props
 }: BaseAutocomplete.Item.Props) {
+  const { size } = useAutocomplete();
+
   return (
     <BaseAutocomplete.Item
       data-slot="autocomplete-item"
-      className={mergeSlotClassName(autocomplete().item, className)}
+      className={mergeSlotClassName(autocomplete({ size }).item, className)}
       {...props}
     />
   );
@@ -354,10 +387,15 @@ function AutocompleteGroupLabel({
   className,
   ...props
 }: BaseAutocomplete.GroupLabel.Props) {
+  const { size } = useAutocomplete();
+
   return (
     <BaseAutocomplete.GroupLabel
       data-slot="autocomplete-group-label"
-      className={mergeSlotClassName(autocomplete().groupLabel, className)}
+      className={mergeSlotClassName(
+        autocomplete({ size }).groupLabel,
+        className,
+      )}
       {...props}
     />
   );
