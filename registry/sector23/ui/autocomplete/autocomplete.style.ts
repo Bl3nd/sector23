@@ -1,4 +1,4 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
 
 const autocomplete = tv({
   slots: {
@@ -9,10 +9,9 @@ const autocomplete = tv({
       "data-readonly:cursor-default data-readonly:opacity-60",
     ],
     input: [
-      "flex h-9 w-full items-center rounded-md border border-input bg-background px-2 text-sm font-normal text-foreground shadow-sm transition-all duration-150 ease-default outline-none",
+      "flex w-full items-center rounded-md border border-input bg-background font-normal text-foreground shadow-sm transition-all duration-150 ease-default outline-none",
       "placeholder:text-muted-foreground",
       "focus-visible:ring-2 focus-visible:ring-ring",
-      "in-data-[slot='autocomplete-input-group']:group-has-[[data-slot='autocomplete-clear'],[data-slot='autocomplete-trigger']]:pe-9",
       "not-in-data-[slot='autocomplete-input-group']:data-disabled:opacity-50",
       "data-invalid:border-destructive/50",
       "focus-visible:data-invalid:ring-destructive",
@@ -21,7 +20,7 @@ const autocomplete = tv({
       "dark:bg-input/15",
     ],
     inputGroupActions: [
-      "absolute inset-e-2 bottom-0 flex h-full items-center justify-center text-muted-foreground",
+      "absolute bottom-0 flex h-full items-center justify-center text-muted-foreground",
     ],
     trigger: [
       "flex shrink-0 cursor-default items-center justify-center rounded-md p-0.5 transition-colors duration-150 ease-default",
@@ -30,14 +29,14 @@ const autocomplete = tv({
       "data-popup-open:bg-accent/80 data-popup-open:text-accent-foreground",
       "data-readonly:pointer-events-none",
     ],
-    icon: "[&>svg]:size-4 [&>svg]:shrink-0",
+    icon: "[&>svg]:shrink-0",
     clear: [
       "invisible flex shrink-0 items-center justify-center rounded-md p-0.5 transition-colors duration-150 ease-default",
       "group-data-readonly:pointer-events-none",
       "hover:not-data-disabled:bg-accent hover:not-data-disabled:text-accent-foreground",
       "data-disabled:not-in-data-disabled:opacity-50",
       "data-visible:visible",
-      "[&>svg]:size-4 [&>svg]:shrink-0",
+      "[&>svg]:shrink-0",
     ],
     portal: "",
     backdrop: "",
@@ -59,18 +58,18 @@ const autocomplete = tv({
     ],
     status: "",
     statusContent: [
-      "px-3.5 py-2 text-sm text-muted-foreground",
-      "[&>svg]:size-4 [&>svg]:shrink-0",
+      "flex items-center py-2 text-muted-foreground",
+      "[&>svg]:shrink-0",
     ],
     empty: "",
-    emptyContent: "px-3.5 py-2 text-sm text-muted-foreground",
+    emptyContent: "py-2 text-muted-foreground",
     list: "p-1.5 data-empty:p-0",
     row: "grid",
     item: [
-      "flex min-h-9 items-center gap-2 rounded-md px-2 text-sm outline-none select-none",
+      "flex items-center rounded-md outline-none select-none",
       "data-disabled:opacity-50",
       "data-highlighted:bg-accent data-highlighted:text-accent-foreground",
-      "[&_svg]:size-4 [&_svg]:shrink-0",
+      "[&_svg]:shrink-0",
     ],
     separator: [
       "self-stretch bg-border",
@@ -79,9 +78,67 @@ const autocomplete = tv({
     ],
     group: "flex flex-col not-last:mb-1",
     groupLabel: [
-      "sticky top-0 mb-0.5 flex h-6 items-center bg-popover px-2 text-xs font-medium text-muted-foreground",
+      "sticky top-0 mb-0.5 flex items-center bg-popover font-medium text-muted-foreground",
     ],
+  },
+  variants: {
+    size: {
+      lg: {
+        input: [
+          "h-10 px-3 text-base",
+          "in-data-[slot='autocomplete-input-group']:group-has-[[data-slot='autocomplete-clear'],[data-slot='autocomplete-trigger']]:pe-11",
+        ],
+        inputGroupActions: "inset-e-3",
+        icon: "[&>svg:not([class*='size-'])]:size-4",
+        clear: "[&>svg:not([class*='size-'])]:size-4",
+        statusContent: [
+          "gap-3 px-4.5 text-base",
+          "[&>svg:not([class*='size-'])]:size-4",
+        ],
+        emptyContent: "px-4.5 text-base",
+        item: "min-h-10 gap-3 px-3 text-base [&_svg:not([class*='size-'])]:size-4",
+        groupLabel: "h-7 px-3 text-sm",
+      },
+      md: {
+        input: [
+          "h-9 px-2.75 text-sm",
+          "in-data-[slot='autocomplete-input-group']:group-has-[[data-slot='autocomplete-clear'],[data-slot='autocomplete-trigger']]:pe-10",
+        ],
+        inputGroupActions: "inset-e-2.75",
+        icon: "[&>svg:not([class*='size-'])]:size-3.5",
+        clear: "[&>svg:not([class*='size-'])]:size-3.5",
+        statusContent: [
+          "gap-2.5 px-4.25 text-sm",
+          "[&>svg:not([class*='size-'])]:size-3.5",
+        ],
+        emptyContent: "px-4.25 text-sm",
+        item: "min-h-9 gap-2.5 px-2.75 text-sm [&_svg:not([class*='size-'])]:size-3.5",
+        groupLabel: "h-6 px-2.75 text-xs",
+      },
+      sm: {
+        input: [
+          "h-8 px-2.5 text-xs",
+          "in-data-[slot='autocomplete-input-group']:group-has-[[data-slot='autocomplete-clear'],[data-slot='autocomplete-trigger']]:pe-9",
+        ],
+        inputGroupActions: "inset-e-2.5",
+        icon: "[&>svg:not([class*='size-'])]:size-3",
+        clear: "[&>svg:not([class*='size-'])]:size-3",
+        statusContent: [
+          "gap-2 px-4 text-xs",
+          "[&>svg:not([class*='size-'])]:size-3",
+        ],
+        emptyContent: "px-4 text-xs",
+        item: "min-h-8 gap-2 px-2.5 text-xs [&_svg:not([class*='size-'])]:size-3",
+        groupLabel: "h-5 px-2.5 text-xs",
+      },
+    },
+  },
+  defaultVariants: {
+    size: "md",
   },
 });
 
+type AutocompleteVariantProps = VariantProps<typeof autocomplete>;
+
 export { autocomplete };
+export type { AutocompleteVariantProps };
