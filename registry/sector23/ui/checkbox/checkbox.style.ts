@@ -25,15 +25,15 @@ const checkbox = tv({
     size: {
       lg: {
         root: "size-5",
-        indicator: "[&>svg]:size-4",
+        indicator: "[&>svg:not([class*='size-'])]:size-4",
       },
       md: {
         root: "size-4.5",
-        indicator: "[&>svg]:size-3.5",
+        indicator: "[&>svg:not([class*='size-'])]:size-3.5",
       },
       sm: {
         root: "size-4",
-        indicator: "[&>svg]:size-3",
+        indicator: "[&>svg:not([class*='size-'])]:size-3",
       },
     },
   },

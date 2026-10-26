@@ -41,8 +41,10 @@ import {
 import {
   CheckboxDefault,
   CheckboxDisabled,
+  CheckboxIndeterminate,
   CheckboxInvalid,
   CheckboxReadonly,
+  CheckboxSiblingLabel,
   CheckboxSize,
 } from "@/app/docs/components/checkbox/demos";
 import {
@@ -134,6 +136,8 @@ const demoRegistry = {
   "checkbox-invalid": CheckboxInvalid,
   "checkbox-disabled": CheckboxDisabled,
   "checkbox-readonly": CheckboxReadonly,
+  "checkbox-indeterminate": CheckboxIndeterminate,
+  "checkbox-sibling-label": CheckboxSiblingLabel,
   "checkbox-group-default": CheckboxGroupDefault,
   "checkbox-group-parent": CheckboxGroupParent,
   "checkbox-group-disabled": CheckboxGroupDisabled,
