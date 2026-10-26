@@ -1,24 +1,33 @@
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/registry/sector23/ui/avatar";
+import { UserIcon } from "lucide-react";
+
+import { Avatar, AvatarFallback } from "@/registry/sector23/ui/avatar";
 
 export function AvatarSize() {
   return (
-    <div className="flex flex-wrap items-center gap-4">
-      <Avatar size="sm">
-        <AvatarImage src="https://images.unsplash.com/photo-1706606999710-72658165a73d?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-        <AvatarFallback delay={600}>CN</AvatarFallback>
-      </Avatar>
-      <Avatar size="md">
-        <AvatarImage src="https://images.unsplash.com/photo-1706606999710-72658165a73d?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-        <AvatarFallback delay={600}>CN</AvatarFallback>
-      </Avatar>
-      <Avatar size="lg">
-        <AvatarImage src="https://images.unsplash.com/photo-1706606999710-72658165a73d?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-        <AvatarFallback delay={600}>CN</AvatarFallback>
-      </Avatar>
+    <div className="flex flex-col gap-4">
+      <div className="flex items-center gap-4">
+        <Avatar size="sm">
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+        <Avatar size="md">
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+        <Avatar size="lg">
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+      </div>
+
+      <div className="flex items-center gap-4">
+        <Avatar size="sm">
+          <UserIcon />
+        </Avatar>
+        <Avatar size="md">
+          <UserIcon />
+        </Avatar>
+        <Avatar size="lg">
+          <UserIcon />
+        </Avatar>
+      </div>
     </div>
   );
 }
