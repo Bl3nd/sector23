@@ -19,17 +19,17 @@ const avatar = tv({
   },
   variants: {
     size: {
-      sm: {
-        root: "size-8 text-xs [&_svg]:size-3",
-        fallback: "text-xs",
+      lg: {
+        root: "size-10 text-base [&_svg:not([class*='size-'])]:size-5",
+        fallback: "text-base",
       },
       md: {
-        root: "size-9 text-sm [&_svg]:size-4",
+        root: "size-9 text-sm [&_svg:not([class*='size-'])]:size-4.5",
         fallback: "text-sm",
       },
-      lg: {
-        root: "size-10 text-base [&_svg]:size-5",
-        fallback: "text-base",
+      sm: {
+        root: "size-8 text-xs [&_svg:not([class*='size-'])]:size-4",
+        fallback: "text-xs",
       },
     },
   },
