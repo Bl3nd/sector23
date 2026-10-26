@@ -18,7 +18,6 @@ export function CheckboxGroupParent() {
       value={value}
       onValueChange={setValue}
       allValues={options}
-
       className="[&>label]:flex [&>label]:items-center [&>label]:gap-2 [&>label]:not-first:ms-2"
     >
       <Label id={id}>
@@ -29,21 +28,21 @@ export function CheckboxGroupParent() {
       </Label>
 
       <Label>
-        <Checkbox value="option-1">
+        <Checkbox name="option" value="option-1">
           <CheckboxIndicator />
         </Checkbox>
         Option 1
       </Label>
 
       <Label>
-        <Checkbox value="option-2">
+        <Checkbox name="option" value="option-2">
           <CheckboxIndicator />
         </Checkbox>
         Option 2
       </Label>
 
       <Label>
-        <Checkbox value="option-3">
+        <Checkbox name="option" value="option-3">
           <CheckboxIndicator />
         </Checkbox>
         Option 3

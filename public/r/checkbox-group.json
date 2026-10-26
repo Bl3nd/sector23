@@ -12,7 +12,7 @@
   "files": [
     {
       "path": "registry/sector23/ui/checkbox-group/checkbox-group.style.ts",
-      "content": "import { tv } from \"tailwind-variants\";\n\nconst checkboxGroup = tv({\n  slots: {\n    root: \"group flex flex-col gap-3\",\n    legend: [\n      \"text-sm font-semibold text-foreground\",\n      \"group-data-disabled:opacity-50\",\n    ],\n  },\n});\n\nexport { checkboxGroup };\n",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst checkboxGroup = tv({\n  slots: {\n    root: \"group flex flex-col gap-1.5\",\n    legend: [\n      \"text-sm font-semibold text-foreground\",\n      \"group-data-disabled:opacity-50\",\n    ],\n  },\n});\n\nexport { checkboxGroup };\n",
       "type": "registry:ui",
       "target": "@ui/checkbox-group/checkbox-group.style.ts"
     },
