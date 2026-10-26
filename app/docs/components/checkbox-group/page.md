@@ -27,7 +27,7 @@ _Note:_ The group matches each checkbox by its `value`. **A checkbox with no `va
 
 ### Layout
 
-`CheckboxGroup` stacks its children in a column with a `gap-3` gap. There is no `orientation` prop. To lay the checkboxes out in a row, add `flex-row` to `className`. `className` and `style` also accept a function that receives the group state, such as `state.disabled`.
+`CheckboxGroup` stacks its children in a column with `gap-1.5` between them. There is no `orientation` prop. To lay the checkboxes out in a row, add `flex-row` to `className`. `className` and `style` also accept a function that receives the group state, such as `state.disabled`.
 
 Each `Label` needs its own flex classes to sit the box beside its text. The examples set `[&>label]:flex [&>label]:items-center [&>label]:gap-2` on the group to do this once.
 
