@@ -29,7 +29,7 @@ import {
   ButtonDefault,
   ButtonDisabled,
   ButtonLoading,
-  ButtonPopupOpen,
+  ButtonPopupTrigger,
   ButtonSize,
   ButtonVariant,
 } from "@/app/docs/components/button/demos";
@@ -128,7 +128,7 @@ const demoRegistry = {
   "button-size": ButtonSize,
   "button-loading": ButtonLoading,
   "button-disabled": ButtonDisabled,
-  "button-popup-open": ButtonPopupOpen,
+  "button-popup-trigger": ButtonPopupTrigger,
   "checkbox-default": CheckboxDefault,
   "checkbox-size": CheckboxSize,
   "checkbox-invalid": CheckboxInvalid,

@@ -11,13 +11,13 @@ export function ButtonSize() {
         <Button size="lg">Large</Button>
       </div>
       <div className="flex items-center gap-4">
-        <Button size="sm">
+        <Button size="sm" aria-label="Profile">
           <UserIcon />
         </Button>
-        <Button size="md">
+        <Button size="md" aria-label="Profile">
           <UserIcon />
         </Button>
-        <Button size="lg">
+        <Button size="lg" aria-label="Profile">
           <UserIcon />
         </Button>
       </div>
