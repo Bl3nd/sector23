@@ -43,6 +43,8 @@ Each feature file starts with an H1 title and one paragraph describing the user-
 - [Autocomplete](./autocomplete.md) covers filtering to `security` and choosing it.
 - [Checkbox](./checkbox.md) covers checking Accept terms and conditions.
 - [Checkbox size](./checkbox-size.md) covers unchecking Small while Medium (default) and Large stay checked.
+- [Checkbox indeterminate](./checkbox-indeterminate.md) covers checking Some notifications, which starts mixed.
+- [Checkbox sibling label](./checkbox-sibling-label.md) covers checking Email me the changelog by clicking the label text.
 - [Checkbox group](./checkbox-group.md) covers checking Option 2 while Option 1 stays checked.
 - [Collapsible](./collapsible.md) covers opening the first Statuses panel.
 - [Combobox](./combobox.md) covers choosing Canada.
