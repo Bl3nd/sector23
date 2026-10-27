@@ -1,11 +1,11 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
 
 const combobox = tv({
   slots: {
     label: "text-sm font-medium text-foreground select-none",
     control: "flex flex-col gap-1.5",
     inputGroup: [
-      "group relative flex min-h-8 w-full cursor-text items-center rounded-md border border-input bg-background shadow-sm transition-all duration-150 ease-default",
+      "group relative flex w-full cursor-text items-center rounded-md border border-input bg-background shadow-sm transition-all duration-150 ease-default",
       "focus-within:ring-2 focus-within:ring-ring/50",
       "data-disabled:pointer-events-none data-disabled:opacity-50",
       "data-invalid:border-destructive/50",
@@ -14,13 +14,11 @@ const combobox = tv({
       "dark:bg-input/15",
     ],
     input: [
-      "flex h-8 w-full rounded-md border border-input bg-background px-2 text-sm font-normal text-foreground shadow-sm transition-all duration-150 ease-default outline-none",
+      "flex w-full rounded-md border border-input bg-background font-normal text-foreground shadow-sm transition-all duration-150 ease-default outline-none",
       "placeholder:text-muted-foreground",
       "focus-visible:ring-2 focus-visible:ring-ring/50",
-      "in-data-[slot='combobox-chips']:p-0",
+      "in-data-[slot='combobox-chips']:rounded-none in-data-[slot='combobox-chips']:p-0",
       "in-data-[slot='combobox-input-group']:h-auto in-data-[slot='combobox-input-group']:min-w-12 in-data-[slot='combobox-input-group']:flex-1 in-data-[slot='combobox-input-group']:border-0 in-data-[slot='combobox-input-group']:bg-transparent in-data-[slot='combobox-input-group']:shadow-none",
-      "in-data-[slot='combobox-input-group']:group-has-data-[slot='combobox-trigger']:pe-9",
-      "in-data-[slot='combobox-input-group']:group-has-data-[slot='combobox-trigger']:group-has-data-[slot='combobox-clear']:pe-16",
       "in-data-[slot='combobox-input-group']:focus-visible:ring-0",
       "not-in-data-[slot='combobox-input-group']:data-disabled:opacity-50",
       "not-in-data-[slot='combobox-input-group']:data-invalid:border-destructive/50",
@@ -31,61 +29,139 @@ const combobox = tv({
       "dark:in-data-[slot='combobox-input-group']:bg-transparent",
     ],
     inputGroupActions: [
-      "absolute inset-e-2 bottom-0 flex h-full items-center justify-center gap-2 text-muted-foreground",
+      "absolute bottom-0 flex h-full items-center justify-center gap-2 text-muted-foreground",
       "group-has-data-readonly:pointer-events-none",
     ],
     clear: [
       "invisible flex items-center justify-center rounded-md p-0.5 transition-colors duration-150 ease-default",
       "hover:bg-accent hover:text-accent-foreground",
       "data-visible:visible",
-      "[&>svg]:size-4 [&>svg]:shrink-0",
+      "[&>svg]:shrink-0",
     ],
     trigger: [
       "flex cursor-default items-center justify-center rounded-md p-0.5 transition-colors duration-150 ease-default",
-      "hover:bg-accent hover:text-accent-foreground data-readonly:pointer-events-none",
+      "hover:bg-accent hover:text-accent-foreground",
+      "data-popup-open:bg-accent/80 data-popup-open:text-accent-foreground",
+      "data-readonly:pointer-events-none",
     ],
-    icon: "[&>svg]:size-4 [&>svg]:shrink-0",
-    chips: "flex w-full flex-wrap items-center gap-1 px-2 py-0.5",
-    chip: "inline-flex items-center gap-1 rounded-md border border-border px-1.5 py-0.5 text-xs font-medium text-foreground shadow-xs",
+    icon: "[&>svg]:shrink-0",
+    chips: "flex w-full flex-wrap items-center gap-1 py-0.5",
+    chip: "inline-flex items-center gap-1 rounded-sm border border-border py-0.5 font-medium text-foreground shadow-xs",
     chipRemove: [
       "flex shrink-0 items-center justify-center rounded-md text-muted-foreground transition-colors duration-150 ease-default",
       "group-has-data-readonly:pointer-events-none",
       "hover:text-foreground",
-      "[&>svg]:size-3 [&>svg]:shrink-0",
+      "[&>svg]:shrink-0",
     ],
     portal: "",
     backdrop: "",
     positioner: "outline-none",
     popup: [
-      "w-(--anchor-width) max-w-(--available-width) origin-(--transform-origin) rounded-md border border-border bg-popover text-popover-foreground shadow-md transition-[scale,opacity] duration-200 ease-default",
+      "w-(--anchor-width) max-w-(--available-width) origin-(--transform-origin) rounded-md border border-border bg-popover text-popover-foreground shadow-md transition-[scale,opacity] duration-500 ease-emphasized",
       "data-ending-style:scale-95 data-ending-style:opacity-0",
       "data-starting-style:scale-95 data-starting-style:opacity-0",
     ],
     arrow: "",
     status: "",
     statusContent: [
-      "px-3.5 py-1.5 text-sm text-muted-foreground",
-      "[&>svg]:size-4 [&>svg]:shrink-0",
+      "flex items-center py-2 text-muted-foreground",
+      "[&>svg]:shrink-0",
     ],
     empty: "",
-    emptyContent: "px-3.5 py-3 text-sm text-muted-foreground",
+    emptyContent: "py-2 text-muted-foreground",
     list: "p-1.5 data-empty:p-0",
     row: "grid",
     item: [
-      "flex min-h-8 items-center gap-2 rounded-md px-2 text-sm outline-none select-none",
+      "flex items-center rounded-md outline-none select-none",
       "data-disabled:opacity-50",
       "data-highlighted:relative data-highlighted:z-0 data-highlighted:text-accent-foreground",
       "data-highlighted:before:absolute data-highlighted:before:inset-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-md data-highlighted:before:bg-accent data-highlighted:before:content-['']",
     ],
-    itemIndicator: "ms-auto [&>svg]:size-4 [&>svg]:shrink-0",
+    itemIndicator: "ms-auto [&>svg]:shrink-0",
     separator: [
       "self-stretch bg-border",
       "data-[orientation=horizontal]:my-1 data-[orientation=horizontal]:h-px",
       "data-[orientation=vertical]:mx-1 data-[orientation=vertical]:w-px",
     ],
     group: "flex flex-col not-last:mb-1",
-    groupLabel: "mb-0.5 px-2 text-xs font-medium text-muted-foreground",
+    groupLabel: "mb-0.5 flex items-center font-medium text-muted-foreground",
+  },
+  variants: {
+    size: {
+      lg: {
+        inputGroup: "min-h-10",
+        input: [
+          "h-10 px-3 text-base",
+          "in-data-[slot='combobox-input-group']:group-has-data-[slot='combobox-trigger']:pe-11",
+          "in-data-[slot='combobox-input-group']:group-has-data-[slot='combobox-trigger']:group-has-data-[slot='combobox-clear']:pe-18",
+        ],
+        inputGroupActions: "inset-e-3",
+        clear: "[&>svg:not([class*='size-'])]:size-4",
+        icon: "[&>svg:not([class*='size-'])]:size-4",
+        chips: "px-3",
+        chip: "px-1.5 text-sm",
+        chipRemove: "[&>svg:not([class*='size-'])]:size-3.5",
+        statusContent: [
+          "gap-3 px-4.5 text-base",
+          "[&>svg:not([class*='size-'])]:size-4",
+        ],
+        emptyContent: "px-4.5 text-base",
+        item: "min-h-10 gap-3 px-3 text-base",
+        itemIndicator: "[&>svg:not([class*='size-'])]:size-4",
+        groupLabel: "h-7 px-3 text-sm",
+      },
+      md: {
+        inputGroup: "min-h-9",
+        input: [
+          "h-9 px-2.75 text-sm",
+          "in-data-[slot='combobox-input-group']:group-has-data-[slot='combobox-trigger']:pe-10",
+          "in-data-[slot='combobox-input-group']:group-has-data-[slot='combobox-trigger']:group-has-data-[slot='combobox-clear']:pe-17",
+        ],
+        inputGroupActions: "inset-e-2.75",
+        clear: "[&>svg:not([class*='size-'])]:size-3.5",
+        icon: "[&>svg:not([class*='size-'])]:size-3.5",
+        chips: "px-2.75",
+        chip: "px-1.5 text-xs",
+        chipRemove: "[&>svg:not([class*='size-'])]:size-3",
+        statusContent: [
+          "gap-2.5 px-4.25 text-sm",
+          "[&>svg:not([class*='size-'])]:size-3.5",
+        ],
+        emptyContent: "px-4.25 text-sm",
+        item: "min-h-9 gap-2.5 px-2.75 text-sm",
+        itemIndicator: "[&>svg:not([class*='size-'])]:size-3.5",
+        groupLabel: "h-6 px-2.75 text-xs",
+      },
+      sm: {
+        inputGroup: "min-h-8",
+        input: [
+          "h-8 px-2.5 text-xs",
+          "in-data-[slot='combobox-input-group']:group-has-data-[slot='combobox-trigger']:pe-9",
+          "in-data-[slot='combobox-input-group']:group-has-data-[slot='combobox-trigger']:group-has-data-[slot='combobox-clear']:pe-15",
+        ],
+        inputGroupActions: "inset-e-2.5",
+        clear: "[&>svg:not([class*='size-'])]:size-3",
+        icon: "[&>svg:not([class*='size-'])]:size-3",
+        chips: "px-2.5",
+        chip: "px-1.5 text-xs",
+        chipRemove: "[&>svg:not([class*='size-'])]:size-3",
+        statusContent: [
+          "gap-2 px-4 text-xs",
+          "[&>svg:not([class*='size-'])]:size-3",
+        ],
+        emptyContent: "px-4 text-xs",
+        item: "min-h-8 gap-2 px-2.5 text-xs",
+        itemIndicator: "[&>svg:not([class*='size-'])]:size-3",
+        groupLabel: "h-5 px-2.5 text-xs",
+      },
+    },
+  },
+  defaultVariants: {
+    size: "md",
   },
 });
 
+type ComboboxVariantProps = VariantProps<typeof combobox>;
+
 export { combobox };
+export type { ComboboxVariantProps };
