@@ -1,9 +1,12 @@
+import { SettingsIcon } from "lucide-react";
+
 import {
   ContextMenu,
   ContextMenuCheckboxItem,
   ContextMenuCheckboxItemIndicator,
   ContextMenuGroup,
   ContextMenuGroupLabel,
+  ContextMenuLinkItem,
   ContextMenuPopup,
   ContextMenuPortal,
   ContextMenuPositioner,
@@ -62,6 +65,11 @@ export function ContextMenuItems() {
                 <ContextMenuRadioItemIndicator />
               </ContextMenuRadioItem>
             </ContextMenuRadioGroup>
+            <ContextMenuSeparator />
+            <ContextMenuLinkItem href="#">
+              <SettingsIcon />
+              Go to settings
+            </ContextMenuLinkItem>
           </ContextMenuPopup>
         </ContextMenuPositioner>
       </ContextMenuPortal>
