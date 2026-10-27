@@ -12,7 +12,7 @@ export function CollapsibleHiddenUntilFound() {
     <Collapsible className="w-full max-w-64">
       <CollapsibleTrigger render={<Button />}>
         Shipping details
-        <ChevronDownIcon className="size-4 transition-transform duration-300 ease-default group-data-panel-open:rotate-180" />
+        <ChevronDownIcon className="transition-transform duration-300 ease-default group-data-panel-open:rotate-180" />
       </CollapsibleTrigger>
       <CollapsiblePanel hiddenUntilFound>
         <p className="mt-2 text-sm text-muted-foreground">
