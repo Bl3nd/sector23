@@ -83,9 +83,9 @@ To run an action, pass `onClick` to `ContextMenuItem`.
 
 To navigate from the menu, use `ContextMenuLinkItem`. It renders an `a`. Pass `href` for a normal link. To route inside the app, pass an element that renders an anchor to the `render` prop, such as a Next.js `Link`.
 
-A link item stays open after a click. To close the menu as the page changes, set `closeOnClick`.
+The link item uses the same row height, padding, and highlight as `ContextMenuItem`. A leading `svg` gets its own column. The checkbox and radio example ends with a settings link.
 
-_Note:_ `ContextMenuLinkItem` has **no Sector23 styles**. It does not get the padding, height, or highlight of `ContextMenuItem`. Add those classes on `className`.
+A link item stays open after a click. To close the menu as the page changes, set `closeOnClick`.
 
 ### Keyboard
 
