@@ -188,7 +188,7 @@ export function ComboboxGrid() {
             />
             <ScrollArea className="max-h-[min(18rem,calc(100dvh-3rem))]">
               <ScrollAreaViewport>
-                <ScrollAreaContent>
+                <ScrollAreaContent className="p-0 pe-1">
                   <ComboboxEmpty>No icons found.</ComboboxEmpty>
                   <ComboboxList aria-label="Icons">
                     {(group: ProjectIconGroup) => (
