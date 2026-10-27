@@ -7,3 +7,4 @@ export { ComboboxInvalid } from "./combobox-invalid";
 export { ComboboxDisabled } from "./combobox-disabled";
 export { ComboboxDisabledItem } from "./combobox-disabled-item";
 export { ComboboxReadonly } from "./combobox-readonly";
+export { ComboboxSize } from "./combobox-size";
