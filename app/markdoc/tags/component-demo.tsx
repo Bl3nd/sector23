@@ -50,6 +50,7 @@ import {
 import {
   CollapsibleDefault,
   CollapsibleDisabled,
+  CollapsibleHiddenUntilFound,
 } from "@/app/docs/components/collapsible/demos";
 import {
   ComboboxDefault,
@@ -143,6 +144,7 @@ const demoRegistry = {
   "checkbox-group-disabled": CheckboxGroupDisabled,
   "collapsible-default": CollapsibleDefault,
   "collapsible-disabled": CollapsibleDisabled,
+  "collapsible-hidden-until-found": CollapsibleHiddenUntilFound,
   "combobox-default": ComboboxDefault,
   "combobox-multiple": ComboboxMultiple,
   "combobox-input": ComboboxInputDemo,
