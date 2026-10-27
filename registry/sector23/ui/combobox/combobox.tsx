@@ -3,10 +3,21 @@
 import { mergeProps, useDirection, useRender } from "@base-ui/react";
 import { Combobox as BaseCombobox } from "@base-ui/react/combobox";
 import { CheckIcon, ChevronDownIcon, XIcon } from "lucide-react";
+import { createContext, useContext } from "react";
 
 import { mergeSlotClassName } from "@/registry/sector23/lib/merge-base-ui";
 
-import { combobox } from "./combobox.style";
+import { combobox, type ComboboxVariantProps } from "./combobox.style";
+
+type ComboboxContext = ComboboxVariantProps;
+
+const ComboboxContext = createContext<ComboboxContext>({
+  size: "md",
+});
+
+function useComboboxContext() {
+  return useContext(ComboboxContext);
+}
 
 const POSITIONER_SIDE_OFFSET = 6;
 
@@ -17,8 +28,16 @@ function Combobox<
   Value,
   Multiple extends boolean | undefined = false,
   Item = Value,
->({ ...props }: BaseCombobox.Root.Props<Value, Multiple, Item>) {
-  return <BaseCombobox.Root {...props} />;
+>({
+  size,
+  children,
+  ...props
+}: BaseCombobox.Root.Props<Value, Multiple, Item> & ComboboxVariantProps) {
+  return (
+    <ComboboxContext.Provider value={{ size }}>
+      <BaseCombobox.Root {...props}>{children}</BaseCombobox.Root>
+    </ComboboxContext.Provider>
+  );
 }
 
 function ComboboxLabel({ className, ...props }: BaseCombobox.Label.Props) {
@@ -58,20 +77,24 @@ function ComboboxInputGroup({
   className,
   ...props
 }: BaseCombobox.InputGroup.Props) {
+  const { size } = useComboboxContext();
+
   return (
     <BaseCombobox.InputGroup
       data-slot="combobox-input-group"
-      className={mergeSlotClassName(combobox().inputGroup, className)}
+      className={mergeSlotClassName(combobox({ size }).inputGroup, className)}
       {...props}
     />
   );
 }
 
 function ComboboxInput({ className, ...props }: BaseCombobox.Input.Props) {
+  const { size } = useComboboxContext();
+
   return (
     <BaseCombobox.Input
       data-slot="combobox-input"
-      className={mergeSlotClassName(combobox().input, className)}
+      className={mergeSlotClassName(combobox({ size }).input, className)}
       {...props}
     />
   );
@@ -82,11 +105,13 @@ function ComboboxInputGroupActions({
   render,
   ...props
 }: useRender.ComponentProps<"div">) {
+  const { size } = useComboboxContext();
+
   const actions = useRender({
     defaultTagName: "div",
     props: {
       ...mergeProps<"div">(
-        { className: combobox().inputGroupActions({ className }) },
+        { className: combobox({ size }).inputGroupActions({ className }) },
         props,
       ),
       "data-slot": "combobox-input-group-actions",
@@ -112,10 +137,12 @@ function ComboboxIcon({
   children,
   ...props
 }: BaseCombobox.Icon.Props) {
+  const { size } = useComboboxContext();
+
   return (
     <BaseCombobox.Icon
       data-slot="combobox-icon"
-      className={mergeSlotClassName(combobox().icon, className)}
+      className={mergeSlotClassName(combobox({ size }).icon, className)}
       {...props}
     >
       {children ?? <ChevronDownIcon />}
@@ -128,10 +155,12 @@ function ComboboxClear({
   children,
   ...props
 }: BaseCombobox.Clear.Props) {
+  const { size } = useComboboxContext();
+
   return (
     <BaseCombobox.Clear
       data-slot="combobox-clear"
-      className={mergeSlotClassName(combobox().clear, className)}
+      className={mergeSlotClassName(combobox({ size }).clear, className)}
       {...props}
     >
       {children ?? <XIcon />}
@@ -144,20 +173,24 @@ function ComboboxValue(props: BaseCombobox.Value.Props) {
 }
 
 function ComboboxChips({ className, ...props }: BaseCombobox.Chips.Props) {
+  const { size } = useComboboxContext();
+
   return (
     <BaseCombobox.Chips
       data-slot="combobox-chips"
-      className={mergeSlotClassName(combobox().chips, className)}
+      className={mergeSlotClassName(combobox({ size }).chips, className)}
       {...props}
     />
   );
 }
 
 function ComboboxChip({ className, ...props }: BaseCombobox.Chip.Props) {
+  const { size } = useComboboxContext();
+
   return (
     <BaseCombobox.Chip
       data-slot="combobox-chip"
-      className={mergeSlotClassName(combobox().chip, className)}
+      className={mergeSlotClassName(combobox({ size }).chip, className)}
       {...props}
     />
   );
@@ -168,10 +201,12 @@ function ComboboxChipRemove({
   children,
   ...props
 }: BaseCombobox.ChipRemove.Props) {
+  const { size } = useComboboxContext();
+
   return (
     <BaseCombobox.ChipRemove
       data-slot="combobox-chip-remove"
-      className={mergeSlotClassName(combobox().chipRemove, className)}
+      className={mergeSlotClassName(combobox({ size }).chipRemove, className)}
       {...props}
     >
       {children ?? <XIcon />}
@@ -247,6 +282,8 @@ function ComboboxStatus({
   children,
   ...props
 }: BaseCombobox.Status.Props & { show?: boolean; contentClassName?: string }) {
+  const { size } = useComboboxContext();
+
   return (
     <BaseCombobox.Status
       data-slot="combobox-status"
@@ -256,7 +293,9 @@ function ComboboxStatus({
       {show && (
         <div
           data-slot="combobox-status-content"
-          className={combobox().statusContent({ className: contentClassName })}
+          className={combobox({ size }).statusContent({
+            className: contentClassName,
+          })}
         >
           {children}
         </div>
@@ -272,6 +311,8 @@ function ComboboxEmpty({
   children,
   ...props
 }: BaseCombobox.Empty.Props & { show?: boolean; contentClassName?: string }) {
+  const { size } = useComboboxContext();
+
   return (
     <BaseCombobox.Empty
       data-slot="combobox-empty"
@@ -281,7 +322,9 @@ function ComboboxEmpty({
       {show && (
         <div
           data-slot="combobox-empty-content"
-          className={combobox().emptyContent({ className: contentClassName })}
+          className={combobox({ size }).emptyContent({
+            className: contentClassName,
+          })}
         >
           {children}
         </div>
@@ -311,10 +354,12 @@ function ComboboxRow({ className, ...props }: BaseCombobox.Row.Props) {
 }
 
 function ComboboxItem({ className, ...props }: BaseCombobox.Item.Props) {
+  const { size } = useComboboxContext();
+
   return (
     <BaseCombobox.Item
       data-slot="combobox-item"
-      className={mergeSlotClassName(combobox().item, className)}
+      className={mergeSlotClassName(combobox({ size }).item, className)}
       {...props}
     />
   );
@@ -325,10 +370,15 @@ function ComboboxItemIndicator({
   children,
   ...props
 }: BaseCombobox.ItemIndicator.Props) {
+  const { size } = useComboboxContext();
+
   return (
     <BaseCombobox.ItemIndicator
       data-slot="combobox-item-indicator"
-      className={mergeSlotClassName(combobox().itemIndicator, className)}
+      className={mergeSlotClassName(
+        combobox({ size }).itemIndicator,
+        className,
+      )}
       {...props}
     >
       {children ?? <CheckIcon />}
@@ -363,10 +413,12 @@ function ComboboxGroupLabel({
   className,
   ...props
 }: BaseCombobox.GroupLabel.Props) {
+  const { size } = useComboboxContext();
+
   return (
     <BaseCombobox.GroupLabel
       data-slot="combobox-group-label"
-      className={mergeSlotClassName(combobox().groupLabel, className)}
+      className={mergeSlotClassName(combobox({ size }).groupLabel, className)}
       {...props}
     />
   );

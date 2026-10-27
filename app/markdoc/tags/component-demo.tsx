@@ -62,6 +62,7 @@ import {
   ComboboxInvalid,
   ComboboxMultiple,
   ComboboxReadonly,
+  ComboboxSize,
 } from "@/app/docs/components/combobox/demos";
 import {
   ContextMenuDefault,
@@ -154,6 +155,7 @@ const demoRegistry = {
   "combobox-disabled": ComboboxDisabled,
   "combobox-disabled-item": ComboboxDisabledItem,
   "combobox-readonly": ComboboxReadonly,
+  "combobox-size": ComboboxSize,
   "context-menu-default": ContextMenuDefault,
   "context-menu-items": ContextMenuItems,
   "context-menu-nested": ContextMenuNested,
