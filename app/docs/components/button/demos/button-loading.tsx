@@ -25,11 +25,12 @@ export function ButtonLoading() {
       <span id={labelId}>
         {loading ? (
           <>
-            <Loader2Icon className="animate-spin" /> Submitting...
+            <Loader2Icon className="animate-spin" data-side="inline-start" />{" "}
+            Submitting...
           </>
         ) : (
           <>
-            <SendIcon />
+            <SendIcon data-side="inline-start" />
             Submit
           </>
         )}
