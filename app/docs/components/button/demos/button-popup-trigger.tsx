@@ -14,7 +14,7 @@ export function ButtonPopupTrigger() {
   return (
     <Menu>
       <MenuTrigger render={<Button variant="outline" />}>
-        Options <ChevronDownIcon />
+        Options <ChevronDownIcon data-side="inline-end" />
       </MenuTrigger>
       <MenuPortal>
         <MenuPositioner align="start">
