@@ -2,7 +2,7 @@ import { tv } from "tailwind-variants";
 
 const field = tv({
   slots: {
-    root: "flex w-full flex-col gap-1",
+    root: "flex w-full flex-col gap-1.5",
     label: [
       "text-sm font-medium text-foreground select-none",
       "data-disabled:opacity-50",
