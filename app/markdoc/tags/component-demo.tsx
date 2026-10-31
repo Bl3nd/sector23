@@ -76,7 +76,7 @@ import {
   DialogOuterScroll,
 } from "@/app/docs/components/dialog/demos";
 import Drawer01 from "@/app/docs/components/drawer/demos/drawer-01";
-import Field01 from "@/app/docs/components/field/demos/field-01";
+import { FieldDefault, FieldDisabled } from "@/app/docs/components/field/demos";
 import Fieldset01 from "@/app/docs/components/fieldset/demos/fieldset-01";
 import Form01 from "@/app/docs/components/form/demos/form-01";
 import Input01 from "@/app/docs/components/input/demos/input-01";
@@ -164,7 +164,8 @@ const demoRegistry = {
   "dialog-nested": DialogNested,
   "dialog-outer-scroll": DialogOuterScroll,
   "drawer-01": Drawer01,
-  "field-01": Field01,
+  "field-default": FieldDefault,
+  "field-disabled": FieldDisabled,
   "fieldset-01": Fieldset01,
   "form-01": Form01,
   "input-01": Input01,
