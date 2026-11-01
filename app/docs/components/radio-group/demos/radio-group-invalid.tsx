@@ -1,22 +1,16 @@
-"use client";
-
-import { useId } from "react";
-
 import { Field, FieldItem, FieldLabel } from "@/registry/sector23/ui/field";
+import { Fieldset, FieldsetLegend } from "@/registry/sector23/ui/fieldset";
 import {
   Radio,
   RadioGroup,
-  RadioGroupLegend,
   RadioIndicator,
 } from "@/registry/sector23/ui/radio-group";
 
 export function RadioGroupInvalid() {
-  const id = useId();
-
   return (
     <Field name="shipping" className="w-fit" invalid>
-      <RadioGroup required aria-labelledby={id}>
-        <RadioGroupLegend id={id}>Shipping method</RadioGroupLegend>
+      <Fieldset render={<RadioGroup required />}>
+        <FieldsetLegend>Shipping method</FieldsetLegend>
         <FieldItem>
           <FieldLabel className="flex items-center gap-1.5">
             <Radio value="ground">
@@ -33,7 +27,7 @@ export function RadioGroupInvalid() {
             Air
           </FieldLabel>
         </FieldItem>
-      </RadioGroup>
+      </Fieldset>
     </Field>
   );
 }
