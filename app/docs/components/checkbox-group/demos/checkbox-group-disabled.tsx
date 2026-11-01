@@ -16,7 +16,7 @@ export function CheckboxGroupDisabled() {
     <CheckboxGroup
       aria-labelledby={id}
       defaultValue={["option-1"]}
-      className="[&>label]:flex [&>label]:items-center [&>label]:gap-2"
+      className="[&>label]:flex [&>label]:items-center [&>label]:gap-1.5"
       disabled
     >
       <CheckboxGroupLegend id={id}>Options</CheckboxGroupLegend>

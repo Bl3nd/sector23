@@ -18,7 +18,7 @@ export function CheckboxGroupParent() {
       value={value}
       onValueChange={setValue}
       allValues={options}
-      className="[&>label]:flex [&>label]:items-center [&>label]:gap-2 [&>label]:not-first:ms-2"
+      className="[&>label]:flex [&>label]:items-center [&>label]:gap-1.5 [&>label]:not-first:ms-2"
     >
       <Label id={id}>
         <Checkbox parent>
