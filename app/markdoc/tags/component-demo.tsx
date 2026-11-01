@@ -95,7 +95,14 @@ import OTPField01 from "@/app/docs/components/otp-field/demos/otp-field-01";
 import Popover01 from "@/app/docs/components/popover/demos/popover-01";
 import PreviewCard01 from "@/app/docs/components/preview-card/demos/preview-card-01";
 import Progress01 from "@/app/docs/components/progress/demos/progress-01";
-import RadioGroup01 from "@/app/docs/components/radio-group/demos/radio-group-01";
+import {
+  RadioGroupDefault,
+  RadioGroupDisabled,
+  RadioGroupInvalid,
+  RadioGroupReadonly,
+  RadioGroupSiblingLabel,
+  RadioGroupSize,
+} from "@/app/docs/components/radio-group/demos";
 import ScrollArea01 from "@/app/docs/components/scroll-area/demos/scroll-area-01";
 import Select01 from "@/app/docs/components/select/demos/select-01";
 import Separator01 from "@/app/docs/components/separator/demos/separator-01";
@@ -187,7 +194,12 @@ const demoRegistry = {
   "popover-01": Popover01,
   "preview-card-01": PreviewCard01,
   "progress-01": Progress01,
-  "radio-group-01": RadioGroup01,
+  "radio-group-default": RadioGroupDefault,
+  "radio-group-sibling-label": RadioGroupSiblingLabel,
+  "radio-group-size": RadioGroupSize,
+  "radio-group-invalid": RadioGroupInvalid,
+  "radio-group-disabled": RadioGroupDisabled,
+  "radio-group-readonly": RadioGroupReadonly,
   "scroll-area-01": ScrollArea01,
   "select-01": Select01,
   "separator-01": Separator01,
