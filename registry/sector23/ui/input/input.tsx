@@ -5,15 +5,19 @@ import { Input as BaseInput } from "@base-ui/react/input";
 
 import { mergeVariantClassName } from "@/registry/sector23/lib/merge-base-ui";
 
-import { input } from "./input.style";
+import { input, type InputVariantProps } from "./input.style";
 
-function Input({ className, ...props }: BaseInput.Props) {
+function Input({
+  className,
+  size,
+  ...props
+}: Omit<BaseInput.Props, "size"> & InputVariantProps) {
   const direction = useDirection();
 
   return (
     <BaseInput
       data-slot="input"
-      className={mergeVariantClassName(input, {}, className)}
+      className={mergeVariantClassName(input, { size }, className)}
       {...props}
       dir={direction}
     />

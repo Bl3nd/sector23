@@ -79,7 +79,12 @@ import Drawer01 from "@/app/docs/components/drawer/demos/drawer-01";
 import { FieldDefault, FieldDisabled } from "@/app/docs/components/field/demos";
 import Fieldset01 from "@/app/docs/components/fieldset/demos/fieldset-01";
 import Form01 from "@/app/docs/components/form/demos/form-01";
-import Input01 from "@/app/docs/components/input/demos/input-01";
+import {
+  InputDefault,
+  InputDisabled,
+  InputInvalid,
+  InputSize,
+} from "@/app/docs/components/input/demos";
 import Label01 from "@/app/docs/components/label/demos/label-01";
 import Menu01 from "@/app/docs/components/menu/demos/menu-01";
 import Menubar01 from "@/app/docs/components/menubar/demos/menubar-01";
@@ -168,7 +173,10 @@ const demoRegistry = {
   "field-disabled": FieldDisabled,
   "fieldset-01": Fieldset01,
   "form-01": Form01,
-  "input-01": Input01,
+  "input-default": InputDefault,
+  "input-size": InputSize,
+  "input-invalid": InputInvalid,
+  "input-disabled": InputDisabled,
   "label-01": Label01,
   "menu-01": Menu01,
   "menubar-01": Menubar01,
