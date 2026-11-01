@@ -2,29 +2,51 @@
 
 import { useDirection } from "@base-ui/react";
 import { Switch as BaseSwitch } from "@base-ui/react/switch";
+import { createContext, useContext } from "react";
 
 import { mergeSlotClassName } from "@/registry/sector23/lib/merge-base-ui";
 
-import { switchStyle } from "./switch.style";
+import { switchStyle, type SwitchVariantProps } from "./switch.style";
 
-function Switch({ className, ...props }: BaseSwitch.Root.Props) {
+type SwitchContext = SwitchVariantProps;
+
+const SwitchContext = createContext<SwitchContext>({
+  size: "md",
+});
+
+function useSwitch() {
+  return useContext(SwitchContext);
+}
+
+function Switch({
+  size,
+  className,
+  children,
+  ...props
+}: BaseSwitch.Root.Props & SwitchVariantProps) {
   const direction = useDirection();
 
   return (
-    <BaseSwitch.Root
-      data-slot="switch"
-      className={mergeSlotClassName(switchStyle().root, className)}
-      {...props}
-      dir={direction}
-    />
+    <SwitchContext.Provider value={{ size }}>
+      <BaseSwitch.Root
+        data-slot="switch"
+        className={mergeSlotClassName(switchStyle({ size }).root, className)}
+        {...props}
+        dir={direction}
+      >
+        {children}
+      </BaseSwitch.Root>
+    </SwitchContext.Provider>
   );
 }
 
 function SwitchThumb({ className, ...props }: BaseSwitch.Thumb.Props) {
+  const { size } = useSwitch();
+
   return (
     <BaseSwitch.Thumb
       data-slot="switch-thumb"
-      className={mergeSlotClassName(switchStyle().thumb, className)}
+      className={mergeSlotClassName(switchStyle({ size }).thumb, className)}
       {...props}
     />
   );

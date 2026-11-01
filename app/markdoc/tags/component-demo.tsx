@@ -107,7 +107,14 @@ import ScrollArea01 from "@/app/docs/components/scroll-area/demos/scroll-area-01
 import Select01 from "@/app/docs/components/select/demos/select-01";
 import Separator01 from "@/app/docs/components/separator/demos/separator-01";
 import Slider01 from "@/app/docs/components/slider/demos/slider-01";
-import Switch01 from "@/app/docs/components/switch/demos/switch-01";
+import {
+  SwitchDefault,
+  SwitchDisabled,
+  SwitchInvalid,
+  SwitchReadonly,
+  SwitchSiblingLabel,
+  SwitchSize,
+} from "@/app/docs/components/switch/demos";
 import Tabs01 from "@/app/docs/components/tabs/demos/tabs-01";
 import Toast01 from "@/app/docs/components/toast/demos/toast-01";
 import ToggleGroup01 from "@/app/docs/components/toggle-group/demos/toggle-group-01";
@@ -204,7 +211,12 @@ const demoRegistry = {
   "select-01": Select01,
   "separator-01": Separator01,
   "slider-01": Slider01,
-  "switch-01": Switch01,
+  "switch-default": SwitchDefault,
+  "switch-sibling-label": SwitchSiblingLabel,
+  "switch-size": SwitchSize,
+  "switch-invalid": SwitchInvalid,
+  "switch-disabled": SwitchDisabled,
+  "switch-readonly": SwitchReadonly,
   "tabs-01": Tabs01,
   "toast-01": Toast01,
   "toggle-01": Toggle01,
