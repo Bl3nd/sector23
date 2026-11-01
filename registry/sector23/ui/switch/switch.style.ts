@@ -3,7 +3,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 const switchStyle = tv({
   slots: {
     root: [
-      "flex shrink-0 items-center rounded-full border border-input bg-background p-0.5 transition-all duration-150 ease-default outline-none",
+      "m-1 flex shrink-0 items-center rounded-full border border-input bg-background p-0.5 transition-all duration-150 ease-default outline-none",
       "focus-visible:ring-2 focus-visible:ring-ring",
       "data-checked:bg-primary",
       "data-disabled:pointer-events-none data-disabled:opacity-50",
