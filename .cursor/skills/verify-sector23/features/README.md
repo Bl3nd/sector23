@@ -54,7 +54,7 @@ Each feature file starts with an H1 title and one paragraph describing the user-
 - [Field](./field.md) covers the slug hint. The required error stays hidden until the field has been edited.
 - [Fieldset](./fieldset.md) covers typing an email into Account Information.
 - [Form](./form.md) covers submitting the empty form and seeing Name and Email errors.
-- [Input](./input.md) covers typing into the textbox named `Enter you email`.
+- [Input](./input.md) covers typing into the textbox named `Email`. The disabled textbox named `Workspace URL` keeps its value.
 - [Label](./label.md) covers typing into the Name field.
 - [Menu](./menu.md) covers opening File until New file is shown.
 - [Menubar](./menubar.md) covers opening File until New file is shown. Help stays disabled.
