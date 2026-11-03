@@ -51,40 +51,38 @@ const groupedProduce = [
 
 export function SelectGrouped() {
   return (
-    <div className="flex flex-col items-center justify-center py-10">
-      <div className="flex w-xs flex-col items-start gap-1.5">
-        <Select items={groupedProduce} name="produce">
-          <SelectLabel>Produce</SelectLabel>
-          <SelectTrigger>
-            <SelectValue placeholder="Select produce" />
-            <SelectIcon />
-          </SelectTrigger>
-          <SelectPortal>
-            <SelectPositioner>
-              <SelectPopup>
-                <SelectScrollUpArrow />
-                <SelectList>
-                  {groupedProduce.map((group, index) => (
-                    <Fragment key={group.value}>
-                      {index > 0 && <SelectSeparator />}
-                      <SelectGroup>
-                        <SelectGroupLabel>{group.value}</SelectGroupLabel>
-                        {group.items.map((item) => (
-                          <SelectItem key={item.value} value={item.value}>
-                            <SelectItemText>{item.label}</SelectItemText>
-                            <SelectItemIndicator />
-                          </SelectItem>
-                        ))}
-                      </SelectGroup>
-                    </Fragment>
-                  ))}
-                </SelectList>
-                <SelectScrollDownArrow />
-              </SelectPopup>
-            </SelectPositioner>
-          </SelectPortal>
-        </Select>
-      </div>
+    <div className="flex w-xs flex-col items-start gap-1.5">
+      <Select items={groupedProduce} name="produce">
+        <SelectLabel>Produce</SelectLabel>
+        <SelectTrigger>
+          <SelectValue placeholder="Select produce" />
+          <SelectIcon />
+        </SelectTrigger>
+        <SelectPortal>
+          <SelectPositioner>
+            <SelectPopup>
+              <SelectScrollUpArrow />
+              <SelectList>
+                {groupedProduce.map((group, index) => (
+                  <Fragment key={group.value}>
+                    {index > 0 && <SelectSeparator />}
+                    <SelectGroup>
+                      <SelectGroupLabel>{group.value}</SelectGroupLabel>
+                      {group.items.map((item) => (
+                        <SelectItem key={item.value} value={item.value}>
+                          <SelectItemText>{item.label}</SelectItemText>
+                          <SelectItemIndicator />
+                        </SelectItem>
+                      ))}
+                    </SelectGroup>
+                  </Fragment>
+                ))}
+              </SelectList>
+              <SelectScrollDownArrow />
+            </SelectPopup>
+          </SelectPositioner>
+        </SelectPortal>
+      </Select>
     </div>
   );
 }

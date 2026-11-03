@@ -48,37 +48,35 @@ function renderLanguages(value: readonly Language[]) {
 
 export function SelectMultiple() {
   return (
-    <div className="flex flex-col items-center justify-center py-10">
-      <div className="flex w-xs flex-col items-start gap-1.5">
-        <Select
-          items={languages}
-          multiple
-          defaultValue={["javascript", "typescript"]}
-          name="languages"
-        >
-          <SelectLabel>Languages</SelectLabel>
-          <SelectTrigger>
-            <SelectValue>{renderLanguages}</SelectValue>
-            <SelectIcon />
-          </SelectTrigger>
-          <SelectPortal>
-            <SelectPositioner alignItemWithTrigger={false}>
-              <SelectPopup>
-                <SelectScrollUpArrow />
-                <SelectList>
-                  {languageValues.map((value) => (
-                    <SelectItem key={value} value={value}>
-                      <SelectItemText>{languages[value]}</SelectItemText>
-                      <SelectItemIndicator />
-                    </SelectItem>
-                  ))}
-                </SelectList>
-                <SelectScrollDownArrow />
-              </SelectPopup>
-            </SelectPositioner>
-          </SelectPortal>
-        </Select>
-      </div>
+    <div className="flex w-xs flex-col items-start gap-1.5">
+      <Select
+        items={languages}
+        multiple
+        defaultValue={["javascript", "typescript"]}
+        name="languages"
+      >
+        <SelectLabel>Languages</SelectLabel>
+        <SelectTrigger>
+          <SelectValue>{renderLanguages}</SelectValue>
+          <SelectIcon />
+        </SelectTrigger>
+        <SelectPortal>
+          <SelectPositioner alignItemWithTrigger={false}>
+            <SelectPopup>
+              <SelectScrollUpArrow />
+              <SelectList>
+                {languageValues.map((value) => (
+                  <SelectItem key={value} value={value}>
+                    <SelectItemText>{languages[value]}</SelectItemText>
+                    <SelectItemIndicator />
+                  </SelectItem>
+                ))}
+              </SelectList>
+              <SelectScrollDownArrow />
+            </SelectPopup>
+          </SelectPositioner>
+        </SelectPortal>
+      </Select>
     </div>
   );
 }

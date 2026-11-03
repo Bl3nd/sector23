@@ -56,43 +56,38 @@ const timezones = timezoneGroups.flatMap((group) => group.timezones);
 
 export function SelectDefault() {
   return (
-    <div className="flex flex-col items-center justify-center py-10">
-      <div className="flex w-xs flex-col items-start gap-1.5">
-        <Select items={timezones} name="timezone">
-          <SelectLabel>Timezone</SelectLabel>
-          <SelectTrigger>
-            <SelectValue placeholder="Select a timezone" />
-            <SelectIcon />
-          </SelectTrigger>
-          <SelectPortal>
-            <SelectPositioner>
-              <SelectPopup>
-                <SelectScrollUpArrow />
-                <SelectList>
-                  {timezoneGroups.map((group, index) => (
-                    <Fragment key={group.region}>
-                      {index > 0 && <SelectSeparator />}
-                      <SelectGroup>
-                        <SelectGroupLabel>{group.region}</SelectGroupLabel>
-                        {group.timezones.map((timezone) => (
-                          <SelectItem
-                            key={timezone.value}
-                            value={timezone.value}
-                          >
-                            <SelectItemText>{timezone.label}</SelectItemText>
-                            <SelectItemIndicator />
-                          </SelectItem>
-                        ))}
-                      </SelectGroup>
-                    </Fragment>
-                  ))}
-                </SelectList>
-                <SelectScrollDownArrow />
-              </SelectPopup>
-            </SelectPositioner>
-          </SelectPortal>
-        </Select>
-      </div>
+    <div className="flex w-xs flex-col items-start gap-1.5">
+      <Select items={timezones} name="timezone">
+        <SelectLabel>Timezone</SelectLabel>
+        <SelectTrigger>
+          <SelectValue placeholder="Select a timezone" />
+          <SelectIcon />
+        </SelectTrigger>
+        <SelectPortal>
+          <SelectPositioner>
+            <SelectPopup>
+              <SelectScrollUpArrow />
+              <SelectList>
+                {timezoneGroups.map((group, index) => (
+                  <Fragment key={group.region}>
+                    {index > 0 && <SelectSeparator />}
+                    <SelectGroup>
+                      <SelectGroupLabel>{group.region}</SelectGroupLabel>
+                      {group.timezones.map((timezone) => (
+                        <SelectItem key={timezone.value} value={timezone.value}>
+                          <SelectItemText>{timezone.label}</SelectItemText>
+                          <SelectItemIndicator />
+                        </SelectItem>
+                      ))}
+                    </SelectGroup>
+                  </Fragment>
+                ))}
+              </SelectList>
+              <SelectScrollDownArrow />
+            </SelectPopup>
+          </SelectPositioner>
+        </SelectPortal>
+      </Select>
     </div>
   );
 }

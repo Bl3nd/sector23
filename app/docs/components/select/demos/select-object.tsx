@@ -49,59 +49,57 @@ const shippingMethods: ShippingMethod[] = [
 
 export function SelectObject() {
   return (
-    <div className="flex flex-col items-center justify-center py-10">
-      <div className="flex w-xs flex-col items-start gap-1.5">
-        <Select
-          defaultValue={standardShipping}
-          itemToStringValue={(method) => method.id}
-          isItemEqualToValue={(item, value) => item.id === value.id}
-          name="shipping"
-        >
-          <SelectLabel>Shipping method</SelectLabel>
-          <SelectTrigger className="h-auto py-1.5 whitespace-normal">
-            <SelectValue>
-              {(method: ShippingMethod | null) =>
-                method ? (
-                  <span className="flex flex-col items-start gap-0.5">
-                    <span>{method.name}</span>
-                    <span className="text-xs text-muted-foreground">
-                      {method.duration} ({method.price})
-                    </span>
+    <div className="flex w-xs flex-col items-start gap-1.5">
+      <Select
+        defaultValue={standardShipping}
+        itemToStringValue={(method) => method.id}
+        isItemEqualToValue={(item, value) => item.id === value.id}
+        name="shipping"
+      >
+        <SelectLabel>Shipping method</SelectLabel>
+        <SelectTrigger className="h-auto py-1.5 whitespace-normal">
+          <SelectValue>
+            {(method: ShippingMethod | null) =>
+              method ? (
+                <span className="flex flex-col items-start gap-0.5">
+                  <span>{method.name}</span>
+                  <span className="text-xs text-muted-foreground">
+                    {method.duration} ({method.price})
                   </span>
-                ) : (
-                  "Select a shipping method"
-                )
-              }
-            </SelectValue>
-            <SelectIcon />
-          </SelectTrigger>
-          <SelectPortal>
-            <SelectPositioner>
-              <SelectPopup>
-                <SelectScrollUpArrow />
-                <SelectList>
-                  {shippingMethods.map((method) => (
-                    <SelectItem
-                      key={method.id}
-                      value={method}
-                      className="items-start"
-                    >
-                      <SelectItemText className="flex flex-col gap-0.5 py-1.5">
-                        <span>{method.name}</span>
-                        <span className="text-xs text-muted-foreground in-data-highlighted:text-accent-foreground">
-                          {method.duration} ({method.price})
-                        </span>
-                      </SelectItemText>
-                      <SelectItemIndicator />
-                    </SelectItem>
-                  ))}
-                </SelectList>
-                <SelectScrollDownArrow />
-              </SelectPopup>
-            </SelectPositioner>
-          </SelectPortal>
-        </Select>
-      </div>
+                </span>
+              ) : (
+                "Select a shipping method"
+              )
+            }
+          </SelectValue>
+          <SelectIcon />
+        </SelectTrigger>
+        <SelectPortal>
+          <SelectPositioner>
+            <SelectPopup>
+              <SelectScrollUpArrow />
+              <SelectList>
+                {shippingMethods.map((method) => (
+                  <SelectItem
+                    key={method.id}
+                    value={method}
+                    className="items-start"
+                  >
+                    <SelectItemText className="flex flex-col gap-0.5 py-1.5">
+                      <span>{method.name}</span>
+                      <span className="text-xs text-muted-foreground in-data-highlighted:text-accent-foreground">
+                        {method.duration} ({method.price})
+                      </span>
+                    </SelectItemText>
+                    <SelectItemIndicator />
+                  </SelectItem>
+                ))}
+              </SelectList>
+              <SelectScrollDownArrow />
+            </SelectPopup>
+          </SelectPositioner>
+        </SelectPortal>
+      </Select>
     </div>
   );
 }

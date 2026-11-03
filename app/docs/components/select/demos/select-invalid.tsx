@@ -23,32 +23,30 @@ const countries = [
 
 export function SelectInvalid() {
   return (
-    <div className="flex flex-col items-center justify-center py-10">
-      <Field name="country" invalid className="w-xs">
-        <FieldLabel>Country</FieldLabel>
-        <Select items={countries} required>
-          <SelectTrigger>
-            <SelectValue placeholder="Select a country" />
-            <SelectIcon />
-          </SelectTrigger>
-          <SelectPortal>
-            <SelectPositioner>
-              <SelectPopup>
-                <SelectScrollUpArrow />
-                <SelectList>
-                  {countries.map((country) => (
-                    <SelectItem key={country.value} value={country.value}>
-                      <SelectItemText>{country.label}</SelectItemText>
-                      <SelectItemIndicator />
-                    </SelectItem>
-                  ))}
-                </SelectList>
-                <SelectScrollDownArrow />
-              </SelectPopup>
-            </SelectPositioner>
-          </SelectPortal>
-        </Select>
-      </Field>
-    </div>
+    <Field name="country" invalid className="w-xs">
+      <FieldLabel>Country</FieldLabel>
+      <Select items={countries} required>
+        <SelectTrigger>
+          <SelectValue placeholder="Select a country" />
+          <SelectIcon />
+        </SelectTrigger>
+        <SelectPortal>
+          <SelectPositioner>
+            <SelectPopup>
+              <SelectScrollUpArrow />
+              <SelectList>
+                {countries.map((country) => (
+                  <SelectItem key={country.value} value={country.value}>
+                    <SelectItemText>{country.label}</SelectItemText>
+                    <SelectItemIndicator />
+                  </SelectItem>
+                ))}
+              </SelectList>
+              <SelectScrollDownArrow />
+            </SelectPopup>
+          </SelectPositioner>
+        </SelectPortal>
+      </Select>
+    </Field>
   );
 }
