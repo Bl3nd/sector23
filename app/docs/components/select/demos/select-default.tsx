@@ -1,4 +1,3 @@
-// oxlint-disable no-magic-numbers
 import { Fragment } from "react";
 
 import {
@@ -55,7 +54,7 @@ const timezoneGroups = [
 
 const timezones = timezoneGroups.flatMap((group) => group.timezones);
 
-export default function Select01() {
+export function SelectDefault() {
   return (
     <div className="flex flex-col items-center justify-center py-10">
       <div className="flex w-xs flex-col items-start gap-1.5">

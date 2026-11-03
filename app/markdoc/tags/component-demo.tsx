@@ -104,7 +104,17 @@ import {
   RadioGroupSize,
 } from "@/app/docs/components/radio-group/demos";
 import ScrollArea01 from "@/app/docs/components/scroll-area/demos/scroll-area-01";
-import Select01 from "@/app/docs/components/select/demos/select-01";
+import {
+  SelectDefault,
+  SelectDisabled,
+  SelectDisabledItem,
+  SelectGrouped,
+  SelectInvalid,
+  SelectMultiple,
+  SelectObject,
+  SelectReadonly,
+  SelectSize,
+} from "@/app/docs/components/select/demos";
 import Separator01 from "@/app/docs/components/separator/demos/separator-01";
 import Slider01 from "@/app/docs/components/slider/demos/slider-01";
 import {
@@ -208,7 +218,15 @@ const demoRegistry = {
   "radio-group-disabled": RadioGroupDisabled,
   "radio-group-readonly": RadioGroupReadonly,
   "scroll-area-01": ScrollArea01,
-  "select-01": Select01,
+  "select-default": SelectDefault,
+  "select-size": SelectSize,
+  "select-multiple": SelectMultiple,
+  "select-object": SelectObject,
+  "select-grouped": SelectGrouped,
+  "select-invalid": SelectInvalid,
+  "select-disabled": SelectDisabled,
+  "select-disabled-item": SelectDisabledItem,
+  "select-readonly": SelectReadonly,
   "separator-01": Separator01,
   "slider-01": Slider01,
   "switch-default": SwitchDefault,
