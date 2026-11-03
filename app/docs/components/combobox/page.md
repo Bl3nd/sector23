@@ -11,7 +11,7 @@ nextjs:
 
 ### Item values
 
-To give the combobox its options, pass an array to the `items` prop on `Combobox`. Render each one inside `ComboboxList` as a `ComboboxItem` whose `value` is the item itself. That item is what `value`, `defaultValue`, and `onValueChange` receive.
+To give the combobox its options, pass an array to the `items` prop on `Combobox`, or pass a collection from `createComboboxItems`. Render each entry inside `ComboboxList` as a `ComboboxItem`. When the array holds the items themselves, set `value` on `ComboboxItem` to the item. That item is what `value`, `defaultValue`, and `onValueChange` receive.
 
 When your items are objects, use the `itemToStringLabel` prop to set the text the input shows. Use the `itemToStringValue` prop to set the string a form submits. The demo at the top of the page shows "Canada" in the input and submits `CA`.
 
@@ -119,19 +119,31 @@ To show the invalid state, wrap the combobox in `Field` and set `invalid` on the
 
 ### Readonly
 
-To show a selection the user cannot change, use the `readOnly` prop on the root. This demo also sets `openOnInputClick` to `false`, so a click on the input does not open the list.
+To show a selection the user cannot change, use the `readOnly` prop on the root. This demo starts with Australia selected.
 
 {% component-demo component="combobox-readonly" /%}
 
 ## Additional Base UI examples
 
-### Typed wrapper component
-
-To see this example, visit [typed wrapper component](https://base-ui.com/react/components/combobox#typed-wrapper-component).
-
 ### Value selection with IDs
 
-To see this example, visit [value selection with IDs](https://base-ui.com/react/components/combobox#value-selection-with-ids). It uses `createItems`, which Sector23 does not re-export.
+When the selection should be an id, call `createComboboxItems`. Sector23 exports Base UI's `createItems` under that name. Pass the source items and two functions. `getValue` returns the id each item selects. `getLabel` returns the text the input shows and the text the filter matches. The id is a string, number, bigint, or boolean. Each item needs its own id, and `null` and `undefined` stay reserved for no selection.
+
+Pass the collection to `items`. `ComboboxList` still receives each source item. Set `value` on `ComboboxItem` to the id from `getValue`. `value`, `defaultValue`, and `onValueChange` then receive that id.
+
+For data that does not change, call `createComboboxItems` at module scope. When the data loads or changes, wrap the call in `useMemo` and list that data as its dependency.
+
+The data can be a flat array or an array of groups. The two functions receive the items inside a group. Remove empty entries before the call. The `items` prop has the same rule.
+
+_Note:_ A source item with an `items` array is read as a **group**. Rename that field, or cast the data when those values are not arrays.
+
+`itemToStringLabel` applies when the selected id is missing from the collection and from `filteredItems`. For an id the collection can resolve, `getLabel` is the label.
+
+`Combobox` takes a third type argument for the source item. It defaults to the selection value. Pass the source item type when the collection selects an id and the list renders an object.
+
+_Note:_ Without that type argument, a `createComboboxItems` collection reports the mismatch on **`defaultValue`**.
+
+To see a worked example, visit [value selection with IDs](https://base-ui.com/react/components/combobox#value-selection-with-ids).
 
 ### Keeping the filter after selection
 

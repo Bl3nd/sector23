@@ -23,6 +23,7 @@ const POSITIONER_SIDE_OFFSET = 6;
 
 const useComboboxFilter = BaseCombobox.useFilter;
 const useComboboxFilteredItems = BaseCombobox.useFilteredItems;
+const createComboboxItems = BaseCombobox.createItems;
 
 function Combobox<
   Value,
@@ -431,6 +432,7 @@ function ComboboxCollection(props: BaseCombobox.Collection.Props) {
 export {
   useComboboxFilter,
   useComboboxFilteredItems,
+  createComboboxItems,
   Combobox,
   ComboboxLabel,
   ComboboxControl,

@@ -48,8 +48,8 @@ export function ComboboxReadonly() {
       itemToStringLabel={(country) => country.name}
       itemToStringValue={(country) => country.code}
       name="country"
+      defaultValue={countries[0]}
       readOnly
-      openOnInputClick={false}
     >
       <ComboboxControl className="w-full max-w-64">
         <Label htmlFor={id}>Shipping country</Label>

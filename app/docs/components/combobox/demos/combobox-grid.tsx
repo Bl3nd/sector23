@@ -158,7 +158,7 @@ export function ComboboxGrid() {
         <ComboboxTrigger
           id={id}
           render={<Button variant="outline" />}
-          className="justify-between p-0 px-2"
+          className="justify-between p-0 px-2.75"
         >
           <ComboboxValue>
             {(selected: ProjectIcon | null) => {
@@ -168,7 +168,7 @@ export function ComboboxGrid() {
               const Icon = selected.icon;
               return (
                 <span className="flex items-center gap-2">
-                  <Icon aria-hidden />
+                  <Icon aria-hidden data-side="inline-end" />
                   {selected.label}
                 </span>
               );
