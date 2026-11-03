@@ -1,4 +1,5 @@
 export { SelectDefault } from "./select-default";
+export { SelectSize } from "./select-size";
 export { SelectMultiple } from "./select-multiple";
 export { SelectObject } from "./select-object";
 export { SelectGrouped } from "./select-grouped";

@@ -35,6 +35,14 @@ A `dir` prop on `SelectLabel`, `SelectTrigger`, or `SelectPortal` is replaced. S
 
 To learn more, visit Base UI's [labeling a select](https://base-ui.com/react/components/select#labeling-a-select) section.
 
+### Size
+
+To change the size, use the `size` prop on `Select`. It accepts `sm`, `md`, or `lg` and defaults to `md`. The trigger, the icon, every item, the check, and the group label scale with it.
+
+_Note:_ Set `size` on `Select`, not on `SelectTrigger` or `SelectItem`. Those parts read **the size from the root**.
+
+{% component-demo component="select-size" /%}
+
 ### Placeholder
 
 To show text before a value is chosen, set `placeholder` on `SelectValue`. The text uses the muted foreground color. The demo at the top of the page starts as "Select a timezone".

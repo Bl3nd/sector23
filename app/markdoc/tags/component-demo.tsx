@@ -113,6 +113,7 @@ import {
   SelectMultiple,
   SelectObject,
   SelectReadonly,
+  SelectSize,
 } from "@/app/docs/components/select/demos";
 import Separator01 from "@/app/docs/components/separator/demos/separator-01";
 import Slider01 from "@/app/docs/components/slider/demos/slider-01";
@@ -218,6 +219,7 @@ const demoRegistry = {
   "radio-group-readonly": RadioGroupReadonly,
   "scroll-area-01": ScrollArea01,
   "select-default": SelectDefault,
+  "select-size": SelectSize,
   "select-multiple": SelectMultiple,
   "select-object": SelectObject,
   "select-grouped": SelectGrouped,
