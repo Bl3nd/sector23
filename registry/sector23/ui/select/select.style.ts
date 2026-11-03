@@ -11,6 +11,7 @@ const select = tv({
       "data-invalid:border-destructive",
       "focus-visible:data-invalid:ring-destructive",
       "data-pressed:bg-input/20",
+      "data-readonly:opacity-60",
       "dark:bg-input/15",
       "dark:hover:bg-input/50",
       "dark:data-pressed:bg-input/55",
@@ -49,7 +50,7 @@ const select = tv({
     list: "relative max-h-(--available-height) p-1.5",
     item: "grid grid-cols-[1fr_auto] items-center rounded-md outline-none select-none data-disabled:opacity-50 data-highlighted:bg-accent data-highlighted:text-accent-foreground",
     itemText: "",
-    itemIndicator: "-me-0.5 [&>svg]:shrink-0",
+    itemIndicator: "-me-0.5 self-center [&>svg]:shrink-0",
     separator: [
       "self-stretch bg-border",
       "data-[orientation=horizontal]:my-1 data-[orientation=horizontal]:h-px",

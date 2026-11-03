@@ -8,17 +8,34 @@ import {
   ChevronsUpDownIcon,
   ChevronUpIcon,
 } from "lucide-react";
+import { createContext, useContext } from "react";
 
 import { mergeSlotClassName } from "@/registry/sector23/lib/merge-base-ui";
 
-import { select } from "./select.style";
+import { select, type SelectVariantProps } from "./select.style";
+
+type SelectContext = SelectVariantProps;
+
+const SelectContext = createContext<SelectContext>({
+  size: "md",
+});
+
+function useSelect() {
+  return useContext(SelectContext);
+}
 
 const POSITIONER_SIDE_OFFSET = 6;
 
-function Select<Value, Multiple extends boolean | undefined = false>(
-  props: BaseSelect.Root.Props<Value, Multiple>,
-) {
-  return <BaseSelect.Root {...props} />;
+function Select<Value, Multiple extends boolean | undefined = false>({
+  size,
+  children,
+  ...props
+}: BaseSelect.Root.Props<Value, Multiple> & SelectVariantProps) {
+  return (
+    <SelectContext.Provider value={{ size }}>
+      <BaseSelect.Root {...props}>{children}</BaseSelect.Root>
+    </SelectContext.Provider>
+  );
 }
 
 function SelectLabel({ className, ...props }: BaseSelect.Label.Props) {
@@ -36,11 +53,12 @@ function SelectLabel({ className, ...props }: BaseSelect.Label.Props) {
 
 function SelectTrigger({ className, ...props }: BaseSelect.Trigger.Props) {
   const direction = useDirection();
+  const { size } = useSelect();
 
   return (
     <BaseSelect.Trigger
       data-slot="select-trigger"
-      className={mergeSlotClassName(select().trigger, className)}
+      className={mergeSlotClassName(select({ size }).trigger, className)}
       {...props}
       dir={direction}
     />
@@ -58,10 +76,12 @@ function SelectValue({ className, ...props }: BaseSelect.Value.Props) {
 }
 
 function SelectIcon({ className, children, ...props }: BaseSelect.Icon.Props) {
+  const { size } = useSelect();
+
   return (
     <BaseSelect.Icon
       data-slot="select-icon"
-      className={mergeSlotClassName(select().icon, className)}
+      className={mergeSlotClassName(select({ size }).icon, className)}
       {...props}
     >
       {children ?? <ChevronsUpDownIcon />}
@@ -154,20 +174,24 @@ function SelectList({ className, ...props }: BaseSelect.List.Props) {
 }
 
 function SelectItem({ className, ...props }: BaseSelect.Item.Props) {
+  const { size } = useSelect();
+
   return (
     <BaseSelect.Item
       data-slot="select-item"
-      className={mergeSlotClassName(select().item, className)}
+      className={mergeSlotClassName(select({ size }).item, className)}
       {...props}
     />
   );
 }
 
 function SelectItemText({ className, ...props }: BaseSelect.ItemText.Props) {
+  const { size } = useSelect();
+
   return (
     <BaseSelect.ItemText
       data-slot="select-item-text"
-      className={mergeSlotClassName(select().itemText, className)}
+      className={mergeSlotClassName(select({ size }).itemText, className)}
       {...props}
     />
   );
@@ -178,10 +202,12 @@ function SelectItemIndicator({
   children,
   ...props
 }: BaseSelect.ItemIndicator.Props) {
+  const { size } = useSelect();
+
   return (
     <BaseSelect.ItemIndicator
       data-slot="select-item-indicator"
-      className={mergeSlotClassName(select().itemIndicator, className)}
+      className={mergeSlotClassName(select({ size }).itemIndicator, className)}
       {...props}
     >
       {children ?? <CheckIcon />}
@@ -213,10 +239,12 @@ function SelectGroupLabel({
   className,
   ...props
 }: BaseSelect.GroupLabel.Props) {
+  const { size } = useSelect();
+
   return (
     <BaseSelect.GroupLabel
       data-slot="select-group-label"
-      className={mergeSlotClassName(select().groupLabel, className)}
+      className={mergeSlotClassName(select({ size }).groupLabel, className)}
       {...props}
     />
   );
