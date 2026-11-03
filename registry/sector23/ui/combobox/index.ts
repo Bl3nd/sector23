@@ -1,6 +1,7 @@
 export {
   useComboboxFilter,
   useComboboxFilteredItems,
+  createComboboxItems,
   Combobox,
   ComboboxLabel,
   ComboboxControl,
