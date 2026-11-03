@@ -28,5 +28,9 @@
   "env": {
     "builtin": true
   },
-  "ignorePatterns": [".cursor/**/*", "scripts/*"]
+  "ignorePatterns": [
+    ".cursor/**/*",
+    "scripts/*",
+    "app/docs/components/**/demos/*"
+  ]
 }
