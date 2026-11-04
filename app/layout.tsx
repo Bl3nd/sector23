@@ -2,17 +2,17 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 import { DirectionProvider } from "@base-ui/react";
-import { JetBrains_Mono, Lora, Quicksand } from "next/font/google";
+import { Commissioner, Fraunces, JetBrains_Mono } from "next/font/google";
 
 import DocsHeader from "./components/docs/docs-header";
 import { ThemeProvider } from "./components/theme-provider";
 
-const fontSans = Quicksand({
+const fontSans = Commissioner({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
-const fontSerif = Lora({
+const fontSerif = Fraunces({
   subsets: ["latin"],
   variable: "--font-serif",
 });
