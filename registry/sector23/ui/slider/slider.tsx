@@ -2,21 +2,41 @@
 
 import { useDirection } from "@base-ui/react";
 import { Slider as BaseSlider } from "@base-ui/react/slider";
+import { createContext, useContext } from "react";
 
 import { mergeSlotClassName } from "@/registry/sector23/lib/merge-base-ui";
 
-import { slider } from "./slider.style";
+import { slider, type SliderVariantProps } from "./slider.style";
 
-function Slider({ className, ...props }: BaseSlider.Root.Props) {
+type SliderContext = SliderVariantProps;
+
+const SliderContext = createContext<SliderContext>({
+  size: "md",
+});
+
+function useSlider() {
+  return useContext(SliderContext);
+}
+
+function Slider({
+  size,
+  className,
+  children,
+  ...props
+}: BaseSlider.Root.Props & SliderVariantProps) {
   const direction = useDirection();
 
   return (
-    <BaseSlider.Root
-      data-slot="slider"
-      className={mergeSlotClassName(slider().root, className)}
-      {...props}
-      dir={direction}
-    />
+    <SliderContext.Provider value={{ size }}>
+      <BaseSlider.Root
+        data-slot="slider"
+        className={mergeSlotClassName(slider().root, className)}
+        {...props}
+        dir={direction}
+      >
+        {children}
+      </BaseSlider.Root>
+    </SliderContext.Provider>
   );
 }
 
@@ -41,10 +61,12 @@ function SliderValue({ className, ...props }: BaseSlider.Value.Props) {
 }
 
 function SliderControl({ className, ...props }: BaseSlider.Control.Props) {
+  const { size } = useSlider();
+
   return (
     <BaseSlider.Control
       data-slot="slider-control"
-      className={mergeSlotClassName(slider().control, className)}
+      className={mergeSlotClassName(slider({ size }).control, className)}
       {...props}
     />
   );
@@ -71,10 +93,12 @@ function SliderIndicator({ className, ...props }: BaseSlider.Indicator.Props) {
 }
 
 function SliderThumb({ className, ...props }: BaseSlider.Thumb.Props) {
+  const { size } = useSlider();
+
   return (
     <BaseSlider.Thumb
       data-slot="slider-thumb"
-      className={mergeSlotClassName(slider().thumb, className)}
+      className={mergeSlotClassName(slider({ size }).thumb, className)}
       {...props}
     />
   );

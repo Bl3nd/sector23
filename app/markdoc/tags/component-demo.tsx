@@ -116,7 +116,16 @@ import {
   SelectSize,
 } from "@/app/docs/components/select/demos";
 import Separator01 from "@/app/docs/components/separator/demos/separator-01";
-import Slider01 from "@/app/docs/components/slider/demos/slider-01";
+import {
+  SliderDefault,
+  SliderDisabled,
+  SliderMarks,
+  SliderRange,
+  SliderSize,
+  SliderSteps,
+  SliderThumbAlignment,
+  SliderVertical,
+} from "@/app/docs/components/slider/demos";
 import {
   SwitchDefault,
   SwitchDisabled,
@@ -228,7 +237,14 @@ const demoRegistry = {
   "select-disabled-item": SelectDisabledItem,
   "select-readonly": SelectReadonly,
   "separator-01": Separator01,
-  "slider-01": Slider01,
+  "slider-default": SliderDefault,
+  "slider-range": SliderRange,
+  "slider-steps": SliderSteps,
+  "slider-marks": SliderMarks,
+  "slider-thumb-alignment": SliderThumbAlignment,
+  "slider-vertical": SliderVertical,
+  "slider-size": SliderSize,
+  "slider-disabled": SliderDisabled,
   "switch-default": SwitchDefault,
   "switch-sibling-label": SwitchSiblingLabel,
   "switch-size": SwitchSize,
