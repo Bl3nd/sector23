@@ -103,7 +103,11 @@ import {
   RadioGroupSiblingLabel,
   RadioGroupSize,
 } from "@/app/docs/components/radio-group/demos";
-import ScrollArea01 from "@/app/docs/components/scroll-area/demos/scroll-area-01";
+import {
+  ScrollAreaBoth,
+  ScrollAreaDefault,
+  ScrollAreaFaded,
+} from "@/app/docs/components/scroll-area/demos";
 import {
   SelectDefault,
   SelectDisabled,
@@ -226,7 +230,9 @@ const demoRegistry = {
   "radio-group-invalid": RadioGroupInvalid,
   "radio-group-disabled": RadioGroupDisabled,
   "radio-group-readonly": RadioGroupReadonly,
-  "scroll-area-01": ScrollArea01,
+  "scroll-area-both": ScrollAreaBoth,
+  "scroll-area-default": ScrollAreaDefault,
+  "scroll-area-faded": ScrollAreaFaded,
   "select-default": SelectDefault,
   "select-size": SelectSize,
   "select-multiple": SelectMultiple,
