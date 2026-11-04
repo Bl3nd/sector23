@@ -2,21 +2,41 @@
 
 import { useDirection } from "@base-ui/react";
 import { ScrollArea as BaseScrollArea } from "@base-ui/react/scroll-area";
+import { createContext, useContext } from "react";
 
 import { mergeSlotClassName } from "@/registry/sector23/lib/merge-base-ui";
 
-import { scrollArea } from "./scroll-area.style";
+import { scrollArea, type ScrollAreaVariantProps } from "./scroll-area.style";
 
-function ScrollArea({ className, ...props }: BaseScrollArea.Root.Props) {
+type ScrollAreaContext = ScrollAreaVariantProps;
+
+const ScrollAreaContext = createContext<ScrollAreaContext>({
+  faded: false,
+});
+
+function useScrollArea() {
+  return useContext(ScrollAreaContext);
+}
+
+function ScrollArea({
+  faded,
+  className,
+  children,
+  ...props
+}: BaseScrollArea.Root.Props & ScrollAreaVariantProps) {
   const direction = useDirection();
 
   return (
-    <BaseScrollArea.Root
-      data-slot="scroll-area"
-      className={mergeSlotClassName(scrollArea().root, className)}
-      {...props}
-      dir={direction}
-    />
+    <ScrollAreaContext.Provider value={{ faded }}>
+      <BaseScrollArea.Root
+        data-slot="scroll-area"
+        className={mergeSlotClassName(scrollArea().root, className)}
+        {...props}
+        dir={direction}
+      >
+        {children}
+      </BaseScrollArea.Root>
+    </ScrollAreaContext.Provider>
   );
 }
 
@@ -24,10 +44,12 @@ function ScrollAreaViewport({
   className,
   ...props
 }: BaseScrollArea.Viewport.Props) {
+  const { faded } = useScrollArea();
+
   return (
     <BaseScrollArea.Viewport
       data-slot="scroll-area-viewport"
-      className={mergeSlotClassName(scrollArea().viewport, className)}
+      className={mergeSlotClassName(scrollArea({ faded }).viewport, className)}
       {...props}
     />
   );
