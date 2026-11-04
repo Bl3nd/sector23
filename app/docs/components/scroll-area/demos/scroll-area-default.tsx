@@ -8,7 +8,7 @@ import {
 
 export function ScrollAreaDefault() {
   return (
-    <ScrollArea className="h-48 w-96">
+    <ScrollArea className="h-48 w-auto lg:w-96">
       <ScrollAreaViewport>
         <ScrollAreaContent className="gap-4">
           <p>

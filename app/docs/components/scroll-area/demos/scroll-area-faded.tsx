@@ -8,7 +8,7 @@ import {
 
 export function ScrollAreaFaded() {
   return (
-    <ScrollArea faded className="h-48 w-96">
+    <ScrollArea faded className="h-48 w-auto lg:w-96">
       <ScrollAreaViewport>
         <ScrollAreaContent className="gap-4">
           <p>
