@@ -129,7 +129,7 @@ export default function NavigationMenu01() {
             <NavigationMenuItem key={department.label}>
               <NavigationMenuTrigger render={<Button variant="ghost" />}>
                 {department.label}
-                <NavigationMenuIcon />
+                <NavigationMenuIcon data-side="inline-end" />
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="grid gap-6 sm:grid-cols-[repeat(3,9rem)_14rem]">
@@ -177,7 +177,7 @@ export default function NavigationMenu01() {
           <NavigationMenuItem>
             <NavigationMenuTrigger render={<Button variant="ghost" />}>
               Collections
-              <NavigationMenuIcon />
+              <NavigationMenuIcon data-side="inline-end" />
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-1 sm:w-md sm:grid-cols-2">

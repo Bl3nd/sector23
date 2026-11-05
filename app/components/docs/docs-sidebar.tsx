@@ -67,7 +67,10 @@ export default function DocsSidebar({ handle }: { handle: DrawerHandle }) {
                               className="group w-full justify-between"
                             >
                               {doc.title}
-                              <ChevronDownIcon className="size-4 transition-transform duration-300 ease-default group-data-panel-open:rotate-180" />
+                              <ChevronDownIcon
+                                data-side="inline-end"
+                                className="size-4 transition-transform duration-300 ease-default group-data-panel-open:rotate-180"
+                              />
                             </CollapsibleTrigger>
                             <CollapsiblePanel>
                               <div className="ms-2 me-0.5 pt-0.5">

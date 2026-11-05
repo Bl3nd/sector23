@@ -12,7 +12,10 @@ export function CollapsibleDisabled() {
     <Collapsible className="w-full max-w-32" defaultOpen={true} disabled>
       <CollapsibleTrigger render={<Button />}>
         Statuses
-        <ChevronDownIcon className="transition-transform duration-300 ease-default group-data-panel-open:rotate-180" />
+        <ChevronDownIcon
+          data-side="inline-end"
+          className="transition-transform duration-300 ease-default group-data-panel-open:rotate-180"
+        />
       </CollapsibleTrigger>
       <CollapsiblePanel>
         <div className="mt-2 text-sm text-muted-foreground">

@@ -22,7 +22,7 @@ export default function Menu01() {
     <div className="flex flex-col items-center justify-center py-10">
       <Menu>
         <MenuTrigger render={<Button variant="ghost" />}>
-          File <ChevronDownIcon />
+          File <ChevronDownIcon data-side="inline-end" />
         </MenuTrigger>
         <MenuPortal>
           <MenuPositioner align="start">
