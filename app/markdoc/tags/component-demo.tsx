@@ -138,7 +138,14 @@ import {
   SwitchSiblingLabel,
   SwitchSize,
 } from "@/app/docs/components/switch/demos";
-import Tabs01 from "@/app/docs/components/tabs/demos/tabs-01";
+import {
+  TabsAnimated,
+  TabsDefault,
+  TabsDisabled,
+  TabsSize,
+  TabsVariant,
+  TabsVertical,
+} from "@/app/docs/components/tabs/demos";
 import Toast01 from "@/app/docs/components/toast/demos/toast-01";
 import ToggleGroup01 from "@/app/docs/components/toggle-group/demos/toggle-group-01";
 import Toggle01 from "@/app/docs/components/toggle/demos/toggle-01";
@@ -257,7 +264,12 @@ const demoRegistry = {
   "switch-invalid": SwitchInvalid,
   "switch-disabled": SwitchDisabled,
   "switch-readonly": SwitchReadonly,
-  "tabs-01": Tabs01,
+  "tabs-default": TabsDefault,
+  "tabs-variant": TabsVariant,
+  "tabs-size": TabsSize,
+  "tabs-vertical": TabsVertical,
+  "tabs-animated": TabsAnimated,
+  "tabs-disabled": TabsDisabled,
   "toast-01": Toast01,
   "toggle-01": Toggle01,
   "toggle-group-01": ToggleGroup01,
