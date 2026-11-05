@@ -5,6 +5,7 @@ import { tv } from "tailwind-variants";
 const button = tv({
   base: [
     "inline-flex shrink-0 transform-gpu items-center justify-center rounded-md font-medium whitespace-nowrap shadow-sm transition-[color,background-color,box-shadow,scale,opacity] duration-150 ease-default will-change-transform outline-none select-none",
+    "[text-box:trim-both_cap_alphabetic]",
     "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background",
     "active:not-aria-[expanded]:scale-98",
     "data-disabled:pointer-events-none data-disabled:opacity-50",
