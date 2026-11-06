@@ -3,7 +3,7 @@ import { Input } from "@/registry/sector23/ui/input";
 
 export function InputInvalid() {
   return (
-    <Field invalid className="w-56">
+    <Field invalid className="w-56" name="username">
       <FieldLabel>Username</FieldLabel>
       <Input defaultValue="ada lovelace" />
     </Field>
