@@ -6,9 +6,8 @@ const button = tv({
   base: [
     "inline-flex shrink-0 transform-gpu items-center justify-center rounded-md font-medium whitespace-nowrap shadow-sm transition-[color,background-color,box-shadow,scale,opacity] duration-150 ease-default will-change-transform outline-none select-none",
     "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background",
-    "active:not-aria-[expanded]:scale-98",
     "data-disabled:pointer-events-none data-disabled:opacity-50",
-    "motion-reduce:transition-none motion-reduce:duration-0",
+    "motion-safe:active:not-aria-[expanded]:scale-98",
     "[&_svg]:pointer-events-none [&_svg]:shrink-0",
     "[&>span]:inline-flex [&>span]:items-center [&>span]:justify-center [&>span]:whitespace-nowrap",
   ],
