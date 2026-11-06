@@ -9,15 +9,15 @@ import { input, type InputVariantProps } from "./input.style";
 
 function Input({
   className,
-  size,
+  scale,
   ...props
-}: Omit<BaseInput.Props, "size"> & InputVariantProps) {
+}: BaseInput.Props & InputVariantProps) {
   const direction = useDirection();
 
   return (
     <BaseInput
       data-slot="input"
-      className={mergeVariantClassName(input, { size }, className)}
+      className={mergeVariantClassName(input, { scale }, className)}
       {...props}
       dir={direction}
     />

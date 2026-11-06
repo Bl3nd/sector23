@@ -4,29 +4,14 @@ export function InputSize() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-wrap items-center gap-4">
-        <Input
-          size="sm"
-          aria-label="Small"
-          placeholder="Small"
-          className="w-36"
-        />
-        <Input
-          size="md"
-          aria-label="Medium"
-          placeholder="Medium (default)"
-          className="w-36"
-        />
-        <Input
-          size="lg"
-          aria-label="Large"
-          placeholder="Large"
-          className="w-36"
-        />
+        <Input scale="sm" aria-label="Small" placeholder="Small" />
+        <Input scale="md" aria-label="Medium" placeholder="Medium (default)" />
+        <Input scale="lg" aria-label="Large" placeholder="Large" />
       </div>
       <div className="flex w-64 flex-col gap-4">
-        <Input type="file" size="sm" aria-label="Small file" />
-        <Input type="file" size="md" aria-label="Medium file" />
-        <Input type="file" size="lg" aria-label="Large file" />
+        <Input type="file" scale="sm" aria-label="Small file" />
+        <Input type="file" scale="md" aria-label="Medium file" />
+        <Input type="file" scale="lg" aria-label="Large file" />
       </div>
     </div>
   );
