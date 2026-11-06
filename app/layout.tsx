@@ -2,12 +2,12 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 import { DirectionProvider } from "@base-ui/react";
-import { Commissioner, Fraunces, JetBrains_Mono } from "next/font/google";
+import { Asap, Fraunces, JetBrains_Mono } from "next/font/google";
 
 import DocsHeader from "./components/docs/docs-header";
 import { ThemeProvider } from "./components/theme-provider";
 
-const fontSans = Commissioner({
+const fontSans = Asap({
   subsets: ["latin"],
   variable: "--font-sans",
 });

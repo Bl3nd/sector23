@@ -25,31 +25,27 @@ _Note:_ An icon-only button has no text for screen readers to announce. Give it 
 
 ### Icons
 
-To place an icon beside the label, put the icon inside `Button` and set `data-side` on the icon. It accepts `inline-start` or `inline-end` and has no default. Button narrows the padding on that side to the gap between the icon and the label, as the demo at the top of the page does. Without `data-side`, the icon gets the same padding as text.
-
-`inline-start` and `inline-end` follow the reading direction, so the spacing stays correct in right-to-left layouts.
+To place an icon beside the label, put the icon inside `Button` and set `data-side` on the icon. It accepts `inline-start` or `inline-end` and has no default. Button narrows the padding on that side to the gap between the icon and the label, as the demo at the top of the page does. Without `data-side`, the icon gets the same padding as text. `inline-start` and `inline-end` follow the reading direction, so the spacing stays correct in right-to-left layouts.
 
 _Note:_ Do **not** set `data-side` on the icon of an icon-only button. Button narrows one side, and the button is no longer square.
 
 ### Disabled
 
-To disable the button, use the `disabled` prop. A disabled button ignores clicks and key presses, leaves the tab order, and renders at half opacity.
-
-To keep a disabled button in the tab order, add the `focusableWhenDisabled` prop. Button then sets `aria-disabled` instead of the native `disabled` attribute, so keyboard and screen reader users can still reach it and hear that it is unavailable. Clicks stay blocked.
+To disable the button, use the `disabled` prop. A disabled button ignores clicks and key presses, leaves the tab order, and renders at half opacity. To keep a disabled button in the tab order, add the `focusableWhenDisabled` prop. Button then sets `aria-disabled` instead of the native `disabled` attribute, so keyboard and screen reader users can still reach it and hear that it is unavailable. Clicks stay blocked under this situation.
 
 {% component-demo component="button-disabled" /%}
 
 ### Press feedback
 
-Button shrinks to 98% of its size while it is pressed. When the operating system asks for reduced motion, the button changes at once, without animation.
+Button scales down while it is pressed. When the operating system asks for reduced motion, the button changes at once, without animation.
 
 _Note:_ A button with an `aria-expanded` attribute does **not** shrink, whatever the attribute's value. Menu, popover, and dialog triggers set that attribute while closed. Tooltip, preview card, and context menu triggers do not set it, so a `Button` used for one of those still shrinks.
 
 ### Loading state
 
-Button has no `loading` prop. To show a loading state, set `disabled` while the action runs and add `focusableWhenDisabled` so focus stays on the button.
+Button has no `loading` prop. To show a loading state, set `disabled` while the action runs and add `focusableWhenDisabled` so focus stays on the button. To maintain ARIA capability, wrap the changing icon and label in a `span` with an `id`, and point `aria-labelledby` on `Button` at it. Some browser and screen reader pairs do not announce text that changes inside a focused button. An explicit label makes the new text the button's name.
 
-Wrap the changing icon and label in a `span` with an `id`, and point `aria-labelledby` on `Button` at it. Some browser and screen reader pairs do not announce text that changes inside a focused button. An explicit label makes the new text the button's name. Sector23 lays out a direct child `span` as an inline row, so the spinner and text keep the same spacing as an icon and label placed directly in the button. Set `data-side="inline-start"` on the spinner and the icon. Button finds them inside the `span`.
+_Note:_ Sector23 lays out a direct child `span` as an inline row, so the spinner and text keep the same spacing as an icon and label placed directly in the button. Set `data-side="inline-start"` on the spinner and the icon. Button finds them inside the `span`.
 
 {% component-demo component="button-loading" /%}
 
@@ -63,7 +59,7 @@ _Note:_ Button defaults to `type="button"`, unlike a native `<button>`. A `Butto
 
 ### Render as another tag
 
-To render a tag other than `<button>`, pass the element to the `render` prop and set `nativeButton={false}`. `nativeButton` defaults to `true`. Leave that default when the rendered element is a `<button>`. With `nativeButton={false}`, Button adds `role="button"`. Enter activates the element on keydown, and Space activates it on keyup.
+To render a tag other than `<button>`, pass the element to the `render` prop and set `nativeButton={false}`. `nativeButton` defaults to `true` by Base UI. Leave that default when the rendered element is a `<button>`. With `nativeButton={false}`, Button adds `role="button"`. Enter activates the element on keydown, and Space activates it on keyup.
 
 _Note:_ Do **not** render an `<a>` through `Button`. A link has its own semantics, and Button does not add key handling to it. To make a link look like a button, style the `<a>` directly.
 
