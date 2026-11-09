@@ -1,4 +1,5 @@
 import { ComponentDemo } from "./tags/component-demo";
+import { Section } from "./tags/section";
 
 const tags = {
   "component-demo": {
@@ -8,6 +9,9 @@ const tags = {
       showViewport: { type: "boolean", default: false },
     },
     render: ComponentDemo,
+  },
+  section: {
+    render: Section,
   },
 };
 

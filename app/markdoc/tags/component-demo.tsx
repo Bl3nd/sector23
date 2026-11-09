@@ -304,7 +304,7 @@ export function ComponentDemo({
   const Demo = demoRegistry[key];
 
   return (
-    <figure className="mx-auto w-full overflow-hidden rounded-md border border-border **:data-[slot=code-block]:rounded-none **:data-[slot=code-block]:border-0">
+    <figure className="mx-auto my-2 w-full overflow-hidden rounded-md border border-border **:data-[slot=code-block]:rounded-none **:data-[slot=code-block]:border-0">
       <div className="flex w-full flex-col items-center justify-center p-6 *:data-[slot=demo-viewport]:w-full">
         {showViewport ? (
           <DemoViewportFrame>

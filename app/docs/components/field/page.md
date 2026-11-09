@@ -9,25 +9,39 @@ nextjs:
 
 ## Examples
 
+{% section %}
+
 ### Label
 
 To name the control, place `FieldLabel` in the `Field`. Field links the label to the control, so you do not set `id` or `htmlFor`. A click on the label focuses the control.
 
 _Note:_ `nativeLabel` defaults to **true**. Set it to `false` when `render` replaces the label with another element, such as a combobox trigger. A click on the label text then does not activate that trigger.
 
+{% /section %}
+
+{% section %}
+
 ### Validation
 
 To show an error, place `FieldError` inside `Field` and set `match` to the failure that should reveal it. `match` accepts `true`, `'valid'`, or a `ValidityState` key such as `valueMissing`, `typeMismatch`, `tooShort`, or `customError`. `true` always shows the message.
 
-To choose when the field validates, use the `validationMode` prop on `Field`. It accepts `onSubmit`, `onBlur`, or `onChange` and defaults to `onSubmit`. The demo at the top of the page uses `onBlur`, so the message appears when focus leaves the empty input. With `onSubmit`, nothing validates until the form submits, and the field then validates again on every change. With `onChange`, the field validates on every change. To wait between `onChange` checks, set `validationDebounceTime` on `Field`. The wait is in milliseconds and defaults to `0`.
+To choose when the field validates, set `validationMode` on `Field` to `onSubmit` (default), `onBlur`, or `onChange`. The demo at the top of the page uses `onBlur`, so the message appears when focus leaves the empty input. To wait between `onChange` checks, set `validationDebounceTime` on `Field`, in milliseconds. It defaults to `0`.
+
+{% /section %}
+
+{% section %}
 
 ### Invalid
 
-To mark a field invalid from your own state, set the `invalid` prop on `Field`. The same prop works for any control inside the field. The Checkbox page's [Invalid](/docs/components/checkbox#invalid) example wraps a checkbox.
+To mark a field invalid from your own state, set the `invalid` prop on `Field`. Controls inside the field, such as `Input` and `Checkbox`, show the invalid border. The Checkbox page's [Invalid](/docs/components/checkbox#invalid) example shows this with a checkbox.
 
 To show a message for that state, set `match` to `true` on `FieldError` and pass the text as children. Leaving `match` unset does not show the message. `invalid` does not set the browser validity flags that `FieldError` reads.
 
 _Note:_ `FieldDescription` does **not** change color when the field is invalid. To tell the user what went wrong, add a `FieldError`.
+
+{% /section %}
+
+{% section %}
 
 ### Disabled
 
@@ -41,25 +55,39 @@ A disabled `Fieldset` also disables every `Field` inside it.
 
 {% component-demo component="field-disabled" /%}
 
+{% /section %}
+
+{% section %}
+
 ### Field Control
 
-`FieldControl` is unstyled due to `Input`, `Checkbox` and other input components working natively with `Field`. If you want to use `FieldControl`, use it like you would like the `Input`, but style it to your liking. Otherwise, use the input components available in its place.
+`FieldControl` renders a bare `input` with no styles. Use the input components instead, such as `Input` and `Checkbox`, which are styled and already work with `Field`. To use `FieldControl` directly, style it yourself.
+
+{% /section %}
+
+{% section %}
 
 ### Form submission
 
 To include the value in a form, set `name` on `Field`. It takes precedence over `name` on the control. Inside a [Form](/docs/components/form), each `FieldError` shows the error for its own field. To show errors returned by the server, pass them to the `errors` prop on `Form`, keyed by each field's `name`. See [server-side validation](https://base-ui.com/react/handbook/forms#server-side-validation).
 
+{% /section %}
+
 ## Additional Base UI examples
+
+{% section %}
 
 ### Custom validation
 
 To see this example, visit [custom validation](https://base-ui.com/react/handbook/forms#custom-validation).
 
-To check a value beyond the browser's built-in rules, use the `validate` prop on `Field`. Return a string or an array of strings when the value is invalid, and return nothing when it is valid. Pair it with `FieldError match="customError"` to show the message. The function can be asynchronous.
-
-To run the check from your own code, pass a ref to `actionsRef` and call `validate()` on it.
+Pair the `validate` prop on `Field` with `FieldError match="customError"` to show its message.
 
 _Note:_ With the default `validationMode="onSubmit"`, an asynchronous `validate` does **not** block the form from submitting. Use `onBlur` or `onChange` when the check must finish first.
+
+{% /section %}
+
+{% section %}
 
 ### Form libraries
 
@@ -67,8 +95,14 @@ To see these examples, visit [React Hook Form](https://base-ui.com/react/handboo
 
 React Hook Form's example sets `match` to whether that field has an error. TanStack Form's example sets `match` to whether the field is invalid. Copy that `match` expression. Setting `match` to `true` would show the message even when the library has no error.
 
+{% /section %}
+
 ## Credits
+
+{% section %}
 
 ### Base UI
 
 This component is based on Base UI's [Field](https://base-ui.com/react/components/field). You can view the full API reference [here](https://base-ui.com/react/components/field#api-reference).
+
+{% /section %}
