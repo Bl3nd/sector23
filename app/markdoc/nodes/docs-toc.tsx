@@ -55,6 +55,17 @@ export function DocsToc({ entries }: { entries: Toc }) {
     return null;
   }
 
+  const scrollToTop = () => {
+    const viewport = navRef.current?.closest(
+      '[data-slot="scroll-area-viewport"]',
+    );
+    if (viewport) {
+      viewport.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <nav
       ref={navRef}
@@ -63,6 +74,15 @@ export function DocsToc({ entries }: { entries: Toc }) {
     >
       <p className="mb-2 text-sm font-medium text-foreground">On this page</p>
       <ul className="flex flex-col gap-1">
+        <li>
+          <button
+            type="button"
+            onClick={scrollToTop}
+            className="block w-full cursor-pointer text-left text-sm text-muted-foreground"
+          >
+            Top of page
+          </button>
+        </li>
         {entries.map((entry) => {
           const inView = highlight.inView.has(entry.id);
           const current = entry.id === highlight.currentId;

@@ -77,7 +77,10 @@ import {
 } from "@/app/docs/components/dialog/demos";
 import Drawer01 from "@/app/docs/components/drawer/demos/drawer-01";
 import { FieldDefault, FieldDisabled } from "@/app/docs/components/field/demos";
-import Fieldset01 from "@/app/docs/components/fieldset/demos/fieldset-01";
+import {
+  FieldsetDefault,
+  FieldsetDisabled,
+} from "@/app/docs/components/fieldset/demos";
 import Form01 from "@/app/docs/components/form/demos/form-01";
 import {
   InputDefault,
@@ -215,7 +218,8 @@ const demoRegistry = {
   "drawer-01": Drawer01,
   "field-default": FieldDefault,
   "field-disabled": FieldDisabled,
-  "fieldset-01": Fieldset01,
+  "fieldset-default": FieldsetDefault,
+  "fieldset-disabled": FieldsetDisabled,
   "form-01": Form01,
   "input-default": InputDefault,
   "input-size": InputSize,

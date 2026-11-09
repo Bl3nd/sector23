@@ -15,6 +15,10 @@ Sector23 component documentation is for a user that wants to learn more about Se
 
 The documentation page should have the title of the component, example: `Accordion`. It should also have a description that is an overview of what the component is in one sentence.
 
+## Sections
+
+Each section should use the `section` tag. Usage is `{% section %}` to start and `{% /section %}` to end. For a reference, look at the `button` docs page.
+
 ## Base UI
 
 With Base UI having extensive documentation for their components, we should not re-explain its behavior unless we changed it. Additionally, if a demo does not showcase a different behavior that requires a style change, we do not need to showcase it. If it is not explained in Base UI's components documentation, add the explaination. If a demo is not already created, create it and explicitly state that you did within the response.
