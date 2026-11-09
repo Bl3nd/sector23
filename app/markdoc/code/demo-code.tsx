@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 import { CodeBlock } from "./code-block";
 import { CodeFold } from "./code-fold";
+import { CopyButton } from "./copy-button";
 import { loadDemoSource, toCopyPasteSource } from "./demo-source";
 import { planCodeFold, stripFinalNewline } from "./fold";
 
@@ -11,7 +12,12 @@ export function DemoCode({ demoKey }: { demoKey: string }): ReactNode {
   const block = <CodeBlock code={code} lang="tsx" />;
 
   if (plan.kind === "whole") {
-    return block;
+    return (
+      <div className="relative">
+        <CopyButton code={code} />
+        {block}
+      </div>
+    );
   }
 
   return (

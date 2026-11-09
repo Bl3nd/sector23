@@ -1,15 +1,10 @@
 "use client";
 
-import { CheckIcon, ClipboardIcon } from "lucide-react";
-import {
-  useEffect,
-  useId,
-  useState,
-  type CSSProperties,
-  type ReactNode,
-} from "react";
+import { useId, useState, type CSSProperties, type ReactNode } from "react";
 
 import { Button } from "@/registry/sector23/ui/button";
+
+import { CopyButton } from "./copy-button";
 
 export function CodeFold({
   code,
@@ -23,33 +18,7 @@ export function CodeFold({
   children: ReactNode;
 }): ReactNode {
   const [expanded, setExpanded] = useState(false);
-  const [copied, setCopied] = useState(false);
   const contentId = useId();
-
-  useEffect(() => {
-    if (!copied) {
-      return;
-    }
-
-    const ms = 2000;
-    const timeout = globalThis.setTimeout(() => {
-      setCopied(false);
-    }, ms);
-
-    return () => {
-      globalThis.clearTimeout(timeout);
-    };
-  }, [copied]);
-
-  async function copyCode() {
-    try {
-      await navigator.clipboard.writeText(code);
-    } catch {
-      return;
-    }
-
-    setCopied(true);
-  }
 
   return (
     <div
@@ -58,23 +27,7 @@ export function CodeFold({
       style={{ "--fold-lines": visibleLines } as CSSProperties}
     >
       <div id={contentId} className="relative">
-        <Button
-          variant="outline"
-          size="sm"
-          aria-label={copied ? "Copied" : "Copy code"}
-          className="absolute inset-e-2 top-2 bg-background"
-          onClick={() => {
-            void copyCode();
-          }}
-        >
-          <span>
-            {copied ? (
-              <CheckIcon className="text-chart-2" />
-            ) : (
-              <ClipboardIcon />
-            )}
-          </span>
-        </Button>
+        <CopyButton code={code} />
         {children}
         {expanded ? undefined : (
           <div
