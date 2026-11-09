@@ -6,7 +6,7 @@ const scrollArea = tv({
     viewport: [
       "min-h-0 flex-auto outline-none focus-visible:ring-2 focus-visible:ring-ring",
     ],
-    content: "flex flex-col pe-3 text-sm text-foreground",
+    content: "relative flex flex-col pe-3 text-sm text-foreground",
     scrollbar: [
       "pointer-events-none m-px flex rounded-full bg-muted opacity-0 transition-opacity duration-300 ease-default",
       "data-hovering:pointer-events-auto data-hovering:opacity-100",

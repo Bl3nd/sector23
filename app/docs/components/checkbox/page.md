@@ -9,11 +9,17 @@ nextjs:
 
 ## Examples
 
+{% section %}
+
 ### Indicator
 
 `Checkbox` renders the box. To show a mark, place `CheckboxIndicator` inside it. The indicator shows a check when the box is checked and a minus when the box is indeterminate. To use another icon, pass an element or a function to the `render` prop of `CheckboxIndicator`. A function receives the indicator state as its second argument, so read `state.indeterminate` there when the mixed state needs its own icon.
 
 _Note:_ Without `CheckboxIndicator`, a checked box fills with the primary color and shows **no mark**.
+
+{% /section %}
+
+{% section %}
 
 ### Label
 
@@ -23,6 +29,10 @@ To place the text beside the box, set `id` on `Checkbox` and point `htmlFor` on 
 
 {% component-demo component="checkbox-sibling-label" /%}
 
+{% /section %}
+
+{% section %}
+
 ### Size
 
 To change the size, use the `size` prop on `Checkbox`. It accepts `sm`, `md`, or `lg` and defaults to `md`. The box and the icon in `CheckboxIndicator` scale with it.
@@ -30,6 +40,10 @@ To change the size, use the `size` prop on `Checkbox`. It accepts `sm`, `md`, or
 _Note:_ Set `size` on `Checkbox`, not on `CheckboxIndicator`. The indicator reads **the size from its parent `Checkbox`**.
 
 {% component-demo component="checkbox-size" /%}
+
+{% /section %}
+
+{% section %}
 
 ### Indeterminate
 
@@ -41,11 +55,19 @@ To drive a parent checkbox from a list of children, see [Checkbox Group](/docs/c
 
 {% component-demo component="checkbox-indeterminate" /%}
 
+{% /section %}
+
+{% section %}
+
 ### Form submission
 
-To include the checkbox in a form, set the `name` prop. A checked box submits its `value`, or `on` when `value` is unset. An unchecked box submits nothing. To submit a value while the box is unchecked, set `uncheckedValue`.
+To include the checkbox in a form, set the `name` prop. An unchecked box submits nothing unless you set `uncheckedValue`.
 
 Space toggles the checkbox. Enter does not. Enter clicks the form's submit button.
+
+{% /section %}
+
+{% section %}
 
 ### Invalid
 
@@ -53,30 +75,44 @@ To mark a checkbox as invalid, place it in a `Field` and set `invalid` on the `F
 
 {% component-demo component="checkbox-invalid" /%}
 
+{% /section %}
+
+{% section %}
+
 ### Disabled
 
 To disable the checkbox, use the `disabled` prop. A disabled checkbox ignores clicks and key presses, renders at half opacity, and leaves its value out of the form.
 
 {% component-demo component="checkbox-disabled" /%}
 
+{% /section %}
+
+{% section %}
+
 ### Readonly
 
-To show a value the user cannot change, use the `readOnly` prop. A read-only checkbox ignores clicks and key presses and renders at 60% opacity. It still submits its value, and screen readers announce it as read only.
+To show a value the user cannot change, use the `readOnly` prop. A read-only checkbox ignores clicks and Space and renders at 60% opacity. It still submits its value, and screen readers announce it as read only.
 
 {% component-demo component="checkbox-readonly" /%}
 
+{% /section %}
+
 ## Additional Base UI examples
+
+{% section %}
 
 ### Rendering as a native button
 
 To see this example, visit [rendering as a native button](https://base-ui.com/react/components/checkbox#rendering-as-a-native-button).
 
-`nativeButton` defaults to `false`, which matches the default `span` root. Set `nativeButton` only when `render` replaces that root with a `<button>`.
-
-_Note:_ If `render` is a `<button>`, also set **`nativeButton`**. The two must agree.
+{% /section %}
 
 ## Credits
+
+{% section %}
 
 ### Base UI
 
 This component is based on Base UI's [Checkbox](https://base-ui.com/react/components/checkbox). You can view the full API reference [here](https://base-ui.com/react/components/checkbox#api-reference).
+
+{% /section %}

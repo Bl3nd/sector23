@@ -3,13 +3,13 @@ import { tv, type VariantProps } from "tailwind-variants";
 const checkbox = tv({
   slots: {
     root: [
-      "m-1 flex shrink-0 items-center justify-center rounded-sm border border-input bg-background shadow-md transition-all duration-150 ease-default outline-none",
+      "m-1 flex shrink-0 items-center justify-center rounded-sm border border-input bg-background shadow-xs transition-[color,background-color,border-color,box-shadow,opacity] duration-150 ease-default outline-none",
       "focus-visible:ring-2 focus-visible:ring-ring",
       "data-checked:bg-primary data-checked:text-primary-foreground",
-      "data-disabled:pointer-events-none data-disabled:opacity-50",
+      "data-disabled:opacity-50",
       "data-invalid:border-destructive",
       "focus-visible:data-invalid:ring-destructive",
-      "data-readonly:pointer-events-none data-readonly:opacity-60",
+      "data-readonly:opacity-60",
       "dark:bg-input/15",
       "dark:data-checked:bg-primary dark:data-checked:text-primary-foreground",
     ],
