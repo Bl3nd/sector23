@@ -19,15 +19,11 @@ _Note:_ `nativeLabel` defaults to **true**. Set it to `false` when `render` repl
 
 To show an error, place `FieldError` inside `Field` and set `match` to the failure that should reveal it. `match` accepts `true`, `'valid'`, or a `ValidityState` key such as `valueMissing`, `typeMismatch`, `tooShort`, or `customError`. `true` always shows the message.
 
-To choose when the field validates, use the `validationMode` prop on `Field`. It accepts `onSubmit`, `onBlur`, or `onChange` and defaults to `onSubmit`. The demo at the top of the page uses `onBlur`, so the message appears when focus leaves the empty input. With `onSubmit`, nothing validates until the form submits, and the field then validates again on every change. With `onChange`, the field validates on every change.
-
-To wait between `onChange` checks, set `validationDebounceTime` on `Field`. The wait is in milliseconds and defaults to `0`.
-
-_Note:_ `FieldError` has **no** enter or exit animation. It appears and disappears at once.
+To choose when the field validates, use the `validationMode` prop on `Field`. It accepts `onSubmit`, `onBlur`, or `onChange` and defaults to `onSubmit`. The demo at the top of the page uses `onBlur`, so the message appears when focus leaves the empty input. With `onSubmit`, nothing validates until the form submits, and the field then validates again on every change. With `onChange`, the field validates on every change. To wait between `onChange` checks, set `validationDebounceTime` on `Field`. The wait is in milliseconds and defaults to `0`.
 
 ### Invalid
 
-To mark a field invalid from your own state, set the `invalid` prop on `Field`. The label turns the destructive color. `Input` draws a destructive border and focus ring. The same prop works for any control inside the field. The Checkbox page's [Invalid](/docs/components/checkbox#invalid) example wraps a checkbox.
+To mark a field invalid from your own state, set the `invalid` prop on `Field`. The same prop works for any control inside the field. The Checkbox page's [Invalid](/docs/components/checkbox#invalid) example wraps a checkbox.
 
 To show a message for that state, set `match` to `true` on `FieldError` and pass the text as children. Leaving `match` unset does not show the message. `invalid` does not set the browser validity flags that `FieldError` reads.
 
@@ -35,9 +31,7 @@ _Note:_ `FieldDescription` does **not** change color when the field is invalid. 
 
 ### Disabled
 
-To disable the field, use the `disabled` prop on `Field`. It defaults to `false`. The control ignores clicks and key presses. The label and the description render at half opacity. The input's dimming and `pointer-events-none` come from `Input`, not from Field.
-
-A disabled field skips validation. `FieldError` stays hidden unless `match` is `true`. When the error does show, it renders at half opacity.
+To disable the field, use the `disabled` prop on `Field`. It defaults to `false`. The control ignores clicks and key presses. A disabled field skips validation. `FieldError` stays hidden unless `match` is `true`.
 
 The first field in the demo is disabled and has a value. The second field is disabled and invalid, and its error uses `match={true}`, so the dimmed error is visible.
 
@@ -47,21 +41,13 @@ A disabled `Fieldset` also disables every `Field` inside it.
 
 {% component-demo component="field-disabled" /%}
 
-### Parts without styles
+### Field Control
 
-`FieldControl`, `FieldItem`, and `FieldValidity` add no Sector23 styles. `FieldControl` renders a plain `<input>`. To get the styled input, use `Input` inside `Field` instead. Use `FieldControl` only when you style the input yourself.
-
-To group one checkbox or radio with its own label, wrap the control in `FieldItem`. The [Checkbox Group](/docs/components/checkbox-group) page shows that wiring under Form integration.
-
-To read the validity state while you render, pass a function as the child of `FieldValidity`. The function receives the validity flags, the error messages, and the current value. `FieldValidity` renders nothing of its own. See Base UI's [Validity](https://base-ui.com/react/components/field#validity) part.
-
-_Note:_ Field reads direction from the nearest `DirectionProvider`. A `dir` prop on `Field` is **replaced**.
+`FieldControl` is unstyled due to `Input`, `Checkbox` and other input components working natively with `Field`. If you want to use `FieldControl`, use it like you would like the `Input`, but style it to your liking. Otherwise, use the input components available in its place.
 
 ### Form submission
 
-To include the value in a form, set `name` on `Field`. It takes precedence over `name` on the control. Inside a [Form](/docs/components/form), each `FieldError` shows the error for its own field.
-
-To show errors returned by the server, pass them to the `errors` prop on `Form`, keyed by each field's `name`. See [server-side validation](https://base-ui.com/react/handbook/forms#server-side-validation).
+To include the value in a form, set `name` on `Field`. It takes precedence over `name` on the control. Inside a [Form](/docs/components/form), each `FieldError` shows the error for its own field. To show errors returned by the server, pass them to the `errors` prop on `Form`, keyed by each field's `name`. See [server-side validation](https://base-ui.com/react/handbook/forms#server-side-validation).
 
 ## Additional Base UI examples
 

@@ -12,7 +12,7 @@
   "files": [
     {
       "path": "registry/sector23/ui/field/field.style.ts",
-      "content": "import { tv } from \"tailwind-variants\";\n\nconst field = tv({\n  slots: {\n    root: \"flex w-full flex-col gap-1.5\",\n    label: [\n      \"text-sm font-medium text-foreground select-none\",\n      \"data-disabled:opacity-50\",\n      \"data-invalid:text-destructive\",\n    ],\n    control: \"\",\n    description: \"text-sm text-muted-foreground data-disabled:opacity-50\",\n    item: \"\",\n    error: \"text-sm text-destructive data-disabled:opacity-50\",\n  },\n});\n\nexport { field };\n",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst field = tv({\n  slots: {\n    root: \"flex w-full flex-col gap-1.5\",\n    label: [\n      \"text-sm font-medium text-foreground transition-[color,opacity] duration-150 ease-default select-none\",\n      \"data-disabled:opacity-50\",\n      \"data-invalid:text-destructive\",\n    ],\n    control: \"\",\n    description: \"text-sm text-muted-foreground data-disabled:opacity-50\",\n    item: \"\",\n    error: [\n      \"text-sm text-destructive transition-opacity duration-150 ease-default\",\n      \"data-disabled:opacity-50\",\n      \"data-ending-style:opacity-0\",\n      \"data-starting-style:opacity-0\",\n    ],\n  },\n});\n\nexport { field };\n",
       "type": "registry:ui",
       "target": "@ui/field/field.style.ts"
     },

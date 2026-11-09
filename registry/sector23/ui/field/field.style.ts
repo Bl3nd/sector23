@@ -4,14 +4,19 @@ const field = tv({
   slots: {
     root: "flex w-full flex-col gap-1.5",
     label: [
-      "text-sm font-medium text-foreground select-none",
+      "text-sm font-medium text-foreground transition-[color,opacity] duration-150 ease-default select-none",
       "data-disabled:opacity-50",
       "data-invalid:text-destructive",
     ],
     control: "",
     description: "text-sm text-muted-foreground data-disabled:opacity-50",
     item: "",
-    error: "text-sm text-destructive data-disabled:opacity-50",
+    error: [
+      "text-sm text-destructive transition-opacity duration-150 ease-default",
+      "data-disabled:opacity-50",
+      "data-ending-style:opacity-0",
+      "data-starting-style:opacity-0",
+    ],
   },
 });
 
