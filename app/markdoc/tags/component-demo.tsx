@@ -134,6 +134,7 @@ import { SeparatorDefault } from "@/app/docs/components/separator/demos";
 import {
   SliderDefault,
   SliderDisabled,
+  SliderInvalid,
   SliderSize,
   SliderVertical,
 } from "@/app/docs/components/slider/demos";
@@ -275,6 +276,7 @@ const demoRegistry = {
   "slider-vertical": SliderVertical,
   "slider-size": SliderSize,
   "slider-disabled": SliderDisabled,
+  "slider-invalid": SliderInvalid,
   "switch-default": SwitchDefault,
   "switch-sibling-label": SwitchSiblingLabel,
   "switch-size": SwitchSize,
