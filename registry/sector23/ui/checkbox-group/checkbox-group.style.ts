@@ -4,7 +4,7 @@ const checkboxGroup = tv({
   slots: {
     root: "group flex flex-col gap-1.5",
     legend: [
-      "text-sm font-semibold text-foreground",
+      "text-base font-semibold text-foreground transition-opacity duration-150 ease-default",
       "group-data-disabled:opacity-50",
     ],
   },
