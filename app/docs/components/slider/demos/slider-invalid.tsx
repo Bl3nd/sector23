@@ -1,4 +1,4 @@
-import { Field } from "@/registry/sector23/ui/field";
+import { Field, FieldLabel } from "@/registry/sector23/ui/field";
 import {
   Slider,
   SliderControl,
@@ -11,9 +11,9 @@ import {
 
 export function SliderInvalid() {
   return (
-    <Field name="volume" invalid>
+    <Field name="volume" invalid className="w-fit">
       <Slider defaultValue={25} className="w-52">
-        <SliderLabel>Volume</SliderLabel>
+        <FieldLabel>Volume</FieldLabel>
         <SliderValue />
         <SliderControl>
           <SliderTrack>
