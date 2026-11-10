@@ -12,7 +12,7 @@
   "files": [
     {
       "path": "registry/sector23/ui/fieldset/fieldset.style.ts",
-      "content": "import { tv } from \"tailwind-variants\";\n\nconst fieldset = tv({\n  slots: {\n    root: \"flex w-full flex-col gap-1.5\",\n    legend: [\n      \"text-base font-semibold text-foreground transition-opacity duration-150 ease-default\",\n      \"data-disabled:opacity-50\",\n    ],\n  },\n});\n\nexport { fieldset };\n",
+      "content": "import { tv } from \"tailwind-variants\";\n\nconst fieldset = tv({\n  slots: {\n    root: \"flex w-full min-w-0 flex-col gap-1.5\",\n    legend: [\n      \"text-base font-semibold text-foreground transition-opacity duration-150 ease-default\",\n      \"data-disabled:opacity-50\",\n    ],\n  },\n});\n\nexport { fieldset };\n",
       "type": "registry:ui",
       "target": "@ui/fieldset/fieldset.style.ts"
     },
