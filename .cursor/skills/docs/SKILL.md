@@ -9,7 +9,7 @@ A component should have a docs page that both showcases and explains it.
 
 ## Who this documentation is for
 
-Sector23 component documentation is for a user that wants to learn more about Sector23 or who already uses the components. It should provide insight into how to use the component and its related behavior through its available props. Therefore, explainations or prose should be concise and to the point without including unnecessary and inessential information to what is being described.
+Sector23 component documentation is for a user that wants to learn more about Sector23 or who already uses the components. It should provide insight into how to use the component and its related behavior through its available props. Therefore, explainations or prose should be concise and to the point without including unnecessary and inessential information to what is being described. Prose and explainations should earn their place without becoming redundant information.
 
 ## Title and description
 

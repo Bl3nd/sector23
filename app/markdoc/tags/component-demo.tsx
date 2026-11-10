@@ -93,7 +93,15 @@ import Menu01 from "@/app/docs/components/menu/demos/menu-01";
 import Menubar01 from "@/app/docs/components/menubar/demos/menubar-01";
 import Meter01 from "@/app/docs/components/meter/demos/meter-01";
 import NavigationMenu01 from "@/app/docs/components/navigation-menu/demos/navigation-menu-01";
-import NumberField01 from "@/app/docs/components/number-field/demos/number-field-01";
+import {
+  NumberFieldDefault,
+  NumberFieldDisabled,
+  NumberFieldInvalid,
+  NumberFieldSize,
+  NumberFieldWithoutButtons,
+  NumberFieldWithoutDecrement,
+  NumberFieldWithoutIncrement,
+} from "@/app/docs/components/number-field/demos";
 import OTPField01 from "@/app/docs/components/otp-field/demos/otp-field-01";
 import Popover01 from "@/app/docs/components/popover/demos/popover-01";
 import PreviewCard01 from "@/app/docs/components/preview-card/demos/preview-card-01";
@@ -237,7 +245,13 @@ const demoRegistry = {
   "menubar-01": Menubar01,
   "meter-01": Meter01,
   "navigation-menu-01": NavigationMenu01,
-  "number-field-01": NumberField01,
+  "number-field-default": NumberFieldDefault,
+  "number-field-disabled": NumberFieldDisabled,
+  "number-field-invalid": NumberFieldInvalid,
+  "number-field-size": NumberFieldSize,
+  "number-field-without-decrement": NumberFieldWithoutDecrement,
+  "number-field-without-increment": NumberFieldWithoutIncrement,
+  "number-field-without-buttons": NumberFieldWithoutButtons,
   "otp-field-01": OTPField01,
   "popover-01": Popover01,
   "preview-card-01": PreviewCard01,
