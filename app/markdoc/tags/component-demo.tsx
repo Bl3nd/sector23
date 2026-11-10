@@ -152,7 +152,13 @@ import {
 } from "@/app/docs/components/tabs/demos";
 import Toast01 from "@/app/docs/components/toast/demos/toast-01";
 import ToggleGroup01 from "@/app/docs/components/toggle-group/demos/toggle-group-01";
-import Toggle01 from "@/app/docs/components/toggle/demos/toggle-01";
+import {
+  ToggleDefault,
+  ToggleDisabled,
+  ToggleIcon,
+  TogglePressed,
+  ToggleSize,
+} from "@/app/docs/components/toggle/demos";
 import Toolbar01 from "@/app/docs/components/toolbar/demos/toolbar-01";
 import Tooltip01 from "@/app/docs/components/tooltip/demos/tooltip-01";
 
@@ -277,7 +283,11 @@ const demoRegistry = {
   "tabs-animated": TabsAnimated,
   "tabs-disabled": TabsDisabled,
   "toast-01": Toast01,
-  "toggle-01": Toggle01,
+  "toggle-default": ToggleDefault,
+  "toggle-disabled": ToggleDisabled,
+  "toggle-icon": ToggleIcon,
+  "toggle-pressed": TogglePressed,
+  "toggle-size": ToggleSize,
   "toggle-group-01": ToggleGroup01,
   "toolbar-01": Toolbar01,
   "tooltip-01": Tooltip01,

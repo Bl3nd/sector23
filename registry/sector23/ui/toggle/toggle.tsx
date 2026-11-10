@@ -3,17 +3,21 @@
 import { useDirection } from "@base-ui/react";
 import { Toggle as BaseToggle } from "@base-ui/react/toggle";
 
-import { mergeSlotClassName } from "@/registry/sector23/lib/merge-base-ui";
+import { mergeVariantClassName } from "@/registry/sector23/lib/merge-base-ui";
 
-import { toggle } from "./toggle.style";
+import { toggle, type ToggleVariantProps } from "./toggle.style";
 
-function Toggle({ className, ...props }: BaseToggle.Props) {
+function Toggle({
+  size,
+  className,
+  ...props
+}: BaseToggle.Props & ToggleVariantProps) {
   const direction = useDirection();
 
   return (
     <BaseToggle
       data-slot="toggle"
-      className={mergeSlotClassName(toggle, className)}
+      className={mergeVariantClassName(toggle, { size }, className)}
       {...props}
       dir={direction}
     />
