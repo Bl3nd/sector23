@@ -49,7 +49,7 @@ To disable one thumb, set `disabled` on that `SliderThumb`. The thumb ignores in
 
 ### Invalid
 
-To mark the slider as invalid, place it in a `Field` and set `invalid` on the `Field`. `Slider` has no `invalid` prop of its own. The `Field` sets `data-invalid` on the slider's root, control, track, indicator, thumb, and value. `SliderLabel` does **not** get `data-invalid`.
+To mark the slider as invalid, place it in a `Field` and set `invalid` on the `Field`. `Slider` has no `invalid` prop of its own. The `Field` sets `data-invalid` on the slider's root, control, track, indicator, thumb, and value.
 
 {% component-demo component="slider-invalid" /%}
 
