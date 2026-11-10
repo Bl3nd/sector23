@@ -5,7 +5,7 @@ nextjs:
     description: A line that divides content and is announced to screen readers.
 ---
 
-{% component-demo component="separator-01" /%}
+{% component-demo component="separator-default" /%}
 
 ## Examples
 
