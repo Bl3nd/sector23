@@ -134,11 +134,7 @@ import { SeparatorDefault } from "@/app/docs/components/separator/demos";
 import {
   SliderDefault,
   SliderDisabled,
-  SliderMarks,
-  SliderRange,
   SliderSize,
-  SliderSteps,
-  SliderThumbAlignment,
   SliderVertical,
 } from "@/app/docs/components/slider/demos";
 import {
@@ -276,10 +272,6 @@ const demoRegistry = {
   "select-readonly": SelectReadonly,
   "separator-default": SeparatorDefault,
   "slider-default": SliderDefault,
-  "slider-range": SliderRange,
-  "slider-steps": SliderSteps,
-  "slider-marks": SliderMarks,
-  "slider-thumb-alignment": SliderThumbAlignment,
   "slider-vertical": SliderVertical,
   "slider-size": SliderSize,
   "slider-disabled": SliderDisabled,

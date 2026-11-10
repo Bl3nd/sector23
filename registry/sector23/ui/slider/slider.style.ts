@@ -31,7 +31,7 @@ const slider = tv({
     ],
     indicator: "rounded-[inherit] bg-primary select-none",
     thumb: [
-      "rounded-full border border-primary bg-background select-none",
+      "rounded-full border border-primary bg-background shadow-xs transition-shadow duration-150 ease-default select-none",
       "has-focus-visible:ring-2 has-focus-visible:ring-ring",
     ],
   },
