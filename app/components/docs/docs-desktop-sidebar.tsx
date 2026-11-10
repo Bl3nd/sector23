@@ -56,12 +56,11 @@ export default function DocsDesktopSidebar() {
               <TooltipTrigger>
                 <Switch
                   checked={dark}
-                  className="dark:bg-primary"
                   onCheckedChange={(checked) =>
                     setTheme(checked ? "dark" : "light")
                   }
                 >
-                  <SwitchThumb className="dark:translate-x-3.75 dark:bg-primary-foreground">
+                  <SwitchThumb>
                     <SunIcon className="dark:hidden" />
                     <MoonIcon className="hidden dark:block" />
                   </SwitchThumb>

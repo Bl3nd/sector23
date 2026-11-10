@@ -136,6 +136,7 @@ import {
 import {
   SwitchDefault,
   SwitchDisabled,
+  SwitchIcon,
   SwitchInvalid,
   SwitchReadonly,
   SwitchSiblingLabel,
@@ -267,6 +268,7 @@ const demoRegistry = {
   "switch-size": SwitchSize,
   "switch-invalid": SwitchInvalid,
   "switch-disabled": SwitchDisabled,
+  "switch-icon": SwitchIcon,
   "switch-readonly": SwitchReadonly,
   "tabs-default": TabsDefault,
   "tabs-variant": TabsVariant,
