@@ -122,7 +122,7 @@ import {
   SelectReadonly,
   SelectSize,
 } from "@/app/docs/components/select/demos";
-import Separator01 from "@/app/docs/components/separator/demos/separator-01";
+import { SeparatorDefault } from "@/app/docs/components/separator/demos";
 import {
   SliderDefault,
   SliderDisabled,
@@ -260,7 +260,7 @@ const demoRegistry = {
   "select-disabled": SelectDisabled,
   "select-disabled-item": SelectDisabledItem,
   "select-readonly": SelectReadonly,
-  "separator-01": Separator01,
+  "separator-default": SeparatorDefault,
   "slider-default": SliderDefault,
   "slider-range": SliderRange,
   "slider-steps": SliderSteps,
