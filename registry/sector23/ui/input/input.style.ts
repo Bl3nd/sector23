@@ -10,13 +10,14 @@ const input = tv({
     "data-invalid:border-destructive",
     "focus-visible:data-invalid:ring-destructive",
     "dark:bg-input/15",
+    "any-pointer-coarse:text-base",
     "[[type='file']]:py-1.5",
   ],
   variants: {
     scale: {
-      lg: "h-10 px-3 text-base file:me-3 file:px-3",
-      md: "h-9 px-2.75 text-sm file:me-2.75 file:px-2.75",
-      sm: "h-8 px-2.5 text-xs file:me-2.5 file:px-2.5",
+      lg: "h-10 px-3 text-base file:me-3 file:px-3 any-pointer-coarse:[[type='file']]:text-base",
+      md: "h-9 px-2.75 text-sm file:me-2.75 file:px-2.75 any-pointer-coarse:[[type='file']]:text-sm",
+      sm: "h-8 px-2.5 text-xs file:me-2.5 file:px-2.5 any-pointer-coarse:[[type='file']]:text-xs",
     },
   },
   defaultVariants: {

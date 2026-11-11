@@ -27,6 +27,7 @@ const numberField = tv({
       "group-has-data-[slot='number-field-decrement']:rounded-s-none",
       "group-has-data-[slot='number-field-increment']:rounded-e-none",
       "placeholder:text-muted-foreground",
+      "any-pointer-coarse:text-base",
     ],
     increment: [
       "flex h-full items-center justify-center bg-muted text-foreground transition-colors duration-150 ease-default select-none",
