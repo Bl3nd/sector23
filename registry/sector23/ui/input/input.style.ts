@@ -10,6 +10,7 @@ const input = tv({
     "data-invalid:border-destructive",
     "focus-visible:data-invalid:ring-destructive",
     "dark:bg-input/15",
+    "any-pointer-coarse:text-base",
     "[[type='file']]:py-1.5",
   ],
   variants: {
