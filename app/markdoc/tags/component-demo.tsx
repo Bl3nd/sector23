@@ -102,7 +102,13 @@ import {
   NumberFieldWithoutDecrement,
   NumberFieldWithoutIncrement,
 } from "@/app/docs/components/number-field/demos";
-import OTPField01 from "@/app/docs/components/otp-field/demos/otp-field-01";
+import {
+  OTPFieldDefault,
+  OTPFieldDisabled,
+  OTPFieldInvalid,
+  OTPFieldSeparatorDemo,
+  OTPFieldSize,
+} from "@/app/docs/components/otp-field/demos";
 import Popover01 from "@/app/docs/components/popover/demos/popover-01";
 import PreviewCard01 from "@/app/docs/components/preview-card/demos/preview-card-01";
 import Progress01 from "@/app/docs/components/progress/demos/progress-01";
@@ -253,7 +259,11 @@ const demoRegistry = {
   "number-field-without-decrement": NumberFieldWithoutDecrement,
   "number-field-without-increment": NumberFieldWithoutIncrement,
   "number-field-without-buttons": NumberFieldWithoutButtons,
-  "otp-field-01": OTPField01,
+  "otp-field-default": OTPFieldDefault,
+  "otp-field-size": OTPFieldSize,
+  "otp-field-separator": OTPFieldSeparatorDemo,
+  "otp-field-disabled": OTPFieldDisabled,
+  "otp-field-invalid": OTPFieldInvalid,
   "popover-01": Popover01,
   "preview-card-01": PreviewCard01,
   "progress-01": Progress01,
