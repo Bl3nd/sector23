@@ -156,7 +156,11 @@ import {
   TabsVertical,
 } from "@/app/docs/components/tabs/demos";
 import Toast01 from "@/app/docs/components/toast/demos/toast-01";
-import ToggleGroup01 from "@/app/docs/components/toggle-group/demos/toggle-group-01";
+import {
+  ToggleGroupDefault,
+  ToggleGroupOrientation,
+  ToggleGroupOutline,
+} from "@/app/docs/components/toggle-group/demos";
 import {
   ToggleDefault,
   ToggleDisabled,
@@ -296,7 +300,9 @@ const demoRegistry = {
   "toggle-icon": ToggleIcon,
   "toggle-pressed": TogglePressed,
   "toggle-size": ToggleSize,
-  "toggle-group-01": ToggleGroup01,
+  "toggle-group-default": ToggleGroupDefault,
+  "toggle-group-outline": ToggleGroupOutline,
+  "toggle-group-orientation": ToggleGroupOrientation,
   "toolbar-01": Toolbar01,
   "tooltip-01": Tooltip01,
 } satisfies Record<string, () => ReactNode>;
