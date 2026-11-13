@@ -1,6 +1,6 @@
 "use client";
 
-import { useDirection } from "@base-ui/react";
+import { mergeProps, useDirection, useRender } from "@base-ui/react";
 import { Popover as BasePopover } from "@base-ui/react/popover";
 
 import { mergeSlotClassName } from "@/registry/sector23/lib/merge-base-ui";
@@ -11,7 +11,9 @@ const POSITIONER_SIDE_OFFSET = 8;
 
 const createPopoverHandle = BasePopover.createHandle;
 
-function Popover(props: BasePopover.Root.Props) {
+function Popover<Payload = unknown>({
+  ...props
+}: BasePopover.Root.Props<Payload>) {
   return <BasePopover.Root {...props} />;
 }
 
@@ -93,6 +95,26 @@ function PopoverViewport({ className, ...props }: BasePopover.Viewport.Props) {
   );
 }
 
+function PopoverHeader({
+  className,
+  render,
+  ...props
+}: useRender.ComponentProps<"div">) {
+  const header = useRender({
+    defaultTagName: "div",
+    props: {
+      ...mergeProps<"div">(
+        { className: popover().header({ className }) },
+        props,
+      ),
+      "data-slot": "popover-header",
+    },
+    render,
+  });
+
+  return header;
+}
+
 function PopoverTitle({ className, ...props }: BasePopover.Title.Props) {
   return (
     <BasePopover.Title
@@ -136,6 +158,7 @@ export {
   PopoverPopup,
   PopoverArrow,
   PopoverViewport,
+  PopoverHeader,
   PopoverTitle,
   PopoverDescription,
   PopoverClose,

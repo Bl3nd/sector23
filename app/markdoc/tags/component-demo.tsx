@@ -109,7 +109,8 @@ import {
   OTPFieldSeparatorDemo,
   OTPFieldSize,
 } from "@/app/docs/components/otp-field/demos";
-import Popover01 from "@/app/docs/components/popover/demos/popover-01";
+import { PopoverDefault } from "@/app/docs/components/popover/demos/popover-default";
+import { PopoverViewportDemo } from "@/app/docs/components/popover/demos/popover-viewport";
 import PreviewCard01 from "@/app/docs/components/preview-card/demos/preview-card-01";
 import Progress01 from "@/app/docs/components/progress/demos/progress-01";
 import {
@@ -264,7 +265,8 @@ const demoRegistry = {
   "otp-field-separator": OTPFieldSeparatorDemo,
   "otp-field-disabled": OTPFieldDisabled,
   "otp-field-invalid": OTPFieldInvalid,
-  "popover-01": Popover01,
+  "popover-default": PopoverDefault,
+  "popover-viewport": PopoverViewportDemo,
   "preview-card-01": PreviewCard01,
   "progress-01": Progress01,
   "radio-group-default": RadioGroupDefault,
