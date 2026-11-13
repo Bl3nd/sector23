@@ -49,7 +49,7 @@ Without a viewport, the popover jumps to a new trigger and its content swaps ins
 
 ### Motion
 
-The popup fades in and out and scales down slightly as it opens and closes. With a viewport, this takes 500 ms instead of 200 ms. When the operating system requests reduced motion, the popup only fades on open and close. The glide and content slide in Animation are not affected.
+The popup fades in and out and scales down slightly as it opens and closes. With a viewport, this takes 500 ms instead of 200 ms. When the operating system requests reduced motion, the popup only fades on open and close, and it takes 200 ms. With a viewport, the glide, resize, arrow movement, and content swap happen instantly.
 
 {% /section %}
 
