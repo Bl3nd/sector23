@@ -81,7 +81,7 @@ import {
   FieldsetDefault,
   FieldsetDisabled,
 } from "@/app/docs/components/fieldset/demos";
-import Form01 from "@/app/docs/components/form/demos/form-01";
+import { FormDefault } from "@/app/docs/components/form/demos";
 import {
   InputDefault,
   InputDisabled,
@@ -242,7 +242,7 @@ const demoRegistry = {
   "field-disabled": FieldDisabled,
   "fieldset-default": FieldsetDefault,
   "fieldset-disabled": FieldsetDisabled,
-  "form-01": Form01,
+  "form-default": FormDefault,
   "input-default": InputDefault,
   "input-size": InputSize,
   "input-invalid": InputInvalid,
