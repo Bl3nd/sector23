@@ -8,6 +8,7 @@ export {
   PopoverPopup,
   PopoverArrow,
   PopoverViewport,
+  PopoverHeader,
   PopoverTitle,
   PopoverDescription,
   PopoverClose,
