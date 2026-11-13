@@ -21,7 +21,9 @@ Each section should use the `section` tag. Usage is `{% section %}` to start and
 
 ## Base UI
 
-With Base UI having extensive documentation for their components, we should not re-explain its behavior unless we changed it. Additionally, if a demo does not showcase a different behavior that requires a style change, we do not need to showcase it. If it is not explained in Base UI's components documentation, add the explaination. If a demo is not already created, create it and explicitly state that you did within the response.
+With Base UI having extensive documentation for their components, we should not re-explain any behavior unless we changed it. Additionally, if a demo does not showcase a different behavior that requires a style change, we do not need to showcase it. If it is not explained in Base UI's components documentation, add the explaination. If a demo is not already created, create it and explicitly state that you did within the response.
+
+If a demo or multiple demos need to be created or updated, call `Opus 5.5 (medium)` as a subagent for them.
 
 ## Duplication
 
