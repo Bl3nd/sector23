@@ -12,7 +12,7 @@ import {
   TooltipTrigger,
 } from "@/registry/sector23/ui/tooltip";
 
-export default function Tooltip01() {
+export function TooltipDefault() {
   return (
     <TooltipProvider>
       <ToggleGroup>

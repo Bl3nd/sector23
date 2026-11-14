@@ -5,7 +5,7 @@ nextjs:
     description: A short label that appears when a user hovers over or focuses a trigger.
 ---
 
-{% component-demo component="tooltip-01" /%}
+{% component-demo component="tooltip-default" /%}
 
 ## Examples
 
