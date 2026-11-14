@@ -177,6 +177,7 @@ import {
 } from "@/app/docs/components/toggle/demos";
 import Toolbar01 from "@/app/docs/components/toolbar/demos/toolbar-01";
 import Tooltip01 from "@/app/docs/components/tooltip/demos/tooltip-01";
+import { TooltipViewportDemo } from "@/app/docs/components/tooltip/demos/tooltip-viewport";
 
 import { DemoCode } from "../code/demo-code";
 import { DemoViewportFrame } from "./demo-viewport-frame";
@@ -317,6 +318,7 @@ const demoRegistry = {
   "toggle-group-orientation": ToggleGroupOrientation,
   "toolbar-01": Toolbar01,
   "tooltip-01": Tooltip01,
+  "tooltip-viewport": TooltipViewportDemo,
 } satisfies Record<string, () => ReactNode>;
 
 type DemoPath = keyof typeof demoRegistry;
