@@ -6,7 +6,7 @@ import { mergeSlotClassName } from "@/registry/sector23/lib/merge-base-ui";
 
 import { tooltip } from "./tooltip.style";
 
-const POSITIONER_SIDE_OFFSET = 6;
+const POSITIONER_SIDE_OFFSET = 8;
 
 const createTooltipHandle = BaseTooltip.createHandle;
 
