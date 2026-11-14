@@ -6,17 +6,20 @@ const popover = tv({
     portal: "",
     backdrop: "",
     positioner: [
-      "has-data-[slot='popover-viewport']:h-(--positioner-height) has-data-[slot='popover-viewport']:w-(--positioner-width) has-data-[slot='popover-viewport']:max-w-(--available-width) motion-safe:has-data-[slot='popover-viewport']:transition-[top,left,right,bottom,transform] motion-safe:has-data-[slot='popover-viewport']:duration-500 motion-safe:has-data-[slot='popover-viewport']:ease-emphasized",
+      "has-data-[slot='popover-viewport']:h-(--positioner-height) has-data-[slot='popover-viewport']:w-(--positioner-width) has-data-[slot='popover-viewport']:max-w-(--available-width)",
       "has-data-[slot='popover-viewport']:data-instant:transition-none",
+      "motion-safe:has-data-[slot='popover-viewport']:transition-[top,left,right,bottom,transform] motion-safe:has-data-[slot='popover-viewport']:duration-500 motion-safe:has-data-[slot='popover-viewport']:ease-emphasized",
     ],
     popup: [
       "relative flex h-(--popup-height,auto) w-(--popup-width,auto) max-w-(--available-width) origin-(--transform-origin) flex-col gap-1.5 rounded-lg border border-border bg-popover p-3 text-popover-foreground shadow-md transition-[scale,opacity] duration-200 ease-default outline-none",
-      "has-data-[slot='popover-viewport']:p-0 motion-safe:has-data-[slot='popover-viewport']:transition-[width,height,scale,opacity] motion-safe:has-data-[slot='popover-viewport']:duration-500 motion-safe:has-data-[slot='popover-viewport']:ease-emphasized motion-safe:has-data-[slot='popover-viewport']:**:data-[slot='popover-arrow']:transition-[left] motion-safe:has-data-[slot='popover-viewport']:**:data-[slot='popover-arrow']:duration-500 motion-safe:has-data-[slot='popover-viewport']:**:data-[slot='popover-arrow']:ease-emphasized",
+      "has-data-[slot='popover-viewport']:p-0",
       "data-ending-style:opacity-0",
-      "has-data-[slot='popover-viewport']:data-instant:transition-none",
+      "data-instant:transition-none",
       "data-starting-style:opacity-0",
       "motion-safe:data-ending-style:scale-95",
       "motion-safe:data-starting-style:scale-95",
+      "motion-safe:has-data-[slot='popover-viewport']:transition-[width,height,scale,opacity] motion-safe:has-data-[slot='popover-viewport']:duration-500 motion-safe:has-data-[slot='popover-viewport']:ease-emphasized",
+      "motion-safe:has-data-[slot='popover-viewport']:**:data-[slot='popover-arrow']:transition-[left] motion-safe:has-data-[slot='popover-viewport']:**:data-[slot='popover-arrow']:duration-500 motion-safe:has-data-[slot='popover-viewport']:**:data-[slot='popover-arrow']:ease-emphasized",
     ],
     arrow: [
       "relative block h-1.5 w-3 overflow-clip",
